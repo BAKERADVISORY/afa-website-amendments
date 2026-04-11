@@ -1,5 +1,7 @@
 import type { MetadataRoute } from "next";
 
+export const dynamic = "force-static";
+
 const BASE_URL = "https://www.ausfinancialadvisory.com.au";
 
 export default function sitemap(): MetadataRoute.Sitemap {
