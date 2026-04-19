@@ -71,7 +71,7 @@ export default function SmallBusinessRestructurePage() {
 
       {/* Hero Section */}
       <section style={{
-        backgroundColor: '#17243B',
+        backgroundColor: '#111111',
         paddingTop: 160,
         paddingBottom: 80,
         paddingLeft: 80,
@@ -81,7 +81,7 @@ export default function SmallBusinessRestructurePage() {
       }}>
         <div style={{ maxWidth: 1400, margin: '0 auto' }}>
           <p style={{
-            color: '#0C9488',
+            color: '#333333',
             textTransform: 'uppercase',
             fontSize: 12,
             letterSpacing: 3,
@@ -110,7 +110,7 @@ export default function SmallBusinessRestructurePage() {
             Give your business a fresh start with our Small Business Restructuring Process. A formal insolvency procedure designed to help viable businesses recover while maintaining control.
           </p>
           <a href="/contact/" style={{
-            backgroundColor: '#0C9488',
+            backgroundColor: '#333333',
             color: '#FFFFFF',
             borderRadius: 50,
             padding: '14px 28px',
@@ -137,7 +137,7 @@ export default function SmallBusinessRestructurePage() {
             {/* Left column */}
             <div>
               <p style={{
-                color: '#0C9488',
+                color: '#333333',
                 textTransform: 'uppercase',
                 fontSize: 12,
                 letterSpacing: 3,
@@ -162,17 +162,17 @@ export default function SmallBusinessRestructurePage() {
                   'No prior SBR in 7 years',
                 ].map((item) => (
                   <div key={item} style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-                    <CheckCircle size={20} color="#0C9488" style={{ flexShrink: 0 }} />
+                    <CheckCircle size={20} color="#333333" style={{ flexShrink: 0 }} />
                     <span style={{ color: '#383838', fontSize: 16 }}>{item}</span>
                   </div>
                 ))}
               </div>
               <a href="/contact/" style={{
-                color: '#0C9488',
+                color: '#333333',
                 fontSize: 16,
                 fontWeight: 600,
                 textDecoration: 'none',
-                borderBottom: '1px solid #0C9488',
+                borderBottom: '1px solid #333333',
                 paddingBottom: 2,
               }}>
                 Check Your Eligibility →
@@ -187,10 +187,10 @@ export default function SmallBusinessRestructurePage() {
       </section>
 
       {/* Why Choose SBR Section */}
-      <section style={{ backgroundColor: '#EBF3F8', padding: '80px 0' }}>
+      <section style={{ backgroundColor: '#f5f5f5', padding: '80px 0' }}>
         <div style={{ maxWidth: 1400, margin: '0 auto', padding: '0 32px' }}>
           <p style={{
-            color: '#0C9488',
+            color: '#333333',
             textTransform: 'uppercase',
             fontSize: 12,
             letterSpacing: 3,
@@ -234,7 +234,7 @@ export default function SmallBusinessRestructurePage() {
                   width: 8,
                   height: 8,
                   borderRadius: '50%',
-                  backgroundColor: '#0C9488',
+                  backgroundColor: '#333333',
                   flexShrink: 0,
                 }} />
                 <span style={{ color: '#383838', fontSize: 16 }}>{benefit}</span>
@@ -245,10 +245,10 @@ export default function SmallBusinessRestructurePage() {
       </section>
 
       {/* Our SBR Process Section */}
-      <section style={{ backgroundColor: '#17243B', padding: '80px 0' }}>
+      <section style={{ backgroundColor: '#111111', padding: '80px 0' }}>
         <div style={{ maxWidth: 1400, margin: '0 auto', padding: '0 32px' }}>
           <p style={{
-            color: '#0C9488',
+            color: '#333333',
             textTransform: 'uppercase',
             fontSize: 12,
             letterSpacing: 3,
@@ -307,7 +307,7 @@ export default function SmallBusinessRestructurePage() {
                     width: 44,
                     height: 44,
                     borderRadius: '50%',
-                    backgroundColor: '#0C9488',
+                    backgroundColor: '#333333',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -349,29 +349,29 @@ export default function SmallBusinessRestructurePage() {
             flexWrap: 'wrap',
           }}>
             <div style={{
-              backgroundColor: '#EBF3F8',
+              backgroundColor: '#f5f5f5',
               borderRadius: 12,
               padding: 40,
               textAlign: 'center',
               maxWidth: 300,
               width: '100%',
             }}>
-              <Clock size={36} color="#0C9488" style={{ marginBottom: 16 }} />
-              <p style={{ fontSize: 42, fontWeight: 700, color: '#17243B', marginBottom: 8, lineHeight: 1.1 }}>
+              <Clock size={36} color="#333333" style={{ marginBottom: 16 }} />
+              <p style={{ fontSize: 42, fontWeight: 700, color: '#111111', marginBottom: 8, lineHeight: 1.1 }}>
                 4 - 6 Weeks
               </p>
               <p style={{ fontSize: 15, color: '#666666' }}>Time Under Restructure Proposal</p>
             </div>
             <div style={{
-              backgroundColor: '#EBF3F8',
+              backgroundColor: '#f5f5f5',
               borderRadius: 12,
               padding: 40,
               textAlign: 'center',
               maxWidth: 300,
               width: '100%',
             }}>
-              <Calendar size={36} color="#0C9488" style={{ marginBottom: 16 }} />
-              <p style={{ fontSize: 42, fontWeight: 700, color: '#17243B', marginBottom: 8, lineHeight: 1.1 }}>
+              <Calendar size={36} color="#333333" style={{ marginBottom: 16 }} />
+              <p style={{ fontSize: 42, fontWeight: 700, color: '#111111', marginBottom: 8, lineHeight: 1.1 }}>
                 0 - 36 Months
               </p>
               <p style={{ fontSize: 15, color: '#666666' }}>Time Under Restructure Plan</p>
@@ -383,17 +383,17 @@ export default function SmallBusinessRestructurePage() {
       {/* Related Services */}
       <section style={{ backgroundColor: '#FFFFFF', padding: '48px 0' }}>
         <div style={{ maxWidth: 1400, margin: '0 auto', padding: '0 32px' }}>
-          <h2 style={{ fontSize: 22, fontWeight: 700, color: '#17243B', marginBottom: 24 }}>
+          <h2 style={{ fontSize: 22, fontWeight: 700, color: '#111111', marginBottom: 24 }}>
             Related Services
           </h2>
           <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
-            <a href="/services/voluntary-administration/" style={{ backgroundColor: '#EBF3F8', borderRadius: 8, padding: '14px 20px', fontSize: 15, fontWeight: 600, color: '#17243B', textDecoration: 'none' }}>
+            <a href="/services/voluntary-administration/" style={{ backgroundColor: '#f5f5f5', borderRadius: 8, padding: '14px 20px', fontSize: 15, fontWeight: 600, color: '#111111', textDecoration: 'none' }}>
               Voluntary Administration &rarr;
             </a>
-            <a href="/services/creditors-voluntary-liquidation/" style={{ backgroundColor: '#EBF3F8', borderRadius: 8, padding: '14px 20px', fontSize: 15, fontWeight: 600, color: '#17243B', textDecoration: 'none' }}>
+            <a href="/services/creditors-voluntary-liquidation/" style={{ backgroundColor: '#f5f5f5', borderRadius: 8, padding: '14px 20px', fontSize: 15, fontWeight: 600, color: '#111111', textDecoration: 'none' }}>
               Creditors Voluntary Liquidation &rarr;
             </a>
-            <a href="/reduce-debt/" style={{ backgroundColor: '#EBF3F8', borderRadius: 8, padding: '14px 20px', fontSize: 15, fontWeight: 600, color: '#17243B', textDecoration: 'none' }}>
+            <a href="/reduce-debt/" style={{ backgroundColor: '#f5f5f5', borderRadius: 8, padding: '14px 20px', fontSize: 15, fontWeight: 600, color: '#111111', textDecoration: 'none' }}>
               Reduce Business Debt &rarr;
             </a>
           </div>

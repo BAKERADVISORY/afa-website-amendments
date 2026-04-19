@@ -1,4 +1,4 @@
-import { Trophy, Lightbulb, Clock, UserCheck, ShieldCheck, Target } from 'lucide-react';
+import { UserCheck, GitBranch, FileX, ShieldAlert, Clock } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
 interface FeatureItemProps {
@@ -15,11 +15,11 @@ function FeatureItem({ icon: Icon, title, description }: FeatureItemProps) {
           minWidth: 48,
           height: 48,
           borderRadius: '50%',
-          backgroundColor: 'rgba(12,148,136,0.2)',
+          backgroundColor: 'rgba(255,255,255,0.08)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          color: '#0C9488',
+          color: '#ffffff',
         }}
       >
         <Icon size={22} />
@@ -28,7 +28,7 @@ function FeatureItem({ icon: Icon, title, description }: FeatureItemProps) {
         <h3 style={{ fontSize: 16, fontWeight: 700, color: '#FFFFFF', marginBottom: 4, margin: '0 0 4px' }}>
           {title}
         </h3>
-        <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.7)', lineHeight: 1.6, margin: 0 }}>
+        <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, margin: 0 }}>
           {description}
         </p>
       </div>
@@ -38,40 +38,34 @@ function FeatureItem({ icon: Icon, title, description }: FeatureItemProps) {
 
 const features: FeatureItemProps[] = [
   {
-    icon: Trophy,
-    title: 'Proven Track Record',
+    icon: UserCheck,
+    title: 'We Work for You — Not the Creditors',
     description:
-      'We have many years of experience helping businesses navigate complex challenges with a high success rate.',
+      'Unlike insolvency practitioners appointed by creditors, we represent you — the business owner. Your interests come first, every time.',
   },
   {
-    icon: Lightbulb,
-    title: 'Industry Expertise',
+    icon: GitBranch,
+    title: 'Every Alternative Explored Before Formal Insolvency',
     description:
-      'Our advisers specialise in business restructuring, debt management, and strategic planning.',
+      'Formal insolvency is a last resort. We exhaust every negotiation, restructuring, and advisory pathway before recommending it.',
+  },
+  {
+    icon: FileX,
+    title: 'Formal Insolvency Appears on Company Records — We Help You Avoid That',
+    description:
+      'A formal insolvency appointment stays on the record permanently. Our pre-insolvency approach protects your company history and future reputation.',
+  },
+  {
+    icon: ShieldAlert,
+    title: 'Personal Assets Are at Risk from DPNs — We Act Fast',
+    description:
+      'Director Penalty Notices remove the corporate veil. Once issued, you are personally liable. We move quickly to protect what you have built.',
   },
   {
     icon: Clock,
-    title: 'Fast Response Time',
+    title: 'Professional, Urgent, and Reassuring',
     description:
-      'We understand urgency in business. Get expert consultation within 24 hours of your initial contact.',
-  },
-  {
-    icon: UserCheck,
-    title: 'Personalised Approach',
-    description:
-      'Every business is unique. We tailor our solutions to fit your specific situation and goals.',
-  },
-  {
-    icon: ShieldCheck,
-    title: 'Complete Compliance',
-    description:
-      'Stay compliant with legal and regulatory requirements whilst achieving your business objectives.',
-  },
-  {
-    icon: Target,
-    title: 'Results Driven',
-    description:
-      "We measure success by your success. We're designed to deliver measurable outcomes.",
+      'We understand that financial distress is stressful. Our approach is fast, confidential, and designed to give you clarity and a clear path forward.',
   },
 ];
 
@@ -79,7 +73,7 @@ export function WhyChooseSection() {
   return (
     <section
       style={{
-        backgroundColor: '#17243B',
+        backgroundColor: '#111111',
         padding: '80px 0',
         position: 'relative',
         overflow: 'hidden',
@@ -120,7 +114,7 @@ export function WhyChooseSection() {
             fontSize: 12,
             letterSpacing: 3,
             textTransform: 'uppercase',
-            color: '#5ACBBD',
+            color: '#cccccc',
             marginBottom: 12,
           }}
         >
@@ -135,19 +129,20 @@ export function WhyChooseSection() {
             marginBottom: 16,
           }}
         >
-          Why Choose <span style={{ color: '#5ACBBD' }}>Australian Financial Advisory?</span>
+          Why Choose{' '}
+          <span style={{ color: '#ffffff', opacity: 0.75 }}>Australian Financial Advisory?</span>
         </h2>
         <p
           style={{
             textAlign: 'center',
             fontSize: 16,
-            color: 'rgba(255,255,255,0.75)',
+            color: 'rgba(255,255,255,0.6)',
             maxWidth: 700,
             margin: '0 auto 48px',
           }}
         >
-          Australian Financial Advisory is here to support you in the early stages of financial difficulty, when
-          decisions matter most.
+          We support business owners at the earliest stage of financial difficulty — when the most
+          options are still available to you.
         </p>
 
         {/* 2-column: images | features */}
@@ -170,6 +165,7 @@ export function WhyChooseSection() {
                 borderRadius: 12,
                 objectFit: 'cover',
                 height: 260,
+                filter: 'grayscale(30%)',
               }}
             />
             <img
@@ -180,12 +176,13 @@ export function WhyChooseSection() {
                 borderRadius: 12,
                 objectFit: 'cover',
                 height: 260,
+                filter: 'grayscale(30%)',
               }}
             />
           </div>
 
           {/* Features column */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 28 }}>
             {features.map((feature) => (
               <FeatureItem key={feature.title} {...feature} />
             ))}

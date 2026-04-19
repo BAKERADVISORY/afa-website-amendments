@@ -27,7 +27,7 @@ export default function ServicesPage() {
 
         {/* Hero Section */}
         <section style={{
-          backgroundColor: '#17243B',
+          backgroundColor: '#111111',
           paddingTop: 160,
           paddingBottom: 80,
           paddingLeft: 80,
@@ -37,7 +37,7 @@ export default function ServicesPage() {
         }}>
           <div style={{ maxWidth: 1400, margin: '0 auto', position: 'relative', zIndex: 1 }}>
             <p style={{
-              color: '#5ACBBD',
+              color: '#ffffff',
               fontSize: 12,
               fontWeight: 700,
               letterSpacing: 3,
@@ -68,7 +68,7 @@ export default function ServicesPage() {
             <a
               href="#contact"
               style={{
-                backgroundColor: '#0C9488',
+                backgroundColor: '#333333',
                 color: '#FFFFFF',
                 borderRadius: 50,
                 padding: '14px 28px',
@@ -131,7 +131,7 @@ export default function ServicesPage() {
         </section>
 
         {/* Ready to Transform Section */}
-        <section style={{ backgroundColor: '#17243B', padding: '80px 0', textAlign: 'center' }}>
+        <section style={{ backgroundColor: '#111111', padding: '80px 0', textAlign: 'center' }}>
           <div style={{ maxWidth: 800, margin: '0 auto', padding: '0 32px' }}>
             <h2 style={{
               color: '#FFFFFF',
@@ -153,7 +153,7 @@ export default function ServicesPage() {
             <a
               href="#contact"
               style={{
-                backgroundColor: '#0C9488',
+                backgroundColor: '#333333',
                 color: '#FFFFFF',
                 borderRadius: 50,
                 padding: '14px 28px',
@@ -172,7 +172,7 @@ export default function ServicesPage() {
         <section style={{ backgroundColor: '#FFFFFF', padding: '80px 0' }}>
           <div style={{ maxWidth: 1400, margin: '0 auto', padding: '0 32px' }}>
             <h2 style={{
-              color: '#17243B',
+              color: '#111111',
               fontSize: 38,
               fontWeight: 700,
               textAlign: 'center',
@@ -210,8 +210,8 @@ export default function ServicesPage() {
                 <span
                   key={industry}
                   style={{
-                    backgroundColor: '#EBF3F8',
-                    color: '#17243B',
+                    backgroundColor: '#f5f5f5',
+                    color: '#111111',
                     borderRadius: 50,
                     padding: '12px 24px',
                     fontSize: 15,
@@ -242,7 +242,7 @@ interface ServiceCardProps {
 function ServiceCard({ title, description, bullets, href }: ServiceCardProps) {
   return (
     <div style={{
-      backgroundColor: '#EBF3F8',
+      backgroundColor: '#f5f5f5',
       borderRadius: 12,
       padding: 32,
       display: 'flex',
@@ -253,15 +253,15 @@ function ServiceCard({ title, description, bullets, href }: ServiceCardProps) {
       <div style={{
         width: 40,
         height: 40,
-        backgroundColor: '#0C9488',
+        backgroundColor: '#333333',
         borderRadius: 8,
       }} />
-      <h3 style={{ color: '#17243B', fontSize: 20, fontWeight: 700, lineHeight: 1.25 }}>{title}</h3>
+      <h3 style={{ color: '#111111', fontSize: 20, fontWeight: 700, lineHeight: 1.25 }}>{title}</h3>
       <p style={{ color: '#555555', fontSize: 15, lineHeight: 1.65 }}>{description}</p>
       <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 8 }}>
         {bullets.map((bullet) => (
           <li key={bullet} style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-            <ArrowRight size={16} color="#0C9488" style={{ flexShrink: 0 }} />
+            <ArrowRight size={16} color="#333333" style={{ flexShrink: 0 }} />
             <span style={{ color: '#555555', fontSize: 14 }}>{bullet}</span>
           </li>
         ))}
@@ -269,7 +269,7 @@ function ServiceCard({ title, description, bullets, href }: ServiceCardProps) {
       <a
         href={href}
         style={{
-          color: '#0C9488',
+          color: '#333333',
           fontSize: 15,
           fontWeight: 700,
           textDecoration: 'none',

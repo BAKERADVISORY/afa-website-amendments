@@ -71,7 +71,7 @@ export default function VoluntaryAdministrationPage() {
 
       {/* Hero Section */}
       <section style={{
-        backgroundColor: '#17243B',
+        backgroundColor: '#111111',
         paddingTop: 160,
         paddingBottom: 80,
         paddingLeft: 80,
@@ -81,7 +81,7 @@ export default function VoluntaryAdministrationPage() {
       }}>
         <div style={{ maxWidth: 1400, margin: '0 auto' }}>
           <p style={{
-            color: '#0C9488',
+            color: '#333333',
             textTransform: 'uppercase',
             fontSize: 12,
             letterSpacing: 3,
@@ -110,7 +110,7 @@ export default function VoluntaryAdministrationPage() {
             Voluntary Administration provides a structured process for financially distressed companies to explore options for recovery while being protected from creditor actions.
           </p>
           <a href="/contact/" style={{
-            backgroundColor: '#0C9488',
+            backgroundColor: '#333333',
             color: '#FFFFFF',
             borderRadius: 50,
             padding: '14px 28px',
@@ -137,7 +137,7 @@ export default function VoluntaryAdministrationPage() {
             {/* Left column */}
             <div>
               <p style={{
-                color: '#0C9488',
+                color: '#333333',
                 textTransform: 'uppercase',
                 fontSize: 12,
                 letterSpacing: 3,
@@ -162,7 +162,7 @@ export default function VoluntaryAdministrationPage() {
                   'Independent professional oversight',
                 ].map((item) => (
                   <div key={item} style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-                    <CheckCircle size={20} color="#0C9488" style={{ flexShrink: 0 }} />
+                    <CheckCircle size={20} color="#333333" style={{ flexShrink: 0 }} />
                     <span style={{ color: '#383838', fontSize: 16 }}>{item}</span>
                   </div>
                 ))}
@@ -177,7 +177,7 @@ export default function VoluntaryAdministrationPage() {
       </section>
 
       {/* Key Objective Box Section */}
-      <section style={{ backgroundColor: '#17243B', padding: '80px 0' }}>
+      <section style={{ backgroundColor: '#111111', padding: '80px 0' }}>
         <div style={{ maxWidth: 1400, margin: '0 auto', padding: '0 32px' }}>
           <div style={{
             backgroundColor: '#FFFFFF',
@@ -187,7 +187,7 @@ export default function VoluntaryAdministrationPage() {
             margin: '0 auto',
           }}>
             <p style={{
-              color: '#0C9488',
+              color: '#333333',
               textTransform: 'uppercase',
               fontSize: 12,
               letterSpacing: 3,
@@ -207,7 +207,7 @@ export default function VoluntaryAdministrationPage() {
       </section>
 
       {/* Benefits Section */}
-      <section style={{ backgroundColor: '#EBF3F8', padding: '80px 0' }}>
+      <section style={{ backgroundColor: '#f5f5f5', padding: '80px 0' }}>
         <div style={{ maxWidth: 1400, margin: '0 auto', padding: '0 32px' }}>
           <h2 style={{
             fontSize: 36,
@@ -257,7 +257,7 @@ export default function VoluntaryAdministrationPage() {
                 borderRadius: 12,
                 padding: 28,
               }}>
-                <Icon size={28} color="#0C9488" style={{ marginBottom: 14 }} />
+                <Icon size={28} color="#333333" style={{ marginBottom: 14 }} />
                 <h3 style={{ fontSize: 18, fontWeight: 700, color: '#383838', marginBottom: 8 }}>{title}</h3>
                 <p style={{ fontSize: 15, color: '#666666', lineHeight: 1.6 }}>{desc}</p>
               </div>
@@ -267,7 +267,7 @@ export default function VoluntaryAdministrationPage() {
       </section>
 
       {/* The Administration Process Section */}
-      <section style={{ backgroundColor: '#17243B', padding: '80px 0' }}>
+      <section style={{ backgroundColor: '#111111', padding: '80px 0' }}>
         <div style={{ maxWidth: 1400, margin: '0 auto', padding: '0 32px' }}>
           <h2 style={{
             fontSize: 38,
@@ -318,7 +318,7 @@ export default function VoluntaryAdministrationPage() {
                     width: 44,
                     height: 44,
                     borderRadius: '50%',
-                    backgroundColor: '#0C9488',
+                    backgroundColor: '#333333',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -380,23 +380,23 @@ export default function VoluntaryAdministrationPage() {
                 'Proceed to liquidation',
               ].map((outcome) => (
                 <div key={outcome} style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-                  <ArrowRight size={20} color="#0C9488" style={{ flexShrink: 0 }} />
+                  <ArrowRight size={20} color="#333333" style={{ flexShrink: 0 }} />
                   <span style={{ color: '#383838', fontSize: 16 }}>{outcome}</span>
                 </div>
               ))}
             </div>
             {/* DOCA highlighted box */}
             <div style={{
-              backgroundColor: '#EBF3F8',
+              backgroundColor: '#f5f5f5',
               borderRadius: 12,
               padding: 32,
             }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 16, flexWrap: 'wrap' }}>
-                <h3 style={{ fontSize: 22, fontWeight: 700, color: '#17243B', margin: 0 }}>
+                <h3 style={{ fontSize: 22, fontWeight: 700, color: '#111111', margin: 0 }}>
                   Deed of Company Arrangement
                 </h3>
                 <span style={{
-                  backgroundColor: '#0C9488',
+                  backgroundColor: '#333333',
                   color: '#FFFFFF',
                   borderRadius: 50,
                   padding: '4px 14px',
@@ -417,7 +417,7 @@ export default function VoluntaryAdministrationPage() {
                   'Better returns for creditors',
                 ].map((item) => (
                   <div key={item} style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-                    <CheckCircle size={18} color="#0C9488" style={{ flexShrink: 0 }} />
+                    <CheckCircle size={18} color="#333333" style={{ flexShrink: 0 }} />
                     <span style={{ color: '#383838', fontSize: 15 }}>{item}</span>
                   </div>
                 ))}
@@ -428,7 +428,7 @@ export default function VoluntaryAdministrationPage() {
       </section>
 
       {/* Custom CTA Section */}
-      <section style={{ backgroundColor: '#17243B', padding: '64px 0', textAlign: 'center' }}>
+      <section style={{ backgroundColor: '#111111', padding: '64px 0', textAlign: 'center' }}>
         <div style={{ maxWidth: 900, margin: '0 auto', padding: '0 32px' }}>
           <h2 style={{ fontSize: 38, fontWeight: 700, color: '#FFFFFF', marginBottom: 16, lineHeight: 1.25 }}>
             Have Questions About Voluntary Administration?
@@ -445,7 +445,7 @@ export default function VoluntaryAdministrationPage() {
             Time is critical in financial distress situations. Our experienced team can help you understand your options and guide you through the process.
           </p>
           <a href="/contact/" style={{
-            backgroundColor: '#0C9488',
+            backgroundColor: '#333333',
             color: '#FFFFFF',
             borderRadius: 50,
             padding: '14px 28px',
@@ -462,17 +462,17 @@ export default function VoluntaryAdministrationPage() {
       {/* Related Services */}
       <section style={{ backgroundColor: '#FFFFFF', padding: '48px 0' }}>
         <div style={{ maxWidth: 1400, margin: '0 auto', padding: '0 32px' }}>
-          <h2 style={{ fontSize: 22, fontWeight: 700, color: '#17243B', marginBottom: 24 }}>
+          <h2 style={{ fontSize: 22, fontWeight: 700, color: '#111111', marginBottom: 24 }}>
             Related Services
           </h2>
           <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
-            <a href="/services/small-business-restructure/" style={{ backgroundColor: '#EBF3F8', borderRadius: 8, padding: '14px 20px', fontSize: 15, fontWeight: 600, color: '#17243B', textDecoration: 'none' }}>
+            <a href="/services/small-business-restructure/" style={{ backgroundColor: '#f5f5f5', borderRadius: 8, padding: '14px 20px', fontSize: 15, fontWeight: 600, color: '#111111', textDecoration: 'none' }}>
               Small Business Restructure &rarr;
             </a>
-            <a href="/services/creditors-voluntary-liquidation/" style={{ backgroundColor: '#EBF3F8', borderRadius: 8, padding: '14px 20px', fontSize: 15, fontWeight: 600, color: '#17243B', textDecoration: 'none' }}>
+            <a href="/services/creditors-voluntary-liquidation/" style={{ backgroundColor: '#f5f5f5', borderRadius: 8, padding: '14px 20px', fontSize: 15, fontWeight: 600, color: '#111111', textDecoration: 'none' }}>
               Creditors Voluntary Liquidation &rarr;
             </a>
-            <a href="/reduce-debt/" style={{ backgroundColor: '#EBF3F8', borderRadius: 8, padding: '14px 20px', fontSize: 15, fontWeight: 600, color: '#17243B', textDecoration: 'none' }}>
+            <a href="/reduce-debt/" style={{ backgroundColor: '#f5f5f5', borderRadius: 8, padding: '14px 20px', fontSize: 15, fontWeight: 600, color: '#111111', textDecoration: 'none' }}>
               Reduce Business Debt &rarr;
             </a>
           </div>

@@ -31,7 +31,7 @@ export function BlogCarousel() {
     <section style={{ backgroundColor: '#FFFFFF', padding: '80px 0' }}>
       <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 32px' }}>
         <h2 style={{ fontSize: 38, fontWeight: 700, color: '#383838', textAlign: 'center', marginBottom: 48, margin: '0 0 48px' }}>
-          Latest from our <span style={{ color: '#5ACBBD' }}>Blog</span>
+          Latest from our <span style={{ color: '#ffffff' }}>Blog</span>
         </h2>
 
         <div style={{ position: 'relative', display: 'flex', alignItems: 'center', gap: 16 }}>

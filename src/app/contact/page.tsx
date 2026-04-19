@@ -55,7 +55,7 @@ export default function ContactPage() {
 
       {/* Hero Section */}
       <section style={{
-        backgroundColor: '#17243B',
+        backgroundColor: '#111111',
         paddingTop: 160,
         paddingBottom: 80,
         paddingLeft: 80,
@@ -64,7 +64,7 @@ export default function ContactPage() {
         overflow: 'hidden',
       }}>
         <div style={{ maxWidth: 1400, margin: '0 auto', position: 'relative', zIndex: 1 }}>
-          <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: 2, color: '#0C9488', textTransform: 'uppercase', marginBottom: 16 }}>
+          <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: 2, color: '#333333', textTransform: 'uppercase', marginBottom: 16 }}>
             CONTACT US
           </p>
           <h1 style={{ fontSize: 52, fontWeight: 800, color: '#FFFFFF', lineHeight: 1.15, marginBottom: 20, maxWidth: 600 }}>
@@ -76,7 +76,7 @@ export default function ContactPage() {
           <a
             href="/contact/"
             style={{
-              backgroundColor: '#0C9488',
+              backgroundColor: '#333333',
               color: '#FFFFFF',
               borderRadius: 50,
               padding: '14px 28px',
@@ -152,7 +152,7 @@ export default function ContactPage() {
                   type="submit"
                   style={{
                     width: '100%',
-                    backgroundColor: '#17243B',
+                    backgroundColor: '#111111',
                     color: '#FFFFFF',
                     border: 'none',
                     borderRadius: 8,
@@ -172,41 +172,41 @@ export default function ContactPage() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
 
               {/* Box 1: Free Consultation */}
-              <div style={{ backgroundColor: '#EBF3F8', borderRadius: 12, padding: 24 }}>
+              <div style={{ backgroundColor: '#f5f5f5', borderRadius: 12, padding: 24 }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 12 }}>
-                  <div style={{ width: 44, height: 44, borderRadius: '50%', backgroundColor: '#0C9488', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                  <div style={{ width: 44, height: 44, borderRadius: '50%', backgroundColor: '#333333', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                     <Headphones size={20} color="#FFFFFF" />
                   </div>
-                  <h3 style={{ fontSize: 16, fontWeight: 700, color: '#17243B', margin: 0 }}>Free Consultation</h3>
+                  <h3 style={{ fontSize: 16, fontWeight: 700, color: '#111111', margin: 0 }}>Free Consultation</h3>
                 </div>
                 <p style={{ fontSize: 14, color: '#555', lineHeight: 1.6, marginBottom: 12 }}>
                   Get expert advice on your business challenges with a complimentary 30-minute consultation.
                 </p>
-                <a href="/contact/" style={{ color: '#0C9488', fontWeight: 600, fontSize: 14, textDecoration: 'none' }}>
+                <a href="/contact/" style={{ color: '#333333', fontWeight: 600, fontSize: 14, textDecoration: 'none' }}>
                   Schedule Now &rarr;
                 </a>
               </div>
 
               {/* Box 2: Business Hours */}
-              <div style={{ backgroundColor: '#EBF3F8', borderRadius: 12, padding: 24 }}>
+              <div style={{ backgroundColor: '#f5f5f5', borderRadius: 12, padding: 24 }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 12 }}>
-                  <div style={{ width: 44, height: 44, borderRadius: '50%', backgroundColor: '#0C9488', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                  <div style={{ width: 44, height: 44, borderRadius: '50%', backgroundColor: '#333333', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                     <Clock size={20} color="#FFFFFF" />
                   </div>
-                  <h3 style={{ fontSize: 16, fontWeight: 700, color: '#17243B', margin: 0 }}>Hours</h3>
+                  <h3 style={{ fontSize: 16, fontWeight: 700, color: '#111111', margin: 0 }}>Hours</h3>
                 </div>
                 <p style={{ fontSize: 14, color: '#555', lineHeight: 1.6, marginBottom: 12 }}>
                   Monday &ndash; Friday: 8.30 AM &ndash; 5.30 PM
                 </p>
-                <a href="/contact/" style={{ color: '#0C9488', fontWeight: 600, fontSize: 14, textDecoration: 'none' }}>
+                <a href="/contact/" style={{ color: '#333333', fontWeight: 600, fontSize: 14, textDecoration: 'none' }}>
                   Schedule Now &rarr;
                 </a>
               </div>
 
               {/* Box 3: Urgent Matter */}
-              <div style={{ backgroundColor: '#17243B', borderRadius: 12, padding: 24 }}>
+              <div style={{ backgroundColor: '#111111', borderRadius: 12, padding: 24 }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 12 }}>
-                  <div style={{ width: 44, height: 44, borderRadius: '50%', backgroundColor: '#0C9488', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                  <div style={{ width: 44, height: 44, borderRadius: '50%', backgroundColor: '#333333', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                     <Phone size={20} color="#FFFFFF" />
                   </div>
                   <h3 style={{ fontSize: 16, fontWeight: 700, color: '#FFFFFF', margin: 0 }}>Urgent Business Matter?</h3>
@@ -217,7 +217,7 @@ export default function ContactPage() {
                 <a
                   href="tel:1300052321"
                   style={{
-                    backgroundColor: '#0C9488',
+                    backgroundColor: '#333333',
                     color: '#FFFFFF',
                     borderRadius: 50,
                     padding: '10px 24px',

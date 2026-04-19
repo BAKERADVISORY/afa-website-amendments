@@ -37,7 +37,7 @@ export default function AboutPage() {
 
         {/* Hero Section */}
         <section style={{
-          backgroundColor: '#17243B',
+          backgroundColor: '#111111',
           paddingTop: 160,
           paddingBottom: 80,
           paddingLeft: 80,
@@ -47,7 +47,7 @@ export default function AboutPage() {
         }}>
           <div style={{ maxWidth: 1400, margin: '0 auto', position: 'relative', zIndex: 1 }}>
             <p style={{
-              color: '#5ACBBD',
+              color: '#ffffff',
               fontSize: 12,
               fontWeight: 700,
               letterSpacing: 3,
@@ -78,7 +78,7 @@ export default function AboutPage() {
             <a
               href="#contact"
               style={{
-                backgroundColor: '#0C9488',
+                backgroundColor: '#333333',
                 color: '#FFFFFF',
                 borderRadius: 50,
                 padding: '14px 28px',
@@ -107,7 +107,7 @@ export default function AboutPage() {
               {/* Left text */}
               <div>
                 <p style={{
-                  color: '#0C9488',
+                  color: '#333333',
                   fontSize: 12,
                   fontWeight: 700,
                   letterSpacing: 3,
@@ -142,13 +142,13 @@ export default function AboutPage() {
                     <div
                       key={stat.label}
                       style={{
-                        border: '2px solid #0C9488',
+                        border: '2px solid #333333',
                         borderRadius: 10,
                         padding: '20px 16px',
                         textAlign: 'center',
                       }}
                     >
-                      <div style={{ color: '#0C9488', fontSize: 28, fontWeight: 700, lineHeight: 1 }}>{stat.value}</div>
+                      <div style={{ color: '#333333', fontSize: 28, fontWeight: 700, lineHeight: 1 }}>{stat.value}</div>
                       <div style={{ color: '#666666', fontSize: 13, marginTop: 6 }}>{stat.label}</div>
                     </div>
                   ))}
@@ -164,26 +164,26 @@ export default function AboutPage() {
         </section>
 
         {/* Our Values Section */}
-        <section style={{ backgroundColor: '#EBF3F8', padding: '80px 0' }}>
+        <section style={{ backgroundColor: '#f5f5f5', padding: '80px 0' }}>
           <div style={{ maxWidth: 1400, margin: '0 auto', padding: '0 32px' }}>
             <div style={{ textAlign: 'center', marginBottom: 56 }}>
-              <h2 style={{ color: '#17243B', fontSize: 38, fontWeight: 700, marginBottom: 12 }}>Our Core Values</h2>
+              <h2 style={{ color: '#111111', fontSize: 38, fontWeight: 700, marginBottom: 12 }}>Our Core Values</h2>
               <p style={{ color: '#666666', fontSize: 17 }}>The principles that guide everything we do</p>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 28 }}>
               {[
                 {
-                  icon: <ShieldCheck size={36} color="#0C9488" />,
+                  icon: <ShieldCheck size={36} color="#333333" />,
                   title: 'Integrity',
                   desc: 'We operate with complete transparency and honesty in all our dealings, ensuring you always have the full picture.',
                 },
                 {
-                  icon: <Target size={36} color="#0C9488" />,
+                  icon: <Target size={36} color="#333333" />,
                   title: 'Results-Driven',
                   desc: 'Every strategy we develop is focused on delivering measurable outcomes that make a real difference to your business.',
                 },
                 {
-                  icon: <Users size={36} color="#0C9488" />,
+                  icon: <Users size={36} color="#333333" />,
                   title: 'Client-Focused',
                   desc: 'Your success is our success. We tailor every solution to your specific circumstances and goals.',
                 },
@@ -198,7 +198,7 @@ export default function AboutPage() {
                   }}
                 >
                   <div style={{ marginBottom: 20 }}>{card.icon}</div>
-                  <h3 style={{ color: '#17243B', fontSize: 20, fontWeight: 700, marginBottom: 12 }}>{card.title}</h3>
+                  <h3 style={{ color: '#111111', fontSize: 20, fontWeight: 700, marginBottom: 12 }}>{card.title}</h3>
                   <p style={{ color: '#666666', fontSize: 15, lineHeight: 1.7 }}>{card.desc}</p>
                 </div>
               ))}
@@ -207,10 +207,10 @@ export default function AboutPage() {
         </section>
 
         {/* Our Expertise Section */}
-        <section style={{ backgroundColor: '#17243B', padding: '80px 0' }}>
+        <section style={{ backgroundColor: '#111111', padding: '80px 0' }}>
           <div style={{ maxWidth: 1400, margin: '0 auto', padding: '0 32px' }}>
             <p style={{
-              color: '#5ACBBD',
+              color: '#ffffff',
               fontSize: 12,
               fontWeight: 700,
               letterSpacing: 3,
@@ -246,7 +246,7 @@ export default function AboutPage() {
                     width: 8,
                     height: 8,
                     borderRadius: '50%',
-                    backgroundColor: '#0C9488',
+                    backgroundColor: '#333333',
                     marginTop: 6,
                     flexShrink: 0,
                   }} />
@@ -266,8 +266,8 @@ export default function AboutPage() {
             {/* Quote icon */}
             <div style={{ marginBottom: 24 }}>
               <svg width="48" height="48" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z" fill="#0C9488" />
-                <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z" fill="#0C9488" />
+                <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z" fill="#333333" />
+                <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z" fill="#333333" />
               </svg>
             </div>
             <p style={{

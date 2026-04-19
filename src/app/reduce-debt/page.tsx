@@ -1,230 +1,366 @@
-import type { Metadata } from 'next'
-import { NavBar } from '@/components/NavBar'
+import type { Metadata } from 'next';
+import { NavBar } from '@/components/NavBar';
+import { Footer } from '@/components/Footer';
+import { ChevronRight, FileText, Users, Search, TrendingDown } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Reduce Business Debt | Debt Negotiation for Company Directors Gold Coast',
+  title: 'Reduce ATO Debt & Creditor Pressure | Australian Financial Advisory',
   description:
-    'Struggling with business debt? Our expert team negotiates with creditors, develops debt management plans and guides company directors through formal insolvency options. Gold Coast QLD and Australia-wide. Free debt assessment.',
+    'Facing ATO debt or creditor pressure? We review your full financial position, assess every negotiation pathway, and connect you with the right specialist to act. Early advice is your most powerful tool.',
   alternates: {
     canonical: 'https://www.ausfinancialadvisory.com.au/reduce-debt/',
   },
   openGraph: {
-    title: 'Reduce Business Debt | Debt Negotiation for Company Directors Gold Coast',
+    title: 'Reduce ATO Debt & Creditor Pressure | Australian Financial Advisory',
     description:
-      'Expert debt negotiation and restructuring for company directors facing financial distress. Serving Gold Coast QLD and Australia.',
+      'Early negotiation protects your business and personal assets. We assess your options and refer you to the right specialist to execute the strategy.',
     url: 'https://www.ausfinancialadvisory.com.au/reduce-debt/',
   },
-}
-import { CTABanner } from '@/components/CTABanner'
-import { Footer } from '@/components/Footer'
-import { TrendingDown, ShieldCheck, BarChart3, BookOpen, CheckCircle, ArrowRight } from 'lucide-react'
+};
 
-function PlaceholderImage({ height = 400, label = 'Image' }: { height?: number; label?: string }) {
+function SectionLabel({ text, light = false }: { text: string; light?: boolean }) {
   return (
-    <div style={{
-      width: '100%', height, backgroundColor: '#D1D5DB', borderRadius: 12,
-      display: 'flex', alignItems: 'center', justifyContent: 'center',
-      color: '#9CA3AF', fontSize: 14, fontWeight: 500
-    }}>{label}</div>
-  )
+    <p
+      style={{
+        fontSize: 12,
+        letterSpacing: 3,
+        textTransform: 'uppercase',
+        color: light ? 'rgba(255,255,255,0.5)' : '#999999',
+        marginBottom: 12,
+      }}
+    >
+      {text}
+    </p>
+  );
 }
-
-interface ServiceCardProps {
-  icon: React.ReactNode
-  title: string
-  description: string
-}
-
-function ServiceCard({ icon, title, description }: ServiceCardProps) {
-  return (
-    <div style={{ backgroundColor: '#EBF3F8', borderRadius: 12, padding: 28 }}>
-      <div style={{ width: 48, height: 48, borderRadius: '50%', backgroundColor: '#0C9488', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16 }}>
-        {icon}
-      </div>
-      <h3 style={{ fontSize: 18, fontWeight: 700, color: '#17243B', marginBottom: 10 }}>{title}</h3>
-      <p style={{ fontSize: 15, color: '#555', lineHeight: 1.6 }}>{description}</p>
-    </div>
-  )
-}
-
-const processSteps = [
-  'Initial consultation and financial assessment',
-  'Comprehensive debt analysis and strategy development',
-  'Development of tailored debt management plan',
-  'Appointment of registered practitioner when required',
-  'Ongoing monitoring and support',
-]
 
 export default function ReduceDebtPage() {
   return (
     <>
       <NavBar />
-      <main>
+      <main style={{ paddingTop: 80 }}>
 
-      {/* Hero Section */}
-      <section style={{
-        backgroundColor: '#17243B',
-        paddingTop: 160,
-        paddingBottom: 80,
-        paddingLeft: 80,
-        paddingRight: 80,
-        position: 'relative',
-        overflow: 'hidden',
-      }}>
-        <div style={{ maxWidth: 1400, margin: '0 auto', position: 'relative', zIndex: 1 }}>
-          <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: 2, color: '#0C9488', textTransform: 'uppercase', marginBottom: 16 }}>
-            DEBT MANAGEMENT
-          </p>
-          <h1 style={{ fontSize: 52, fontWeight: 800, color: '#FFFFFF', lineHeight: 1.15, marginBottom: 20, maxWidth: 700 }}>
-            Reduce Your Business Debt
-          </h1>
-          <p style={{ fontSize: 18, color: 'rgba(255,255,255,0.7)', maxWidth: 640, lineHeight: 1.6, marginBottom: 32 }}>
-            Strategic debt management solutions to help your business regain financial stability and achieve sustainable growth without compromising your operations.
-          </p>
-          <a
-            href="/contact/"
+        {/* Hero */}
+        <section
+          style={{
+            backgroundColor: '#111111',
+            padding: '100px 0 80px',
+            position: 'relative',
+            overflow: 'hidden',
+          }}
+        >
+          <div
             style={{
-              backgroundColor: '#0C9488',
-              color: '#FFFFFF',
-              borderRadius: 50,
-              padding: '14px 28px',
-              fontSize: 16,
-              fontWeight: 700,
-              textDecoration: 'none',
-              display: 'inline-block',
+              position: 'absolute',
+              fontSize: 220,
+              fontWeight: 900,
+              color: 'rgba(255,255,255,0.03)',
+              right: -40,
+              top: '50%',
+              transform: 'translateY(-50%)',
+              userSelect: 'none',
+              lineHeight: 1,
+              pointerEvents: 'none',
+              letterSpacing: -6,
             }}
           >
-            Get Free Debt Assessment &rarr;
-          </a>
-        </div>
-        {/* Wave */}
-        <div style={{ position: 'absolute', bottom: -1, left: '-35%', width: '171%', height: 100 }}>
-          <svg viewBox="0 0 1440 100" preserveAspectRatio="none" style={{ width: '100%', height: '100%' }}>
-            <path d="M0,50 C360,100 1080,0 1440,50 L1440,100 L0,100 Z" fill="#ffffff" />
-          </svg>
-        </div>
-      </section>
-
-      {/* Services Grid Section */}
-      <section style={{ backgroundColor: '#FFFFFF', padding: '80px 0' }}>
-        <div style={{ maxWidth: 1400, margin: '0 auto', padding: '0 32px' }}>
-          <h2 style={{ fontSize: 36, fontWeight: 800, color: '#383838', textAlign: 'center', marginBottom: 12 }}>
-            Our Debt Reduction Services
-          </h2>
-          <p style={{ fontSize: 16, color: '#666', textAlign: 'center', marginBottom: 48, lineHeight: 1.6 }}>
-            Comprehensive debt management solutions tailored to your business needs
-          </p>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>
-            <ServiceCard
-              icon={<TrendingDown size={22} color="#FFFFFF" />}
-              title="Debt Restructuring"
-              description="Negotiate with creditors to reduce payment amounts and extend payment terms for better cash flow management."
-            />
-            <ServiceCard
-              icon={<ShieldCheck size={22} color="#FFFFFF" />}
-              title="Creditor Protection"
-              description="Protect your business assets whilst working toward sustainable debt resolution strategies."
-            />
-            <ServiceCard
-              icon={<BarChart3 size={22} color="#FFFFFF" />}
-              title="Financial Analysis"
-              description="Comprehensive review of your financial position to identify the best debt reduction strategies."
-            />
-            <ServiceCard
-              icon={<BookOpen size={22} color="#FFFFFF" />}
-              title="Insolvency Guidance"
-              description="Expert guidance through formal insolvency processes, working closely with you to navigate the best pathway forward."
-            />
+            DEBT
           </div>
-        </div>
-      </section>
+          <div
+            style={{
+              maxWidth: 900,
+              margin: '0 auto',
+              padding: '0 32px',
+              position: 'relative',
+              zIndex: 1,
+            }}
+          >
+            <SectionLabel text="Debt Reduction Advisory" light />
+            <h1
+              style={{
+                fontSize: 52,
+                fontWeight: 700,
+                color: '#ffffff',
+                lineHeight: 1.15,
+                marginBottom: 24,
+              }}
+            >
+              Reduce Your Debt.{' '}
+              <span
+                style={{
+                  textDecoration: 'underline',
+                  textUnderlineOffset: '5px',
+                  textDecorationColor: 'rgba(255,255,255,0.35)',
+                }}
+              >
+                Protect Your Future.
+              </span>
+            </h1>
+            <p
+              style={{
+                fontSize: 18,
+                color: 'rgba(255,255,255,0.72)',
+                lineHeight: 1.7,
+                maxWidth: 680,
+                marginBottom: 36,
+              }}
+            >
+              When ATO debt and creditor pressure is mounting, early negotiation is your most
+              powerful tool. Every day without action increases your exposure — and narrows your
+              options.
+            </p>
+            <a
+              href="/#contact"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 8,
+                backgroundColor: '#ffffff',
+                color: '#000000',
+                borderRadius: 50,
+                padding: '14px 28px',
+                fontSize: 15,
+                fontWeight: 700,
+                textDecoration: 'none',
+              }}
+            >
+              Book a Discovery Call
+              <ChevronRight size={16} />
+            </a>
+          </div>
+        </section>
 
-      {/* Our Proven Process Section */}
-      <section style={{ backgroundColor: '#17243B', padding: '80px 0' }}>
-        <div style={{ maxWidth: 1400, margin: '0 auto', padding: '0 32px' }}>
-          <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: 2, color: '#0C9488', textTransform: 'uppercase', marginBottom: 16, textAlign: 'center' }}>
-            OUR PROCESS
-          </p>
-          <h2 style={{ fontSize: 38, fontWeight: 800, color: '#FFFFFF', textAlign: 'center', marginBottom: 12 }}>
-            Our Proven Process
-          </h2>
-          <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.7)', textAlign: 'center', marginBottom: 56 }}>
-            A systematic approach to debt reduction that delivers results
-          </p>
-          <div style={{ maxWidth: 680, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 0 }}>
-            {processSteps.map((step, index) => (
-              <div key={step} style={{ display: 'flex', alignItems: 'flex-start', gap: 24, position: 'relative' }}>
-                {/* Connector line (not after last) */}
-                {index < processSteps.length - 1 && (
-                  <div style={{
-                    position: 'absolute',
-                    left: 21,
-                    top: 44,
-                    width: 2,
-                    height: 40,
-                    backgroundColor: 'rgba(255,255,255,0.2)',
-                  }} />
-                )}
-                <div style={{
-                  width: 44,
-                  height: 44,
-                  borderRadius: '50%',
-                  backgroundColor: '#0C9488',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  flexShrink: 0,
+        {/* What We Do */}
+        <section style={{ backgroundColor: '#ffffff', padding: '80px 0' }}>
+          <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 32px' }}>
+            <div style={{ maxWidth: 700, marginBottom: 48 }}>
+              <SectionLabel text="What We Do" />
+              <h2
+                style={{
+                  fontSize: 38,
                   fontWeight: 700,
-                  fontSize: 16,
-                  color: '#FFFFFF',
-                  zIndex: 1,
-                }}>
-                  {index + 1}
-                </div>
-                <div style={{ paddingBottom: index < processSteps.length - 1 ? 40 : 0, paddingTop: 10 }}>
-                  <p style={{ fontSize: 18, fontWeight: 700, color: '#FFFFFF', margin: 0, lineHeight: 1.4 }}>
-                    {step}
+                  color: '#111111',
+                  lineHeight: 1.2,
+                  marginBottom: 16,
+                }}
+              >
+                An Independent Review of Your Full Financial Position
+              </h2>
+              <p style={{ fontSize: 16, color: '#555555', lineHeight: 1.75, margin: 0 }}>
+                Before you approach the ATO or any creditor, you need to know exactly where you
+                stand. We provide an independent assessment of your situation — so you negotiate from
+                a position of knowledge, not panic.
+              </p>
+            </div>
+
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(2, 1fr)',
+                gap: 24,
+              }}
+              className="rd-two-col"
+            >
+              {[
+                {
+                  icon: Search,
+                  heading: 'Full financial review',
+                  body: 'We assess your ATO debt, creditor exposure, cash flow position, and repayment capacity — building a clear picture of where you actually stand.',
+                },
+                {
+                  icon: TrendingDown,
+                  heading: 'Negotiation pathway assessment',
+                  body: 'We identify every available negotiation and consolidation pathway — ATO payment plans, creditor agreements, and loan consolidation options — and evaluate which are realistic for your situation.',
+                },
+                {
+                  icon: FileText,
+                  heading: 'Written report with recommended steps',
+                  body: 'You receive a clear written report outlining your position, your options, and the recommended action steps — tailored specifically to your circumstances.',
+                },
+                {
+                  icon: Users,
+                  heading: 'Specialist referral',
+                  body: 'We connect you with the right specialist in our network to execute the strategy — whether that is ATO payment plan negotiation, creditor negotiation, or loan consolidation.',
+                },
+              ].map(({ icon: Icon, heading, body }) => (
+                <div
+                  key={heading}
+                  style={{
+                    backgroundColor: '#f5f5f5',
+                    borderRadius: 12,
+                    padding: '28px 32px',
+                    borderTop: '3px solid #333333',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: 12,
+                  }}
+                >
+                  <div
+                    style={{
+                      width: 44,
+                      height: 44,
+                      borderRadius: '50%',
+                      backgroundColor: '#111111',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                    }}
+                  >
+                    <Icon size={20} color="#ffffff" />
+                  </div>
+                  <h3 style={{ fontSize: 17, fontWeight: 700, color: '#111111', margin: 0 }}>
+                    {heading}
+                  </h3>
+                  <p style={{ fontSize: 14, color: '#555555', lineHeight: 1.65, margin: 0 }}>
+                    {body}
                   </p>
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+              ))}
+            </div>
 
-      {/* Insolvency Options Checker Section */}
-      <section style={{ backgroundColor: '#EBF3F8', padding: '80px 0' }}>
-        <div style={{ maxWidth: 800, margin: '0 auto', padding: '0 32px', textAlign: 'center' }}>
-          <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: 2, color: '#0C9488', textTransform: 'uppercase', marginBottom: 16 }}>
-            QUICK TOOL
+            {/* Key messages */}
+            <div style={{ marginTop: 48 }}>
+              <h3
+                style={{
+                  fontSize: 22,
+                  fontWeight: 700,
+                  color: '#111111',
+                  marginBottom: 20,
+                }}
+              >
+                What You Need to Know
+              </h3>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+                {[
+                  'The ATO will negotiate — but only if you approach them correctly and early. An unguided approach often results in worse outcomes.',
+                  'Creditors would often rather settle than pursue — we help you understand your leverage and what a realistic outcome looks like.',
+                  'Debt consolidation can simplify repayments and reduce pressure — we connect you with the right people to explore this option.',
+                  'Every day without action increases your exposure. The ATO adds interest and penalties daily, and DPN risk grows as time passes.',
+                ].map((msg) => (
+                  <div
+                    key={msg}
+                    style={{
+                      display: 'flex',
+                      alignItems: 'flex-start',
+                      gap: 14,
+                      padding: '16px 20px',
+                      backgroundColor: '#f5f5f5',
+                      borderRadius: 8,
+                    }}
+                  >
+                    <span
+                      style={{
+                        width: 22,
+                        height: 22,
+                        borderRadius: '50%',
+                        backgroundColor: '#111111',
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        flexShrink: 0,
+                        fontSize: 11,
+                        color: '#ffffff',
+                        fontWeight: 700,
+                        marginTop: 1,
+                      }}
+                    >
+                      ✓
+                    </span>
+                    <p style={{ fontSize: 15, color: '#444444', lineHeight: 1.6, margin: 0 }}>
+                      {msg}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Disclaimer */}
+        <section style={{ backgroundColor: '#ffffff', padding: '24px 0' }}>
+          <p style={{ maxWidth: 800, margin: '0 auto', padding: '0 32px', fontSize: 12, color: '#888888', lineHeight: 1.7, textAlign: 'center' }}>
+            The information on this page is general in nature and does not constitute legal,
+            financial, or insolvency advice. Australian Financial Advisory Pty Ltd provides
+            assessment and advisory services only. All specialist services are referred to
+            appropriately licensed partners. You should seek independent professional advice before
+            acting on any information on this page.
           </p>
-          <h2 style={{ fontSize: 36, fontWeight: 800, color: '#383838', marginBottom: 24 }}>
-            Insolvency Options Checker
-          </h2>
-          <p style={{ fontSize: 16, color: '#555', lineHeight: 1.8, marginBottom: 36 }}>
-            Unsure which path is right for your business? Our quick Insolvency Options Checker helps company directors understand the formal processes available when facing financial distress. By answering a few simple questions, you&apos;ll see whether Small Business Restructuring, Voluntary Administration, or Liquidation could be the most suitable option for your situation. It&apos;s free, takes only a couple of minutes, and gives you a clearer starting point before speaking with a professional.
-          </p>
-          <a
-            href="/contact/"
+        </section>
+
+        {/* CTA */}
+        <section style={{ backgroundColor: '#111111', padding: '80px 0' }}>
+          <div
             style={{
-              backgroundColor: '#0C9488',
-              color: '#FFFFFF',
-              borderRadius: 50,
-              padding: '14px 28px',
-              fontSize: 16,
-              fontWeight: 700,
-              textDecoration: 'none',
-              display: 'inline-block',
+              maxWidth: 700,
+              margin: '0 auto',
+              padding: '0 32px',
+              textAlign: 'center',
             }}
           >
-            Insolvency Options Checker &rarr;
-          </a>
-        </div>
-      </section>
+            <SectionLabel text="Get Started" light />
+            <h2
+              style={{
+                fontSize: 42,
+                fontWeight: 700,
+                color: '#ffffff',
+                marginBottom: 16,
+                lineHeight: 1.2,
+              }}
+            >
+              Schedule Your Discovery Call
+            </h2>
+            <p
+              style={{
+                fontSize: 17,
+                color: 'rgba(255,255,255,0.7)',
+                lineHeight: 1.7,
+                marginBottom: 36,
+              }}
+            >
+              The earlier you act, the more options you have. The discovery call is free,
+              confidential, and carries no obligation. Let&apos;s work out what your best path
+              forward looks like.
+            </p>
+            <a
+              href="/#contact"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 8,
+                backgroundColor: '#ffffff',
+                color: '#000000',
+                borderRadius: 50,
+                padding: '16px 36px',
+                fontSize: 16,
+                fontWeight: 700,
+                textDecoration: 'none',
+              }}
+            >
+              Book Your Free Discovery Call
+              <ChevronRight size={16} />
+            </a>
+            <p
+              style={{
+                fontSize: 13,
+                color: 'rgba(255,255,255,0.4)',
+                marginTop: 20,
+              }}
+            >
+              Confidential · No obligation · Fast response
+            </p>
+          </div>
+        </section>
 
-      <CTABanner />
       </main>
       <Footer />
+
+      <style>{`
+        @media (max-width: 767px) {
+          .rd-two-col {
+            grid-template-columns: 1fr !important;
+          }
+        }
+      `}</style>
     </>
-  )
+  );
 }

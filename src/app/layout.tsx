@@ -87,7 +87,7 @@ const jsonLd = {
       description:
         "Australian Financial Advisory is a specialist pre-insolvency and corporate restructuring firm serving company directors across Gold Coast, Queensland and Australia. We provide expert voluntary administration, small business restructuring, creditors voluntary liquidation, and debt negotiation services.",
       telephone: "1300052321",
-      email: "contact@ausfinancialadvisory.com.au",
+      email: "jason@australianfinancialadvisory.com.au",
       address: [
         {
           "@type": "PostalAddress",

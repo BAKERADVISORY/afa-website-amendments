@@ -10,16 +10,14 @@
   --font-heading: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
   --font-mono: ui-monospace, monospace;
 
-  /* Wynn Advisory brand colors */
-  --color-wynn-navy:   #17243B;
-  --color-wynn-teal:   #0C9488;
-  --color-wynn-teal-medium: #20BBAE;
-  --color-wynn-teal-light: #5ACBBD;
-  --color-wynn-peach:  #FFF4EF;
-  --color-wynn-card-bg: #EBF3F8;
-  --color-wynn-faq-bg: #E0F5F2;
+  /* AFA brand colors */
+  --color-afa-navy:        #0d1b2a;
+  --color-afa-gold:        #c9a84c;
+  --color-afa-gold-dark:   #b8963e;
+  --color-afa-card-bg:     #f5f0e6;
+  --color-afa-faq-bg:      #fdf5e4;
 
-  /* shadcn tokens mapped to Wynn palette */
+  /* shadcn tokens mapped to AFA palette */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
@@ -52,18 +50,18 @@
   --card-foreground: #383838;
   --popover: #ffffff;
   --popover-foreground: #383838;
-  --primary: #0C9488;
+  --primary: #c9a84c;
   --primary-foreground: #ffffff;
-  --secondary: #EBF3F8;
+  --secondary: #f5f0e6;
   --secondary-foreground: #383838;
   --muted: #F5F7FA;
   --muted-foreground: #666666;
-  --accent: #5ACBBD;
-  --accent-foreground: #17243B;
+  --accent: #c9a84c;
+  --accent-foreground: #0d1b2a;
   --destructive: #EF4444;
   --border: #E5E7EB;
   --input: #E5E7EB;
-  --ring: #0C9488;
+  --ring: #c9a84c;
   --radius: 0.625rem;
 }
 
@@ -97,7 +95,7 @@
   animation: marquee 35s linear infinite;
 }
 
-/* Wynn teal gradient */
-.wynn-teal-gradient {
-  background: linear-gradient(135deg, #0C9488, #20BBAE);
+/* AFA gold gradient */
+.afa-gold-gradient {
+  background: linear-gradient(135deg, #c9a84c, #b8963e);
 }

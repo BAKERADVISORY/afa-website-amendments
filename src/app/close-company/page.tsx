@@ -37,11 +37,11 @@ interface ServiceCardProps {
 
 function ServiceCard({ icon, title, description }: ServiceCardProps) {
   return (
-    <div style={{ backgroundColor: '#EBF3F8', borderRadius: 12, padding: 28 }}>
-      <div style={{ width: 48, height: 48, borderRadius: '50%', backgroundColor: '#0C9488', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16 }}>
+    <div style={{ backgroundColor: '#f5f5f5', borderRadius: 12, padding: 28 }}>
+      <div style={{ width: 48, height: 48, borderRadius: '50%', backgroundColor: '#333333', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16 }}>
         {icon}
       </div>
-      <h3 style={{ fontSize: 18, fontWeight: 700, color: '#17243B', marginBottom: 10 }}>{title}</h3>
+      <h3 style={{ fontSize: 18, fontWeight: 700, color: '#111111', marginBottom: 10 }}>{title}</h3>
       <p style={{ fontSize: 15, color: '#555', lineHeight: 1.6 }}>{description}</p>
     </div>
   )
@@ -62,7 +62,7 @@ export default function CloseCompanyPage() {
 
       {/* Hero Section */}
       <section style={{
-        backgroundColor: '#17243B',
+        backgroundColor: '#111111',
         paddingTop: 160,
         paddingBottom: 80,
         paddingLeft: 80,
@@ -71,7 +71,7 @@ export default function CloseCompanyPage() {
         overflow: 'hidden',
       }}>
         <div style={{ maxWidth: 1400, margin: '0 auto', position: 'relative', zIndex: 1 }}>
-          <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: 2, color: '#0C9488', textTransform: 'uppercase', marginBottom: 16 }}>
+          <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: 2, color: '#333333', textTransform: 'uppercase', marginBottom: 16 }}>
             CLOSE COMPANY
           </p>
           <h1 style={{ fontSize: 52, fontWeight: 800, color: '#FFFFFF', lineHeight: 1.15, marginBottom: 20, maxWidth: 700 }}>
@@ -83,7 +83,7 @@ export default function CloseCompanyPage() {
           <a
             href="/contact/"
             style={{
-              backgroundColor: '#0C9488',
+              backgroundColor: '#333333',
               color: '#FFFFFF',
               borderRadius: 50,
               padding: '14px 28px',
@@ -139,12 +139,12 @@ export default function CloseCompanyPage() {
       </section>
 
       {/* Why Professional Closure Matters Section */}
-      <section style={{ backgroundColor: '#17243B', padding: '80px 0' }}>
+      <section style={{ backgroundColor: '#111111', padding: '80px 0' }}>
         <div style={{ maxWidth: 1400, margin: '0 auto', padding: '0 32px' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center' }}>
             {/* Left text */}
             <div>
-              <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: 2, color: '#0C9488', textTransform: 'uppercase', marginBottom: 16 }}>
+              <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: 2, color: '#333333', textTransform: 'uppercase', marginBottom: 16 }}>
                 WHY IT MATTERS
               </p>
               <h2 style={{ fontSize: 38, fontWeight: 800, color: '#FFFFFF', lineHeight: 1.2, marginBottom: 20 }}>
@@ -156,7 +156,7 @@ export default function CloseCompanyPage() {
               <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 36px 0', display: 'flex', flexDirection: 'column', gap: 14 }}>
                 {bullets.map((bullet) => (
                   <li key={bullet} style={{ display: 'flex', alignItems: 'flex-start', gap: 12 }}>
-                    <CheckCircle size={20} color="#0C9488" style={{ flexShrink: 0, marginTop: 2 }} />
+                    <CheckCircle size={20} color="#333333" style={{ flexShrink: 0, marginTop: 2 }} />
                     <span style={{ fontSize: 15, color: 'rgba(255,255,255,0.8)', lineHeight: 1.5 }}>{bullet}</span>
                   </li>
                 ))}
@@ -164,7 +164,7 @@ export default function CloseCompanyPage() {
               <a
                 href="/contact/"
                 style={{
-                  backgroundColor: '#0C9488',
+                  backgroundColor: '#333333',
                   color: '#FFFFFF',
                   borderRadius: 50,
                   padding: '14px 28px',
@@ -204,7 +204,7 @@ export default function CloseCompanyPage() {
             <a
               href="/contact/"
               style={{
-                backgroundColor: '#0C9488',
+                backgroundColor: '#333333',
                 color: '#FFFFFF',
                 borderRadius: 50,
                 padding: '14px 28px',

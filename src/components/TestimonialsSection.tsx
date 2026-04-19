@@ -11,7 +11,7 @@ interface Review {
 const reviews: Review[] = [
   {
     name: 'Joel A',
-    text: "From the very first conversation I had with Sam, I knew he was different. Genuine, transparent, and incredibly grounded — he didn't speak like someone just doing a job, and I never once felt like just another number. I've been burnt before, so I was cautious.",
+    text: "From the very first conversation I had with the team, I knew they were different. Genuine, transparent, and incredibly grounded — they didn't speak like someone just doing a job, and I never once felt like just another number. I've been burnt before, so I was cautious.",
   },
   {
     name: 'Daniel C',
@@ -32,7 +32,7 @@ export function TestimonialsSection() {
   const current = reviews[activeIndex];
 
   return (
-    <section style={{ backgroundColor: '#17243B', padding: '80px 0' }}>
+    <section style={{ backgroundColor: '#111111', padding: '80px 0' }}>
       <div
         style={{
           display: 'flex',
@@ -42,23 +42,16 @@ export function TestimonialsSection() {
           margin: '0 auto',
           padding: '0 32px',
         }}
+        className="testimonials-grid"
       >
         {/* Left col */}
         <div style={{ width: '40%', flexShrink: 0 }}>
-          {/* Stars */}
           <div style={{ display: 'flex', gap: 6, marginBottom: 8 }}>
             {Array.from({ length: 5 }).map((_, i) => (
-              <Star key={i} size={24} fill="#5ACBBD" color="#5ACBBD" />
+              <Star key={i} size={24} fill="#ffffff" color="#ffffff" />
             ))}
           </div>
-          <p
-            style={{
-              fontSize: 14,
-              color: 'rgba(255,255,255,0.6)',
-              marginBottom: 16,
-              marginTop: 0,
-            }}
-          >
+          <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.5)', marginBottom: 16, marginTop: 0 }}>
             Rated 5 out of 5
           </p>
           <h2
@@ -70,30 +63,28 @@ export function TestimonialsSection() {
               margin: 0,
             }}
           >
-            <span style={{ color: '#5ACBBD' }}>Trusted</span> by hundreds of businesses across
-            Australia.
+            Trusted by businesses across Australia.
           </h2>
         </div>
 
         {/* Right col */}
         <div style={{ flex: 1 }}>
-          {/* Review card */}
           <div
             style={{
               backgroundColor: '#FFFFFF',
               borderRadius: 16,
               padding: 32,
               position: 'relative',
+              borderTop: '4px solid #333333',
             }}
           >
-            {/* Large quotation mark */}
             <span
               style={{
                 position: 'absolute',
                 top: 20,
                 left: 24,
                 fontSize: 80,
-                color: 'rgba(12,148,136,0.15)',
+                color: 'rgba(0,0,0,0.08)',
                 fontFamily: 'serif',
                 lineHeight: 1,
                 userSelect: 'none',
@@ -101,22 +92,14 @@ export function TestimonialsSection() {
             >
               &ldquo;
             </span>
-            <p
-              style={{
-                fontSize: 15,
-                color: '#444',
-                lineHeight: 1.7,
-                paddingTop: 32,
-                margin: 0,
-              }}
-            >
+            <p style={{ fontSize: 15, color: '#444', lineHeight: 1.7, paddingTop: 32, margin: 0 }}>
               {current.text}
             </p>
             <p
               style={{
                 fontSize: 14,
                 fontWeight: 700,
-                color: '#0C9488',
+                color: '#333333',
                 marginTop: 16,
                 textAlign: 'center',
                 marginBottom: 0,
@@ -127,14 +110,7 @@ export function TestimonialsSection() {
           </div>
 
           {/* Dot navigation */}
-          <div
-            style={{
-              display: 'flex',
-              gap: 10,
-              justifyContent: 'center',
-              marginTop: 24,
-            }}
-          >
+          <div style={{ display: 'flex', gap: 10, justifyContent: 'center', marginTop: 24 }}>
             {reviews.map((_, i) => (
               <button
                 key={i}
@@ -144,7 +120,7 @@ export function TestimonialsSection() {
                   width: 10,
                   height: 10,
                   borderRadius: '50%',
-                  backgroundColor: i === activeIndex ? '#0C9488' : 'rgba(255,255,255,0.3)',
+                  backgroundColor: i === activeIndex ? '#ffffff' : 'rgba(255,255,255,0.25)',
                   border: 'none',
                   cursor: 'pointer',
                   padding: 0,
@@ -154,6 +130,18 @@ export function TestimonialsSection() {
           </div>
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 767px) {
+          .testimonials-grid {
+            flex-direction: column !important;
+            gap: 32px !important;
+          }
+          .testimonials-grid > div:first-child {
+            width: 100% !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }

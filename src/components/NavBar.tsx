@@ -3,14 +3,26 @@
 import { useState } from 'react';
 import { ChevronRight, Menu, X } from 'lucide-react';
 
-const navLinks = [
-  { text: 'Home', href: '/', active: true },
-  { text: 'About', href: '/about/' },
-  { text: 'Close Company', href: '/close-company/' },
+const serviceLinks = [
   { text: 'Reduce Debt', href: '/reduce-debt/' },
-  { text: 'Services', href: '/services/' },
-  { text: 'Contact', href: '/contact/' },
+  { text: 'Restructure Your Business', href: '/restructure-your-business/' },
+  { text: 'Administration & Liquidation', href: '/administration-and-liquidation/' },
+  { text: 'Credit Repair & Funding', href: '/credit-repair-and-funding/' },
 ];
+
+function AfaLogo() {
+  return (
+    <svg viewBox="0 0 420 100" xmlns="http://www.w3.org/2000/svg" style={{ width: '280px', display: 'block' }}>
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Raleway:wght@500&display=swap');
+        .lm { font-family: Oswald, Arial, sans-serif; font-weight: 700; font-size: 72px; fill: #ffffff; stroke: #ffffff; stroke-width: 4px; paint-order: stroke fill; letter-spacing: 2px; }
+        .ls { font-family: Raleway, Arial, sans-serif; font-weight: 500; font-size: 11.5px; fill: #ffffff; letter-spacing: 4.5px; }
+      `}</style>
+      <text x="210" y="72" textAnchor="middle" className="lm">AFA</text>
+      <text x="210" y="90" textAnchor="middle" className="ls">AUSTRALIAN FINANCIAL ADVISORY</text>
+    </svg>
+  );
+}
 
 export function NavBar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -23,7 +35,7 @@ export function NavBar() {
         left: 0,
         right: 0,
         zIndex: 50,
-        backgroundColor: '#17243B',
+        backgroundColor: '#111111',
         height: '80px',
         display: 'flex',
         alignItems: 'center',
@@ -42,39 +54,48 @@ export function NavBar() {
         }}
       >
         {/* Logo */}
-        <a href="/" aria-label="Australian Financial Advisory">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/images/logo-light.svg"
-            alt="Australian Financial Advisory"
-            style={{ height: '37px', width: 'auto' }}
-          />
+        <a href="/" aria-label="Australian Financial Advisory" style={{ display: 'block', flexShrink: 0 }}>
+          <AfaLogo />
         </a>
 
         {/* Desktop nav */}
         <nav className="hidden md:flex" style={{ alignItems: 'center', gap: '4px' }}>
-          {navLinks.map((link) => (
+          {/* DPN Risk — styled with border, first position */}
+          <a
+            href="/director-penalty-notice"
+            style={{
+              color: '#ffffff',
+              fontSize: '15px',
+              fontWeight: 600,
+              padding: '6px 12px',
+              textDecoration: 'none',
+              border: '1px solid rgba(255,255,255,0.5)',
+              borderRadius: '4px',
+              marginRight: '8px',
+              whiteSpace: 'nowrap',
+              transition: 'border-color 0.15s ease, color 0.15s ease',
+            }}
+            onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.borderColor = '#ffffff'; }}
+            onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(255,255,255,0.5)'; }}
+          >
+            DPN Risk
+          </a>
+
+          {serviceLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
               style={{
-                color: link.active ? '#5ACBBD' : '#FFFFFF',
-                fontSize: '16px',
+                color: 'rgba(255,255,255,0.7)',
+                fontSize: '15px',
                 fontWeight: 400,
-                padding: '13px 7px',
+                padding: '13px 8px',
                 textDecoration: 'none',
                 transition: 'color 0.15s ease',
+                whiteSpace: 'nowrap',
               }}
-              onMouseEnter={(e) => {
-                if (!link.active) {
-                  (e.currentTarget as HTMLAnchorElement).style.color = '#0C9488';
-                }
-              }}
-              onMouseLeave={(e) => {
-                if (!link.active) {
-                  (e.currentTarget as HTMLAnchorElement).style.color = '#FFFFFF';
-                }
-              }}
+              onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = '#ffffff'; }}
+              onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.7)'; }}
             >
               {link.text}
             </a>
@@ -86,23 +107,21 @@ export function NavBar() {
           href="#contact"
           className="hidden md:inline-flex"
           style={{
-            backgroundColor: '#0C9488',
-            color: '#FFFFFF',
+            backgroundColor: '#ffffff',
+            color: '#000000',
             borderRadius: '50px',
             padding: '12px 20px',
-            fontSize: '16px',
+            fontSize: '15px',
             fontWeight: 700,
             alignItems: 'center',
             gap: '8px',
             textDecoration: 'none',
             transition: 'background-color 0.15s ease',
+            whiteSpace: 'nowrap',
+            flexShrink: 0,
           }}
-          onMouseEnter={(e) => {
-            (e.currentTarget as HTMLAnchorElement).style.backgroundColor = '#20BBAE';
-          }}
-          onMouseLeave={(e) => {
-            (e.currentTarget as HTMLAnchorElement).style.backgroundColor = '#0C9488';
-          }}
+          onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = '#cccccc'; }}
+          onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = '#ffffff'; }}
         >
           Get Started
           <ChevronRight size={16} />
@@ -113,13 +132,7 @@ export function NavBar() {
           className="md:hidden"
           onClick={() => setMobileOpen((prev) => !prev)}
           aria-label="Toggle menu"
-          style={{
-            background: 'none',
-            border: 'none',
-            color: '#FFFFFF',
-            cursor: 'pointer',
-            padding: '8px',
-          }}
+          style={{ background: 'none', border: 'none', color: '#FFFFFF', cursor: 'pointer', padding: '8px' }}
         >
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -134,20 +147,38 @@ export function NavBar() {
             top: '80px',
             left: 0,
             right: 0,
-            backgroundColor: '#17243B',
+            backgroundColor: '#111111',
             borderTop: '1px solid rgba(255,255,255,0.1)',
             display: 'flex',
             flexDirection: 'column',
             padding: '8px 0',
           }}
         >
-          {navLinks.map((link) => (
+          {/* DPN Risk mobile — first position */}
+          <a
+            href="/director-penalty-notice"
+            onClick={() => setMobileOpen(false)}
+            style={{
+              color: '#ffffff',
+              fontSize: '16px',
+              fontWeight: 600,
+              padding: '10px 20px',
+              textDecoration: 'none',
+              border: '1px solid rgba(255,255,255,0.5)',
+              borderRadius: '4px',
+              margin: '8px 32px',
+              textAlign: 'center',
+            }}
+          >
+            DPN Risk
+          </a>
+          {serviceLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={() => setMobileOpen(false)}
               style={{
-                color: link.active ? '#5ACBBD' : '#FFFFFF',
+                color: 'rgba(255,255,255,0.7)',
                 fontSize: '16px',
                 fontWeight: 400,
                 padding: '12px 32px',
@@ -161,14 +192,14 @@ export function NavBar() {
             href="#contact"
             onClick={() => setMobileOpen(false)}
             style={{
-              backgroundColor: '#0C9488',
-              color: '#FFFFFF',
+              backgroundColor: '#ffffff',
+              color: '#000000',
               borderRadius: '50px',
               padding: '12px 20px',
               fontSize: '16px',
               fontWeight: 700,
               textDecoration: 'none',
-              margin: '12px 32px',
+              margin: '8px 32px',
               textAlign: 'center',
             }}
           >

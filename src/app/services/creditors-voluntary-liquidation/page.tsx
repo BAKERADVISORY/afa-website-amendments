@@ -72,7 +72,7 @@ export default function CreditorsVoluntaryLiquidationPage() {
 
       {/* Hero Section */}
       <section style={{
-        backgroundColor: '#17243B',
+        backgroundColor: '#111111',
         paddingTop: 160,
         paddingBottom: 80,
         paddingLeft: 80,
@@ -82,7 +82,7 @@ export default function CreditorsVoluntaryLiquidationPage() {
       }}>
         <div style={{ maxWidth: 1400, margin: '0 auto' }}>
           <p style={{
-            color: '#0C9488',
+            color: '#333333',
             textTransform: 'uppercase',
             fontSize: 12,
             letterSpacing: 3,
@@ -111,7 +111,7 @@ export default function CreditorsVoluntaryLiquidationPage() {
             When a company cannot meet its financial obligations, Creditors Voluntary Liquidation provides an orderly process to wind up affairs and distribute assets fairly to creditors.
           </p>
           <a href="/contact/" style={{
-            backgroundColor: '#0C9488',
+            backgroundColor: '#333333',
             color: '#FFFFFF',
             borderRadius: 50,
             padding: '14px 28px',
@@ -173,11 +173,11 @@ export default function CreditorsVoluntaryLiquidationPage() {
               },
             ].map(({ Icon, title, desc }) => (
               <div key={title} style={{
-                backgroundColor: '#EBF3F8',
+                backgroundColor: '#f5f5f5',
                 borderRadius: 12,
                 padding: 28,
               }}>
-                <Icon size={28} color="#0C9488" style={{ marginBottom: 14 }} />
+                <Icon size={28} color="#333333" style={{ marginBottom: 14 }} />
                 <h3 style={{ fontSize: 18, fontWeight: 700, color: '#383838', marginBottom: 10 }}>{title}</h3>
                 <p style={{ fontSize: 15, color: '#666666', lineHeight: 1.6 }}>{desc}</p>
               </div>
@@ -187,7 +187,7 @@ export default function CreditorsVoluntaryLiquidationPage() {
       </section>
 
       {/* The CVL Process Section */}
-      <section style={{ backgroundColor: '#17243B', padding: '80px 0' }}>
+      <section style={{ backgroundColor: '#111111', padding: '80px 0' }}>
         <div style={{ maxWidth: 1400, margin: '0 auto', padding: '0 32px' }}>
           <h2 style={{
             fontSize: 38,
@@ -248,7 +248,7 @@ export default function CreditorsVoluntaryLiquidationPage() {
                     width: 44,
                     height: 44,
                     borderRadius: '50%',
-                    backgroundColor: '#0C9488',
+                    backgroundColor: '#333333',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -281,13 +281,13 @@ export default function CreditorsVoluntaryLiquidationPage() {
       </section>
 
       {/* Benefits Section */}
-      <section style={{ backgroundColor: '#EBF3F8', padding: '80px 0' }}>
+      <section style={{ backgroundColor: '#f5f5f5', padding: '80px 0' }}>
         <div style={{ maxWidth: 1400, margin: '0 auto', padding: '0 32px' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center' }}>
             {/* Left column */}
             <div>
               <p style={{
-                color: '#0C9488',
+                color: '#333333',
                 textTransform: 'uppercase',
                 fontSize: 12,
                 letterSpacing: 3,
@@ -303,7 +303,7 @@ export default function CreditorsVoluntaryLiquidationPage() {
                 Professional management of the liquidation process ensures compliance, maximises asset recovery, and protects directors from ongoing liability.
               </p>
               <a href="/contact/" style={{
-                backgroundColor: '#0C9488',
+                backgroundColor: '#333333',
                 color: '#FFFFFF',
                 borderRadius: 50,
                 padding: '14px 28px',
@@ -326,7 +326,7 @@ export default function CreditorsVoluntaryLiquidationPage() {
                   'Director protection from personal liability',
                 ].map((item) => (
                   <div key={item} style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-                    <CheckCircle size={20} color="#0C9488" style={{ flexShrink: 0 }} />
+                    <CheckCircle size={20} color="#333333" style={{ flexShrink: 0 }} />
                     <span style={{ color: '#383838', fontSize: 16 }}>{item}</span>
                   </div>
                 ))}
@@ -346,7 +346,7 @@ export default function CreditorsVoluntaryLiquidationPage() {
             padding: 40,
           }}>
             <p style={{
-              color: '#0C9488',
+              color: '#333333',
               textTransform: 'uppercase',
               fontSize: 12,
               letterSpacing: 3,
@@ -355,14 +355,14 @@ export default function CreditorsVoluntaryLiquidationPage() {
             }}>
               Insolvent Trading
             </p>
-            <h2 style={{ fontSize: 24, fontWeight: 700, color: '#17243B', marginBottom: 16, lineHeight: 1.3 }}>
+            <h2 style={{ fontSize: 24, fontWeight: 700, color: '#111111', marginBottom: 16, lineHeight: 1.3 }}>
               Director Responsibilities
             </h2>
             <p style={{ fontSize: 16, color: '#444444', lineHeight: 1.7, marginBottom: 28 }}>
               Directors have a duty to prevent insolvent trading. Once a company becomes insolvent, continuing to trade can result in personal liability for directors for debts incurred during this period. Early action through CVL can help minimise this risk and ensure compliance with director duties under the Corporations Act.
             </p>
             <a href="/contact/" style={{
-              backgroundColor: '#0C9488',
+              backgroundColor: '#333333',
               color: '#FFFFFF',
               borderRadius: 50,
               padding: '14px 28px',
@@ -380,17 +380,17 @@ export default function CreditorsVoluntaryLiquidationPage() {
       {/* Related Services */}
       <section style={{ backgroundColor: '#FFFFFF', padding: '48px 0' }}>
         <div style={{ maxWidth: 1400, margin: '0 auto', padding: '0 32px' }}>
-          <h2 style={{ fontSize: 22, fontWeight: 700, color: '#17243B', marginBottom: 24 }}>
+          <h2 style={{ fontSize: 22, fontWeight: 700, color: '#111111', marginBottom: 24 }}>
             Related Services
           </h2>
           <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
-            <a href="/services/voluntary-administration/" style={{ backgroundColor: '#EBF3F8', borderRadius: 8, padding: '14px 20px', fontSize: 15, fontWeight: 600, color: '#17243B', textDecoration: 'none' }}>
+            <a href="/services/voluntary-administration/" style={{ backgroundColor: '#f5f5f5', borderRadius: 8, padding: '14px 20px', fontSize: 15, fontWeight: 600, color: '#111111', textDecoration: 'none' }}>
               Voluntary Administration &rarr;
             </a>
-            <a href="/services/small-business-restructure/" style={{ backgroundColor: '#EBF3F8', borderRadius: 8, padding: '14px 20px', fontSize: 15, fontWeight: 600, color: '#17243B', textDecoration: 'none' }}>
+            <a href="/services/small-business-restructure/" style={{ backgroundColor: '#f5f5f5', borderRadius: 8, padding: '14px 20px', fontSize: 15, fontWeight: 600, color: '#111111', textDecoration: 'none' }}>
               Small Business Restructure &rarr;
             </a>
-            <a href="/close-company/" style={{ backgroundColor: '#EBF3F8', borderRadius: 8, padding: '14px 20px', fontSize: 15, fontWeight: 600, color: '#17243B', textDecoration: 'none' }}>
+            <a href="/close-company/" style={{ backgroundColor: '#f5f5f5', borderRadius: 8, padding: '14px 20px', fontSize: 15, fontWeight: 600, color: '#111111', textDecoration: 'none' }}>
               Close Your Company &rarr;
             </a>
           </div>

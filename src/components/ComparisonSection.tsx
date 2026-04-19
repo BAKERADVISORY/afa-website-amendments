@@ -49,7 +49,7 @@ export function ComparisonSection() {
             fontSize: 12,
             letterSpacing: 3,
             textTransform: 'uppercase',
-            color: '#0C9488',
+            color: '#333333',
             textAlign: 'center',
             marginBottom: 12,
           }}
@@ -60,13 +60,13 @@ export function ComparisonSection() {
           style={{
             fontSize: 38,
             fontWeight: 700,
-            color: '#383838',
+            color: '#111111',
             textAlign: 'center',
             margin: '0 0 16px 0',
           }}
         >
           Why engage{' '}
-          <span style={{ color: '#5ACBBD' }}>with us?</span>
+          <span style={{ color: '#333333' }}>with us?</span>
         </h2>
         <p
           style={{
@@ -95,7 +95,7 @@ export function ComparisonSection() {
         {/* Header row */}
         <div
           style={{
-            backgroundColor: '#17243B',
+            backgroundColor: '#111111',
             padding: '16px 24px',
             display: 'grid',
             gridTemplateColumns: '1fr 1fr 1fr',
@@ -106,7 +106,7 @@ export function ComparisonSection() {
           </span>
           <span style={{ color: '#FFFFFF', fontWeight: 700, fontSize: 15 }}>
             Australian Financial Advisory{' '}
-            <span style={{ color: '#0C9488' }}>VS</span>{' '}
+            <span style={{ color: '#cccccc' }}>VS</span>{' '}
             (Pre-Insolvency)
           </span>
           <span style={{ color: '#FFFFFF', fontWeight: 700, fontSize: 15 }}>
@@ -128,11 +128,11 @@ export function ComparisonSection() {
             }}
           >
             {/* Col 1: Feature name */}
-            <div style={{ fontWeight: 600, color: '#383838', fontSize: 15 }}>
+            <div style={{ fontWeight: 600, color: '#111111', fontSize: 15 }}>
               {row.feature}
             </div>
 
-            {/* Col 2: Australian Financial Advisory */}
+            {/* Col 2: AFA */}
             <div>
               <div style={{ fontSize: 12, color: '#888', marginBottom: 4 }}>
                 Australian Financial Advisory
@@ -140,8 +140,8 @@ export function ComparisonSection() {
               <div style={{ display: 'flex', alignItems: 'center', gap: 0 }}>
                 <span
                   style={{
-                    backgroundColor: 'rgba(12,148,136,0.15)',
-                    color: '#0C9488',
+                    backgroundColor: 'rgba(0,0,0,0.07)',
+                    color: '#333333',
                     borderRadius: 4,
                     padding: '1px 5px',
                     fontSize: 11,
@@ -151,7 +151,7 @@ export function ComparisonSection() {
                 >
                   afa
                 </span>
-                <span style={{ color: '#0C9488', fontSize: 14 }}>{row.ourValue}</span>
+                <span style={{ color: '#333333', fontSize: 14 }}>{row.ourValue}</span>
               </div>
             </div>
 
@@ -171,29 +171,23 @@ export function ComparisonSection() {
         {/* Key Difference row */}
         <div
           style={{
-            backgroundColor: '#E0F5F2',
+            backgroundColor: '#f5f5f5',
             padding: 24,
             borderRadius: '0 0 16px 16px',
             display: 'flex',
             gap: 24,
             alignItems: 'flex-start',
+            borderTop: '3px solid #333333',
           }}
         >
-          <div
-            style={{
-              fontWeight: 700,
-              color: '#383838',
-              fontSize: 18,
-              whiteSpace: 'nowrap',
-            }}
-          >
+          <div style={{ fontWeight: 700, color: '#111111', fontSize: 18, whiteSpace: 'nowrap' }}>
             The Key Difference
           </div>
           <div style={{ fontSize: 15, color: '#444', lineHeight: 1.6 }}>
             Traditional insolvency firms are appointed after your business has failed and work for
-            creditors. Australian Financial Advisory works before formal insolvency processes begin, representing
-            your interests as the business owner to help you navigate challenges and protect your
-            position.
+            creditors. Australian Financial Advisory works before formal insolvency processes begin,
+            representing your interests as the business owner to help you navigate challenges and
+            protect your position.
           </div>
         </div>
       </div>

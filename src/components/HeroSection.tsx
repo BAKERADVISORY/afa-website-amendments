@@ -7,7 +7,7 @@ export function HeroSection() {
         minHeight: '95vh',
         position: 'relative',
         overflow: 'hidden',
-        backgroundColor: '#17243B',
+        backgroundColor: '#000000',
       }}
     >
       {/* Background video */}
@@ -22,7 +22,7 @@ export function HeroSection() {
           width: '100%',
           height: '100%',
           objectFit: 'cover',
-          opacity: 0.45,
+          opacity: 0.35,
         }}
       >
         <source src="/images/hero-video.mp4" type="video/mp4" />
@@ -33,7 +33,7 @@ export function HeroSection() {
         style={{
           position: 'absolute',
           inset: 0,
-          backgroundColor: 'rgba(23, 36, 59, 0.75)',
+          backgroundColor: 'rgba(0, 0, 0, 0.72)',
         }}
       />
 
@@ -46,113 +46,99 @@ export function HeroSection() {
           paddingLeft: '80px',
           paddingRight: '80px',
           paddingBottom: '120px',
-          maxWidth: '780px',
+          maxWidth: '820px',
         }}
       >
         <h1
           style={{
             fontFamily: 'Manrope, sans-serif',
             fontWeight: 700,
-            fontSize: '52px',
-            lineHeight: 1.15,
+            fontSize: '56px',
+            lineHeight: 1.12,
             color: '#FFFFFF',
             margin: 0,
           }}
         >
-          You built the business.
-          <br />
-          <span
-            style={{
-              color: '#5ACBBD',
-              textDecoration: 'underline',
-              textUnderlineOffset: '4px',
-            }}
-          >
-            We&apos;ll help you
-          </span>
-          <span style={{ color: '#FFFFFF' }}> protect it.</span>
+          Early Action,{' '}
+          <span style={{ color: '#ffffff', opacity: 0.85 }}>Better Outcomes.</span>
         </h1>
 
         <p
           style={{
-            fontSize: '18px',
-            color: 'rgba(255,255,255,0.85)',
-            lineHeight: 1.6,
-            maxWidth: '600px',
+            fontSize: '20px',
+            color: 'rgba(255,255,255,0.9)',
+            lineHeight: 1.55,
+            maxWidth: '660px',
             marginTop: '24px',
+            marginBottom: 0,
+            fontWeight: 500,
+          }}
+        >
+          Protect your business and personal assets from ATO debt, cash flow crisis, and financial
+          distress before it&apos;s too late.
+        </p>
+
+        <p
+          style={{
+            fontSize: '16px',
+            color: 'rgba(255,255,255,0.65)',
+            lineHeight: 1.65,
+            maxWidth: '620px',
+            marginTop: '16px',
             marginBottom: 0,
           }}
         >
-          Navigate complex business challenges with confidence. Our expert advisory services help you
-          make informed decisions, reduce financial risk, and achieve sustainable growth.
+          We work for you — the business owner — not the creditors. We explore every alternative
+          before formal insolvency to protect your company record and your personal assets.
         </p>
 
         <a
           href="#contact"
           style={{
-            backgroundColor: '#0C9488',
-            color: '#FFFFFF',
+            backgroundColor: '#ffffff',
+            color: '#000000',
             borderRadius: '50px',
-            padding: '14px 28px',
+            padding: '16px 32px',
             fontSize: '16px',
             fontWeight: 700,
             display: 'inline-block',
-            marginTop: '32px',
+            marginTop: '36px',
             textDecoration: 'none',
+            letterSpacing: '0.01em',
           }}
         >
-          Get A Free Consultation →
+          Schedule Your Discovery Call — Let&apos;s figure out how we can help you.
         </a>
 
         <ul
           style={{
             display: 'flex',
             gap: '32px',
-            marginTop: '24px',
             listStyle: 'none',
             padding: 0,
-            margin: '24px 0 0 0',
+            margin: '28px 0 0 0',
+            flexWrap: 'wrap',
           }}
         >
-          <li
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '8px',
-              color: '#FFFFFF',
-              fontSize: '14px',
-              opacity: 0.9,
-            }}
-          >
-            <ShieldCheck size={16} color="#5ACBBD" />
-            Trusted Australia wide
-          </li>
-          <li
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '8px',
-              color: '#FFFFFF',
-              fontSize: '14px',
-              opacity: 0.9,
-            }}
-          >
-            <Eye size={16} color="#5ACBBD" />
-            Confidential &amp; Private
-          </li>
-          <li
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '8px',
-              color: '#FFFFFF',
-              fontSize: '14px',
-              opacity: 0.9,
-            }}
-          >
-            <Users size={16} color="#5ACBBD" />
-            Experienced advisers
-          </li>
+          {[
+            { icon: ShieldCheck, label: 'Trusted Australia wide' },
+            { icon: Eye, label: 'Confidential & Private' },
+            { icon: Users, label: 'Experienced advisers' },
+          ].map(({ icon: Icon, label }) => (
+            <li
+              key={label}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px',
+                color: 'rgba(255,255,255,0.8)',
+                fontSize: '14px',
+              }}
+            >
+              <Icon size={16} color="#cccccc" />
+              {label}
+            </li>
+          ))}
         </ul>
       </div>
 
