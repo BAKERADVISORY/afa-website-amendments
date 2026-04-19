@@ -12,15 +12,8 @@ const serviceLinks = [
 
 function AfaLogo() {
   return (
-    <svg viewBox="0 0 420 100" xmlns="http://www.w3.org/2000/svg" style={{ width: '280px', display: 'block' }}>
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Raleway:wght@500&display=swap');
-        .lm { font-family: Oswald, Arial, sans-serif; font-weight: 700; font-size: 72px; fill: #ffffff; stroke: #ffffff; stroke-width: 4px; paint-order: stroke fill; letter-spacing: 2px; }
-        .ls { font-family: Raleway, Arial, sans-serif; font-weight: 500; font-size: 11.5px; fill: #ffffff; letter-spacing: 4.5px; }
-      `}</style>
-      <text x="210" y="72" textAnchor="middle" className="lm">AFA</text>
-      <text x="210" y="90" textAnchor="middle" className="ls">AUSTRALIAN FINANCIAL ADVISORY</text>
-    </svg>
+    // eslint-disable-next-line @next/next/no-img-element
+    <img src="/images/logo.png" alt="Australian Financial Advisory" style={{ width: '200px', display: 'block' }} />
   );
 }
 
