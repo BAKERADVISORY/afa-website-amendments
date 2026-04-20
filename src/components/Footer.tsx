@@ -3,7 +3,7 @@ import { Mail, MapPin } from 'lucide-react'
 function AfaLogo() {
   return (
     // eslint-disable-next-line @next/next/no-img-element
-    <img src="/images/logo.png" alt="Australian Financial Advisory" style={{ width: '200px', display: 'block' }} />
+    <img src="/afa-logo.svg" alt="Australian Financial Advisory" style={{ width: '200px', display: 'block' }} />
   );
 }
 
