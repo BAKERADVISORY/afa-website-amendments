@@ -1,0 +1,12 @@
+<svg width="400" height="120" viewBox="0 0 400 120" role="img" xmlns="http://www.w3.org/2000/svg">
+  <title>AFA Logo</title>
+  <desc>Australian Financial Advisory logo white on black</desc>
+  <rect x="0" y="0" width="400" height="120" fill="#111111"/>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@800;400&display=swap');
+    .logo-main { font-family: 'Barlow', Arial, sans-serif; font-weight: 800; font-size: 66px; fill: #ffffff; letter-spacing: -2px; }
+    .logo-sub { font-family: 'Barlow', Arial, sans-serif; font-weight: 400; font-size: 9px; fill: #ffffff; letter-spacing: 3px; }
+  </style>
+  <text x="200" y="78" text-anchor="middle" class="logo-main">AFA</text>
+  <text x="200" y="96" text-anchor="middle" class="logo-sub">AUSTRALIAN FINANCIAL ADVISORY</text>
+</svg>
