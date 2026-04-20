@@ -2,8 +2,11 @@ import { Mail, MapPin } from 'lucide-react'
 
 function AfaLogo() {
   return (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img src="/afa-logo.svg" alt="Australian Financial Advisory" style={{ width: '200px', display: 'block' }} />
+    <svg width="240" viewBox="0 0 400 120" xmlns="http://www.w3.org/2000/svg" style={{ display: 'block' }}>
+      <rect x="0" y="0" width="400" height="120" fill="#111111"/>
+      <text x="200" y="78" textAnchor="middle" style={{ fontFamily: 'Barlow, Arial, sans-serif', fontWeight: 800, fontSize: '66px', fill: '#ffffff', letterSpacing: '-2px' }}>AFA</text>
+      <text x="200" y="96" textAnchor="middle" style={{ fontFamily: 'Barlow, Arial, sans-serif', fontWeight: 400, fontSize: '9px', fill: '#ffffff', letterSpacing: '3px' }}>AUSTRALIAN FINANCIAL ADVISORY</text>
+    </svg>
   );
 }
 
