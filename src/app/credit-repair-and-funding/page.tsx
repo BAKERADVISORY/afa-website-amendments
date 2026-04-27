@@ -1,24 +1,31 @@
-import type { Metadata } from 'next';
-import { NavBar } from '@/components/NavBar';
-import { Footer } from '@/components/Footer';
-import { ChevronRight, FileText, Users, Search, CreditCard } from 'lucide-react';
+import type { Metadata } from 'next'
+import { NavBar } from '@/components/NavBar'
+import { Footer } from '@/components/Footer'
+import { ChevronRight, FileText, Users, Search, CreditCard } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Credit Repair & Funding Solutions | Australian Financial Advisory',
   description:
     'Defaults, judgments, and bad credit listings do not have to be permanent. We assess your credit position and connect you with licensed specialists who can help.',
   alternates: {
-    canonical: 'https://www.ausfinancialadvisory.com.au/credit-repair-and-funding/',
+    canonical:
+      'https://www.ausfinancialadvisory.com.au/credit-repair-and-funding/',
   },
   openGraph: {
     title: 'Credit Repair & Funding Solutions | Australian Financial Advisory',
     description:
-      'Whether it\'s your business or personal credit — there are options. We assess your position and refer you to the right specialist.',
+      "Whether it's your business or personal credit — there are options. We assess your position and refer you to the right specialist.",
     url: 'https://www.ausfinancialadvisory.com.au/credit-repair-and-funding/',
   },
-};
+}
 
-function SectionLabel({ text, light = false }: { text: string; light?: boolean }) {
+function SectionLabel({
+  text,
+  light = false,
+}: {
+  text: string
+  light?: boolean
+}) {
   return (
     <p
       style={{
@@ -31,7 +38,7 @@ function SectionLabel({ text, light = false }: { text: string; light?: boolean }
     >
       {text}
     </p>
-  );
+  )
 }
 
 export default function CreditRepairAndFundingPage() {
@@ -39,7 +46,6 @@ export default function CreditRepairAndFundingPage() {
     <>
       <NavBar />
       <main style={{ paddingTop: 80 }}>
-
         {/* Hero */}
         <section
           style={{
@@ -105,9 +111,10 @@ export default function CreditRepairAndFundingPage() {
                 marginBottom: 36,
               }}
             >
-              Whether it&apos;s your business or your personal credit — there are options. We help
-              you find them. We assess your credit position, identify what can be disputed or
-              resolved, and connect you with the right specialist to act.
+              Whether it&apos;s your business or your personal credit — there
+              are options. We help you find them. We assess your credit
+              position, identify what can be disputed or resolved, and connect
+              you with the right specialist to act.
             </p>
             <a
               href="/#contact"
@@ -146,10 +153,18 @@ export default function CreditRepairAndFundingPage() {
               >
                 A Clear Assessment of Your Credit Position and Funding Options
               </h2>
-              <p style={{ fontSize: 16, color: '#555555', lineHeight: 1.75, margin: 0 }}>
-                Before pursuing credit repair or funding, you need to understand exactly what is on
-                your credit file, what can realistically be disputed, and what funding options remain
-                available given your current position. That is what we provide.
+              <p
+                style={{
+                  fontSize: 16,
+                  color: '#555555',
+                  lineHeight: 1.75,
+                  margin: 0,
+                }}
+              >
+                Before pursuing credit repair or funding, you need to understand
+                exactly what is on your credit file, what can realistically be
+                disputed, and what funding options remain available given your
+                current position. That is what we provide.
               </p>
             </div>
 
@@ -209,8 +224,26 @@ export default function CreditRepairAndFundingPage() {
                   >
                     <Icon size={20} color="#ffffff" />
                   </div>
-                  <h3 style={{ fontSize: 17, fontWeight: 700, color: '#111111', margin: 0 }}>{heading}</h3>
-                  <p style={{ fontSize: 14, color: '#555555', lineHeight: 1.65, margin: 0 }}>{body}</p>
+                  <h3
+                    style={{
+                      fontSize: 17,
+                      fontWeight: 700,
+                      color: '#111111',
+                      margin: 0,
+                    }}
+                  >
+                    {heading}
+                  </h3>
+                  <p
+                    style={{
+                      fontSize: 14,
+                      color: '#555555',
+                      lineHeight: 1.65,
+                      margin: 0,
+                    }}
+                  >
+                    {body}
+                  </p>
                 </div>
               ))}
             </div>
@@ -218,19 +251,64 @@ export default function CreditRepairAndFundingPage() {
             {/* Credit Repair */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: 32 }}>
               <div>
-                <h3 style={{ fontSize: 20, fontWeight: 700, color: '#111111', marginBottom: 16 }}>
+                <h3
+                  style={{
+                    fontSize: 20,
+                    fontWeight: 700,
+                    color: '#111111',
+                    marginBottom: 16,
+                  }}
+                >
                   Credit Repair
                 </h3>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+                <div
+                  style={{ display: 'flex', flexDirection: 'column', gap: 12 }}
+                >
                   {[
                     'Defaults, court judgments, and negative credit listings can prevent you from accessing finance — for your business and personally. They can affect everything from loan applications to lease approvals.',
                     'We work with licensed credit specialists in our network who can assess your credit file and pursue legitimate disputes on your behalf where grounds exist.',
                     'Not all negative listings can be removed — but many can be disputed where the information is inaccurate, incomplete, or incorrectly listed. We make sure you understand what is realistic before any work begins.',
                     'We never make promises about outcomes. But we do make sure you understand your options before committing to any credit repair pathway.',
                   ].map((msg) => (
-                    <div key={msg} style={{ display: 'flex', alignItems: 'flex-start', gap: 14, padding: '14px 18px', backgroundColor: '#f5f5f5', borderRadius: 8 }}>
-                      <span style={{ width: 20, height: 20, borderRadius: '50%', backgroundColor: '#111111', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontSize: 10, color: '#ffffff', fontWeight: 700, marginTop: 2 }}>✓</span>
-                      <p style={{ fontSize: 14, color: '#444444', lineHeight: 1.65, margin: 0 }}>{msg}</p>
+                    <div
+                      key={msg}
+                      style={{
+                        display: 'flex',
+                        alignItems: 'flex-start',
+                        gap: 14,
+                        padding: '14px 18px',
+                        backgroundColor: '#f5f5f5',
+                        borderRadius: 8,
+                      }}
+                    >
+                      <span
+                        style={{
+                          width: 20,
+                          height: 20,
+                          borderRadius: '50%',
+                          backgroundColor: '#111111',
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          flexShrink: 0,
+                          fontSize: 10,
+                          color: '#ffffff',
+                          fontWeight: 700,
+                          marginTop: 2,
+                        }}
+                      >
+                        ✓
+                      </span>
+                      <p
+                        style={{
+                          fontSize: 14,
+                          color: '#444444',
+                          lineHeight: 1.65,
+                          margin: 0,
+                        }}
+                      >
+                        {msg}
+                      </p>
                     </div>
                   ))}
                 </div>
@@ -238,18 +316,63 @@ export default function CreditRepairAndFundingPage() {
 
               {/* Funding */}
               <div>
-                <h3 style={{ fontSize: 20, fontWeight: 700, color: '#111111', marginBottom: 16 }}>
+                <h3
+                  style={{
+                    fontSize: 20,
+                    fontWeight: 700,
+                    color: '#111111',
+                    marginBottom: 16,
+                  }}
+                >
                   Funding Solutions
                 </h3>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+                <div
+                  style={{ display: 'flex', flexDirection: 'column', gap: 12 }}
+                >
                   {[
                     'If your credit position is affecting your ability to access finance, there may still be solutions available — even where mainstream lenders have said no.',
                     'We have a network of brokers who specialise in finding funding solutions for businesses and individuals in complex financial situations — including those with defaults, prior insolvency, or non-standard income structures.',
                     'Whether you need business finance, equipment funding, or personal lending — our network works to find a solution where others may have declined.',
                   ].map((msg) => (
-                    <div key={msg} style={{ display: 'flex', alignItems: 'flex-start', gap: 14, padding: '14px 18px', backgroundColor: '#f5f5f5', borderRadius: 8 }}>
-                      <span style={{ width: 20, height: 20, borderRadius: '50%', backgroundColor: '#111111', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontSize: 10, color: '#ffffff', fontWeight: 700, marginTop: 2 }}>✓</span>
-                      <p style={{ fontSize: 14, color: '#444444', lineHeight: 1.65, margin: 0 }}>{msg}</p>
+                    <div
+                      key={msg}
+                      style={{
+                        display: 'flex',
+                        alignItems: 'flex-start',
+                        gap: 14,
+                        padding: '14px 18px',
+                        backgroundColor: '#f5f5f5',
+                        borderRadius: 8,
+                      }}
+                    >
+                      <span
+                        style={{
+                          width: 20,
+                          height: 20,
+                          borderRadius: '50%',
+                          backgroundColor: '#111111',
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          flexShrink: 0,
+                          fontSize: 10,
+                          color: '#ffffff',
+                          fontWeight: 700,
+                          marginTop: 2,
+                        }}
+                      >
+                        ✓
+                      </span>
+                      <p
+                        style={{
+                          fontSize: 14,
+                          color: '#444444',
+                          lineHeight: 1.65,
+                          margin: 0,
+                        }}
+                      >
+                        {msg}
+                      </p>
                     </div>
                   ))}
                 </div>
@@ -260,25 +383,59 @@ export default function CreditRepairAndFundingPage() {
 
         {/* Disclaimer */}
         <section style={{ backgroundColor: '#ffffff', padding: '24px 0' }}>
-          <p style={{ maxWidth: 800, margin: '0 auto', padding: '0 32px', fontSize: 12, color: '#888888', lineHeight: 1.7, textAlign: 'center' }}>
-            The information on this page is general in nature and does not constitute legal,
-            financial, or insolvency advice. Australian Financial Advisory Pty Ltd provides
-            assessment and advisory services only. All specialist services are referred to
-            appropriately licensed partners. You should seek independent professional advice before
+          <p
+            style={{
+              maxWidth: 800,
+              margin: '0 auto',
+              padding: '0 32px',
+              fontSize: 12,
+              color: '#888888',
+              lineHeight: 1.7,
+              textAlign: 'center',
+            }}
+          >
+            The information on this page is general in nature and does not
+            constitute legal, financial, or insolvency advice. Australian
+            Financial Advisory Pty Ltd provides assessment and advisory services
+            only. All specialist services are referred to appropriately licensed
+            partners. You should seek independent professional advice before
             acting on any information on this page.
           </p>
         </section>
 
         {/* CTA */}
         <section style={{ backgroundColor: '#111111', padding: '80px 0' }}>
-          <div style={{ maxWidth: 700, margin: '0 auto', padding: '0 32px', textAlign: 'center' }}>
+          <div
+            style={{
+              maxWidth: 700,
+              margin: '0 auto',
+              padding: '0 32px',
+              textAlign: 'center',
+            }}
+          >
             <SectionLabel text="Get Started" light />
-            <h2 style={{ fontSize: 42, fontWeight: 700, color: '#ffffff', marginBottom: 16, lineHeight: 1.2 }}>
+            <h2
+              style={{
+                fontSize: 42,
+                fontWeight: 700,
+                color: '#ffffff',
+                marginBottom: 16,
+                lineHeight: 1.2,
+              }}
+            >
               Schedule Your Discovery Call
             </h2>
-            <p style={{ fontSize: 17, color: 'rgba(255,255,255,0.7)', lineHeight: 1.7, marginBottom: 36 }}>
-              The discovery call is free, confidential, and carries no obligation. Let&apos;s
-              understand your credit and funding situation and work out the best path forward.
+            <p
+              style={{
+                fontSize: 17,
+                color: 'rgba(255,255,255,0.7)',
+                lineHeight: 1.7,
+                marginBottom: 36,
+              }}
+            >
+              The discovery call is free, confidential, and carries no
+              obligation. Let&apos;s understand your credit and funding
+              situation and work out the best path forward.
             </p>
             <a
               href="/#contact"
@@ -298,7 +455,13 @@ export default function CreditRepairAndFundingPage() {
               Book Your Free Discovery Call
               <ChevronRight size={16} />
             </a>
-            <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.4)', marginTop: 20 }}>
+            <p
+              style={{
+                fontSize: 13,
+                color: 'rgba(255,255,255,0.4)',
+                marginTop: 20,
+              }}
+            >
               Confidential · No obligation · Fast response
             </p>
           </div>
@@ -316,13 +479,13 @@ export default function CreditRepairAndFundingPage() {
                 margin: 0,
               }}
             >
-              Credit repair and funding services are provided by licensed specialists within our
-              referral network. Australian Financial Advisory provides assessment and advisory
-              services only and refers clients to appropriately licensed partners.
+              Credit repair and funding services are provided by licensed
+              specialists within our referral network. Australian Financial
+              Advisory provides assessment and advisory services only and refers
+              clients to appropriately licensed partners.
             </p>
           </div>
         </section>
-
       </main>
       <Footer />
 
@@ -334,5 +497,5 @@ export default function CreditRepairAndFundingPage() {
         }
       `}</style>
     </>
-  );
+  )
 }

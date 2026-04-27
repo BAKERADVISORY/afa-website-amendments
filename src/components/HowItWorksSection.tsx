@@ -24,7 +24,7 @@ export function HowItWorksSection() {
       body: 'We implement the recommendations in the report, working directly with the director every step of the way.',
       note: null,
     },
-  ];
+  ]
 
   return (
     <section style={{ backgroundColor: '#eeeeee', padding: '80px 0' }}>
@@ -63,8 +63,8 @@ export function HowItWorksSection() {
             lineHeight: 1.65,
           }}
         >
-          We review your situation, assess every available option, and work directly with you
-          to implement the right path forward.
+          We review your situation, assess every available option, and work
+          directly with you to implement the right path forward.
         </p>
 
         {/* Steps grid */}
@@ -155,5 +155,5 @@ export function HowItWorksSection() {
         }
       `}</style>
     </section>
-  );
+  )
 }

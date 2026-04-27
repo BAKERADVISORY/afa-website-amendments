@@ -1,11 +1,13 @@
 # NavBar Specification
 
 ## Overview
+
 - **Target file:** `src/components/NavBar.tsx`
 - **Screenshot:** see desktop hero screenshot
 - **Interaction model:** static (fixed position) + hover states
 
 ## DOM Structure
+
 ```
 header (fixed, full-width, z-50)
   div.container (max-w-[1400px] mx-auto flex items-center justify-between px-8)
@@ -21,6 +23,7 @@ header (fixed, full-width, z-50)
 ## Computed Styles (exact)
 
 ### Header wrapper
+
 - position: fixed
 - top: 0
 - left: 0
@@ -32,10 +35,12 @@ header (fixed, full-width, z-50)
 - align-items: center
 
 ### Logo
+
 - height: 37px (natural height of SVG)
 - width: auto
 
 ### Nav links
+
 - color: #FFFFFF
 - font-size: 16px
 - font-weight: 400
@@ -45,9 +50,11 @@ header (fixed, full-width, z-50)
 - Active link color: #5ACBBD
 
 ### Hover state (nav links)
+
 - color: #0C9488 (transition on hover)
 
 ### "Get Started" button
+
 - background-color: #0C9488
 - color: #FFFFFF
 - border-radius: 50px
@@ -62,9 +69,11 @@ header (fixed, full-width, z-50)
 - transition: background 0.2s ease
 
 ### Hover state (button)
+
 - background-color: #20BBAE
 
 ## Nav Links (verbatim)
+
 - Home (href="/", active)
 - About (href="/about/")
 - Close Company (href="/close-company/")
@@ -73,13 +82,16 @@ header (fixed, full-width, z-50)
 - Contact (href="/contact/")
 
 ## Assets
+
 - Logo: `public/images/logo-light.svg`
 
 ## Responsive Behavior
+
 - **Desktop (1440px):** full nav shown, hamburger hidden
 - **Mobile (< 768px):** hamburger menu icon shown, nav links hidden
 - Mobile nav: opens as overlay/off-canvas (simplified: just toggle visibility)
 
 ## Notes
+
 - "Services" link has a dropdown arrow in original — can be simplified to static link
 - The "Get Started" button has `›` arrow text or a right-arrow icon

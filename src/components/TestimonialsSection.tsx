@@ -1,11 +1,11 @@
-'use client';
+'use client'
 
-import { useState } from 'react';
-import { Star } from 'lucide-react';
+import { useState } from 'react'
+import { Star } from 'lucide-react'
 
 interface Review {
-  name: string;
-  text: string;
+  name: string
+  text: string
 }
 
 const reviews: Review[] = [
@@ -25,11 +25,11 @@ const reviews: Review[] = [
     name: 'Michael T',
     text: 'Australian Financial Advisory helped us navigate a very challenging period with clarity and confidence. Their advice was timely, practical, and exactly what we needed to make informed decisions about our business.',
   },
-];
+]
 
 export function TestimonialsSection() {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const current = reviews[activeIndex];
+  const [activeIndex, setActiveIndex] = useState(0)
+  const current = reviews[activeIndex]
 
   return (
     <section style={{ backgroundColor: '#111111', padding: '80px 0' }}>
@@ -51,7 +51,14 @@ export function TestimonialsSection() {
               <Star key={i} size={24} fill="#ffffff" color="#ffffff" />
             ))}
           </div>
-          <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.5)', marginBottom: 16, marginTop: 0 }}>
+          <p
+            style={{
+              fontSize: 14,
+              color: 'rgba(255,255,255,0.5)',
+              marginBottom: 16,
+              marginTop: 0,
+            }}
+          >
             Rated 5 out of 5
           </p>
           <h2
@@ -92,7 +99,15 @@ export function TestimonialsSection() {
             >
               &ldquo;
             </span>
-            <p style={{ fontSize: 15, color: '#444', lineHeight: 1.7, paddingTop: 32, margin: 0 }}>
+            <p
+              style={{
+                fontSize: 15,
+                color: '#444',
+                lineHeight: 1.7,
+                paddingTop: 32,
+                margin: 0,
+              }}
+            >
               {current.text}
             </p>
             <p
@@ -110,7 +125,14 @@ export function TestimonialsSection() {
           </div>
 
           {/* Dot navigation */}
-          <div style={{ display: 'flex', gap: 10, justifyContent: 'center', marginTop: 24 }}>
+          <div
+            style={{
+              display: 'flex',
+              gap: 10,
+              justifyContent: 'center',
+              marginTop: 24,
+            }}
+          >
             {reviews.map((_, i) => (
               <button
                 key={i}
@@ -120,7 +142,8 @@ export function TestimonialsSection() {
                   width: 10,
                   height: 10,
                   borderRadius: '50%',
-                  backgroundColor: i === activeIndex ? '#ffffff' : 'rgba(255,255,255,0.25)',
+                  backgroundColor:
+                    i === activeIndex ? '#ffffff' : 'rgba(255,255,255,0.25)',
                   border: 'none',
                   cursor: 'pointer',
                   padding: 0,
@@ -143,5 +166,5 @@ export function TestimonialsSection() {
         }
       `}</style>
     </section>
-  );
+  )
 }

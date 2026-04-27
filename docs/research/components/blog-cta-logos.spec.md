@@ -1,14 +1,17 @@
 # BlogCarousel + CTABanner + PartnerLogos Specification
 
 ## Overview
+
 Three separate sections bundled in one file since they're relatively simple.
 
 ## 1. BlogCarousel
+
 - **Target file:** `src/components/BlogCarousel.tsx`
 - **Interaction model:** click carousel (prev/next arrows)
 - **Background:** #FFFFFF
 
 ### DOM Structure
+
 ```
 section (white bg, py-20)
   div.container (max-w-[1200px] mx-auto px-8)
@@ -27,6 +30,7 @@ section (white bg, py-20)
 ### Computed Styles
 
 #### H2
+
 - font-size: 38px
 - font-weight: 700
 - color: #383838
@@ -34,9 +38,11 @@ section (white bg, py-20)
 - margin-bottom: 48px
 
 #### H2 teal span
+
 - color: #5ACBBD
 
 #### Blog card (link container)
+
 - display: block
 - border-radius: 12px
 - overflow: hidden
@@ -45,6 +51,7 @@ section (white bg, py-20)
 - transition: box-shadow 0.2s
 
 #### Card image
+
 - width: 100%
 - aspect-ratio: 16/9
 - object-fit: cover
@@ -52,6 +59,7 @@ section (white bg, py-20)
 - background-position: center
 
 #### Card title
+
 - font-size: 15px
 - font-weight: 600
 - color: #383838
@@ -62,6 +70,7 @@ section (white bg, py-20)
 - overflow: hidden
 
 #### Nav arrows
+
 - position: absolute
 - top: 50%
 - transform: translateY(-50%)
@@ -78,21 +87,23 @@ section (white bg, py-20)
 
 ### Blog posts (use as data, show 3 at a time, cycle through)
 
-| Title | Image | URL |
-|-------|-------|-----|
-| Reduce company debt NSW with expert business advice | `/images/blog/reduce-company-debt-nsw.webp` | `/reduce-company-debt-nsw/` |
-| Closing a business with debt Australia What directors need to know | `/images/blog/closing-business-with-debt.webp` | `/closing-a-business-with-debt-australia/` |
-| How to restructure a small business Australia with expert guidance | `/images/blog/how-to-restructure.webp` | `/how-to-restructure-a-small-business-australia/` |
-| How to fix business cash flow problems Australia | `/images/blog/fix-cash-flow.webp` | `/how-to-fix-business-cash-flow-problems-australia/` |
-| Company bankruptcy vs liquidation Australia What directors need to know | `/images/blog/bankruptcy-vs-liquidation.webp` | `/company-bankruptcy-vs-liquidation-australia/` |
+| Title                                                                   | Image                                          | URL                                                  |
+| ----------------------------------------------------------------------- | ---------------------------------------------- | ---------------------------------------------------- |
+| Reduce company debt NSW with expert business advice                     | `/images/blog/reduce-company-debt-nsw.webp`    | `/reduce-company-debt-nsw/`                          |
+| Closing a business with debt Australia What directors need to know      | `/images/blog/closing-business-with-debt.webp` | `/closing-a-business-with-debt-australia/`           |
+| How to restructure a small business Australia with expert guidance      | `/images/blog/how-to-restructure.webp`         | `/how-to-restructure-a-small-business-australia/`    |
+| How to fix business cash flow problems Australia                        | `/images/blog/fix-cash-flow.webp`              | `/how-to-fix-business-cash-flow-problems-australia/` |
+| Company bankruptcy vs liquidation Australia What directors need to know | `/images/blog/bankruptcy-vs-liquidation.webp`  | `/company-bankruptcy-vs-liquidation-australia/`      |
 
 ---
 
 ## 2. CTABanner
+
 - **Target file:** `src/components/CTABanner.tsx`
 - **Background:** #17243B with watermark
 
 ### DOM Structure
+
 ```
 section (dark navy bg, py-20, relative overflow-hidden)
   div.watermark (absolute, large "WA" text, low opacity)
@@ -105,6 +116,7 @@ section (dark navy bg, py-20, relative overflow-hidden)
 ### Computed Styles
 
 #### Section
+
 - background-color: #17243B
 - padding: 80px 0
 - text-align: center
@@ -112,6 +124,7 @@ section (dark navy bg, py-20, relative overflow-hidden)
 - overflow: hidden
 
 #### H2
+
 - font-size: 42px
 - font-weight: 700
 - color: #FFFFFF
@@ -119,6 +132,7 @@ section (dark navy bg, py-20, relative overflow-hidden)
 - line-height: 1.25
 
 #### Subtext
+
 - font-size: 17px
 - color: rgba(255,255,255,0.75)
 - margin-bottom: 32px
@@ -127,6 +141,7 @@ section (dark navy bg, py-20, relative overflow-hidden)
 - margin-right: auto
 
 #### Button
+
 - background-color: #0C9488
 - color: #FFFFFF
 - border-radius: 50px
@@ -135,6 +150,7 @@ section (dark navy bg, py-20, relative overflow-hidden)
 - font-weight: 700
 
 ### Text Content
+
 - H2: "Ready to Protect Your Business Future?"
 - Subtext: "Don't let business challenges overwhelm you. Get expert guidance and strategic solutions tailored to your specific situation."
 - Button: "Schedule Free Consultation →"
@@ -142,11 +158,13 @@ section (dark navy bg, py-20, relative overflow-hidden)
 ---
 
 ## 3. PartnerLogos
+
 - **Target file:** `src/components/PartnerLogos.tsx`
 - **Background:** #FFFFFF
 - **Interaction:** CSS marquee / infinite scroll
 
 ### DOM Structure
+
 ```
 section (white bg, py-12)
   div.marquee-wrapper (overflow-hidden)
@@ -158,15 +176,18 @@ section (white bg, py-12)
 ### Computed Styles
 
 #### Section
+
 - background-color: #FFFFFF
 - padding: 48px 0
 
 #### Marquee track
+
 - display: flex
 - animation: marquee 30s linear infinite
 - width: fit-content
 
 #### Logo image
+
 - height: 48px
 - width: auto
 - filter: grayscale(100%)
@@ -175,6 +196,7 @@ section (white bg, py-12)
 - object-fit: contain
 
 ### Partner logos (9 total)
+
 1. `/images/partners/facebook.png` — Facebook
 2. `/images/partners/myob.jpeg` — MYOB
 3. `/images/partners/ca-logo.jpg` — CA
@@ -186,14 +208,20 @@ section (white bg, py-12)
 9. `/images/partners/zohologo.png` — Zoho
 
 ### CSS Animation
+
 ```css
 @keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 ```
 
 ## Responsive Behavior
+
 - Blog: 3 cols desktop → 1 col mobile (show 1 card at a time)
 - CTA: full width, text centered at all sizes
 - Logos: marquee at all sizes (same speed)

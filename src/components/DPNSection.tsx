@@ -1,4 +1,4 @@
-import { AlertTriangle } from 'lucide-react';
+import { AlertTriangle } from 'lucide-react'
 
 export function DPNSection() {
   return (
@@ -64,7 +64,14 @@ export function DPNSection() {
           }}
         >
           Are You at Risk of a{' '}
-          <span style={{ color: '#ffffff', textDecoration: 'underline', textUnderlineOffset: '4px', textDecorationColor: 'rgba(255,255,255,0.4)' }}>
+          <span
+            style={{
+              color: '#ffffff',
+              textDecoration: 'underline',
+              textUnderlineOffset: '4px',
+              textDecorationColor: 'rgba(255,255,255,0.4)',
+            }}
+          >
             Director Penalty Notice?
           </span>
         </h2>
@@ -78,8 +85,9 @@ export function DPNSection() {
             margin: '0 auto 16px',
           }}
         >
-          The ATO is issuing Director Penalty Notices aggressively — even for debts in the tens of
-          thousands. A DPN puts your personal assets at risk.{' '}
+          The ATO is issuing Director Penalty Notices aggressively — even for
+          debts in the tens of thousands. A DPN puts your personal assets at
+          risk.{' '}
           <strong style={{ color: '#ffffff' }}>
             Early action is the only protection.
           </strong>
@@ -94,12 +102,19 @@ export function DPNSection() {
             margin: '0 auto 36px',
           }}
         >
-          Once a DPN is issued, the protection of the corporate structure is removed. You become
-          personally liable for unpaid PAYG withholding and superannuation. Don&apos;t wait for the
-          letter — act now.
+          Once a DPN is issued, the protection of the corporate structure is
+          removed. You become personally liable for unpaid PAYG withholding and
+          superannuation. Don&apos;t wait for the letter — act now.
         </p>
 
-        <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
+        <div
+          style={{
+            display: 'flex',
+            gap: 16,
+            justifyContent: 'center',
+            flexWrap: 'wrap',
+          }}
+        >
           <a
             href="/director-penalty-notice"
             style={{
@@ -134,5 +149,5 @@ export function DPNSection() {
         </div>
       </div>
     </section>
-  );
+  )
 }

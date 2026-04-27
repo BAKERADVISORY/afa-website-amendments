@@ -1,6 +1,6 @@
-'use client';
+'use client'
 
-import { useState } from 'react';
+import { useState } from 'react'
 
 const inputStyle: React.CSSProperties = {
   border: '1px solid #E5E7EB',
@@ -12,13 +12,13 @@ const inputStyle: React.CSSProperties = {
   backgroundColor: '#FAFAFA',
   width: '100%',
   boxSizing: 'border-box',
-};
+}
 
 const labelStyle: React.CSSProperties = {
   fontSize: 13,
   fontWeight: 600,
   color: '#383838',
-};
+}
 
 export function CTABanner() {
   const [form, setForm] = useState({
@@ -28,24 +28,31 @@ export function CTABanner() {
     email: '',
     service: '',
     situation: '',
-  });
-  const [submitted, setSubmitted] = useState(false);
+  })
+  const [submitted, setSubmitted] = useState(false)
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
   ) => {
-    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  };
+    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
+  }
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
+    e.preventDefault()
+    setSubmitted(true)
+  }
 
   return (
     <section
       id="contact"
-      style={{ backgroundColor: '#111111', padding: '80px 0', position: 'relative', overflow: 'hidden' }}
+      style={{
+        backgroundColor: '#111111',
+        padding: '80px 0',
+        position: 'relative',
+        overflow: 'hidden',
+      }}
     >
       {/* Background watermark */}
       <div
@@ -103,7 +110,14 @@ export function CTABanner() {
             }}
           >
             Schedule Your{' '}
-            <span style={{ color: '#ffffff', textDecoration: 'underline', textUnderlineOffset: '4px', textDecorationColor: 'rgba(255,255,255,0.4)' }}>
+            <span
+              style={{
+                color: '#ffffff',
+                textDecoration: 'underline',
+                textUnderlineOffset: '4px',
+                textDecorationColor: 'rgba(255,255,255,0.4)',
+              }}
+            >
               Discovery Call
             </span>
           </h2>
@@ -115,8 +129,9 @@ export function CTABanner() {
               lineHeight: 1.65,
             }}
           >
-            Let&apos;s figure out how we can help you. Early action means more options — and a
-            better outcome for you, your business, and your personal assets.
+            Let&apos;s figure out how we can help you. Early action means more
+            options — and a better outcome for you, your business, and your
+            personal assets.
           </p>
 
           <ul
@@ -178,25 +193,53 @@ export function CTABanner() {
           {submitted ? (
             <div style={{ textAlign: 'center', padding: '32px 0' }}>
               <div style={{ fontSize: 48, marginBottom: 16 }}>✓</div>
-              <h3 style={{ fontSize: 22, fontWeight: 700, color: '#111111', margin: '0 0 12px' }}>
+              <h3
+                style={{
+                  fontSize: 22,
+                  fontWeight: 700,
+                  color: '#111111',
+                  margin: '0 0 12px',
+                }}
+              >
                 Thank you — we&apos;ll be in touch shortly.
               </h3>
               <p style={{ fontSize: 15, color: '#666', lineHeight: 1.6 }}>
-                One of our advisers will contact you to schedule your discovery call.
+                One of our advisers will contact you to schedule your discovery
+                call.
               </p>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-              <h3 style={{ fontSize: 20, fontWeight: 700, color: '#111111', margin: '0 0 4px' }}>
+            <form
+              onSubmit={handleSubmit}
+              style={{ display: 'flex', flexDirection: 'column', gap: 16 }}
+            >
+              <h3
+                style={{
+                  fontSize: 20,
+                  fontWeight: 700,
+                  color: '#111111',
+                  margin: '0 0 4px',
+                }}
+              >
                 Book a Discovery Call
               </h3>
-              <p style={{ fontSize: 14, color: '#666', margin: '0 0 8px', lineHeight: 1.5 }}>
-                Tell us a little about your situation and we&apos;ll reach out to arrange a time.
+              <p
+                style={{
+                  fontSize: 14,
+                  color: '#666',
+                  margin: '0 0 8px',
+                  lineHeight: 1.5,
+                }}
+              >
+                Tell us a little about your situation and we&apos;ll reach out
+                to arrange a time.
               </p>
 
               {/* Name */}
               <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
-                <label htmlFor="name" style={labelStyle}>Your Name</label>
+                <label htmlFor="name" style={labelStyle}>
+                  Your Name
+                </label>
                 <input
                   id="name"
                   name="name"
@@ -211,7 +254,9 @@ export function CTABanner() {
 
               {/* Phone */}
               <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
-                <label htmlFor="phone" style={labelStyle}>Phone Number</label>
+                <label htmlFor="phone" style={labelStyle}>
+                  Phone Number
+                </label>
                 <input
                   id="phone"
                   name="phone"
@@ -228,7 +273,9 @@ export function CTABanner() {
               <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
                 <label htmlFor="abn" style={labelStyle}>
                   ABN (Australian Business Number){' '}
-                  <span style={{ fontWeight: 400, color: '#999999' }}>(optional)</span>
+                  <span style={{ fontWeight: 400, color: '#999999' }}>
+                    (optional)
+                  </span>
                 </label>
                 <input
                   id="abn"
@@ -243,7 +290,9 @@ export function CTABanner() {
 
               {/* Email */}
               <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
-                <label htmlFor="email" style={labelStyle}>Email Address</label>
+                <label htmlFor="email" style={labelStyle}>
+                  Email Address
+                </label>
                 <input
                   id="email"
                   name="email"
@@ -258,7 +307,9 @@ export function CTABanner() {
 
               {/* Service dropdown */}
               <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
-                <label htmlFor="service" style={labelStyle}>Main Service Needed</label>
+                <label htmlFor="service" style={labelStyle}>
+                  Main Service Needed
+                </label>
                 <select
                   id="service"
                   name="service"
@@ -267,12 +318,22 @@ export function CTABanner() {
                   required
                   style={inputStyle}
                 >
-                  <option value="" disabled>Select a service...</option>
+                  <option value="" disabled>
+                    Select a service...
+                  </option>
                   <option value="Reduce Debt">Reduce Debt</option>
-                  <option value="Restructure Your Business">Restructure Your Business</option>
-                  <option value="Administration & Liquidation">Administration &amp; Liquidation</option>
-                  <option value="Credit Repair & Funding">Credit Repair &amp; Funding</option>
-                  <option value="Director Penalty Notice">Director Penalty Notice</option>
+                  <option value="Restructure Your Business">
+                    Restructure Your Business
+                  </option>
+                  <option value="Administration & Liquidation">
+                    Administration &amp; Liquidation
+                  </option>
+                  <option value="Credit Repair & Funding">
+                    Credit Repair &amp; Funding
+                  </option>
+                  <option value="Director Penalty Notice">
+                    Director Penalty Notice
+                  </option>
                   <option value="Other">Other</option>
                 </select>
               </div>
@@ -314,7 +375,14 @@ export function CTABanner() {
                 Submit — Schedule My Discovery Call →
               </button>
 
-              <p style={{ fontSize: 12, color: '#999', textAlign: 'center', margin: 0 }}>
+              <p
+                style={{
+                  fontSize: 12,
+                  color: '#999',
+                  textAlign: 'center',
+                  margin: 0,
+                }}
+              >
                 Your information is kept strictly confidential.
               </p>
             </form>
@@ -330,5 +398,5 @@ export function CTABanner() {
         }
       `}</style>
     </section>
-  );
+  )
 }

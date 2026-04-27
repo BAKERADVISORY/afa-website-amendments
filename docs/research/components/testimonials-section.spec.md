@@ -1,11 +1,13 @@
 # TestimonialsSection Specification
 
 ## Overview
+
 - **Target file:** `src/components/TestimonialsSection.tsx`
 - **Interaction model:** click carousel (dot navigation)
 - **Background:** #17243B (dark navy)
 
 ## DOM Structure
+
 ```
 section (dark navy bg, py-20)
   div.container (max-w-[1200px] mx-auto px-8)
@@ -26,19 +28,23 @@ section (dark navy bg, py-20)
 ## Computed Styles
 
 ### Section
+
 - background-color: #17243B
 - padding: 80px 0
 
 ### Layout flex container
+
 - display: flex
 - gap: 64px
 - align-items: center
 
 ### Left col
+
 - width: ~40%
 - flex-shrink: 0
 
 ### Stars container
+
 - display: flex
 - gap: 8px
 - color: #5ACBBD
@@ -46,29 +52,35 @@ section (dark navy bg, py-20)
 - margin-bottom: 8px
 
 ### Rating text
+
 - font-size: 14px
 - color: rgba(255,255,255,0.6)
 - margin-bottom: 16px
 
 ### H2
+
 - font-size: 38px
 - font-weight: 700
 - color: #FFFFFF
 - line-height: 1.25
 
 ### H2 teal span ("Trusted")
+
 - color: #5ACBBD
 
 ### Right col
+
 - flex: 1
 
 ### Carousel card (white bg)
+
 - background-color: #FFFFFF
 - border-radius: 16px
 - padding: 32px
 - position: relative
 
 ### Large quote mark
+
 - position: absolute
 - top: 20px
 - left: 24px
@@ -78,12 +90,14 @@ section (dark navy bg, py-20)
 - font-family: Georgia, serif
 
 ### Review text
+
 - font-size: 15px
 - color: #444444
 - line-height: 1.7
 - padding-top: 32px
 
 ### Reviewer name
+
 - font-size: 14px
 - font-weight: 700
 - color: #0C9488
@@ -91,12 +105,14 @@ section (dark navy bg, py-20)
 - text-align: center
 
 ### Dot navigation
+
 - display: flex
 - gap: 10px
 - justify-content: center
 - margin-top: 24px
 
 ### Dot (inactive)
+
 - width: 10px
 - height: 10px
 - border-radius: 50%
@@ -104,6 +120,7 @@ section (dark navy bg, py-20)
 - cursor: pointer
 
 ### Dot (active)
+
 - background-color: #0C9488
 
 ## Text Content (verbatim)
@@ -123,5 +140,6 @@ section (dark navy bg, py-20)
 "Wynn Advisory helped us navigate a very challenging period with clarity and confidence. Their advice was timely, practical, and exactly what we needed to make informed decisions about our business."
 
 ## Responsive Behavior
+
 - **Desktop (1440px):** side-by-side (left col 40%, right col 60%)
 - **Mobile (390px):** stacked, stars/heading on top, carousel below

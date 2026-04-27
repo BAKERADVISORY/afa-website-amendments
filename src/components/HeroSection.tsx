@@ -1,4 +1,4 @@
-import { ShieldCheck, Eye, Users } from 'lucide-react';
+import { ShieldCheck, Eye, Users } from 'lucide-react'
 
 export function HeroSection() {
   return (
@@ -60,7 +60,9 @@ export function HeroSection() {
           }}
         >
           Early Action,{' '}
-          <span style={{ color: '#ffffff', opacity: 0.85 }}>Better Outcomes.</span>
+          <span style={{ color: '#ffffff', opacity: 0.85 }}>
+            Better Outcomes.
+          </span>
         </h1>
 
         <p
@@ -74,8 +76,8 @@ export function HeroSection() {
             fontWeight: 500,
           }}
         >
-          Protect your business and personal assets from ATO debt, cash flow crisis, and financial
-          distress before it&apos;s too late.
+          Protect your business and personal assets from ATO debt, cash flow
+          crisis, and financial distress before it&apos;s too late.
         </p>
 
         <p
@@ -88,8 +90,9 @@ export function HeroSection() {
             marginBottom: 0,
           }}
         >
-          We work for you — the business owner — not the creditors. We explore every alternative
-          before formal insolvency to protect your company record and your personal assets.
+          We work for you — the business owner — not the creditors. We explore
+          every alternative before formal insolvency to protect your company
+          record and your personal assets.
         </p>
 
         <a
@@ -107,7 +110,8 @@ export function HeroSection() {
             letterSpacing: '0.01em',
           }}
         >
-          Schedule Your Discovery Call — Let&apos;s figure out how we can help you.
+          Schedule Your Discovery Call — Let&apos;s figure out how we can help
+          you.
         </a>
 
         <ul
@@ -158,9 +162,12 @@ export function HeroSection() {
           preserveAspectRatio="none"
           style={{ width: '100%', height: '100%' }}
         >
-          <path d="M0,70 C360,140 1080,0 1440,70 L1440,140 L0,140 Z" fill="#ffffff" />
+          <path
+            d="M0,70 C360,140 1080,0 1440,70 L1440,140 L0,140 Z"
+            fill="#ffffff"
+          />
         </svg>
       </div>
     </section>
-  );
+  )
 }

@@ -1,14 +1,22 @@
-import type { Metadata } from 'next';
-import { NavBar } from '@/components/NavBar';
-import { Footer } from '@/components/Footer';
-import { ChevronRight, FileText, Users, Search, AlertTriangle } from 'lucide-react';
+import type { Metadata } from 'next'
+import { NavBar } from '@/components/NavBar'
+import { Footer } from '@/components/Footer'
+import {
+  ChevronRight,
+  FileText,
+  Users,
+  Search,
+  AlertTriangle,
+} from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Business Restructure Advisory | Small Business Restructure & Administration | Australian Financial Advisory',
+  title:
+    'Business Restructure Advisory | Small Business Restructure & Administration | Australian Financial Advisory',
   description:
     'Facing business financial distress? We assess every restructure, administration, and liquidation option — and connect you with the right specialist. Act before your options narrow.',
   alternates: {
-    canonical: 'https://www.ausfinancialadvisory.com.au/restructure-your-business/',
+    canonical:
+      'https://www.ausfinancialadvisory.com.au/restructure-your-business/',
   },
   openGraph: {
     title: 'Business Restructure Advisory | Australian Financial Advisory',
@@ -16,9 +24,15 @@ export const metadata: Metadata = {
       'A business restructure can give you a fresh start without the permanent mark of formal insolvency. Early action keeps more options open.',
     url: 'https://www.ausfinancialadvisory.com.au/restructure-your-business/',
   },
-};
+}
 
-function SectionLabel({ text, light = false }: { text: string; light?: boolean }) {
+function SectionLabel({
+  text,
+  light = false,
+}: {
+  text: string
+  light?: boolean
+}) {
   return (
     <p
       style={{
@@ -31,7 +45,7 @@ function SectionLabel({ text, light = false }: { text: string; light?: boolean }
     >
       {text}
     </p>
-  );
+  )
 }
 
 export default function RestructureYourBusinessPage() {
@@ -39,7 +53,6 @@ export default function RestructureYourBusinessPage() {
     <>
       <NavBar />
       <main style={{ paddingTop: 80 }}>
-
         {/* Hero */}
         <section
           style={{
@@ -105,9 +118,10 @@ export default function RestructureYourBusinessPage() {
                 marginBottom: 36,
               }}
             >
-              A business restructure can give you a fresh start — without the permanent mark of
-              formal insolvency. But the window to act is narrow. Once cash flow collapses, the
-              options that were available disappear quickly.
+              A business restructure can give you a fresh start — without the
+              permanent mark of formal insolvency. But the window to act is
+              narrow. Once cash flow collapses, the options that were available
+              disappear quickly.
             </p>
             <a
               href="/#contact"
@@ -146,10 +160,18 @@ export default function RestructureYourBusinessPage() {
               >
                 We Assess Every Option Before Recommending a Path
               </h2>
-              <p style={{ fontSize: 16, color: '#555555', lineHeight: 1.75, margin: 0 }}>
-                Not every business in distress needs to close. And not every business that needs to
-                close should do so through formal insolvency. We assess the full picture before
-                making any recommendation.
+              <p
+                style={{
+                  fontSize: 16,
+                  color: '#555555',
+                  lineHeight: 1.75,
+                  margin: 0,
+                }}
+              >
+                Not every business in distress needs to close. And not every
+                business that needs to close should do so through formal
+                insolvency. We assess the full picture before making any
+                recommendation.
               </p>
             </div>
 
@@ -209,10 +231,24 @@ export default function RestructureYourBusinessPage() {
                   >
                     <Icon size={20} color="#ffffff" />
                   </div>
-                  <h3 style={{ fontSize: 17, fontWeight: 700, color: '#111111', margin: 0 }}>
+                  <h3
+                    style={{
+                      fontSize: 17,
+                      fontWeight: 700,
+                      color: '#111111',
+                      margin: 0,
+                    }}
+                  >
                     {heading}
                   </h3>
-                  <p style={{ fontSize: 14, color: '#555555', lineHeight: 1.65, margin: 0 }}>
+                  <p
+                    style={{
+                      fontSize: 14,
+                      color: '#555555',
+                      lineHeight: 1.65,
+                      margin: 0,
+                    }}
+                  >
                     {body}
                   </p>
                 </div>
@@ -221,21 +257,65 @@ export default function RestructureYourBusinessPage() {
 
             {/* Key message blocks */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: 32 }}>
-
               {/* SBR */}
               <div>
-                <h3 style={{ fontSize: 20, fontWeight: 700, color: '#111111', marginBottom: 16 }}>
+                <h3
+                  style={{
+                    fontSize: 20,
+                    fontWeight: 700,
+                    color: '#111111',
+                    marginBottom: 16,
+                  }}
+                >
                   Small Business Restructure
                 </h3>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+                <div
+                  style={{ display: 'flex', flexDirection: 'column', gap: 12 }}
+                >
                   {[
                     'The Small Business Restructuring process allows eligible businesses to restructure debts while the director remains in control — unlike administration, which appoints an external controller.',
                     'It is less disruptive, less expensive, and carries a lighter long-term stigma than voluntary administration or liquidation.',
                     'It requires early action. Once cash flow collapses and the business cannot meet its obligations, the SBR pathway may no longer be available.',
                   ].map((msg) => (
-                    <div key={msg} style={{ display: 'flex', alignItems: 'flex-start', gap: 14, padding: '14px 18px', backgroundColor: '#f5f5f5', borderRadius: 8 }}>
-                      <span style={{ width: 20, height: 20, borderRadius: '50%', backgroundColor: '#111111', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontSize: 10, color: '#ffffff', fontWeight: 700, marginTop: 2 }}>✓</span>
-                      <p style={{ fontSize: 14, color: '#444444', lineHeight: 1.65, margin: 0 }}>{msg}</p>
+                    <div
+                      key={msg}
+                      style={{
+                        display: 'flex',
+                        alignItems: 'flex-start',
+                        gap: 14,
+                        padding: '14px 18px',
+                        backgroundColor: '#f5f5f5',
+                        borderRadius: 8,
+                      }}
+                    >
+                      <span
+                        style={{
+                          width: 20,
+                          height: 20,
+                          borderRadius: '50%',
+                          backgroundColor: '#111111',
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          flexShrink: 0,
+                          fontSize: 10,
+                          color: '#ffffff',
+                          fontWeight: 700,
+                          marginTop: 2,
+                        }}
+                      >
+                        ✓
+                      </span>
+                      <p
+                        style={{
+                          fontSize: 14,
+                          color: '#444444',
+                          lineHeight: 1.65,
+                          margin: 0,
+                        }}
+                      >
+                        {msg}
+                      </p>
                     </div>
                   ))}
                 </div>
@@ -243,17 +323,62 @@ export default function RestructureYourBusinessPage() {
 
               {/* Administration */}
               <div>
-                <h3 style={{ fontSize: 20, fontWeight: 700, color: '#111111', marginBottom: 16 }}>
+                <h3
+                  style={{
+                    fontSize: 20,
+                    fontWeight: 700,
+                    color: '#111111',
+                    marginBottom: 16,
+                  }}
+                >
                   Voluntary Administration
                 </h3>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+                <div
+                  style={{ display: 'flex', flexDirection: 'column', gap: 12 }}
+                >
                   {[
                     'Voluntary administration gives your business breathing room — it pauses most creditor action while an administrator assesses options.',
                     'The outcome may be a Deed of Company Arrangement (DOCA) that restructures the business and allows it to continue, or an orderly wind-down if that is the better outcome.',
                   ].map((msg) => (
-                    <div key={msg} style={{ display: 'flex', alignItems: 'flex-start', gap: 14, padding: '14px 18px', backgroundColor: '#f5f5f5', borderRadius: 8 }}>
-                      <span style={{ width: 20, height: 20, borderRadius: '50%', backgroundColor: '#111111', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontSize: 10, color: '#ffffff', fontWeight: 700, marginTop: 2 }}>✓</span>
-                      <p style={{ fontSize: 14, color: '#444444', lineHeight: 1.65, margin: 0 }}>{msg}</p>
+                    <div
+                      key={msg}
+                      style={{
+                        display: 'flex',
+                        alignItems: 'flex-start',
+                        gap: 14,
+                        padding: '14px 18px',
+                        backgroundColor: '#f5f5f5',
+                        borderRadius: 8,
+                      }}
+                    >
+                      <span
+                        style={{
+                          width: 20,
+                          height: 20,
+                          borderRadius: '50%',
+                          backgroundColor: '#111111',
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          flexShrink: 0,
+                          fontSize: 10,
+                          color: '#ffffff',
+                          fontWeight: 700,
+                          marginTop: 2,
+                        }}
+                      >
+                        ✓
+                      </span>
+                      <p
+                        style={{
+                          fontSize: 14,
+                          color: '#444444',
+                          lineHeight: 1.65,
+                          margin: 0,
+                        }}
+                      >
+                        {msg}
+                      </p>
                     </div>
                   ))}
                 </div>
@@ -267,52 +392,138 @@ export default function RestructureYourBusinessPage() {
                   padding: '32px 36px',
                 }}
               >
-                <h3 style={{ fontSize: 20, fontWeight: 700, color: '#ffffff', marginBottom: 8 }}>
+                <h3
+                  style={{
+                    fontSize: 20,
+                    fontWeight: 700,
+                    color: '#ffffff',
+                    marginBottom: 8,
+                  }}
+                >
                   If Liquidation Is Inevitable — Choose Your Own Liquidator
                 </h3>
-                <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.6)', lineHeight: 1.65, marginBottom: 20 }}>
-                  This is one of the most important decisions you can make in a distressed situation.
+                <p
+                  style={{
+                    fontSize: 14,
+                    color: 'rgba(255,255,255,0.6)',
+                    lineHeight: 1.65,
+                    marginBottom: 20,
+                  }}
+                >
+                  This is one of the most important decisions you can make in a
+                  distressed situation.
                 </p>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+                <div
+                  style={{ display: 'flex', flexDirection: 'column', gap: 12 }}
+                >
                   {[
                     'A liquidator appointed by creditors works for the creditors — not for you. Their job is to recover money for the people you owe.',
                     'A liquidator you choose through our network understands your position from the outset — and can manage the process in a way that protects directors where possible.',
                     'Early engagement means more control over the outcome — and directors who act first are in a far stronger position than those who wait for a creditor to force the issue.',
                     'Do not wait for a creditor to appoint a liquidator against you. By the time that happens, you have lost all influence over the process.',
                   ].map((msg) => (
-                    <div key={msg} style={{ display: 'flex', alignItems: 'flex-start', gap: 14, padding: '14px 18px', backgroundColor: 'rgba(255,255,255,0.06)', borderRadius: 8 }}>
-                      <span style={{ width: 20, height: 20, borderRadius: '50%', backgroundColor: 'rgba(255,255,255,0.15)', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontSize: 10, color: '#ffffff', fontWeight: 700, marginTop: 2 }}>✓</span>
-                      <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.75)', lineHeight: 1.65, margin: 0 }}>{msg}</p>
+                    <div
+                      key={msg}
+                      style={{
+                        display: 'flex',
+                        alignItems: 'flex-start',
+                        gap: 14,
+                        padding: '14px 18px',
+                        backgroundColor: 'rgba(255,255,255,0.06)',
+                        borderRadius: 8,
+                      }}
+                    >
+                      <span
+                        style={{
+                          width: 20,
+                          height: 20,
+                          borderRadius: '50%',
+                          backgroundColor: 'rgba(255,255,255,0.15)',
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          flexShrink: 0,
+                          fontSize: 10,
+                          color: '#ffffff',
+                          fontWeight: 700,
+                          marginTop: 2,
+                        }}
+                      >
+                        ✓
+                      </span>
+                      <p
+                        style={{
+                          fontSize: 14,
+                          color: 'rgba(255,255,255,0.75)',
+                          lineHeight: 1.65,
+                          margin: 0,
+                        }}
+                      >
+                        {msg}
+                      </p>
                     </div>
                   ))}
                 </div>
               </div>
-
             </div>
           </div>
         </section>
 
         {/* Disclaimer */}
         <section style={{ backgroundColor: '#ffffff', padding: '24px 0' }}>
-          <p style={{ maxWidth: 800, margin: '0 auto', padding: '0 32px', fontSize: 12, color: '#888888', lineHeight: 1.7, textAlign: 'center' }}>
-            The information on this page is general in nature and does not constitute legal,
-            financial, or insolvency advice. Australian Financial Advisory Pty Ltd provides
-            assessment and advisory services only. All specialist services are referred to
-            appropriately licensed partners. You should seek independent professional advice before
+          <p
+            style={{
+              maxWidth: 800,
+              margin: '0 auto',
+              padding: '0 32px',
+              fontSize: 12,
+              color: '#888888',
+              lineHeight: 1.7,
+              textAlign: 'center',
+            }}
+          >
+            The information on this page is general in nature and does not
+            constitute legal, financial, or insolvency advice. Australian
+            Financial Advisory Pty Ltd provides assessment and advisory services
+            only. All specialist services are referred to appropriately licensed
+            partners. You should seek independent professional advice before
             acting on any information on this page.
           </p>
         </section>
 
         {/* CTA */}
         <section style={{ backgroundColor: '#111111', padding: '80px 0' }}>
-          <div style={{ maxWidth: 700, margin: '0 auto', padding: '0 32px', textAlign: 'center' }}>
+          <div
+            style={{
+              maxWidth: 700,
+              margin: '0 auto',
+              padding: '0 32px',
+              textAlign: 'center',
+            }}
+          >
             <SectionLabel text="Get Started" light />
-            <h2 style={{ fontSize: 42, fontWeight: 700, color: '#ffffff', marginBottom: 16, lineHeight: 1.2 }}>
+            <h2
+              style={{
+                fontSize: 42,
+                fontWeight: 700,
+                color: '#ffffff',
+                marginBottom: 16,
+                lineHeight: 1.2,
+              }}
+            >
               Schedule Your Discovery Call
             </h2>
-            <p style={{ fontSize: 17, color: 'rgba(255,255,255,0.7)', lineHeight: 1.7, marginBottom: 36 }}>
-              The earlier you act, the more options you have. The discovery call is free, confidential,
-              and carries no obligation. Let&apos;s work out what your best path forward looks like.
+            <p
+              style={{
+                fontSize: 17,
+                color: 'rgba(255,255,255,0.7)',
+                lineHeight: 1.7,
+                marginBottom: 36,
+              }}
+            >
+              The earlier you act, the more options you have. The discovery call
+              is free, confidential, and carries no obligation. Let&apos;s work
+              out what your best path forward looks like.
             </p>
             <a
               href="/#contact"
@@ -332,12 +543,17 @@ export default function RestructureYourBusinessPage() {
               Book Your Free Discovery Call
               <ChevronRight size={16} />
             </a>
-            <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.4)', marginTop: 20 }}>
+            <p
+              style={{
+                fontSize: 13,
+                color: 'rgba(255,255,255,0.4)',
+                marginTop: 20,
+              }}
+            >
               Confidential · No obligation · Fast response
             </p>
           </div>
         </section>
-
       </main>
       <Footer />
 
@@ -349,5 +565,5 @@ export default function RestructureYourBusinessPage() {
         }
       `}</style>
     </>
-  );
+  )
 }

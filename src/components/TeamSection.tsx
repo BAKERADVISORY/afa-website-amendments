@@ -1,8 +1,8 @@
 interface TeamMemberProps {
-  initials: string;
-  name: string;
-  role: string;
-  description: string;
+  initials: string
+  name: string
+  role: string
+  description: string
 }
 
 function TeamMember({ initials, name, role, description }: TeamMemberProps) {
@@ -42,7 +42,14 @@ function TeamMember({ initials, name, role, description }: TeamMemberProps) {
       </div>
 
       <div>
-        <h3 style={{ fontSize: 18, fontWeight: 700, color: '#111111', margin: '0 0 4px' }}>
+        <h3
+          style={{
+            fontSize: 18,
+            fontWeight: 700,
+            color: '#111111',
+            margin: '0 0 4px',
+          }}
+        >
           {name}
         </h3>
         <p
@@ -59,11 +66,13 @@ function TeamMember({ initials, name, role, description }: TeamMemberProps) {
         </p>
       </div>
 
-      <p style={{ fontSize: 14, color: '#555555', lineHeight: 1.65, margin: 0 }}>
+      <p
+        style={{ fontSize: 14, color: '#555555', lineHeight: 1.65, margin: 0 }}
+      >
         {description}
       </p>
     </div>
-  );
+  )
 }
 
 const team: TeamMemberProps[] = [
@@ -79,7 +88,7 @@ const team: TeamMemberProps[] = [
     role: 'Advisory & Negotiations',
     description: '',
   },
-];
+]
 
 export function TeamSection() {
   return (
@@ -119,8 +128,9 @@ export function TeamSection() {
             lineHeight: 1.6,
           }}
         >
-          Our team combines accounting, negotiation, and insolvency expertise — so you get the right
-          advice at the right stage, without being pushed into a formal process prematurely.
+          Our team combines accounting, negotiation, and insolvency expertise —
+          so you get the right advice at the right stage, without being pushed
+          into a formal process prematurely.
         </p>
 
         {/* Team cards */}
@@ -147,5 +157,5 @@ export function TeamSection() {
         }
       `}</style>
     </section>
-  );
+  )
 }

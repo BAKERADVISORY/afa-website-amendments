@@ -1,10 +1,10 @@
-import { UserCheck, GitBranch, FileX, ShieldAlert, Clock } from 'lucide-react';
-import type { LucideIcon } from 'lucide-react';
+import { UserCheck, GitBranch, FileX, ShieldAlert, Clock } from 'lucide-react'
+import type { LucideIcon } from 'lucide-react'
 
 interface FeatureItemProps {
-  icon: LucideIcon;
-  title: string;
-  description: string;
+  icon: LucideIcon
+  title: string
+  description: string
 }
 
 function FeatureItem({ icon: Icon, title, description }: FeatureItemProps) {
@@ -25,15 +25,30 @@ function FeatureItem({ icon: Icon, title, description }: FeatureItemProps) {
         <Icon size={22} />
       </div>
       <div>
-        <h3 style={{ fontSize: 16, fontWeight: 700, color: '#FFFFFF', marginBottom: 4, margin: '0 0 4px' }}>
+        <h3
+          style={{
+            fontSize: 16,
+            fontWeight: 700,
+            color: '#FFFFFF',
+            marginBottom: 4,
+            margin: '0 0 4px',
+          }}
+        >
           {title}
         </h3>
-        <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, margin: 0 }}>
+        <p
+          style={{
+            fontSize: 14,
+            color: 'rgba(255,255,255,0.6)',
+            lineHeight: 1.6,
+            margin: 0,
+          }}
+        >
           {description}
         </p>
       </div>
     </div>
-  );
+  )
 }
 
 const features: FeatureItemProps[] = [
@@ -51,7 +66,8 @@ const features: FeatureItemProps[] = [
   },
   {
     icon: FileX,
-    title: 'Formal Insolvency Appears on Company Records — We Help You Avoid That',
+    title:
+      'Formal Insolvency Appears on Company Records — We Help You Avoid That',
     description:
       'A formal insolvency appointment stays on the record permanently. Our pre-insolvency approach protects your company history and future reputation.',
   },
@@ -67,7 +83,7 @@ const features: FeatureItemProps[] = [
     description:
       'We understand that financial distress is stressful. Our approach is fast, confidential, and designed to give you clarity and a clear path forward.',
   },
-];
+]
 
 export function WhyChooseSection() {
   return (
@@ -130,7 +146,9 @@ export function WhyChooseSection() {
           }}
         >
           Why Choose{' '}
-          <span style={{ color: '#ffffff', opacity: 0.75 }}>Australian Financial Advisory?</span>
+          <span style={{ color: '#ffffff', opacity: 0.75 }}>
+            Australian Financial Advisory?
+          </span>
         </h2>
         <p
           style={{
@@ -141,8 +159,8 @@ export function WhyChooseSection() {
             margin: '0 auto 48px',
           }}
         >
-          We support business owners at the earliest stage of financial difficulty — when the most
-          options are still available to you.
+          We support business owners at the earliest stage of financial
+          difficulty — when the most options are still available to you.
         </p>
 
         {/* 2-column: images | features */}
@@ -198,5 +216,5 @@ export function WhyChooseSection() {
         }
       `}</style>
     </section>
-  );
+  )
 }

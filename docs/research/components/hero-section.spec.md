@@ -1,11 +1,13 @@
 # HeroSection Specification
 
 ## Overview
+
 - **Target file:** `src/components/HeroSection.tsx`
 - **Interaction model:** static
 - **Height:** 95vh minimum
 
 ## DOM Structure
+
 ```
 section (relative, min-h-[95vh], overflow-hidden)
   div.bg-layer (absolute inset-0, hero photo + dark overlay)
@@ -28,12 +30,14 @@ section (relative, min-h-[95vh], overflow-hidden)
 ## Computed Styles (exact)
 
 ### Section wrapper
+
 - position: relative
 - min-height: 95vh
 - overflow: hidden
 - background-color: #17243B
 
 ### Background image
+
 - position: absolute
 - inset: 0
 - object-fit: cover
@@ -42,11 +46,13 @@ section (relative, min-h-[95vh], overflow-hidden)
 - opacity: ~0.45 (dark navy overlay on top makes it appear dark)
 
 ### Dark overlay
+
 - position: absolute
 - inset: 0
 - background-color: rgba(23, 36, 59, 0.75)
 
 ### Content container
+
 - position: relative
 - z-index: 10
 - padding: ~120px 64px 120px 80px (pt accounts for fixed header)
@@ -56,6 +62,7 @@ section (relative, min-h-[95vh], overflow-hidden)
 - gap: 24px
 
 ### H1
+
 - font-family: Manrope
 - font-size: 52px (desktop)
 - font-weight: 700
@@ -63,17 +70,20 @@ section (relative, min-h-[95vh], overflow-hidden)
 - color: #FFFFFF
 
 ### H1 teal span ("We'll help you")
+
 - color: #5ACBBD
 - text-decoration: underline
 - text-underline-offset: 4px
 
 ### Subtext paragraph
+
 - font-size: 18px
 - color: rgba(255,255,255,0.85)
 - line-height: 1.6
 - max-width: 600px
 
 ### CTA Button
+
 - display: inline-flex
 - align-items: center
 - gap: 10px
@@ -86,6 +96,7 @@ section (relative, min-h-[95vh], overflow-hidden)
 - width: fit-content
 
 ### Trust badges list
+
 - display: flex
 - flex-direction: row
 - gap: 32px
@@ -93,6 +104,7 @@ section (relative, min-h-[95vh], overflow-hidden)
 - margin-top: 8px
 
 ### Trust badge item
+
 - display: flex
 - align-items: center
 - gap: 8px
@@ -101,6 +113,7 @@ section (relative, min-h-[95vh], overflow-hidden)
 - opacity: 0.9
 
 ### Wave (bottom shape divider)
+
 - position: absolute
 - bottom: -1px
 - left: -35%
@@ -110,6 +123,7 @@ section (relative, min-h-[95vh], overflow-hidden)
 - overflow: visible
 
 ## Text Content (verbatim)
+
 - H1 line 1: "You built the business."
 - H1 teal: "We'll help you"
 - H1 line 3: "protect it."
@@ -120,11 +134,14 @@ section (relative, min-h-[95vh], overflow-hidden)
 - Badge 3: 👥 "Experienced advisers"
 
 ## Assets
+
 - Hero photo: `public/images/hero-photo.jpg`
 - Wave: inline SVG (white wave shape, see note)
 
 ## Wave SVG
+
 Use a simple wave/curve SVG path with white fill:
+
 ```svg
 <svg viewBox="0 0 1440 140" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
   <path d="M0,70 C360,140 1080,0 1440,70 L1440,140 L0,140 Z" fill="#ffffff"/>
@@ -132,10 +149,12 @@ Use a simple wave/curve SVG path with white fill:
 ```
 
 ## Responsive Behavior
+
 - **Desktop (1440px):** content left-aligned with large H1, photo shows on right
 - **Mobile (390px):** content stacked, H1 ~32px, full-width, bottom padding increased
 
 ## Notes
+
 - The photo shows a smiling woman in white shirt with colleagues behind her
 - The CTA opens a popup modal in the original — use a `#contact` hash scroll in clone
 - Trust badge icons are small shield/eye/people SVG icons (can use Lucide: Shield, Eye, Users)

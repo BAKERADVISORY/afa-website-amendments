@@ -9,19 +9,19 @@
 
 ## Section Order (top to bottom)
 
-| # | Name | Background | Interaction |
-|---|------|-----------|-------------|
-| 1 | **NavBar** | #17243B (fixed overlay) | static + hover states |
-| 2 | **HeroSection** | #17243B + person photo overlay | static |
-| 3 | **AboutAndServices** | #FFFFFF | static |
-| 4 | **WhyChooseSection** | #17243B (dark) | static |
-| 5 | **ComparisonSection** | #FFFFFF | static (no accordion interaction needed) |
-| 6 | **TestimonialsSection** | #17243B (dark) | click carousel |
-| 7 | **FAQSection** | #FFFFFF | click accordion |
-| 8 | **BlogCarousel** | #FFFFFF | auto-scroll carousel |
-| 9 | **CTABanner** | #17243B (dark) | static |
-| 10 | **PartnerLogos** | #FFFFFF | auto-scroll carousel |
-| 11 | **Footer** | #17243B (dark) | static |
+| #   | Name                    | Background                     | Interaction                              |
+| --- | ----------------------- | ------------------------------ | ---------------------------------------- |
+| 1   | **NavBar**              | #17243B (fixed overlay)        | static + hover states                    |
+| 2   | **HeroSection**         | #17243B + person photo overlay | static                                   |
+| 3   | **AboutAndServices**    | #FFFFFF                        | static                                   |
+| 4   | **WhyChooseSection**    | #17243B (dark)                 | static                                   |
+| 5   | **ComparisonSection**   | #FFFFFF                        | static (no accordion interaction needed) |
+| 6   | **TestimonialsSection** | #17243B (dark)                 | click carousel                           |
+| 7   | **FAQSection**          | #FFFFFF                        | click accordion                          |
+| 8   | **BlogCarousel**        | #FFFFFF                        | auto-scroll carousel                     |
+| 9   | **CTABanner**           | #17243B (dark)                 | static                                   |
+| 10  | **PartnerLogos**        | #FFFFFF                        | auto-scroll carousel                     |
+| 11  | **Footer**              | #17243B (dark)                 | static                                   |
 
 ## Dependencies
 

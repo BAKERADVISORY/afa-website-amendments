@@ -1,22 +1,29 @@
-import type { Metadata } from 'next';
-import { NavBar } from '@/components/NavBar';
-import { Footer } from '@/components/Footer';
-import { ChevronRight, AlertTriangle, Home, TrendingDown, Clock } from 'lucide-react';
+import type { Metadata } from 'next'
+import { NavBar } from '@/components/NavBar'
+import { Footer } from '@/components/Footer'
+import {
+  ChevronRight,
+  AlertTriangle,
+  Home,
+  TrendingDown,
+  Clock,
+} from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Director Penalty Notice (DPN) Risk | Australian Financial Advisory',
   description:
     'Received a Director Penalty Notice? The ATO can make you personally liable for company tax debts. Act now to protect your home, savings, and personal assets.',
   alternates: {
-    canonical: 'https://www.ausfinancialadvisory.com.au/director-penalty-notice/',
+    canonical:
+      'https://www.ausfinancialadvisory.com.au/director-penalty-notice/',
   },
   openGraph: {
     title: 'Director Penalty Notice (DPN) Risk | Australian Financial Advisory',
     description:
-      'A Director Penalty Notice makes you personally liable for your company\'s ATO debt. Early action is the only real protection.',
+      "A Director Penalty Notice makes you personally liable for your company's ATO debt. Early action is the only real protection.",
     url: 'https://www.ausfinancialadvisory.com.au/director-penalty-notice/',
   },
-};
+}
 
 function SectionLabel({ text }: { text: string }) {
   return (
@@ -31,7 +38,7 @@ function SectionLabel({ text }: { text: string }) {
     >
       {text}
     </p>
-  );
+  )
 }
 
 export default function DirectorPenaltyNoticePage() {
@@ -39,7 +46,6 @@ export default function DirectorPenaltyNoticePage() {
     <>
       <NavBar />
       <main style={{ paddingTop: 80 }}>
-
         {/* 1. Hero */}
         <section
           style={{
@@ -105,10 +111,13 @@ export default function DirectorPenaltyNoticePage() {
                 marginBottom: 36,
               }}
             >
-              A Director Penalty Notice (DPN) is one of the most serious tools the ATO uses to
-              collect unpaid tax debt — because it bypasses your company entirely and makes{' '}
-              <strong style={{ color: '#ffffff' }}>you personally liable</strong>. Your home,
-              savings, and personal assets are at risk.
+              A Director Penalty Notice (DPN) is one of the most serious tools
+              the ATO uses to collect unpaid tax debt — because it bypasses your
+              company entirely and makes{' '}
+              <strong style={{ color: '#ffffff' }}>
+                you personally liable
+              </strong>
+              . Your home, savings, and personal assets are at risk.
             </p>
             <a
               href="/#contact"
@@ -154,11 +163,19 @@ export default function DirectorPenaltyNoticePage() {
                 marginBottom: 28,
               }}
             >
-              A Director Penalty Notice is a formal notice from the Australian Taxation Office that
-              transfers your company&apos;s unpaid tax obligations directly to you as a director. It
-              now covers a broad range of ATO debt types:
+              A Director Penalty Notice is a formal notice from the Australian
+              Taxation Office that transfers your company&apos;s unpaid tax
+              obligations directly to you as a director. It now covers a broad
+              range of ATO debt types:
             </p>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 16, marginBottom: 32 }}>
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 16,
+                marginBottom: 32,
+              }}
+            >
               {[
                 {
                   title: 'PAYG Withholding',
@@ -196,7 +213,14 @@ export default function DirectorPenaltyNoticePage() {
                   >
                     {item.title}
                   </h3>
-                  <p style={{ fontSize: 14, color: '#555555', lineHeight: 1.65, margin: 0 }}>
+                  <p
+                    style={{
+                      fontSize: 14,
+                      color: '#555555',
+                      lineHeight: 1.65,
+                      margin: 0,
+                    }}
+                  >
                     {item.body}
                   </p>
                 </div>
@@ -210,13 +234,29 @@ export default function DirectorPenaltyNoticePage() {
                 marginBottom: 32,
               }}
             >
-              <h3 style={{ fontSize: 17, fontWeight: 700, color: '#ffffff', marginBottom: 10 }}>
+              <h3
+                style={{
+                  fontSize: 17,
+                  fontWeight: 700,
+                  color: '#ffffff',
+                  marginBottom: 10,
+                }}
+              >
                 All ATO Debt Is Now on the Radar
               </h3>
-              <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.75)', lineHeight: 1.65, margin: 0 }}>
-                The ATO has significantly expanded its use of DPNs across all debt types. No category
-                of ATO debt is safe from director liability action. If your company has any outstanding
-                ATO obligations — regardless of type or amount — you should seek advice immediately.
+              <p
+                style={{
+                  fontSize: 14,
+                  color: 'rgba(255,255,255,0.75)',
+                  lineHeight: 1.65,
+                  margin: 0,
+                }}
+              >
+                The ATO has significantly expanded its use of DPNs across all
+                debt types. No category of ATO debt is safe from director
+                liability action. If your company has any outstanding ATO
+                obligations — regardless of type or amount — you should seek
+                advice immediately.
               </p>
             </div>
             <p
@@ -232,8 +272,9 @@ export default function DirectorPenaltyNoticePage() {
                 margin: 0,
               }}
             >
-              Once a DPN is issued, you have 21 days to act. After that window closes, your personal
-              liability is locked in — regardless of what happens to the company.
+              Once a DPN is issued, you have 21 days to act. After that window
+              closes, your personal liability is locked in — regardless of what
+              happens to the company.
             </p>
           </div>
         </section>
@@ -261,23 +302,27 @@ export default function DirectorPenaltyNoticePage() {
                 marginBottom: 28,
               }}
             >
-              In recent years, the ATO has significantly increased the issuance of Director Penalty
-              Notices. No debt is too small — businesses with outstanding PAYG or super obligations
-              of even a few thousand dollars have received DPNs.
+              In recent years, the ATO has significantly increased the issuance
+              of Director Penalty Notices. No debt is too small — businesses
+              with outstanding PAYG or super obligations of even a few thousand
+              dollars have received DPNs.
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
               {[
                 {
                   icon: AlertTriangle,
-                  point: 'DPN issuance has increased year-on-year since the end of COVID-era concessions.',
+                  point:
+                    'DPN issuance has increased year-on-year since the end of COVID-era concessions.',
                 },
                 {
                   icon: TrendingDown,
-                  point: 'The ATO uses real-time data matching to identify directors of companies with outstanding obligations.',
+                  point:
+                    'The ATO uses real-time data matching to identify directors of companies with outstanding obligations.',
                 },
                 {
                   icon: Clock,
-                  point: 'Lockdown DPNs are issued when returns are not lodged on time and cannot be cancelled. Once a Lockdown DPN is issued, there are only three ways out: (1) pay the debt in full, (2) place the company into voluntary administration, or (3) appoint a Small Business Restructuring practitioner. There is no other path. This is why early action — before returns become overdue — is critical.',
+                  point:
+                    'Lockdown DPNs are issued when returns are not lodged on time and cannot be cancelled. Once a Lockdown DPN is issued, there are only three ways out: (1) pay the debt in full, (2) place the company into voluntary administration, or (3) appoint a Small Business Restructuring practitioner. There is no other path. This is why early action — before returns become overdue — is critical.',
                 },
               ].map(({ icon: Icon, point }) => (
                 <div
@@ -305,7 +350,14 @@ export default function DirectorPenaltyNoticePage() {
                   >
                     <Icon size={18} color="#ffffff" />
                   </div>
-                  <p style={{ fontSize: 15, color: '#444444', lineHeight: 1.65, margin: 0 }}>
+                  <p
+                    style={{
+                      fontSize: 15,
+                      color: '#444444',
+                      lineHeight: 1.65,
+                      margin: 0,
+                    }}
+                  >
                     {point}
                   </p>
                 </div>
@@ -337,9 +389,9 @@ export default function DirectorPenaltyNoticePage() {
                 marginBottom: 36,
               }}
             >
-              A DPN removes the protection of the corporate structure. The ATO can — and will —
-              pursue you personally for the outstanding amount. That means the following assets
-              are at direct risk:
+              A DPN removes the protection of the corporate structure. The ATO
+              can — and will — pursue you personally for the outstanding amount.
+              That means the following assets are at direct risk:
             </p>
             <div
               style={{
@@ -350,9 +402,24 @@ export default function DirectorPenaltyNoticePage() {
               className="dpn-three-col"
             >
               {[
-                { icon: Home, label: 'Your Home', detail: 'Including any equity you have built up over the years.' },
-                { icon: TrendingDown, label: 'Savings & Investments', detail: 'Bank accounts, shares, managed funds, and other liquid assets.' },
-                { icon: AlertTriangle, label: 'Future Income', detail: 'The ATO can garnish wages or income streams if debts go unpaid.' },
+                {
+                  icon: Home,
+                  label: 'Your Home',
+                  detail:
+                    'Including any equity you have built up over the years.',
+                },
+                {
+                  icon: TrendingDown,
+                  label: 'Savings & Investments',
+                  detail:
+                    'Bank accounts, shares, managed funds, and other liquid assets.',
+                },
+                {
+                  icon: AlertTriangle,
+                  label: 'Future Income',
+                  detail:
+                    'The ATO can garnish wages or income streams if debts go unpaid.',
+                },
               ].map(({ icon: Icon, label, detail }) => (
                 <div
                   key={label}
@@ -388,7 +455,14 @@ export default function DirectorPenaltyNoticePage() {
                   >
                     {label}
                   </h3>
-                  <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, margin: 0 }}>
+                  <p
+                    style={{
+                      fontSize: 14,
+                      color: 'rgba(255,255,255,0.6)',
+                      lineHeight: 1.6,
+                      margin: 0,
+                    }}
+                  >
                     {detail}
                   </p>
                 </div>
@@ -420,11 +494,19 @@ export default function DirectorPenaltyNoticePage() {
                 marginBottom: 32,
               }}
             >
-              Once a DPN arrives, your options narrow quickly. The best outcomes come from acting
-              before a notice is issued — when there is still time to negotiate, restructure, or
-              explore alternatives to formal insolvency.
+              Once a DPN arrives, your options narrow quickly. The best outcomes
+              come from acting before a notice is issued — when there is still
+              time to negotiate, restructure, or explore alternatives to formal
+              insolvency.
             </p>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 16, marginBottom: 40 }}>
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 16,
+                marginBottom: 40,
+              }}
+            >
               {[
                 {
                   step: '01',
@@ -481,7 +563,14 @@ export default function DirectorPenaltyNoticePage() {
                     >
                       {heading}
                     </h3>
-                    <p style={{ fontSize: 14, color: '#555555', lineHeight: 1.65, margin: 0 }}>
+                    <p
+                      style={{
+                        fontSize: 14,
+                        color: '#555555',
+                        lineHeight: 1.65,
+                        margin: 0,
+                      }}
+                    >
                       {body}
                     </p>
                   </div>
@@ -493,11 +582,22 @@ export default function DirectorPenaltyNoticePage() {
 
         {/* Disclaimer */}
         <section style={{ backgroundColor: '#ffffff', padding: '24px 0' }}>
-          <p style={{ maxWidth: 800, margin: '0 auto', padding: '0 32px', fontSize: 12, color: '#888888', lineHeight: 1.7, textAlign: 'center' }}>
-            The information on this page is general in nature and does not constitute legal,
-            financial, or insolvency advice. Australian Financial Advisory Pty Ltd provides
-            assessment and advisory services only. All specialist services are referred to
-            appropriately licensed partners. You should seek independent professional advice before
+          <p
+            style={{
+              maxWidth: 800,
+              margin: '0 auto',
+              padding: '0 32px',
+              fontSize: 12,
+              color: '#888888',
+              lineHeight: 1.7,
+              textAlign: 'center',
+            }}
+          >
+            The information on this page is general in nature and does not
+            constitute legal, financial, or insolvency advice. Australian
+            Financial Advisory Pty Ltd provides assessment and advisory services
+            only. All specialist services are referred to appropriately licensed
+            partners. You should seek independent professional advice before
             acting on any information on this page.
           </p>
         </section>
@@ -532,8 +632,9 @@ export default function DirectorPenaltyNoticePage() {
                 marginBottom: 36,
               }}
             >
-              Our advisers move quickly when DPN risk is involved. The earlier you reach out, the
-              more options we have to protect you. The call is free and completely confidential.
+              Our advisers move quickly when DPN risk is involved. The earlier
+              you reach out, the more options we have to protect you. The call
+              is free and completely confidential.
             </p>
             <a
               href="/#contact"
@@ -564,7 +665,6 @@ export default function DirectorPenaltyNoticePage() {
             </p>
           </div>
         </section>
-
       </main>
       <Footer />
 
@@ -579,5 +679,5 @@ export default function DirectorPenaltyNoticePage() {
         }
       `}</style>
     </>
-  );
+  )
 }

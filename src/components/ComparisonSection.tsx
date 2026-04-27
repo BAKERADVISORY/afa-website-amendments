@@ -1,9 +1,9 @@
-import { X } from 'lucide-react';
+import { X } from 'lucide-react'
 
 interface FeatureRow {
-  feature: string;
-  ourValue: string;
-  traditionalValue: string;
+  feature: string
+  ourValue: string
+  traditionalValue: string
 }
 
 const featureRows: FeatureRow[] = [
@@ -37,13 +37,15 @@ const featureRows: FeatureRow[] = [
     ourValue: 'Fixed-fee known in advance',
     traditionalValue: 'Costs drawn from company assets and time',
   },
-];
+]
 
 export function ComparisonSection() {
   return (
     <section style={{ backgroundColor: '#FFFFFF', padding: '80px 0' }}>
       {/* Header */}
-      <div style={{ textAlign: 'center', marginBottom: '48px', padding: '0 32px' }}>
+      <div
+        style={{ textAlign: 'center', marginBottom: '48px', padding: '0 32px' }}
+      >
         <p
           style={{
             fontSize: 12,
@@ -65,8 +67,7 @@ export function ComparisonSection() {
             margin: '0 0 16px 0',
           }}
         >
-          Why engage{' '}
-          <span style={{ color: '#333333' }}>with us?</span>
+          Why engage <span style={{ color: '#333333' }}>with us?</span>
         </h2>
         <p
           style={{
@@ -76,7 +77,8 @@ export function ComparisonSection() {
             marginBottom: 0,
           }}
         >
-          See how Australian Financial Advisory&apos;s pre-insolvency approach compares to traditional insolvency firms
+          See how Australian Financial Advisory&apos;s pre-insolvency approach
+          compares to traditional insolvency firms
         </p>
       </div>
 
@@ -106,8 +108,7 @@ export function ComparisonSection() {
           </span>
           <span style={{ color: '#FFFFFF', fontWeight: 700, fontSize: 15 }}>
             Australian Financial Advisory{' '}
-            <span style={{ color: '#cccccc' }}>VS</span>{' '}
-            (Pre-Insolvency)
+            <span style={{ color: '#cccccc' }}>VS</span> (Pre-Insolvency)
           </span>
           <span style={{ color: '#FFFFFF', fontWeight: 700, fontSize: 15 }}>
             Traditional Insolvency Firm
@@ -151,7 +152,9 @@ export function ComparisonSection() {
                 >
                   afa
                 </span>
-                <span style={{ color: '#333333', fontSize: 14 }}>{row.ourValue}</span>
+                <span style={{ color: '#333333', fontSize: 14 }}>
+                  {row.ourValue}
+                </span>
               </div>
             </div>
 
@@ -162,7 +165,9 @@ export function ComparisonSection() {
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
                 <X size={16} color="#EF4444" style={{ flexShrink: 0 }} />
-                <span style={{ color: '#666', fontSize: 14 }}>{row.traditionalValue}</span>
+                <span style={{ color: '#666', fontSize: 14 }}>
+                  {row.traditionalValue}
+                </span>
               </div>
             </div>
           </div>
@@ -180,17 +185,25 @@ export function ComparisonSection() {
             borderTop: '3px solid #333333',
           }}
         >
-          <div style={{ fontWeight: 700, color: '#111111', fontSize: 18, whiteSpace: 'nowrap' }}>
+          <div
+            style={{
+              fontWeight: 700,
+              color: '#111111',
+              fontSize: 18,
+              whiteSpace: 'nowrap',
+            }}
+          >
             The Key Difference
           </div>
           <div style={{ fontSize: 15, color: '#444', lineHeight: 1.6 }}>
-            Traditional insolvency firms are appointed after your business has failed and work for
-            creditors. Australian Financial Advisory works before formal insolvency processes begin,
-            representing your interests as the business owner to help you navigate challenges and
+            Traditional insolvency firms are appointed after your business has
+            failed and work for creditors. Australian Financial Advisory works
+            before formal insolvency processes begin, representing your
+            interests as the business owner to help you navigate challenges and
             protect your position.
           </div>
         </div>
       </div>
     </section>
-  );
+  )
 }

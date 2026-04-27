@@ -1,7 +1,13 @@
-import type { Metadata } from 'next';
-import { NavBar } from '@/components/NavBar';
-import { Footer } from '@/components/Footer';
-import { ChevronRight, FileText, Users, Search, TrendingDown } from 'lucide-react';
+import type { Metadata } from 'next'
+import { NavBar } from '@/components/NavBar'
+import { Footer } from '@/components/Footer'
+import {
+  ChevronRight,
+  FileText,
+  Users,
+  Search,
+  TrendingDown,
+} from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Reduce ATO Debt & Creditor Pressure | Australian Financial Advisory',
@@ -11,14 +17,21 @@ export const metadata: Metadata = {
     canonical: 'https://www.ausfinancialadvisory.com.au/reduce-debt/',
   },
   openGraph: {
-    title: 'Reduce ATO Debt & Creditor Pressure | Australian Financial Advisory',
+    title:
+      'Reduce ATO Debt & Creditor Pressure | Australian Financial Advisory',
     description:
       'Early negotiation protects your business and personal assets. We assess your options and refer you to the right specialist to execute the strategy.',
     url: 'https://www.ausfinancialadvisory.com.au/reduce-debt/',
   },
-};
+}
 
-function SectionLabel({ text, light = false }: { text: string; light?: boolean }) {
+function SectionLabel({
+  text,
+  light = false,
+}: {
+  text: string
+  light?: boolean
+}) {
   return (
     <p
       style={{
@@ -31,7 +44,7 @@ function SectionLabel({ text, light = false }: { text: string; light?: boolean }
     >
       {text}
     </p>
-  );
+  )
 }
 
 export default function ReduceDebtPage() {
@@ -39,7 +52,6 @@ export default function ReduceDebtPage() {
     <>
       <NavBar />
       <main style={{ paddingTop: 80 }}>
-
         {/* Hero */}
         <section
           style={{
@@ -105,9 +117,9 @@ export default function ReduceDebtPage() {
                 marginBottom: 36,
               }}
             >
-              When ATO debt and creditor pressure is mounting, early negotiation is your most
-              powerful tool. Every day without action increases your exposure — and narrows your
-              options.
+              When ATO debt and creditor pressure is mounting, early negotiation
+              is your most powerful tool. Every day without action increases
+              your exposure — and narrows your options.
             </p>
             <a
               href="/#contact"
@@ -146,10 +158,18 @@ export default function ReduceDebtPage() {
               >
                 An Independent Review of Your Full Financial Position
               </h2>
-              <p style={{ fontSize: 16, color: '#555555', lineHeight: 1.75, margin: 0 }}>
-                Before you approach the ATO or any creditor, you need to know exactly where you
-                stand. We provide an independent assessment of your situation — so you negotiate from
-                a position of knowledge, not panic.
+              <p
+                style={{
+                  fontSize: 16,
+                  color: '#555555',
+                  lineHeight: 1.75,
+                  margin: 0,
+                }}
+              >
+                Before you approach the ATO or any creditor, you need to know
+                exactly where you stand. We provide an independent assessment of
+                your situation — so you negotiate from a position of knowledge,
+                not panic.
               </p>
             </div>
 
@@ -208,10 +228,24 @@ export default function ReduceDebtPage() {
                   >
                     <Icon size={20} color="#ffffff" />
                   </div>
-                  <h3 style={{ fontSize: 17, fontWeight: 700, color: '#111111', margin: 0 }}>
+                  <h3
+                    style={{
+                      fontSize: 17,
+                      fontWeight: 700,
+                      color: '#111111',
+                      margin: 0,
+                    }}
+                  >
                     {heading}
                   </h3>
-                  <p style={{ fontSize: 14, color: '#555555', lineHeight: 1.65, margin: 0 }}>
+                  <p
+                    style={{
+                      fontSize: 14,
+                      color: '#555555',
+                      lineHeight: 1.65,
+                      margin: 0,
+                    }}
+                  >
                     {body}
                   </p>
                 </div>
@@ -230,7 +264,9 @@ export default function ReduceDebtPage() {
               >
                 What You Need to Know
               </h3>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+              <div
+                style={{ display: 'flex', flexDirection: 'column', gap: 14 }}
+              >
                 {[
                   'The ATO will negotiate — but only if you approach them correctly and early. An unguided approach often results in worse outcomes.',
                   'Creditors would often rather settle than pursue — we help you understand your leverage and what a realistic outcome looks like.',
@@ -266,7 +302,14 @@ export default function ReduceDebtPage() {
                     >
                       ✓
                     </span>
-                    <p style={{ fontSize: 15, color: '#444444', lineHeight: 1.6, margin: 0 }}>
+                    <p
+                      style={{
+                        fontSize: 15,
+                        color: '#444444',
+                        lineHeight: 1.6,
+                        margin: 0,
+                      }}
+                    >
                       {msg}
                     </p>
                   </div>
@@ -278,11 +321,22 @@ export default function ReduceDebtPage() {
 
         {/* Disclaimer */}
         <section style={{ backgroundColor: '#ffffff', padding: '24px 0' }}>
-          <p style={{ maxWidth: 800, margin: '0 auto', padding: '0 32px', fontSize: 12, color: '#888888', lineHeight: 1.7, textAlign: 'center' }}>
-            The information on this page is general in nature and does not constitute legal,
-            financial, or insolvency advice. Australian Financial Advisory Pty Ltd provides
-            assessment and advisory services only. All specialist services are referred to
-            appropriately licensed partners. You should seek independent professional advice before
+          <p
+            style={{
+              maxWidth: 800,
+              margin: '0 auto',
+              padding: '0 32px',
+              fontSize: 12,
+              color: '#888888',
+              lineHeight: 1.7,
+              textAlign: 'center',
+            }}
+          >
+            The information on this page is general in nature and does not
+            constitute legal, financial, or insolvency advice. Australian
+            Financial Advisory Pty Ltd provides assessment and advisory services
+            only. All specialist services are referred to appropriately licensed
+            partners. You should seek independent professional advice before
             acting on any information on this page.
           </p>
         </section>
@@ -317,9 +371,9 @@ export default function ReduceDebtPage() {
                 marginBottom: 36,
               }}
             >
-              The earlier you act, the more options you have. The discovery call is free,
-              confidential, and carries no obligation. Let&apos;s work out what your best path
-              forward looks like.
+              The earlier you act, the more options you have. The discovery call
+              is free, confidential, and carries no obligation. Let&apos;s work
+              out what your best path forward looks like.
             </p>
             <a
               href="/#contact"
@@ -350,7 +404,6 @@ export default function ReduceDebtPage() {
             </p>
           </div>
         </section>
-
       </main>
       <Footer />
 
@@ -362,5 +415,5 @@ export default function ReduceDebtPage() {
         }
       `}</style>
     </>
-  );
+  )
 }

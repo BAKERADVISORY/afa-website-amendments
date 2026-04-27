@@ -19,13 +19,30 @@ import { CTABanner } from '@/components/CTABanner'
 import { Footer } from '@/components/Footer'
 import { Users, Target, ShieldCheck, Star } from 'lucide-react'
 
-function PlaceholderImage({ height = 400, label = 'Image' }: { height?: number; label?: string }) {
+function PlaceholderImage({
+  height = 400,
+  label = 'Image',
+}: {
+  height?: number
+  label?: string
+}) {
   return (
-    <div style={{
-      width: '100%', height, backgroundColor: '#D1D5DB', borderRadius: 12,
-      display: 'flex', alignItems: 'center', justifyContent: 'center',
-      color: '#9CA3AF', fontSize: 14, fontWeight: 500
-    }}>{label}</div>
+    <div
+      style={{
+        width: '100%',
+        height,
+        backgroundColor: '#D1D5DB',
+        borderRadius: 12,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        color: '#9CA3AF',
+        fontSize: 14,
+        fontWeight: 500,
+      }}
+    >
+      {label}
+    </div>
   )
 }
 
@@ -34,46 +51,62 @@ export default function AboutPage() {
     <>
       <NavBar />
       <main>
-
         {/* Hero Section */}
-        <section style={{
-          backgroundColor: '#111111',
-          paddingTop: 160,
-          paddingBottom: 80,
-          paddingLeft: 80,
-          paddingRight: 80,
-          position: 'relative',
-          overflow: 'hidden',
-        }}>
-          <div style={{ maxWidth: 1400, margin: '0 auto', position: 'relative', zIndex: 1 }}>
-            <p style={{
-              color: '#ffffff',
-              fontSize: 12,
-              fontWeight: 700,
-              letterSpacing: 3,
-              textTransform: 'uppercase',
-              marginBottom: 16,
-            }}>
+        <section
+          style={{
+            backgroundColor: '#111111',
+            paddingTop: 160,
+            paddingBottom: 80,
+            paddingLeft: 80,
+            paddingRight: 80,
+            position: 'relative',
+            overflow: 'hidden',
+          }}
+        >
+          <div
+            style={{
+              maxWidth: 1400,
+              margin: '0 auto',
+              position: 'relative',
+              zIndex: 1,
+            }}
+          >
+            <p
+              style={{
+                color: '#ffffff',
+                fontSize: 12,
+                fontWeight: 700,
+                letterSpacing: 3,
+                textTransform: 'uppercase',
+                marginBottom: 16,
+              }}
+            >
               About Us
             </p>
-            <h1 style={{
-              color: '#FFFFFF',
-              fontSize: 52,
-              fontWeight: 700,
-              marginBottom: 24,
-              lineHeight: 1.15,
-              maxWidth: 700,
-            }}>
+            <h1
+              style={{
+                color: '#FFFFFF',
+                fontSize: 52,
+                fontWeight: 700,
+                marginBottom: 24,
+                lineHeight: 1.15,
+                maxWidth: 700,
+              }}
+            >
               Expert Business Advisory Team
             </h1>
-            <p style={{
-              color: 'rgba(255,255,255,0.70)',
-              fontSize: 18,
-              lineHeight: 1.6,
-              maxWidth: 600,
-              marginBottom: 36,
-            }}>
-              We&apos;ve been helping businesses navigate their most challenging financial and strategic decisions with expertise, integrity, and proven results.
+            <p
+              style={{
+                color: 'rgba(255,255,255,0.70)',
+                fontSize: 18,
+                lineHeight: 1.6,
+                maxWidth: 600,
+                marginBottom: 36,
+              }}
+            >
+              We&apos;ve been helping businesses navigate their most challenging
+              financial and strategic decisions with expertise, integrity, and
+              proven results.
             </p>
             <a
               href="#contact"
@@ -92,9 +125,25 @@ export default function AboutPage() {
             </a>
           </div>
           {/* Wave divider */}
-          <div style={{ position: 'absolute', bottom: -1, left: '-35%', width: '171%', height: 100, overflow: 'visible' }}>
-            <svg viewBox="0 0 1440 100" preserveAspectRatio="none" style={{ width: '100%', height: '100%' }}>
-              <path d="M0,50 C360,100 1080,0 1440,50 L1440,100 L0,100 Z" fill="#ffffff" />
+          <div
+            style={{
+              position: 'absolute',
+              bottom: -1,
+              left: '-35%',
+              width: '171%',
+              height: 100,
+              overflow: 'visible',
+            }}
+          >
+            <svg
+              viewBox="0 0 1440 100"
+              preserveAspectRatio="none"
+              style={{ width: '100%', height: '100%' }}
+            >
+              <path
+                d="M0,50 C360,100 1080,0 1440,50 L1440,100 L0,100 Z"
+                fill="#ffffff"
+              />
             </svg>
           </div>
         </section>
@@ -102,38 +151,75 @@ export default function AboutPage() {
         {/* Who We Are Section */}
         <section style={{ backgroundColor: '#FFFFFF', padding: '80px 0' }}>
           <div style={{ maxWidth: 1400, margin: '0 auto', padding: '0 32px' }}>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center' }}>
-
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: '1fr 1fr',
+                gap: 64,
+                alignItems: 'center',
+              }}
+            >
               {/* Left text */}
               <div>
-                <p style={{
-                  color: '#333333',
-                  fontSize: 12,
-                  fontWeight: 700,
-                  letterSpacing: 3,
-                  textTransform: 'uppercase',
-                  marginBottom: 16,
-                }}>
+                <p
+                  style={{
+                    color: '#333333',
+                    fontSize: 12,
+                    fontWeight: 700,
+                    letterSpacing: 3,
+                    textTransform: 'uppercase',
+                    marginBottom: 16,
+                  }}
+                >
                   Who We Are
                 </p>
-                <h2 style={{
-                  color: '#383838',
-                  fontSize: 38,
-                  fontWeight: 700,
-                  lineHeight: 1.2,
-                  marginBottom: 24,
-                }}>
+                <h2
+                  style={{
+                    color: '#383838',
+                    fontSize: 38,
+                    fontWeight: 700,
+                    lineHeight: 1.2,
+                    marginBottom: 24,
+                  }}
+                >
                   Dedicated to Your Business Success
                 </h2>
-                <p style={{ color: '#666666', fontSize: 16, lineHeight: 1.7, marginBottom: 16 }}>
-                  Australian Financial Advisory Pty Ltd is a specialist advisory firm helping Australian businesses navigate complex financial challenges. Our team of experienced practitioners brings deep expertise in insolvency law, business restructuring, and strategic financial management.
+                <p
+                  style={{
+                    color: '#666666',
+                    fontSize: 16,
+                    lineHeight: 1.7,
+                    marginBottom: 16,
+                  }}
+                >
+                  Australian Financial Advisory Pty Ltd is a specialist advisory
+                  firm helping Australian businesses navigate complex financial
+                  challenges. Our team of experienced practitioners brings deep
+                  expertise in insolvency law, business restructuring, and
+                  strategic financial management.
                 </p>
-                <p style={{ color: '#666666', fontSize: 16, lineHeight: 1.7, marginBottom: 40 }}>
-                  We work closely with business owners, directors, and key stakeholders to develop tailored solutions that protect value, preserve jobs, and achieve the best possible outcomes for all parties involved.
+                <p
+                  style={{
+                    color: '#666666',
+                    fontSize: 16,
+                    lineHeight: 1.7,
+                    marginBottom: 40,
+                  }}
+                >
+                  We work closely with business owners, directors, and key
+                  stakeholders to develop tailored solutions that protect value,
+                  preserve jobs, and achieve the best possible outcomes for all
+                  parties involved.
                 </p>
 
                 {/* Stats row */}
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 16 }}>
+                <div
+                  style={{
+                    display: 'grid',
+                    gridTemplateColumns: '1fr 1fr 1fr',
+                    gap: 16,
+                  }}
+                >
                   {[
                     { value: '500+', label: 'Businesses Helped' },
                     { value: '15+', label: 'Years Experience' },
@@ -148,8 +234,21 @@ export default function AboutPage() {
                         textAlign: 'center',
                       }}
                     >
-                      <div style={{ color: '#333333', fontSize: 28, fontWeight: 700, lineHeight: 1 }}>{stat.value}</div>
-                      <div style={{ color: '#666666', fontSize: 13, marginTop: 6 }}>{stat.label}</div>
+                      <div
+                        style={{
+                          color: '#333333',
+                          fontSize: 28,
+                          fontWeight: 700,
+                          lineHeight: 1,
+                        }}
+                      >
+                        {stat.value}
+                      </div>
+                      <div
+                        style={{ color: '#666666', fontSize: 13, marginTop: 6 }}
+                      >
+                        {stat.label}
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -167,10 +266,27 @@ export default function AboutPage() {
         <section style={{ backgroundColor: '#f5f5f5', padding: '80px 0' }}>
           <div style={{ maxWidth: 1400, margin: '0 auto', padding: '0 32px' }}>
             <div style={{ textAlign: 'center', marginBottom: 56 }}>
-              <h2 style={{ color: '#111111', fontSize: 38, fontWeight: 700, marginBottom: 12 }}>Our Core Values</h2>
-              <p style={{ color: '#666666', fontSize: 17 }}>The principles that guide everything we do</p>
+              <h2
+                style={{
+                  color: '#111111',
+                  fontSize: 38,
+                  fontWeight: 700,
+                  marginBottom: 12,
+                }}
+              >
+                Our Core Values
+              </h2>
+              <p style={{ color: '#666666', fontSize: 17 }}>
+                The principles that guide everything we do
+              </p>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 28 }}>
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: '1fr 1fr 1fr',
+                gap: 28,
+              }}
+            >
               {[
                 {
                   icon: <ShieldCheck size={36} color="#333333" />,
@@ -198,8 +314,21 @@ export default function AboutPage() {
                   }}
                 >
                   <div style={{ marginBottom: 20 }}>{card.icon}</div>
-                  <h3 style={{ color: '#111111', fontSize: 20, fontWeight: 700, marginBottom: 12 }}>{card.title}</h3>
-                  <p style={{ color: '#666666', fontSize: 15, lineHeight: 1.7 }}>{card.desc}</p>
+                  <h3
+                    style={{
+                      color: '#111111',
+                      fontSize: 20,
+                      fontWeight: 700,
+                      marginBottom: 12,
+                    }}
+                  >
+                    {card.title}
+                  </h3>
+                  <p
+                    style={{ color: '#666666', fontSize: 15, lineHeight: 1.7 }}
+                  >
+                    {card.desc}
+                  </p>
                 </div>
               ))}
             </div>
@@ -209,30 +338,73 @@ export default function AboutPage() {
         {/* Our Expertise Section */}
         <section style={{ backgroundColor: '#111111', padding: '80px 0' }}>
           <div style={{ maxWidth: 1400, margin: '0 auto', padding: '0 32px' }}>
-            <p style={{
-              color: '#ffffff',
-              fontSize: 12,
-              fontWeight: 700,
-              letterSpacing: 3,
-              textTransform: 'uppercase',
-              marginBottom: 16,
-            }}>
+            <p
+              style={{
+                color: '#ffffff',
+                fontSize: 12,
+                fontWeight: 700,
+                letterSpacing: 3,
+                textTransform: 'uppercase',
+                marginBottom: 16,
+              }}
+            >
               Our Expertise
             </p>
-            <h2 style={{ color: '#FFFFFF', fontSize: 38, fontWeight: 700, marginBottom: 16, maxWidth: 600 }}>
+            <h2
+              style={{
+                color: '#FFFFFF',
+                fontSize: 38,
+                fontWeight: 700,
+                marginBottom: 16,
+                maxWidth: 600,
+              }}
+            >
               Comprehensive Financial Advisory Services
             </h2>
-            <p style={{ color: 'rgba(255,255,255,0.70)', fontSize: 17, lineHeight: 1.6, marginBottom: 48, maxWidth: 560 }}>
-              Our team of specialists provides expert guidance across the full spectrum of financial advisory services.
+            <p
+              style={{
+                color: 'rgba(255,255,255,0.70)',
+                fontSize: 17,
+                lineHeight: 1.6,
+                marginBottom: 48,
+                maxWidth: 560,
+              }}
+            >
+              Our team of specialists provides expert guidance across the full
+              spectrum of financial advisory services.
             </p>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: '1fr 1fr',
+                gap: 24,
+              }}
+            >
               {[
-                { title: 'Solvency Advice', desc: 'Expert guidance on your company\'s solvency position and obligations' },
-                { title: 'Debt Negotiation', desc: 'Strategic negotiations with creditors to achieve sustainable outcomes' },
-                { title: 'Business Restructuring', desc: 'Comprehensive restructuring solutions to revitalise your business' },
-                { title: 'Voluntary Administration', desc: 'Independent administration to assess and maximise business value' },
-                { title: 'Small Business Restructuring', desc: 'Formal SBR process to help viable small businesses recover' },
-                { title: 'Personal Insolvency', desc: 'Expert guidance through personal insolvency options and obligations' },
+                {
+                  title: 'Solvency Advice',
+                  desc: "Expert guidance on your company's solvency position and obligations",
+                },
+                {
+                  title: 'Debt Negotiation',
+                  desc: 'Strategic negotiations with creditors to achieve sustainable outcomes',
+                },
+                {
+                  title: 'Business Restructuring',
+                  desc: 'Comprehensive restructuring solutions to revitalise your business',
+                },
+                {
+                  title: 'Voluntary Administration',
+                  desc: 'Independent administration to assess and maximise business value',
+                },
+                {
+                  title: 'Small Business Restructuring',
+                  desc: 'Formal SBR process to help viable small businesses recover',
+                },
+                {
+                  title: 'Personal Insolvency',
+                  desc: 'Expert guidance through personal insolvency options and obligations',
+                },
               ].map((item) => (
                 <div
                   key={item.title}
@@ -242,17 +414,36 @@ export default function AboutPage() {
                     alignItems: 'flex-start',
                   }}
                 >
-                  <div style={{
-                    width: 8,
-                    height: 8,
-                    borderRadius: '50%',
-                    backgroundColor: '#333333',
-                    marginTop: 6,
-                    flexShrink: 0,
-                  }} />
+                  <div
+                    style={{
+                      width: 8,
+                      height: 8,
+                      borderRadius: '50%',
+                      backgroundColor: '#333333',
+                      marginTop: 6,
+                      flexShrink: 0,
+                    }}
+                  />
                   <div>
-                    <h3 style={{ color: '#FFFFFF', fontSize: 17, fontWeight: 700, marginBottom: 6 }}>{item.title}</h3>
-                    <p style={{ color: 'rgba(255,255,255,0.65)', fontSize: 15, lineHeight: 1.6 }}>{item.desc}</p>
+                    <h3
+                      style={{
+                        color: '#FFFFFF',
+                        fontSize: 17,
+                        fontWeight: 700,
+                        marginBottom: 6,
+                      }}
+                    >
+                      {item.title}
+                    </h3>
+                    <p
+                      style={{
+                        color: 'rgba(255,255,255,0.65)',
+                        fontSize: 15,
+                        lineHeight: 1.6,
+                      }}
+                    >
+                      {item.desc}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -261,25 +452,57 @@ export default function AboutPage() {
         </section>
 
         {/* Testimonial Section */}
-        <section style={{ backgroundColor: '#FFFFFF', padding: '80px 0', textAlign: 'center' }}>
+        <section
+          style={{
+            backgroundColor: '#FFFFFF',
+            padding: '80px 0',
+            textAlign: 'center',
+          }}
+        >
           <div style={{ maxWidth: 800, margin: '0 auto', padding: '0 32px' }}>
             {/* Quote icon */}
             <div style={{ marginBottom: 24 }}>
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z" fill="#333333" />
-                <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z" fill="#333333" />
+              <svg
+                width="48"
+                height="48"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"
+                  fill="#333333"
+                />
+                <path
+                  d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"
+                  fill="#333333"
+                />
               </svg>
             </div>
-            <p style={{
-              color: '#383838',
-              fontSize: 19,
-              lineHeight: 1.75,
-              fontStyle: 'italic',
-              marginBottom: 28,
-            }}>
-              &ldquo;Australian Financial Advisory helped us navigate a very challenging period with clarity and confidence. Their advice was strategic, practical, and tailored to our specific situation. What stood out most was their ability to simplify complex financial decisions and provide a clear path forward. We felt supported at every step.&rdquo;
+            <p
+              style={{
+                color: '#383838',
+                fontSize: 19,
+                lineHeight: 1.75,
+                fontStyle: 'italic',
+                marginBottom: 28,
+              }}
+            >
+              &ldquo;Australian Financial Advisory helped us navigate a very
+              challenging period with clarity and confidence. Their advice was
+              strategic, practical, and tailored to our specific situation. What
+              stood out most was their ability to simplify complex financial
+              decisions and provide a clear path forward. We felt supported at
+              every step.&rdquo;
             </p>
-            <p style={{ color: '#666666', fontSize: 15, fontWeight: 600, marginBottom: 12 }}>
+            <p
+              style={{
+                color: '#666666',
+                fontSize: 15,
+                fontWeight: 600,
+                marginBottom: 12,
+              }}
+            >
               &mdash; Business Owner, Construction Industry
             </p>
             {/* Stars */}

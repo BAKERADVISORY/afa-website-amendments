@@ -10,10 +10,10 @@ Date: 2026-04-11
 
 Three internal links pointed to pages that did not exist. All three now have pages:
 
-| Page | Status |
-|------|--------|
-| `/blog/` | Created — placeholder "coming soon" page |
-| `/privacy-policy/` | Created — placeholder Privacy Policy |
+| Page                         | Status                                   |
+| ---------------------------- | ---------------------------------------- |
+| `/blog/`                     | Created — placeholder "coming soon" page |
+| `/privacy-policy/`           | Created — placeholder Privacy Policy     |
 | `/website-terms-conditions/` | Created — placeholder Terms & Conditions |
 
 ---
@@ -22,12 +22,12 @@ Three internal links pointed to pages that did not exist. All three now have pag
 
 **Fixed.** All references to Wynn / Wynn Advisory / wynnadvisory removed.
 
-| File | What changed |
-|------|-------------|
-| `src/app/layout.tsx` | Title, OG title, Twitter title, OG siteName, OG image alt, JSON-LD alternateName, JSON-LD sameAs URL, JSON-LD WebSite name |
-| `src/components/ComparisonSection.tsx` | `wynnValue` property renamed to `ourValue`; "wynn advisory" label text; "wa" badge abbreviation changed to "afa" |
-| `src/components/Footer.tsx` | LinkedIn href changed from `wynn-advisory` company URL to `australian-financial-advisory` |
-| `src/components/WhyChooseSection.tsx` | "wynn advisory" section label; "WA" background watermark changed to "AFA" |
+| File                                   | What changed                                                                                                               |
+| -------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| `src/app/layout.tsx`                   | Title, OG title, Twitter title, OG siteName, OG image alt, JSON-LD alternateName, JSON-LD sameAs URL, JSON-LD WebSite name |
+| `src/components/ComparisonSection.tsx` | `wynnValue` property renamed to `ourValue`; "wynn advisory" label text; "wa" badge abbreviation changed to "afa"           |
+| `src/components/Footer.tsx`            | LinkedIn href changed from `wynn-advisory` company URL to `australian-financial-advisory`                                  |
+| `src/components/WhyChooseSection.tsx`  | "wynn advisory" section label; "WA" background watermark changed to "AFA"                                                  |
 
 ---
 
@@ -37,12 +37,12 @@ Three internal links pointed to pages that did not exist. All three now have pag
 
 These are grey placeholder boxes (grey rectangles with a label) sitting in page layouts. Each needs a real photo before the site goes live.
 
-| File | Component | Label | Notes |
-|------|-----------|-------|-------|
-| `src/app/about/page.tsx` line 160 | `PlaceholderImage` | "Team Photo" | Right column of the stats section on the About page. Replace with a real team photo. |
-| `src/app/close-company/page.tsx` line 182 | `PlaceholderImage` | "Company Closure" | Right column of the hero content section. Replace with a relevant image. |
-| `src/app/services/creditors-voluntary-liquidation/page.tsx` line 334 | `PlaceholderImage` | "CVL Benefits" | Right column of the benefits section. Replace with a relevant image. |
-| `src/app/services/page.tsx` line 252 | Inline div (40x40 teal square) | Icon placeholder | Each service card has a solid teal square in place of an icon or illustration. Replace with an actual icon or SVG. |
+| File                                                                 | Component                      | Label             | Notes                                                                                                              |
+| -------------------------------------------------------------------- | ------------------------------ | ----------------- | ------------------------------------------------------------------------------------------------------------------ |
+| `src/app/about/page.tsx` line 160                                    | `PlaceholderImage`             | "Team Photo"      | Right column of the stats section on the About page. Replace with a real team photo.                               |
+| `src/app/close-company/page.tsx` line 182                            | `PlaceholderImage`             | "Company Closure" | Right column of the hero content section. Replace with a relevant image.                                           |
+| `src/app/services/creditors-voluntary-liquidation/page.tsx` line 334 | `PlaceholderImage`             | "CVL Benefits"    | Right column of the benefits section. Replace with a relevant image.                                               |
+| `src/app/services/page.tsx` line 252                                 | Inline div (40x40 teal square) | Icon placeholder  | Each service card has a solid teal square in place of an icon or illustration. Replace with an actual icon or SVG. |
 
 ---
 

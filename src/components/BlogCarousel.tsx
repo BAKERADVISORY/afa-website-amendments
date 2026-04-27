@@ -4,11 +4,33 @@ import { useState } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 const posts = [
-  { title: 'Reduce company debt NSW with expert business advice', img: '/images/blog/reduce-company-debt-nsw.webp', href: '/reduce-company-debt-nsw/' },
-  { title: 'Closing a business with debt Australia — What directors need to know', img: '/images/blog/closing-business-with-debt.webp', href: '/closing-a-business-with-debt-australia/' },
-  { title: 'How to restructure a small business Australia with expert guidance', img: '/images/blog/how-to-restructure.webp', href: '/how-to-restructure-a-small-business-australia/' },
-  { title: 'How to fix business cash flow problems Australia', img: '/images/blog/fix-cash-flow.webp', href: '/how-to-fix-business-cash-flow-problems-australia/' },
-  { title: 'Company bankruptcy vs liquidation Australia — What directors need to know', img: '/images/blog/bankruptcy-vs-liquidation.webp', href: '/company-bankruptcy-vs-liquidation-australia/' },
+  {
+    title: 'Reduce company debt NSW with expert business advice',
+    img: '/images/blog/reduce-company-debt-nsw.webp',
+    href: '/reduce-company-debt-nsw/',
+  },
+  {
+    title:
+      'Closing a business with debt Australia — What directors need to know',
+    img: '/images/blog/closing-business-with-debt.webp',
+    href: '/closing-a-business-with-debt-australia/',
+  },
+  {
+    title: 'How to restructure a small business Australia with expert guidance',
+    img: '/images/blog/how-to-restructure.webp',
+    href: '/how-to-restructure-a-small-business-australia/',
+  },
+  {
+    title: 'How to fix business cash flow problems Australia',
+    img: '/images/blog/fix-cash-flow.webp',
+    href: '/how-to-fix-business-cash-flow-problems-australia/',
+  },
+  {
+    title:
+      'Company bankruptcy vs liquidation Australia — What directors need to know',
+    img: '/images/blog/bankruptcy-vs-liquidation.webp',
+    href: '/company-bankruptcy-vs-liquidation-australia/',
+  },
 ]
 
 export function BlogCarousel() {
@@ -30,11 +52,27 @@ export function BlogCarousel() {
   return (
     <section style={{ backgroundColor: '#FFFFFF', padding: '80px 0' }}>
       <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 32px' }}>
-        <h2 style={{ fontSize: 38, fontWeight: 700, color: '#383838', textAlign: 'center', marginBottom: 48, margin: '0 0 48px' }}>
+        <h2
+          style={{
+            fontSize: 38,
+            fontWeight: 700,
+            color: '#383838',
+            textAlign: 'center',
+            marginBottom: 48,
+            margin: '0 0 48px',
+          }}
+        >
           Latest from our <span style={{ color: '#ffffff' }}>Blog</span>
         </h2>
 
-        <div style={{ position: 'relative', display: 'flex', alignItems: 'center', gap: 16 }}>
+        <div
+          style={{
+            position: 'relative',
+            display: 'flex',
+            alignItems: 'center',
+            gap: 16,
+          }}
+        >
           {/* Prev button */}
           <button
             onClick={handlePrev}
@@ -82,16 +120,23 @@ export function BlogCarousel() {
                   transition: 'box-shadow 0.2s',
                 }}
                 onMouseEnter={(e) => {
-                  ;(e.currentTarget as HTMLAnchorElement).style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)'
+                  ;(e.currentTarget as HTMLAnchorElement).style.boxShadow =
+                    '0 4px 20px rgba(0,0,0,0.1)'
                 }}
                 onMouseLeave={(e) => {
-                  ;(e.currentTarget as HTMLAnchorElement).style.boxShadow = 'none'
+                  ;(e.currentTarget as HTMLAnchorElement).style.boxShadow =
+                    'none'
                 }}
               >
                 <img
                   src={post.img}
                   alt={post.title}
-                  style={{ width: '100%', aspectRatio: '16/9', objectFit: 'cover', display: 'block' }}
+                  style={{
+                    width: '100%',
+                    aspectRatio: '16/9',
+                    objectFit: 'cover',
+                    display: 'block',
+                  }}
                 />
                 <div
                   style={{

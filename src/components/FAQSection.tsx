@@ -1,10 +1,10 @@
-'use client';
+'use client'
 
-import { useState } from 'react';
+import { useState } from 'react'
 
 interface FAQItem {
-  question: string;
-  answer: string;
+  question: string
+  answer: string
 }
 
 const faqItems: FAQItem[] = [
@@ -28,24 +28,37 @@ const faqItems: FAQItem[] = [
     answer:
       'No. Liquidation is a last resort, and we make that clear from the outset. We explore every alternative first — ATO payment plans, creditor negotiations, small business restructuring, and more. Formal insolvency appointments appear permanently on company records. We help you avoid that wherever possible.',
   },
-];
+]
 
 export function FAQSection() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   const toggle = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
+    setOpenIndex(openIndex === index ? null : index)
+  }
 
   return (
     <section style={{ backgroundColor: '#FFFFFF', padding: '80px 0' }}>
       {/* Header */}
       <div style={{ textAlign: 'center', marginBottom: 48, padding: '0 32px' }}>
-        <h2 style={{ fontSize: 38, fontWeight: 700, color: '#111111', margin: '0 0 16px 0' }}>
-          Frequently{' '}
-          <span style={{ color: '#333333' }}>Asked Questions</span>
+        <h2
+          style={{
+            fontSize: 38,
+            fontWeight: 700,
+            color: '#111111',
+            margin: '0 0 16px 0',
+          }}
+        >
+          Frequently <span style={{ color: '#333333' }}>Asked Questions</span>
         </h2>
-        <p style={{ fontSize: 16, color: '#666', textAlign: 'center', margin: 0 }}>
+        <p
+          style={{
+            fontSize: 16,
+            color: '#666',
+            textAlign: 'center',
+            margin: 0,
+          }}
+        >
           Common questions from business owners facing financial pressure.
         </p>
       </div>
@@ -66,7 +79,7 @@ export function FAQSection() {
         {/* Accordion */}
         <div>
           {faqItems.map((item, index) => {
-            const isOpen = openIndex === index;
+            const isOpen = openIndex === index
             return (
               <div
                 key={index}
@@ -75,7 +88,9 @@ export function FAQSection() {
                   borderRadius: 10,
                   marginBottom: 12,
                   overflow: 'hidden',
-                  borderLeft: isOpen ? '4px solid #111111' : '4px solid transparent',
+                  borderLeft: isOpen
+                    ? '4px solid #111111'
+                    : '4px solid transparent',
                   transition: 'border-color 0.2s ease',
                 }}
               >
@@ -93,7 +108,9 @@ export function FAQSection() {
                     textAlign: 'left',
                   }}
                 >
-                  <span style={{ fontSize: 15, fontWeight: 600, color: '#111111' }}>
+                  <span
+                    style={{ fontSize: 15, fontWeight: 600, color: '#111111' }}
+                  >
                     {item.question}
                   </span>
                   <span
@@ -109,12 +126,19 @@ export function FAQSection() {
                   </span>
                 </button>
                 {isOpen && (
-                  <div style={{ padding: '0 20px 18px', fontSize: 14, color: '#555', lineHeight: 1.75 }}>
+                  <div
+                    style={{
+                      padding: '0 20px 18px',
+                      fontSize: 14,
+                      color: '#555',
+                      lineHeight: 1.75,
+                    }}
+                  >
                     {item.answer}
                   </div>
                 )}
               </div>
-            );
+            )
           })}
         </div>
 
@@ -131,12 +155,26 @@ export function FAQSection() {
             alignItems: 'center',
           }}
         >
-          <h3 style={{ fontSize: 22, fontWeight: 700, color: '#FFFFFF', margin: 0 }}>
+          <h3
+            style={{
+              fontSize: 22,
+              fontWeight: 700,
+              color: '#FFFFFF',
+              margin: 0,
+            }}
+          >
             Still Have Questions?
           </h3>
-          <p style={{ fontSize: 15, color: 'rgba(255,255,255,0.7)', lineHeight: 1.6, margin: 0 }}>
-            Every situation is different. Talk to our team and get personalised advice for your
-            specific circumstances — no obligation.
+          <p
+            style={{
+              fontSize: 15,
+              color: 'rgba(255,255,255,0.7)',
+              lineHeight: 1.6,
+              margin: 0,
+            }}
+          >
+            Every situation is different. Talk to our team and get personalised
+            advice for your specific circumstances — no obligation.
           </p>
           <a
             href="#contact"
@@ -164,5 +202,5 @@ export function FAQSection() {
         }
       `}</style>
     </section>
-  );
+  )
 }

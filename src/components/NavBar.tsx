@@ -1,27 +1,61 @@
-'use client';
+'use client'
 
-import { useState } from 'react';
-import { ChevronRight, Menu, X } from 'lucide-react';
+import { useState } from 'react'
+import { ChevronRight, Menu, X } from 'lucide-react'
 
 const serviceLinks = [
   { text: 'Reduce Debt', href: '/reduce-debt/' },
   { text: 'Restructure Your Business', href: '/restructure-your-business/' },
-  { text: 'Administration & Liquidation', href: '/administration-and-liquidation/' },
+  {
+    text: 'Administration & Liquidation',
+    href: '/administration-and-liquidation/',
+  },
   { text: 'Credit Repair & Funding', href: '/credit-repair-and-funding/' },
-];
+]
 
 function AfaLogo() {
   return (
-    <svg width="200" viewBox="0 0 400 120" xmlns="http://www.w3.org/2000/svg" style={{ display: 'block' }}>
-      <rect x="0" y="0" width="400" height="120" fill="#111111"/>
-      <text x="200" y="78" textAnchor="middle" style={{ fontFamily: 'Barlow, Arial, sans-serif', fontWeight: 800, fontSize: '66px', fill: '#ffffff', letterSpacing: '-2px' }}>AFA</text>
-      <text x="200" y="96" textAnchor="middle" style={{ fontFamily: 'Barlow, Arial, sans-serif', fontWeight: 400, fontSize: '9px', fill: '#ffffff', letterSpacing: '3px' }}>AUSTRALIAN FINANCIAL ADVISORY</text>
+    <svg
+      width="400"
+      viewBox="0 0 400 120"
+      xmlns="http://www.w3.org/2000/svg"
+      style={{ display: 'block' }}
+    >
+      <rect x="0" y="0" width="400" height="120" fill="#111111" />
+      <text
+        x="200"
+        y="78"
+        textAnchor="middle"
+        style={{
+          fontFamily: 'Barlow, Arial, sans-serif',
+          fontWeight: 800,
+          fontSize: '66px',
+          fill: '#ffffff',
+          letterSpacing: '-2px',
+        }}
+      >
+        AFA
+      </text>
+      <text
+        x="200"
+        y="96"
+        textAnchor="middle"
+        style={{
+          fontFamily: 'Barlow, Arial, sans-serif',
+          fontWeight: 400,
+          fontSize: '9px',
+          fill: '#ffffff',
+          letterSpacing: '3px',
+        }}
+      >
+        AUSTRALIAN FINANCIAL ADVISORY
+      </text>
     </svg>
-  );
+  )
 }
 
 export function NavBar() {
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false)
 
   return (
     <header
@@ -50,12 +84,19 @@ export function NavBar() {
         }}
       >
         {/* Logo */}
-        <a href="/" aria-label="Australian Financial Advisory" style={{ display: 'block', flexShrink: 0 }}>
+        <a
+          href="/"
+          aria-label="Australian Financial Advisory"
+          style={{ display: 'block', flexShrink: 0 }}
+        >
           <AfaLogo />
         </a>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex" style={{ alignItems: 'center', gap: '4px' }}>
+        <nav
+          className="hidden md:flex"
+          style={{ alignItems: 'center', gap: '4px' }}
+        >
           {/* DPN Risk — styled with border, first position */}
           <a
             href="/director-penalty-notice"
@@ -71,8 +112,14 @@ export function NavBar() {
               whiteSpace: 'nowrap',
               transition: 'border-color 0.15s ease, color 0.15s ease',
             }}
-            onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.borderColor = '#ffffff'; }}
-            onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(255,255,255,0.5)'; }}
+            onMouseEnter={(e) => {
+              ;(e.currentTarget as HTMLAnchorElement).style.borderColor =
+                '#ffffff'
+            }}
+            onMouseLeave={(e) => {
+              ;(e.currentTarget as HTMLAnchorElement).style.borderColor =
+                'rgba(255,255,255,0.5)'
+            }}
           >
             DPN Risk
           </a>
@@ -90,8 +137,13 @@ export function NavBar() {
                 transition: 'color 0.15s ease',
                 whiteSpace: 'nowrap',
               }}
-              onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = '#ffffff'; }}
-              onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.7)'; }}
+              onMouseEnter={(e) => {
+                ;(e.currentTarget as HTMLAnchorElement).style.color = '#ffffff'
+              }}
+              onMouseLeave={(e) => {
+                ;(e.currentTarget as HTMLAnchorElement).style.color =
+                  'rgba(255,255,255,0.7)'
+              }}
             >
               {link.text}
             </a>
@@ -116,8 +168,14 @@ export function NavBar() {
             whiteSpace: 'nowrap',
             flexShrink: 0,
           }}
-          onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = '#cccccc'; }}
-          onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = '#ffffff'; }}
+          onMouseEnter={(e) => {
+            ;(e.currentTarget as HTMLAnchorElement).style.backgroundColor =
+              '#cccccc'
+          }}
+          onMouseLeave={(e) => {
+            ;(e.currentTarget as HTMLAnchorElement).style.backgroundColor =
+              '#ffffff'
+          }}
         >
           Get Started
           <ChevronRight size={16} />
@@ -128,7 +186,13 @@ export function NavBar() {
           className="md:hidden"
           onClick={() => setMobileOpen((prev) => !prev)}
           aria-label="Toggle menu"
-          style={{ background: 'none', border: 'none', color: '#FFFFFF', cursor: 'pointer', padding: '8px' }}
+          style={{
+            background: 'none',
+            border: 'none',
+            color: '#FFFFFF',
+            cursor: 'pointer',
+            padding: '8px',
+          }}
         >
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -204,5 +268,5 @@ export function NavBar() {
         </div>
       )}
     </header>
-  );
+  )
 }
