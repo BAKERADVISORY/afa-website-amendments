@@ -18,8 +18,8 @@ function AfaLogo() {
     <svg
       viewBox="0 0 400 120"
       xmlns="http://www.w3.org/2000/svg"
-      width="280"
-      style={{ maxHeight: '70px', width: 'auto', display: 'block' }}
+      width="560"
+      style={{ maxHeight: '100px', width: 'auto', display: 'block' }}
     >
       <rect x="0" y="0" width="400" height="120" fill="#1a1a3e" />
       <text
@@ -66,7 +66,7 @@ export function NavBar() {
         right: 0,
         zIndex: 50,
         backgroundColor: '#1a1a3e',
-        height: '90px',
+        height: '120px',
         overflow: 'hidden',
         display: 'flex',
         alignItems: 'center',
@@ -201,7 +201,7 @@ export function NavBar() {
           className="md:hidden"
           style={{
             position: 'absolute',
-            top: '90px',
+            top: '120px',
             left: 0,
             right: 0,
             backgroundColor: '#1a1a3e',
