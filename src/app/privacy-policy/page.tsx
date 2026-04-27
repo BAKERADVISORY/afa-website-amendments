@@ -220,50 +220,6 @@ export default function PrivacyPolicyPage() {
                 </div>
               </div>
             ))}
-
-            {/* Contact block */}
-            <div
-              style={{
-                backgroundColor: '#1a1a3e',
-                borderRadius: 12,
-                padding: '32px',
-                marginTop: 48,
-              }}
-            >
-              <h2
-                style={{
-                  fontSize: 20,
-                  fontWeight: 700,
-                  color: '#ffffff',
-                  marginBottom: 16,
-                  marginTop: 0,
-                }}
-              >
-                7. Contact Us
-              </h2>
-              <div
-                style={{
-                  fontSize: 15,
-                  color: 'rgba(255,255,255,0.85)',
-                  lineHeight: 2,
-                }}
-              >
-                <div style={{ fontWeight: 700, color: '#FFFFFF' }}>
-                  Australian Financial Advisory Proprietary Limited
-                </div>
-                <div>Directors: Jonathan Moy and Jason Baker</div>
-                <div>8A/215 Brisbane Rd, Biggera Waters QLD 4216</div>
-                <div>
-                  Email:{' '}
-                  <a
-                    href="mailto:info@australianfinancialadvisory.com.au"
-                    style={{ color: '#ffffff', textDecoration: 'none' }}
-                  >
-                    info@australianfinancialadvisory.com.au
-                  </a>
-                </div>
-              </div>
-            </div>
           </div>
         </section>
       </main>
