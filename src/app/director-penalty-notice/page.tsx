@@ -736,10 +736,8 @@ export default function DirectorPenaltyNoticePage() {
                 }}
               >
                 We offer a no-obligation discovery call to understand your
-                situation. Our financial review service is{' '}
-                <strong style={{ color: '#ffffff' }}>$3,300</strong> and
-                provides a complete picture of your exposure, options, and
-                recommended next steps.
+                situation. We provide a written report with our recommended
+                action steps tailored to your specific situation.
               </p>
             </div>
           </div>
@@ -780,7 +778,7 @@ export default function DirectorPenaltyNoticePage() {
                 },
                 {
                   q: 'How much does it cost to get advice?',
-                  a: 'We offer a no-obligation discovery call to understand your situation. Our financial review service is $3,300 and provides a complete picture of your exposure, options, and recommended next steps.',
+                  a: 'We offer a no-obligation discovery call to understand your situation. We provide a written report with our recommended action steps tailored to your specific situation.',
                 },
               ].map(({ q, a }) => (
                 <div

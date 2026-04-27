@@ -10,7 +10,7 @@ export function HowItWorksSection() {
       step: '02',
       heading: 'Financial Review',
       body: 'We assess your full financial position — ATO exposure, creditor obligations, and every available pathway. You get a complete picture of where you stand.',
-      note: '$3,300',
+      note: null,
     },
     {
       step: '03',

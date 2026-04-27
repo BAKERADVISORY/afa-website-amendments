@@ -16,7 +16,7 @@ const faqItems: FAQItem[] = [
   {
     question: 'How much does it cost to get started?',
     answer:
-      'We offer a no-obligation discovery call to understand your situation. Following that, we provide a financial review service priced at $3,300. This gives you a clear picture of your exposure, options, and recommended next steps — before any further commitment.',
+      'We offer a no-obligation discovery call to understand your situation. We provide a written report with our recommended action steps tailored to your specific situation.',
   },
   {
     question: 'What happens after the review?',
