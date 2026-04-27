@@ -10,17 +10,18 @@ import {
 } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Reduce ATO Debt & Creditor Pressure | Australian Financial Advisory',
+  title:
+    'ATO Debt Negotiation & Reduction | Gold Coast & Brisbane | Australian Financial Advisory',
   description:
-    'Facing ATO debt or creditor pressure? We review your full financial position, assess every negotiation pathway, and connect you with the right specialist to act. Early advice is your most powerful tool.',
+    'Struggling with ATO debt or creditor pressure? We review your full financial position and connect you with specialists who negotiate payment plans, debt reduction, and consolidation. Gold Coast, Brisbane and Australia-wide.',
   alternates: {
     canonical: 'https://www.ausfinancialadvisory.com.au/reduce-debt/',
   },
   openGraph: {
     title:
-      'Reduce ATO Debt & Creditor Pressure | Australian Financial Advisory',
+      'ATO Debt Negotiation & Reduction | Gold Coast & Brisbane | Australian Financial Advisory',
     description:
-      'Early negotiation protects your business and personal assets. We assess your options and refer you to the right specialist to execute the strategy.',
+      'Struggling with ATO debt or creditor pressure? We review your full financial position and connect you with specialists who negotiate payment plans, debt reduction, and consolidation. Gold Coast, Brisbane and Australia-wide.',
     url: 'https://www.ausfinancialadvisory.com.au/reduce-debt/',
   },
 }

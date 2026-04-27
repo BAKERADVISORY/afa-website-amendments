@@ -77,7 +77,8 @@ export function HeroSection() {
           }}
         >
           Protect your business and personal assets from ATO debt, cash flow
-          crisis, and financial distress before it&apos;s too late.
+          crisis, and financial distress before it&apos;s too late. Serving
+          business owners across Gold Coast, Brisbane, and Australia-wide.
         </p>
 
         <p
@@ -92,7 +93,7 @@ export function HeroSection() {
         >
           We work for you — the business owner — not the creditors. We explore
           every alternative before formal insolvency to protect your company
-          record and your personal assets.
+          record and your personal assets across Queensland and Australia-wide.
         </p>
 
         <a

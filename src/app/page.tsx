@@ -13,17 +13,17 @@ import { Footer } from '@/components/Footer'
 
 export const metadata: Metadata = {
   title:
-    'Pre-Insolvency Advisory | ATO Debt & Director Penalty Notices | Gold Coast QLD',
+    'Pre-Insolvency Advisory | ATO Debt & Director Penalty Notice Help | Gold Coast & Brisbane',
   description:
-    'Facing ATO debt, cash flow crisis, or a Director Penalty Notice? Australian Financial Advisory helps business owners protect personal assets and explore every alternative before formal insolvency. Gold Coast, Brisbane, and Australia-wide.',
+    'Facing ATO debt, cash flow problems, or a Director Penalty Notice? Australian Financial Advisory helps business owners across Gold Coast, Brisbane and Australia protect personal assets and explore every option before formal insolvency. Early action means more options.',
   alternates: {
     canonical: 'https://www.ausfinancialadvisory.com.au/',
   },
   openGraph: {
     title:
-      'Pre-Insolvency Advisory | ATO Debt & Director Penalty Notices | Gold Coast QLD',
+      'Pre-Insolvency Advisory | ATO Debt & Director Penalty Notice Help | Gold Coast & Brisbane',
     description:
-      'Early action protects personal assets. We work for the business owner — not the creditors. Confidential, urgent, and reassuring advice across Australia.',
+      'Facing ATO debt, cash flow problems, or a Director Penalty Notice? Australian Financial Advisory helps business owners across Gold Coast, Brisbane and Australia protect personal assets and explore every option before formal insolvency. Early action means more options.',
     url: 'https://www.ausfinancialadvisory.com.au/',
   },
 }

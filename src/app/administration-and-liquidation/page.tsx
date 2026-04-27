@@ -12,18 +12,18 @@ import {
 
 export const metadata: Metadata = {
   title:
-    'Voluntary Administration & Liquidation Advisory | Australian Financial Advisory',
+    'Voluntary Administration & Liquidation Advice | Gold Coast & Brisbane | Australian Financial Advisory',
   description:
-    'Facing administration or liquidation? Who appoints the liquidator matters enormously. We help you understand your options and connect you with the right specialist before someone else takes control.',
+    'If liquidation is inevitable, choosing your own liquidator is one of the most important decisions you can make. We help directors understand their options before someone else takes control. Gold Coast and Australia-wide.',
   alternates: {
     canonical:
       'https://www.ausfinancialadvisory.com.au/administration-and-liquidation/',
   },
   openGraph: {
     title:
-      'Administration & Liquidation Advisory | Australian Financial Advisory',
+      'Voluntary Administration & Liquidation Advice | Gold Coast & Brisbane | Australian Financial Advisory',
     description:
-      'Administration and liquidation do not have to happen to you. Choose your path before someone else chooses it for you.',
+      'If liquidation is inevitable, choosing your own liquidator is one of the most important decisions you can make. We help directors understand their options before someone else takes control. Gold Coast and Australia-wide.',
     url: 'https://www.ausfinancialadvisory.com.au/administration-and-liquidation/',
   },
 }

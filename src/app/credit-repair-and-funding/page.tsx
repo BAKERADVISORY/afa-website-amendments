@@ -4,17 +4,19 @@ import { Footer } from '@/components/Footer'
 import { ChevronRight, FileText, Users, Search, CreditCard } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Credit Repair & Funding Solutions | Australian Financial Advisory',
+  title:
+    'Credit Repair & Business Funding Solutions | Gold Coast & Brisbane | Australian Financial Advisory',
   description:
-    'Defaults, judgments, and bad credit listings do not have to be permanent. We assess your credit position and connect you with licensed specialists who can help.',
+    "Defaults and bad credit listings don't have to be permanent. We assess your credit position and connect you with licensed specialists who can help. Gold Coast, Brisbane and Australia-wide.",
   alternates: {
     canonical:
       'https://www.ausfinancialadvisory.com.au/credit-repair-and-funding/',
   },
   openGraph: {
-    title: 'Credit Repair & Funding Solutions | Australian Financial Advisory',
+    title:
+      'Credit Repair & Business Funding Solutions | Gold Coast & Brisbane | Australian Financial Advisory',
     description:
-      "Whether it's your business or personal credit — there are options. We assess your position and refer you to the right specialist.",
+      "Defaults and bad credit listings don't have to be permanent. We assess your credit position and connect you with licensed specialists who can help. Gold Coast, Brisbane and Australia-wide.",
     url: 'https://www.ausfinancialadvisory.com.au/credit-repair-and-funding/',
   },
 }

@@ -193,7 +193,8 @@ export function AboutServicesSection() {
             }}
           >
             Australian Financial Advisory is a pre-insolvency advisory firm
-            helping business owners and individuals facing ATO debt, cash flow
+            helping business owners and individuals across Gold Coast, Brisbane,
+            Queensland, and Australia-wide who are facing ATO debt, cash flow
             challenges, and financial distress. Early action protects your
             personal assets and keeps your business future open.
           </p>

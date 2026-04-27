@@ -413,6 +413,19 @@ export function Footer() {
           liability for any loss or damage arising from reliance on information
           contained on this website.
         </p>
+        <p
+          style={{
+            maxWidth: 1400,
+            margin: '8px auto 0',
+            fontSize: 12,
+            color: '#666666',
+            lineHeight: 1.5,
+            textAlign: 'center',
+          }}
+        >
+          Serving clients across Gold Coast, Brisbane, Sydney, Melbourne, and
+          Australia-wide.
+        </p>
       </div>
     </footer>
   )

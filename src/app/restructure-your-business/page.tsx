@@ -11,17 +11,18 @@ import {
 
 export const metadata: Metadata = {
   title:
-    'Business Restructure Advisory | Small Business Restructure & Administration | Australian Financial Advisory',
+    'Business Restructuring | Small Business Restructure | Gold Coast & Brisbane | Australian Financial Advisory',
   description:
-    'Facing business financial distress? We assess every restructure, administration, and liquidation option — and connect you with the right specialist. Act before your options narrow.',
+    'The Small Business Restructuring process allows eligible directors to restructure debts while remaining in control. We assess your options and connect you with the right specialist. Gold Coast, Brisbane and Australia-wide.',
   alternates: {
     canonical:
       'https://www.ausfinancialadvisory.com.au/restructure-your-business/',
   },
   openGraph: {
-    title: 'Business Restructure Advisory | Australian Financial Advisory',
+    title:
+      'Business Restructuring | Small Business Restructure | Gold Coast & Brisbane | Australian Financial Advisory',
     description:
-      'A business restructure can give you a fresh start without the permanent mark of formal insolvency. Early action keeps more options open.',
+      'The Small Business Restructuring process allows eligible directors to restructure debts while remaining in control. We assess your options and connect you with the right specialist. Gold Coast, Brisbane and Australia-wide.',
     url: 'https://www.ausfinancialadvisory.com.au/restructure-your-business/',
   },
 }
