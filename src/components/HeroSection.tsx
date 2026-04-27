@@ -7,27 +7,12 @@ export function HeroSection() {
         minHeight: '95vh',
         position: 'relative',
         overflow: 'hidden',
-        backgroundColor: '#1a1a3e',
+        backgroundImage: 'url(/CITY.jpg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
       }}
     >
-      {/* Background video */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        style={{
-          position: 'absolute',
-          inset: 0,
-          width: '100%',
-          height: '100%',
-          objectFit: 'cover',
-          opacity: 0.35,
-        }}
-      >
-        <source src="/images/hero-video.mp4" type="video/mp4" />
-      </video>
-
       {/* Dark overlay */}
       <div
         style={{
