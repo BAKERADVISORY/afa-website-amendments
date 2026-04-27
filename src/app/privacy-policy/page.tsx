@@ -76,17 +76,6 @@ export default function PrivacyPolicyPage() {
                 accordance with the Australian <em>Privacy Act 1988</em> (Cth)
                 and the Australian Privacy Principles (APPs).
               </p>
-              <p
-                style={{
-                  fontSize: 15,
-                  color: '#444',
-                  lineHeight: 1.8,
-                  margin: '12px 0 0',
-                }}
-              >
-                <strong style={{ color: '#1a1a3e' }}>Directors:</strong>{' '}
-                Jonathan Moy and Jason Baker
-              </p>
             </div>
 
             {/* Sections */}
