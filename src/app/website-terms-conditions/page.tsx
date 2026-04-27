@@ -73,8 +73,7 @@ export default function TermsConditionsPage() {
               >
                 By accessing this website you agree to the following terms. This
                 website is operated by Australian Financial Advisory Proprietary
-                Limited (ABN 73 680 451 129), directors Jonathan Moy and Jason
-                Baker.
+                Limited (ABN 73 680 451 129).
               </p>
             </div>
 
