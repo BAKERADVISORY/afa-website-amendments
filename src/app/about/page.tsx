@@ -54,7 +54,7 @@ export default function AboutPage() {
         {/* Hero Section */}
         <section
           style={{
-            backgroundColor: '#111111',
+            backgroundColor: '#1a1a3e',
             paddingTop: 160,
             paddingBottom: 80,
             paddingLeft: 80,
@@ -263,12 +263,12 @@ export default function AboutPage() {
         </section>
 
         {/* Our Values Section */}
-        <section style={{ backgroundColor: '#f5f5f5', padding: '80px 0' }}>
+        <section style={{ backgroundColor: '#f8f8ff', padding: '80px 0' }}>
           <div style={{ maxWidth: 1400, margin: '0 auto', padding: '0 32px' }}>
             <div style={{ textAlign: 'center', marginBottom: 56 }}>
               <h2
                 style={{
-                  color: '#111111',
+                  color: '#1a1a3e',
                   fontSize: 38,
                   fontWeight: 700,
                   marginBottom: 12,
@@ -316,7 +316,7 @@ export default function AboutPage() {
                   <div style={{ marginBottom: 20 }}>{card.icon}</div>
                   <h3
                     style={{
-                      color: '#111111',
+                      color: '#1a1a3e',
                       fontSize: 20,
                       fontWeight: 700,
                       marginBottom: 12,
@@ -336,7 +336,7 @@ export default function AboutPage() {
         </section>
 
         {/* Our Expertise Section */}
-        <section style={{ backgroundColor: '#111111', padding: '80px 0' }}>
+        <section style={{ backgroundColor: '#1a1a3e', padding: '80px 0' }}>
           <div style={{ maxWidth: 1400, margin: '0 auto', padding: '0 32px' }}>
             <p
               style={{

@@ -16,7 +16,7 @@ export default function TermsConditionsPage() {
         {/* Hero */}
         <section
           style={{
-            backgroundColor: '#111111',
+            backgroundColor: '#1a1a3e',
             padding: '60px 32px',
             textAlign: 'center',
           }}
@@ -56,7 +56,7 @@ export default function TermsConditionsPage() {
             {/* Intro */}
             <div
               style={{
-                backgroundColor: '#f5f5f5',
+                backgroundColor: '#f8f8ff',
                 borderRadius: 12,
                 padding: '28px 32px',
                 marginBottom: 48,
@@ -134,7 +134,7 @@ export default function TermsConditionsPage() {
                     style={{
                       fontSize: 20,
                       fontWeight: 700,
-                      color: '#111111',
+                      color: '#1a1a3e',
                       margin: 0,
                     }}
                   >
@@ -159,7 +159,7 @@ export default function TermsConditionsPage() {
             {/* Contact block */}
             <div
               style={{
-                backgroundColor: '#111111',
+                backgroundColor: '#1a1a3e',
                 borderRadius: 12,
                 padding: '32px',
                 marginTop: 48,

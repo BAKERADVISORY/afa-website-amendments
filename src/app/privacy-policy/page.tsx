@@ -16,7 +16,7 @@ export default function PrivacyPolicyPage() {
         {/* Hero */}
         <section
           style={{
-            backgroundColor: '#111111',
+            backgroundColor: '#1a1a3e',
             padding: '60px 32px',
             textAlign: 'center',
           }}
@@ -56,11 +56,11 @@ export default function PrivacyPolicyPage() {
             {/* Intro */}
             <div
               style={{
-                backgroundColor: '#f5f5f5',
+                backgroundColor: '#f8f8ff',
                 borderRadius: 12,
                 padding: '28px 32px',
                 marginBottom: 48,
-                borderLeft: '4px solid #333333',
+                borderLeft: '4px solid #9b8ec4',
               }}
             >
               <p
@@ -84,7 +84,7 @@ export default function PrivacyPolicyPage() {
                   margin: '12px 0 0',
                 }}
               >
-                <strong style={{ color: '#111111' }}>Directors:</strong>{' '}
+                <strong style={{ color: '#1a1a3e' }}>Directors:</strong>{' '}
                 Jonathan Moy and Jason Baker
               </p>
             </div>
@@ -195,7 +195,7 @@ export default function PrivacyPolicyPage() {
                     style={{
                       fontSize: 20,
                       fontWeight: 700,
-                      color: '#111111',
+                      color: '#1a1a3e',
                       margin: 0,
                     }}
                   >
@@ -224,7 +224,7 @@ export default function PrivacyPolicyPage() {
             {/* Contact block */}
             <div
               style={{
-                backgroundColor: '#111111',
+                backgroundColor: '#1a1a3e',
                 borderRadius: 12,
                 padding: '32px',
                 marginTop: 48,

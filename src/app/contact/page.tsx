@@ -72,7 +72,7 @@ export default function ContactPage() {
         {/* Hero Section */}
         <section
           style={{
-            backgroundColor: '#111111',
+            backgroundColor: '#1a1a3e',
             paddingTop: 160,
             paddingBottom: 80,
             paddingLeft: 80,
@@ -256,7 +256,7 @@ export default function ContactPage() {
                     type="submit"
                     style={{
                       width: '100%',
-                      backgroundColor: '#111111',
+                      backgroundColor: '#1a1a3e',
                       color: '#FFFFFF',
                       border: 'none',
                       borderRadius: 8,
@@ -279,7 +279,7 @@ export default function ContactPage() {
                 {/* Box 1: Free Consultation */}
                 <div
                   style={{
-                    backgroundColor: '#f5f5f5',
+                    backgroundColor: '#f8f8ff',
                     borderRadius: 12,
                     padding: 24,
                   }}
@@ -310,7 +310,7 @@ export default function ContactPage() {
                       style={{
                         fontSize: 16,
                         fontWeight: 700,
-                        color: '#111111',
+                        color: '#1a1a3e',
                         margin: 0,
                       }}
                     >
@@ -344,7 +344,7 @@ export default function ContactPage() {
                 {/* Box 2: Business Hours */}
                 <div
                   style={{
-                    backgroundColor: '#f5f5f5',
+                    backgroundColor: '#f8f8ff',
                     borderRadius: 12,
                     padding: 24,
                   }}
@@ -375,7 +375,7 @@ export default function ContactPage() {
                       style={{
                         fontSize: 16,
                         fontWeight: 700,
-                        color: '#111111',
+                        color: '#1a1a3e',
                         margin: 0,
                       }}
                     >
@@ -408,7 +408,7 @@ export default function ContactPage() {
                 {/* Box 3: Urgent Matter */}
                 <div
                   style={{
-                    backgroundColor: '#111111',
+                    backgroundColor: '#1a1a3e',
                     borderRadius: 12,
                     padding: 24,
                   }}

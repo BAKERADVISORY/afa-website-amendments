@@ -7,7 +7,7 @@ export function HeroSection() {
         minHeight: '95vh',
         position: 'relative',
         overflow: 'hidden',
-        backgroundColor: '#000000',
+        backgroundColor: '#1a1a3e',
       }}
     >
       {/* Background video */}
@@ -100,7 +100,7 @@ export function HeroSection() {
           href="#contact"
           style={{
             backgroundColor: '#ffffff',
-            color: '#000000',
+            color: '#1a1a3e',
             borderRadius: '50px',
             padding: '16px 32px',
             fontSize: '16px',

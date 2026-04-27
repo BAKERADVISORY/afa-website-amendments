@@ -89,7 +89,7 @@ export default function SmallBusinessRestructurePage() {
         {/* Hero Section */}
         <section
           style={{
-            backgroundColor: '#111111',
+            backgroundColor: '#1a1a3e',
             paddingTop: 160,
             paddingBottom: 80,
             paddingLeft: 80,
@@ -276,7 +276,7 @@ export default function SmallBusinessRestructurePage() {
         </section>
 
         {/* Why Choose SBR Section */}
-        <section style={{ backgroundColor: '#f5f5f5', padding: '80px 0' }}>
+        <section style={{ backgroundColor: '#f8f8ff', padding: '80px 0' }}>
           <div style={{ maxWidth: 1400, margin: '0 auto', padding: '0 32px' }}>
             <p
               style={{
@@ -355,7 +355,7 @@ export default function SmallBusinessRestructurePage() {
         </section>
 
         {/* Our SBR Process Section */}
-        <section style={{ backgroundColor: '#111111', padding: '80px 0' }}>
+        <section style={{ backgroundColor: '#1a1a3e', padding: '80px 0' }}>
           <div style={{ maxWidth: 1400, margin: '0 auto', padding: '0 32px' }}>
             <p
               style={{
@@ -497,7 +497,7 @@ export default function SmallBusinessRestructurePage() {
             >
               <div
                 style={{
-                  backgroundColor: '#f5f5f5',
+                  backgroundColor: '#f8f8ff',
                   borderRadius: 12,
                   padding: 40,
                   textAlign: 'center',
@@ -510,7 +510,7 @@ export default function SmallBusinessRestructurePage() {
                   style={{
                     fontSize: 42,
                     fontWeight: 700,
-                    color: '#111111',
+                    color: '#1a1a3e',
                     marginBottom: 8,
                     lineHeight: 1.1,
                   }}
@@ -523,7 +523,7 @@ export default function SmallBusinessRestructurePage() {
               </div>
               <div
                 style={{
-                  backgroundColor: '#f5f5f5',
+                  backgroundColor: '#f8f8ff',
                   borderRadius: 12,
                   padding: 40,
                   textAlign: 'center',
@@ -540,7 +540,7 @@ export default function SmallBusinessRestructurePage() {
                   style={{
                     fontSize: 42,
                     fontWeight: 700,
-                    color: '#111111',
+                    color: '#1a1a3e',
                     marginBottom: 8,
                     lineHeight: 1.1,
                   }}
@@ -562,7 +562,7 @@ export default function SmallBusinessRestructurePage() {
               style={{
                 fontSize: 22,
                 fontWeight: 700,
-                color: '#111111',
+                color: '#1a1a3e',
                 marginBottom: 24,
               }}
             >
@@ -572,12 +572,12 @@ export default function SmallBusinessRestructurePage() {
               <a
                 href="/services/voluntary-administration/"
                 style={{
-                  backgroundColor: '#f5f5f5',
+                  backgroundColor: '#f8f8ff',
                   borderRadius: 8,
                   padding: '14px 20px',
                   fontSize: 15,
                   fontWeight: 600,
-                  color: '#111111',
+                  color: '#1a1a3e',
                   textDecoration: 'none',
                 }}
               >
@@ -586,12 +586,12 @@ export default function SmallBusinessRestructurePage() {
               <a
                 href="/services/creditors-voluntary-liquidation/"
                 style={{
-                  backgroundColor: '#f5f5f5',
+                  backgroundColor: '#f8f8ff',
                   borderRadius: 8,
                   padding: '14px 20px',
                   fontSize: 15,
                   fontWeight: 600,
-                  color: '#111111',
+                  color: '#1a1a3e',
                   textDecoration: 'none',
                 }}
               >
@@ -600,12 +600,12 @@ export default function SmallBusinessRestructurePage() {
               <a
                 href="/reduce-debt/"
                 style={{
-                  backgroundColor: '#f5f5f5',
+                  backgroundColor: '#f8f8ff',
                   borderRadius: 8,
                   padding: '14px 20px',
                   fontSize: 15,
                   fontWeight: 600,
-                  color: '#111111',
+                  color: '#1a1a3e',
                   textDecoration: 'none',
                 }}
               >

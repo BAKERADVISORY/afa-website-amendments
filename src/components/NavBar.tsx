@@ -16,12 +16,11 @@ const serviceLinks = [
 function AfaLogo() {
   return (
     <svg
-      width="400"
       viewBox="0 0 400 120"
       xmlns="http://www.w3.org/2000/svg"
-      style={{ display: 'block' }}
+      style={{ display: 'block', height: '52px', width: 'auto' }}
     >
-      <rect x="0" y="0" width="400" height="120" fill="#111111" />
+      <rect x="0" y="0" width="400" height="120" fill="#1a1a3e" />
       <text
         x="200"
         y="78"
@@ -65,7 +64,7 @@ export function NavBar() {
         left: 0,
         right: 0,
         zIndex: 50,
-        backgroundColor: '#111111',
+        backgroundColor: '#1a1a3e',
         height: '80px',
         display: 'flex',
         alignItems: 'center',
@@ -87,7 +86,7 @@ export function NavBar() {
         <a
           href="/"
           aria-label="Australian Financial Advisory"
-          style={{ display: 'block', flexShrink: 0 }}
+          style={{ display: 'flex', alignItems: 'center', flexShrink: 0 }}
         >
           <AfaLogo />
         </a>
@@ -97,28 +96,24 @@ export function NavBar() {
           className="hidden md:flex"
           style={{ alignItems: 'center', gap: '4px' }}
         >
-          {/* DPN Risk — styled with border, first position */}
+          {/* DPN Risk — first position */}
           <a
             href="/director-penalty-notice"
             style={{
-              color: '#ffffff',
+              color: 'rgba(255,255,255,0.7)',
               fontSize: '15px',
-              fontWeight: 600,
-              padding: '6px 12px',
+              fontWeight: 700,
+              padding: '13px 8px',
               textDecoration: 'none',
-              border: '1px solid rgba(255,255,255,0.5)',
-              borderRadius: '4px',
-              marginRight: '8px',
               whiteSpace: 'nowrap',
-              transition: 'border-color 0.15s ease, color 0.15s ease',
+              transition: 'color 0.15s ease',
             }}
             onMouseEnter={(e) => {
-              ;(e.currentTarget as HTMLAnchorElement).style.borderColor =
-                '#ffffff'
+              ;(e.currentTarget as HTMLAnchorElement).style.color = '#ffffff'
             }}
             onMouseLeave={(e) => {
-              ;(e.currentTarget as HTMLAnchorElement).style.borderColor =
-                'rgba(255,255,255,0.5)'
+              ;(e.currentTarget as HTMLAnchorElement).style.color =
+                'rgba(255,255,255,0.7)'
             }}
           >
             DPN Risk
@@ -131,7 +126,7 @@ export function NavBar() {
               style={{
                 color: 'rgba(255,255,255,0.7)',
                 fontSize: '15px',
-                fontWeight: 400,
+                fontWeight: 700,
                 padding: '13px 8px',
                 textDecoration: 'none',
                 transition: 'color 0.15s ease',
@@ -155,8 +150,8 @@ export function NavBar() {
           href="#contact"
           className="hidden md:inline-flex"
           style={{
-            backgroundColor: '#ffffff',
-            color: '#000000',
+            backgroundColor: '#9b8ec4',
+            color: '#1a1a3e',
             borderRadius: '50px',
             padding: '12px 20px',
             fontSize: '15px',
@@ -170,11 +165,11 @@ export function NavBar() {
           }}
           onMouseEnter={(e) => {
             ;(e.currentTarget as HTMLAnchorElement).style.backgroundColor =
-              '#cccccc'
+              '#8a7db4'
           }}
           onMouseLeave={(e) => {
             ;(e.currentTarget as HTMLAnchorElement).style.backgroundColor =
-              '#ffffff'
+              '#9b8ec4'
           }}
         >
           Get Started
@@ -207,7 +202,7 @@ export function NavBar() {
             top: '80px',
             left: 0,
             right: 0,
-            backgroundColor: '#111111',
+            backgroundColor: '#1a1a3e',
             borderTop: '1px solid rgba(255,255,255,0.1)',
             display: 'flex',
             flexDirection: 'column',
@@ -219,15 +214,11 @@ export function NavBar() {
             href="/director-penalty-notice"
             onClick={() => setMobileOpen(false)}
             style={{
-              color: '#ffffff',
+              color: 'rgba(255,255,255,0.7)',
               fontSize: '16px',
-              fontWeight: 600,
-              padding: '10px 20px',
+              fontWeight: 700,
+              padding: '12px 32px',
               textDecoration: 'none',
-              border: '1px solid rgba(255,255,255,0.5)',
-              borderRadius: '4px',
-              margin: '8px 32px',
-              textAlign: 'center',
             }}
           >
             DPN Risk
@@ -240,7 +231,7 @@ export function NavBar() {
               style={{
                 color: 'rgba(255,255,255,0.7)',
                 fontSize: '16px',
-                fontWeight: 400,
+                fontWeight: 700,
                 padding: '12px 32px',
                 textDecoration: 'none',
               }}
@@ -252,8 +243,8 @@ export function NavBar() {
             href="#contact"
             onClick={() => setMobileOpen(false)}
             style={{
-              backgroundColor: '#ffffff',
-              color: '#000000',
+              backgroundColor: '#9b8ec4',
+              color: '#1a1a3e',
               borderRadius: '50px',
               padding: '12px 20px',
               fontSize: '16px',

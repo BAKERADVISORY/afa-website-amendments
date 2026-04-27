@@ -18,7 +18,7 @@ function TeamMember({ initials, name, role, description }: TeamMemberProps) {
         alignItems: 'center',
         gap: 12,
         boxShadow: '0 2px 16px rgba(0,0,0,0.07)',
-        borderTop: '3px solid #111111',
+        borderTop: '3px solid #1a1a3e',
       }}
     >
       {/* Avatar */}
@@ -27,7 +27,7 @@ function TeamMember({ initials, name, role, description }: TeamMemberProps) {
           width: 72,
           height: 72,
           borderRadius: '50%',
-          backgroundColor: '#111111',
+          backgroundColor: '#1a1a3e',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -35,7 +35,7 @@ function TeamMember({ initials, name, role, description }: TeamMemberProps) {
           fontWeight: 700,
           color: '#ffffff',
           letterSpacing: 1,
-          border: '3px solid #333333',
+          border: '3px solid #9b8ec4',
         }}
       >
         {initials}
@@ -46,7 +46,7 @@ function TeamMember({ initials, name, role, description }: TeamMemberProps) {
           style={{
             fontSize: 18,
             fontWeight: 700,
-            color: '#111111',
+            color: '#1a1a3e',
             margin: '0 0 4px',
           }}
         >
@@ -112,7 +112,7 @@ export function TeamSection() {
             textAlign: 'center',
             fontSize: 38,
             fontWeight: 700,
-            color: '#111111',
+            color: '#1a1a3e',
             marginBottom: 16,
           }}
         >

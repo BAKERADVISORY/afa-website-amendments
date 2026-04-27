@@ -27,7 +27,7 @@ export default function ServicesPage() {
         {/* Hero Section */}
         <section
           style={{
-            backgroundColor: '#111111',
+            backgroundColor: '#1a1a3e',
             paddingTop: 160,
             paddingBottom: 80,
             paddingLeft: 80,
@@ -186,7 +186,7 @@ export default function ServicesPage() {
         {/* Ready to Transform Section */}
         <section
           style={{
-            backgroundColor: '#111111',
+            backgroundColor: '#1a1a3e',
             padding: '80px 0',
             textAlign: 'center',
           }}
@@ -238,7 +238,7 @@ export default function ServicesPage() {
           <div style={{ maxWidth: 1400, margin: '0 auto', padding: '0 32px' }}>
             <h2
               style={{
-                color: '#111111',
+                color: '#1a1a3e',
                 fontSize: 38,
                 fontWeight: 700,
                 textAlign: 'center',
@@ -282,8 +282,8 @@ export default function ServicesPage() {
                 <span
                   key={industry}
                   style={{
-                    backgroundColor: '#f5f5f5',
-                    color: '#111111',
+                    backgroundColor: '#f8f8ff',
+                    color: '#1a1a3e',
                     borderRadius: 50,
                     padding: '12px 24px',
                     fontSize: 15,
@@ -315,7 +315,7 @@ function ServiceCard({ title, description, bullets, href }: ServiceCardProps) {
   return (
     <div
       style={{
-        backgroundColor: '#f5f5f5',
+        backgroundColor: '#f8f8ff',
         borderRadius: 12,
         padding: 32,
         display: 'flex',
@@ -334,7 +334,7 @@ function ServiceCard({ title, description, bullets, href }: ServiceCardProps) {
       />
       <h3
         style={{
-          color: '#111111',
+          color: '#1a1a3e',
           fontSize: 20,
           fontWeight: 700,
           lineHeight: 1.25,

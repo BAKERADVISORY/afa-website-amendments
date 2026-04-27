@@ -25,7 +25,7 @@ function ServiceCard({
   return (
     <div
       style={{
-        backgroundColor: '#f5f5f5',
+        backgroundColor: '#f8f8ff',
         borderRadius: 12,
         padding: 32,
         position: 'relative',
@@ -33,16 +33,16 @@ function ServiceCard({
         display: 'flex',
         flexDirection: 'column',
         gap: 12,
-        borderTop: '3px solid #333333',
+        borderTop: '3px solid #9b8ec4',
       }}
     >
-      <Icon color="#333333" size={40} />
+      <Icon color="#9b8ec4" size={40} />
 
       <h3
         style={{
           fontSize: 20,
           fontWeight: 700,
-          color: '#111111',
+          color: '#1a1a3e',
           margin: '8px 0 0',
         }}
       >
@@ -75,7 +75,7 @@ function ServiceCard({
             }}
           >
             <ChevronRight
-              color="#333333"
+              color="#9b8ec4"
               size={16}
               style={{ flexShrink: 0, marginTop: 1 }}
             />
@@ -87,7 +87,7 @@ function ServiceCard({
       <a
         href={href}
         style={{
-          backgroundColor: '#111111',
+          backgroundColor: '#1a1a3e',
           color: '#FFFFFF',
           borderRadius: 50,
           padding: '10px 20px',
@@ -170,13 +170,13 @@ export function AboutServicesSection() {
               fontFamily: 'Manrope, sans-serif',
               fontSize: 40,
               fontWeight: 700,
-              color: '#111111',
+              color: '#1a1a3e',
               marginBottom: 16,
             }}
           >
             Early advice is the{' '}
             <span
-              style={{ color: '#333333', borderBottom: '2px solid #333333' }}
+              style={{ color: '#9b8ec4', borderBottom: '2px solid #9b8ec4' }}
             >
               most powerful tool
             </span>{' '}
@@ -201,16 +201,16 @@ export function AboutServicesSection() {
           <p
             style={{
               fontSize: 15,
-              color: '#333333',
+              color: '#1a1a3e',
               lineHeight: 1.7,
               maxWidth: 680,
               margin: '0 auto 64px',
               textAlign: 'center',
               fontWeight: 600,
-              backgroundColor: '#f5f5f5',
+              backgroundColor: '#f8f8ff',
               padding: '14px 24px',
               borderRadius: 8,
-              borderLeft: '4px solid #333333',
+              borderLeft: '4px solid #9b8ec4',
             }}
           >
             Warning: The ATO is escalating Director Penalty Notice (DPN)

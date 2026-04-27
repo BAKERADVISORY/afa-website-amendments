@@ -45,11 +45,11 @@ export function FAQSection() {
           style={{
             fontSize: 38,
             fontWeight: 700,
-            color: '#111111',
+            color: '#1a1a3e',
             margin: '0 0 16px 0',
           }}
         >
-          Frequently <span style={{ color: '#333333' }}>Asked Questions</span>
+          Frequently <span style={{ color: '#9b8ec4' }}>Asked Questions</span>
         </h2>
         <p
           style={{
@@ -84,12 +84,12 @@ export function FAQSection() {
               <div
                 key={index}
                 style={{
-                  backgroundColor: '#f5f5f5',
+                  backgroundColor: '#f8f8ff',
                   borderRadius: 10,
                   marginBottom: 12,
                   overflow: 'hidden',
                   borderLeft: isOpen
-                    ? '4px solid #111111'
+                    ? '4px solid #1a1a3e'
                     : '4px solid transparent',
                   transition: 'border-color 0.2s ease',
                 }}
@@ -109,7 +109,7 @@ export function FAQSection() {
                   }}
                 >
                   <span
-                    style={{ fontSize: 15, fontWeight: 600, color: '#111111' }}
+                    style={{ fontSize: 15, fontWeight: 600, color: '#1a1a3e' }}
                   >
                     {item.question}
                   </span>
@@ -145,7 +145,7 @@ export function FAQSection() {
         {/* Still Have Questions card */}
         <div
           style={{
-            backgroundColor: '#111111',
+            backgroundColor: '#1a1a3e',
             borderRadius: 16,
             padding: '40px 32px',
             textAlign: 'center',
@@ -180,7 +180,7 @@ export function FAQSection() {
             href="#contact"
             style={{
               backgroundColor: '#ffffff',
-              color: '#000000',
+              color: '#1a1a3e',
               borderRadius: 50,
               padding: '12px 24px',
               fontSize: 15,

@@ -88,7 +88,7 @@ export default function DirectorPenaltyNoticePage() {
         {/* 1. Hero */}
         <section
           style={{
-            backgroundColor: '#111111',
+            backgroundColor: '#1a1a3e',
             padding: '100px 0 80px',
             position: 'relative',
             overflow: 'hidden',
@@ -161,7 +161,7 @@ export default function DirectorPenaltyNoticePage() {
                 alignItems: 'center',
                 gap: 8,
                 backgroundColor: '#ffffff',
-                color: '#000000',
+                color: '#1a1a3e',
                 borderRadius: 50,
                 padding: '14px 28px',
                 fontSize: 15,
@@ -183,7 +183,7 @@ export default function DirectorPenaltyNoticePage() {
               style={{
                 fontSize: 38,
                 fontWeight: 700,
-                color: '#111111',
+                color: '#1a1a3e',
                 marginBottom: 20,
                 lineHeight: 1.2,
               }}
@@ -223,10 +223,10 @@ export default function DirectorPenaltyNoticePage() {
             </p>
             <div
               style={{
-                backgroundColor: '#f5f5f5',
+                backgroundColor: '#f8f8ff',
                 borderRadius: 10,
                 padding: '20px 24px',
-                borderLeft: '4px solid #333333',
+                borderLeft: '4px solid #9b8ec4',
               }}
             >
               <p
@@ -247,14 +247,14 @@ export default function DirectorPenaltyNoticePage() {
         </section>
 
         {/* 3. What Debts Trigger a DPN */}
-        <section style={{ backgroundColor: '#f5f5f5', padding: '80px 0' }}>
+        <section style={{ backgroundColor: '#f8f8ff', padding: '80px 0' }}>
           <div style={{ maxWidth: 900, margin: '0 auto', padding: '0 32px' }}>
             <SectionLabel text="DPN Triggers" />
             <h2
               style={{
                 fontSize: 38,
                 fontWeight: 700,
-                color: '#111111',
+                color: '#1a1a3e',
                 marginBottom: 20,
                 lineHeight: 1.2,
               }}
@@ -293,14 +293,14 @@ export default function DirectorPenaltyNoticePage() {
                     backgroundColor: '#ffffff',
                     borderRadius: 10,
                     padding: '24px 28px',
-                    borderTop: '3px solid #333333',
+                    borderTop: '3px solid #9b8ec4',
                   }}
                 >
                   <h3
                     style={{
                       fontSize: 17,
                       fontWeight: 700,
-                      color: '#111111',
+                      color: '#1a1a3e',
                       marginBottom: 10,
                     }}
                   >
@@ -330,7 +330,7 @@ export default function DirectorPenaltyNoticePage() {
               style={{
                 fontSize: 38,
                 fontWeight: 700,
-                color: '#111111',
+                color: '#1a1a3e',
                 marginBottom: 32,
                 lineHeight: 1.2,
               }}
@@ -348,17 +348,17 @@ export default function DirectorPenaltyNoticePage() {
               {/* Non-Lockdown */}
               <div
                 style={{
-                  backgroundColor: '#f5f5f5',
+                  backgroundColor: '#f8f8ff',
                   borderRadius: 10,
                   padding: '28px',
-                  borderTop: '3px solid #333333',
+                  borderTop: '3px solid #9b8ec4',
                 }}
               >
                 <h3
                   style={{
                     fontSize: 20,
                     fontWeight: 700,
-                    color: '#111111',
+                    color: '#1a1a3e',
                     marginBottom: 16,
                   }}
                 >
@@ -439,7 +439,7 @@ export default function DirectorPenaltyNoticePage() {
               {/* Lockdown */}
               <div
                 style={{
-                  backgroundColor: '#111111',
+                  backgroundColor: '#1a1a3e',
                   borderRadius: 10,
                   padding: '28px',
                   borderTop: '3px solid rgba(255,255,255,0.3)',
@@ -529,7 +529,7 @@ export default function DirectorPenaltyNoticePage() {
         </section>
 
         {/* 5. The 21-Day Window */}
-        <section style={{ backgroundColor: '#111111', padding: '80px 0' }}>
+        <section style={{ backgroundColor: '#1a1a3e', padding: '80px 0' }}>
           <div style={{ maxWidth: 900, margin: '0 auto', padding: '0 32px' }}>
             <SectionLabel text="Critical Timing" />
             <h2
@@ -590,7 +590,7 @@ export default function DirectorPenaltyNoticePage() {
               style={{
                 fontSize: 38,
                 fontWeight: 700,
-                color: '#111111',
+                color: '#1a1a3e',
                 marginBottom: 32,
                 lineHeight: 1.2,
               }}
@@ -631,7 +631,7 @@ export default function DirectorPenaltyNoticePage() {
                     display: 'flex',
                     gap: 24,
                     alignItems: 'flex-start',
-                    backgroundColor: '#f5f5f5',
+                    backgroundColor: '#f8f8ff',
                     borderRadius: 10,
                     padding: '24px 28px',
                   }}
@@ -653,7 +653,7 @@ export default function DirectorPenaltyNoticePage() {
                       style={{
                         fontSize: 17,
                         fontWeight: 700,
-                        color: '#111111',
+                        color: '#1a1a3e',
                         marginBottom: 6,
                       }}
                     >
@@ -677,14 +677,14 @@ export default function DirectorPenaltyNoticePage() {
         </section>
 
         {/* 7. How AFA Helps */}
-        <section style={{ backgroundColor: '#f5f5f5', padding: '80px 0' }}>
+        <section style={{ backgroundColor: '#f8f8ff', padding: '80px 0' }}>
           <div style={{ maxWidth: 900, margin: '0 auto', padding: '0 32px' }}>
             <SectionLabel text="How We Help" />
             <h2
               style={{
                 fontSize: 38,
                 fontWeight: 700,
-                color: '#111111',
+                color: '#1a1a3e',
                 marginBottom: 20,
                 lineHeight: 1.2,
               }}
@@ -722,7 +722,7 @@ export default function DirectorPenaltyNoticePage() {
             </p>
             <div
               style={{
-                backgroundColor: '#111111',
+                backgroundColor: '#1a1a3e',
                 borderRadius: 10,
                 padding: '24px 28px',
               }}
@@ -751,7 +751,7 @@ export default function DirectorPenaltyNoticePage() {
               style={{
                 fontSize: 38,
                 fontWeight: 700,
-                color: '#111111',
+                color: '#1a1a3e',
                 marginBottom: 32,
                 lineHeight: 1.2,
               }}
@@ -784,17 +784,17 @@ export default function DirectorPenaltyNoticePage() {
                 <div
                   key={q}
                   style={{
-                    backgroundColor: '#f5f5f5',
+                    backgroundColor: '#f8f8ff',
                     borderRadius: 10,
                     padding: '24px 28px',
-                    borderLeft: '4px solid #333333',
+                    borderLeft: '4px solid #9b8ec4',
                   }}
                 >
                   <h3
                     style={{
                       fontSize: 17,
                       fontWeight: 700,
-                      color: '#111111',
+                      color: '#1a1a3e',
                       marginBottom: 10,
                     }}
                   >
@@ -839,7 +839,7 @@ export default function DirectorPenaltyNoticePage() {
         </section>
 
         {/* 9. CTA */}
-        <section style={{ backgroundColor: '#111111', padding: '80px 0' }}>
+        <section style={{ backgroundColor: '#1a1a3e', padding: '80px 0' }}>
           <div
             style={{
               maxWidth: 700,
@@ -879,7 +879,7 @@ export default function DirectorPenaltyNoticePage() {
                 alignItems: 'center',
                 gap: 8,
                 backgroundColor: '#ffffff',
-                color: '#000000',
+                color: '#1a1a3e',
                 borderRadius: 50,
                 padding: '16px 36px',
                 fontSize: 16,

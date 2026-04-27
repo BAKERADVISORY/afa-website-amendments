@@ -4,7 +4,7 @@ export function DPNSection() {
   return (
     <section
       style={{
-        backgroundColor: '#111111',
+        backgroundColor: '#1a1a3e',
         padding: '80px 0',
         position: 'relative',
         overflow: 'hidden',
@@ -119,7 +119,7 @@ export function DPNSection() {
             href="/director-penalty-notice"
             style={{
               backgroundColor: '#ffffff',
-              color: '#000000',
+              color: '#1a1a3e',
               borderRadius: '50px',
               padding: '14px 28px',
               fontSize: '15px',

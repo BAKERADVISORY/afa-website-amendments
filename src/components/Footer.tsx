@@ -8,7 +8,7 @@ function AfaLogo() {
       xmlns="http://www.w3.org/2000/svg"
       style={{ display: 'block' }}
     >
-      <rect x="0" y="0" width="400" height="120" fill="#111111" />
+      <rect x="0" y="0" width="400" height="120" fill="#1a1a3e" />
       <text
         x="200"
         y="78"
@@ -77,7 +77,7 @@ function FormField({ label, type, required }: FormFieldProps) {
 export function Footer() {
   return (
     <footer
-      style={{ backgroundColor: '#111111', paddingTop: 64, paddingBottom: 32 }}
+      style={{ backgroundColor: '#1a1a3e', paddingTop: 64, paddingBottom: 32 }}
     >
       <div style={{ maxWidth: 1400, margin: '0 auto', padding: '0 32px' }}>
         {/* Top grid: 4 columns */}
@@ -342,7 +342,7 @@ export function Footer() {
                 style={{
                   width: '100%',
                   backgroundColor: '#ffffff',
-                  color: '#000000',
+                  color: '#1a1a3e',
                   border: 'none',
                   borderRadius: 6,
                   padding: '14px',

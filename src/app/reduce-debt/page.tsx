@@ -56,7 +56,7 @@ export default function ReduceDebtPage() {
         {/* Hero */}
         <section
           style={{
-            backgroundColor: '#111111',
+            backgroundColor: '#1a1a3e',
             padding: '100px 0 80px',
             position: 'relative',
             overflow: 'hidden',
@@ -129,7 +129,7 @@ export default function ReduceDebtPage() {
                 alignItems: 'center',
                 gap: 8,
                 backgroundColor: '#ffffff',
-                color: '#000000',
+                color: '#1a1a3e',
                 borderRadius: 50,
                 padding: '14px 28px',
                 fontSize: 15,
@@ -152,7 +152,7 @@ export default function ReduceDebtPage() {
                 style={{
                   fontSize: 38,
                   fontWeight: 700,
-                  color: '#111111',
+                  color: '#1a1a3e',
                   lineHeight: 1.2,
                   marginBottom: 16,
                 }}
@@ -207,10 +207,10 @@ export default function ReduceDebtPage() {
                 <div
                   key={heading}
                   style={{
-                    backgroundColor: '#f5f5f5',
+                    backgroundColor: '#f8f8ff',
                     borderRadius: 12,
                     padding: '28px 32px',
-                    borderTop: '3px solid #333333',
+                    borderTop: '3px solid #9b8ec4',
                     display: 'flex',
                     flexDirection: 'column',
                     gap: 12,
@@ -221,7 +221,7 @@ export default function ReduceDebtPage() {
                       width: 44,
                       height: 44,
                       borderRadius: '50%',
-                      backgroundColor: '#111111',
+                      backgroundColor: '#1a1a3e',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
@@ -233,7 +233,7 @@ export default function ReduceDebtPage() {
                     style={{
                       fontSize: 17,
                       fontWeight: 700,
-                      color: '#111111',
+                      color: '#1a1a3e',
                       margin: 0,
                     }}
                   >
@@ -259,7 +259,7 @@ export default function ReduceDebtPage() {
                 style={{
                   fontSize: 22,
                   fontWeight: 700,
-                  color: '#111111',
+                  color: '#1a1a3e',
                   marginBottom: 20,
                 }}
               >
@@ -281,7 +281,7 @@ export default function ReduceDebtPage() {
                       alignItems: 'flex-start',
                       gap: 14,
                       padding: '16px 20px',
-                      backgroundColor: '#f5f5f5',
+                      backgroundColor: '#f8f8ff',
                       borderRadius: 8,
                     }}
                   >
@@ -290,7 +290,7 @@ export default function ReduceDebtPage() {
                         width: 22,
                         height: 22,
                         borderRadius: '50%',
-                        backgroundColor: '#111111',
+                        backgroundColor: '#1a1a3e',
                         display: 'inline-flex',
                         alignItems: 'center',
                         justifyContent: 'center',
@@ -343,7 +343,7 @@ export default function ReduceDebtPage() {
         </section>
 
         {/* CTA */}
-        <section style={{ backgroundColor: '#111111', padding: '80px 0' }}>
+        <section style={{ backgroundColor: '#1a1a3e', padding: '80px 0' }}>
           <div
             style={{
               maxWidth: 700,
@@ -383,7 +383,7 @@ export default function ReduceDebtPage() {
                 alignItems: 'center',
                 gap: 8,
                 backgroundColor: '#ffffff',
-                color: '#000000',
+                color: '#1a1a3e',
                 borderRadius: 50,
                 padding: '16px 36px',
                 fontSize: 16,

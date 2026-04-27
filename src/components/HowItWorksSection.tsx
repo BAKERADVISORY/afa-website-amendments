@@ -27,7 +27,7 @@ export function HowItWorksSection() {
   ]
 
   return (
-    <section style={{ backgroundColor: '#eeeeee', padding: '80px 0' }}>
+    <section style={{ backgroundColor: '#f8f8ff', padding: '80px 0' }}>
       <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 32px' }}>
         {/* Header */}
         <p
@@ -47,7 +47,7 @@ export function HowItWorksSection() {
             textAlign: 'center',
             fontSize: 38,
             fontWeight: 700,
-            color: '#111111',
+            color: '#1a1a3e',
             marginBottom: 16,
           }}
         >
@@ -86,7 +86,7 @@ export function HowItWorksSection() {
                 display: 'flex',
                 flexDirection: 'column',
                 gap: 12,
-                borderTop: '3px solid #333333',
+                borderTop: '3px solid #9b8ec4',
               }}
             >
               <span
@@ -104,7 +104,7 @@ export function HowItWorksSection() {
                   style={{
                     fontSize: 17,
                     fontWeight: 700,
-                    color: '#111111',
+                    color: '#1a1a3e',
                     margin: '0 0 4px',
                   }}
                 >

@@ -62,7 +62,7 @@ interface ServiceCardProps {
 
 function ServiceCard({ icon, title, description }: ServiceCardProps) {
   return (
-    <div style={{ backgroundColor: '#f5f5f5', borderRadius: 12, padding: 28 }}>
+    <div style={{ backgroundColor: '#f8f8ff', borderRadius: 12, padding: 28 }}>
       <div
         style={{
           width: 48,
@@ -81,7 +81,7 @@ function ServiceCard({ icon, title, description }: ServiceCardProps) {
         style={{
           fontSize: 18,
           fontWeight: 700,
-          color: '#111111',
+          color: '#1a1a3e',
           marginBottom: 10,
         }}
       >
@@ -109,7 +109,7 @@ export default function CloseCompanyPage() {
         {/* Hero Section */}
         <section
           style={{
-            backgroundColor: '#111111',
+            backgroundColor: '#1a1a3e',
             paddingTop: 160,
             paddingBottom: 80,
             paddingLeft: 80,
@@ -260,7 +260,7 @@ export default function CloseCompanyPage() {
         </section>
 
         {/* Why Professional Closure Matters Section */}
-        <section style={{ backgroundColor: '#111111', padding: '80px 0' }}>
+        <section style={{ backgroundColor: '#1a1a3e', padding: '80px 0' }}>
           <div style={{ maxWidth: 1400, margin: '0 auto', padding: '0 32px' }}>
             <div
               style={{

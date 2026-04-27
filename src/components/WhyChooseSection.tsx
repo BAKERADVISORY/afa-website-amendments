@@ -89,7 +89,7 @@ export function WhyChooseSection() {
   return (
     <section
       style={{
-        backgroundColor: '#111111',
+        backgroundColor: '#1a1a3e',
         padding: '80px 0',
         position: 'relative',
         overflow: 'hidden',

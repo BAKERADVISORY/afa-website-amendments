@@ -62,12 +62,12 @@ export function ComparisonSection() {
           style={{
             fontSize: 38,
             fontWeight: 700,
-            color: '#111111',
+            color: '#1a1a3e',
             textAlign: 'center',
             margin: '0 0 16px 0',
           }}
         >
-          Why engage <span style={{ color: '#333333' }}>with us?</span>
+          Why engage <span style={{ color: '#9b8ec4' }}>with us?</span>
         </h2>
         <p
           style={{
@@ -97,7 +97,7 @@ export function ComparisonSection() {
         {/* Header row */}
         <div
           style={{
-            backgroundColor: '#111111',
+            backgroundColor: '#1a1a3e',
             padding: '16px 24px',
             display: 'grid',
             gridTemplateColumns: '1fr 1fr 1fr',
@@ -129,7 +129,7 @@ export function ComparisonSection() {
             }}
           >
             {/* Col 1: Feature name */}
-            <div style={{ fontWeight: 600, color: '#111111', fontSize: 15 }}>
+            <div style={{ fontWeight: 600, color: '#1a1a3e', fontSize: 15 }}>
               {row.feature}
             </div>
 
@@ -176,19 +176,19 @@ export function ComparisonSection() {
         {/* Key Difference row */}
         <div
           style={{
-            backgroundColor: '#f5f5f5',
+            backgroundColor: '#f8f8ff',
             padding: 24,
             borderRadius: '0 0 16px 16px',
             display: 'flex',
             gap: 24,
             alignItems: 'flex-start',
-            borderTop: '3px solid #333333',
+            borderTop: '3px solid #9b8ec4',
           }}
         >
           <div
             style={{
               fontWeight: 700,
-              color: '#111111',
+              color: '#1a1a3e',
               fontSize: 18,
               whiteSpace: 'nowrap',
             }}

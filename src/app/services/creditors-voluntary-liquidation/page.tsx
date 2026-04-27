@@ -98,7 +98,7 @@ export default function CreditorsVoluntaryLiquidationPage() {
         {/* Hero Section */}
         <section
           style={{
-            backgroundColor: '#111111',
+            backgroundColor: '#1a1a3e',
             paddingTop: 160,
             paddingBottom: 80,
             paddingLeft: 80,
@@ -239,7 +239,7 @@ export default function CreditorsVoluntaryLiquidationPage() {
                 <div
                   key={title}
                   style={{
-                    backgroundColor: '#f5f5f5',
+                    backgroundColor: '#f8f8ff',
                     borderRadius: 12,
                     padding: 28,
                   }}
@@ -271,7 +271,7 @@ export default function CreditorsVoluntaryLiquidationPage() {
         </section>
 
         {/* The CVL Process Section */}
-        <section style={{ backgroundColor: '#111111', padding: '80px 0' }}>
+        <section style={{ backgroundColor: '#1a1a3e', padding: '80px 0' }}>
           <div style={{ maxWidth: 1400, margin: '0 auto', padding: '0 32px' }}>
             <h2
               style={{
@@ -396,7 +396,7 @@ export default function CreditorsVoluntaryLiquidationPage() {
         </section>
 
         {/* Benefits Section */}
-        <section style={{ backgroundColor: '#f5f5f5', padding: '80px 0' }}>
+        <section style={{ backgroundColor: '#f8f8ff', padding: '80px 0' }}>
           <div style={{ maxWidth: 1400, margin: '0 auto', padding: '0 32px' }}>
             <div
               style={{
@@ -523,7 +523,7 @@ export default function CreditorsVoluntaryLiquidationPage() {
                 style={{
                   fontSize: 24,
                   fontWeight: 700,
-                  color: '#111111',
+                  color: '#1a1a3e',
                   marginBottom: 16,
                   lineHeight: 1.3,
                 }}
@@ -571,7 +571,7 @@ export default function CreditorsVoluntaryLiquidationPage() {
               style={{
                 fontSize: 22,
                 fontWeight: 700,
-                color: '#111111',
+                color: '#1a1a3e',
                 marginBottom: 24,
               }}
             >
@@ -581,12 +581,12 @@ export default function CreditorsVoluntaryLiquidationPage() {
               <a
                 href="/services/voluntary-administration/"
                 style={{
-                  backgroundColor: '#f5f5f5',
+                  backgroundColor: '#f8f8ff',
                   borderRadius: 8,
                   padding: '14px 20px',
                   fontSize: 15,
                   fontWeight: 600,
-                  color: '#111111',
+                  color: '#1a1a3e',
                   textDecoration: 'none',
                 }}
               >
@@ -595,12 +595,12 @@ export default function CreditorsVoluntaryLiquidationPage() {
               <a
                 href="/services/small-business-restructure/"
                 style={{
-                  backgroundColor: '#f5f5f5',
+                  backgroundColor: '#f8f8ff',
                   borderRadius: 8,
                   padding: '14px 20px',
                   fontSize: 15,
                   fontWeight: 600,
-                  color: '#111111',
+                  color: '#1a1a3e',
                   textDecoration: 'none',
                 }}
               >
@@ -609,12 +609,12 @@ export default function CreditorsVoluntaryLiquidationPage() {
               <a
                 href="/close-company/"
                 style={{
-                  backgroundColor: '#f5f5f5',
+                  backgroundColor: '#f8f8ff',
                   borderRadius: 8,
                   padding: '14px 20px',
                   fontSize: 15,
                   fontWeight: 600,
-                  color: '#111111',
+                  color: '#1a1a3e',
                   textDecoration: 'none',
                 }}
               >

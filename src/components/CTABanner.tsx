@@ -48,7 +48,7 @@ export function CTABanner() {
     <section
       id="contact"
       style={{
-        backgroundColor: '#111111',
+        backgroundColor: '#1a1a3e',
         padding: '80px 0',
         position: 'relative',
         overflow: 'hidden',
@@ -197,7 +197,7 @@ export function CTABanner() {
                 style={{
                   fontSize: 22,
                   fontWeight: 700,
-                  color: '#111111',
+                  color: '#1a1a3e',
                   margin: '0 0 12px',
                 }}
               >
@@ -217,7 +217,7 @@ export function CTABanner() {
                 style={{
                   fontSize: 20,
                   fontWeight: 700,
-                  color: '#111111',
+                  color: '#1a1a3e',
                   margin: '0 0 4px',
                 }}
               >
@@ -361,7 +361,7 @@ export function CTABanner() {
               <button
                 type="submit"
                 style={{
-                  backgroundColor: '#111111',
+                  backgroundColor: '#1a1a3e',
                   color: '#ffffff',
                   borderRadius: 50,
                   padding: '14px 28px',

@@ -32,7 +32,7 @@ export function TestimonialsSection() {
   const current = reviews[activeIndex]
 
   return (
-    <section style={{ backgroundColor: '#111111', padding: '80px 0' }}>
+    <section style={{ backgroundColor: '#1a1a3e', padding: '80px 0' }}>
       <div
         style={{
           display: 'flex',
@@ -82,7 +82,7 @@ export function TestimonialsSection() {
               borderRadius: 16,
               padding: 32,
               position: 'relative',
-              borderTop: '4px solid #333333',
+              borderTop: '4px solid #9b8ec4',
             }}
           >
             <span
