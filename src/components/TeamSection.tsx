@@ -1,11 +1,12 @@
 interface TeamMemberProps {
-  initials: string
+  photo: string
+  alt: string
   name: string
   role: string
   description: string
 }
 
-function TeamMember({ initials, name, role, description }: TeamMemberProps) {
+function TeamMember({ photo, alt, name, role, description }: TeamMemberProps) {
   return (
     <div
       style={{
@@ -21,25 +22,21 @@ function TeamMember({ initials, name, role, description }: TeamMemberProps) {
         borderTop: '3px solid #1a1a3e',
       }}
     >
-      {/* Avatar */}
-      <div
+      {/* Photo */}
+      <img
+        src={photo}
+        alt={alt}
         style={{
-          width: 72,
-          height: 72,
+          width: '120px',
+          height: '120px',
           borderRadius: '50%',
-          backgroundColor: '#1a1a3e',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          fontSize: 22,
-          fontWeight: 700,
-          color: '#ffffff',
-          letterSpacing: 1,
+          objectFit: 'cover',
+          objectPosition: 'center top',
           border: '3px solid #9b8ec4',
+          display: 'block',
+          margin: '0 auto 16px',
         }}
-      >
-        {initials}
-      </div>
+      />
 
       <div>
         <h3
@@ -77,13 +74,15 @@ function TeamMember({ initials, name, role, description }: TeamMemberProps) {
 
 const team: TeamMemberProps[] = [
   {
-    initials: 'JB',
+    photo: '/JB.jpg',
+    alt: 'Jason Baker',
     name: 'Jason Baker',
     role: 'Chartered Accountant',
     description: '',
   },
   {
-    initials: 'JM',
+    photo: '/JMOY.jpg',
+    alt: 'Jonathan Moy',
     name: 'Jonathan Moy',
     role: 'Advisory & Negotiations',
     description: '',

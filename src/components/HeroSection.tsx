@@ -33,7 +33,7 @@ export function HeroSection() {
         style={{
           position: 'absolute',
           inset: 0,
-          backgroundColor: 'rgba(0, 0, 0, 0.72)',
+          backgroundColor: 'rgba(10, 10, 50, 0.45)',
         }}
       />
 

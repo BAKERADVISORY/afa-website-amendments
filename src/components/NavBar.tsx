@@ -18,7 +18,12 @@ function AfaLogo() {
     <svg
       viewBox="0 0 400 120"
       xmlns="http://www.w3.org/2000/svg"
-      style={{ display: 'block', height: '52px', width: 'auto' }}
+      style={{
+        display: 'block',
+        height: '104px',
+        width: 'auto',
+        maxHeight: '60px',
+      }}
     >
       <rect x="0" y="0" width="400" height="120" fill="#1a1a3e" />
       <text
@@ -66,6 +71,7 @@ export function NavBar() {
         zIndex: 50,
         backgroundColor: '#1a1a3e',
         height: '80px',
+        overflow: 'hidden',
         display: 'flex',
         alignItems: 'center',
       }}
