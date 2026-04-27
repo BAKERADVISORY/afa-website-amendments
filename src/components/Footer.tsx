@@ -3,7 +3,7 @@ import { Mail, MapPin } from 'lucide-react'
 function AfaLogo() {
   return (
     <svg
-      width="480"
+      width="960"
       viewBox="0 0 400 120"
       xmlns="http://www.w3.org/2000/svg"
       style={{ display: 'block' }}
@@ -96,15 +96,6 @@ export function Footer() {
             <div style={{ marginBottom: 16 }}>
               <AfaLogo />
             </div>
-            <p
-              style={{
-                fontSize: 13,
-                color: 'rgba(255,255,255,0.5)',
-                marginBottom: 20,
-              }}
-            >
-              ABN 73 680 451 129
-            </p>
             {/* Email */}
             <div
               style={{
@@ -118,10 +109,10 @@ export function Footer() {
             >
               <Mail size={16} color="#cccccc" />
               <a
-                href="mailto:jason@australianfinancialadvisory.com.au"
+                href="mailto:info@australianfinancialadvisory.com.au"
                 style={{ color: 'inherit', textDecoration: 'none' }}
               >
-                jason@australianfinancialadvisory.com.au
+                info@australianfinancialadvisory.com.au
               </a>
             </div>
             {/* Gold Coast */}
@@ -382,6 +373,7 @@ export function Footer() {
           <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
             <span>© 2026 Australian Financial Advisory Pty Ltd</span>
             <span>ACN 688 456 788</span>
+            <span>ABN 73 680 451 129</span>
             <a href="/privacy-policy/" style={{ color: 'inherit' }}>
               Privacy Policy
             </a>

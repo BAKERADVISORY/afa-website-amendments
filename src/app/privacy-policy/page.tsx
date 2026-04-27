@@ -127,14 +127,14 @@ export default function PrivacyPolicyPage() {
                     You have the right to access and correct your personal
                     information held by us. To make a request contact us at{' '}
                     <a
-                      href="mailto:jason@australianfinancialadvisory.com.au"
+                      href="mailto:info@australianfinancialadvisory.com.au"
                       style={{
                         color: '#333333',
                         textDecoration: 'none',
                         fontWeight: 600,
                       }}
                     >
-                      jason@australianfinancialadvisory.com.au
+                      info@australianfinancialadvisory.com.au
                     </a>
                   </p>
                 ),
@@ -256,10 +256,10 @@ export default function PrivacyPolicyPage() {
                 <div>
                   Email:{' '}
                   <a
-                    href="mailto:jason@australianfinancialadvisory.com.au"
+                    href="mailto:info@australianfinancialadvisory.com.au"
                     style={{ color: '#ffffff', textDecoration: 'none' }}
                   >
-                    jason@australianfinancialadvisory.com.au
+                    info@australianfinancialadvisory.com.au
                   </a>
                 </div>
               </div>

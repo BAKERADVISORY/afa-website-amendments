@@ -191,10 +191,10 @@ export default function TermsConditionsPage() {
                 <div>
                   Email:{' '}
                   <a
-                    href="mailto:jason@australianfinancialadvisory.com.au"
+                    href="mailto:info@australianfinancialadvisory.com.au"
                     style={{ color: '#ffffff', textDecoration: 'none' }}
                   >
-                    jason@australianfinancialadvisory.com.au
+                    info@australianfinancialadvisory.com.au
                   </a>
                 </div>
               </div>
