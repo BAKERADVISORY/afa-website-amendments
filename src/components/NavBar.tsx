@@ -27,38 +27,21 @@ const serviceLinks = [
 function AfaLogo() {
   return (
     <svg
-      viewBox="0 0 400 120"
+      width="320"
+      viewBox="0 0 420 100"
       xmlns="http://www.w3.org/2000/svg"
       className="afa-nav-logo"
-      style={{ maxHeight: '100px', width: 'auto', display: 'block' }}
+      style={{ display: 'block' }}
     >
-      <rect x="0" y="0" width="400" height="120" fill="#1a1a3e" />
-      <text
-        x="200"
-        y="78"
-        textAnchor="middle"
-        style={{
-          fontFamily: 'Barlow, Arial, sans-serif',
-          fontWeight: 800,
-          fontSize: '66px',
-          fill: '#ffffff',
-          letterSpacing: '-2px',
-        }}
-      >
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@800;400&display=swap');
+        .lm { font-family: Barlow, Arial, sans-serif; font-weight: 800; font-size: 72px; fill: #ffffff; stroke: #ffffff; stroke-width: 4px; paint-order: stroke fill; letter-spacing: 2px; }
+        .ls { font-family: Barlow, Arial, sans-serif; font-weight: 500; font-size: 11.5px; fill: #ffffff; letter-spacing: 4.5px; }
+      `}</style>
+      <text x="210" y="72" textAnchor="middle" className="lm">
         AFA
       </text>
-      <text
-        x="200"
-        y="96"
-        textAnchor="middle"
-        style={{
-          fontFamily: 'Barlow, Arial, sans-serif',
-          fontWeight: 400,
-          fontSize: '9px',
-          fill: '#ffffff',
-          letterSpacing: '3px',
-        }}
-      >
+      <text x="210" y="90" textAnchor="middle" className="ls">
         AUSTRALIAN FINANCIAL ADVISORY
       </text>
     </svg>
