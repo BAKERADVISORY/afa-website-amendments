@@ -86,6 +86,7 @@ function ServiceCard({
 
       <a
         href={href}
+        className="service-learn-more"
         style={{
           backgroundColor: '#1a1a3e',
           color: '#FFFFFF',
@@ -227,7 +228,7 @@ export function AboutServicesSection() {
             gridTemplateColumns: 'repeat(2, 1fr)',
             gap: 24,
           }}
-          className="services-grid"
+          className="services-grid mobile-stack-grid"
         >
           {cards.map((card) => (
             <div key={card.href} id={card.id}>
@@ -241,6 +242,13 @@ export function AboutServicesSection() {
         @media (max-width: 767px) {
           .services-grid {
             grid-template-columns: 1fr !important;
+          }
+          .service-learn-more {
+            width: 100% !important;
+            display: block !important;
+            text-align: center !important;
+            align-self: stretch !important;
+            box-sizing: border-box !important;
           }
         }
       `}</style>

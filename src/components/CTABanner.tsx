@@ -360,6 +360,7 @@ export function CTABanner() {
 
               <button
                 type="submit"
+                className="cta-submit-btn"
                 style={{
                   backgroundColor: '#1a1a3e',
                   color: '#ffffff',
@@ -394,6 +395,9 @@ export function CTABanner() {
         @media (max-width: 767px) {
           .cta-grid {
             grid-template-columns: 1fr !important;
+          }
+          .cta-submit-btn {
+            width: 100% !important;
           }
         }
       `}</style>

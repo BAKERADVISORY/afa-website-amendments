@@ -82,6 +82,7 @@ export function Footer() {
       <div style={{ maxWidth: 1400, margin: '0 auto', padding: '0 32px' }}>
         {/* Top grid: 4 columns */}
         <div
+          className="footer-grid"
           style={{
             display: 'grid',
             gridTemplateColumns: '1.5fr 1fr 1fr 1.8fr',
@@ -92,8 +93,8 @@ export function Footer() {
           }}
         >
           {/* Col 1: Brand */}
-          <div>
-            <div style={{ marginBottom: 16 }}>
+          <div className="footer-col-brand">
+            <div className="footer-logo-wrap" style={{ marginBottom: 16 }}>
               <AfaLogo />
             </div>
             {/* Email */}
@@ -217,17 +218,28 @@ export function Footer() {
               Menu
             </h4>
             <nav>
-              {[
-                'Home',
-                'About',
-                'Reduce Debt',
-                'Close Company',
-                'Services',
-                'Contact',
-              ].map((item) => (
+              {(
+                [
+                  { label: 'Home', href: '/' },
+                  { label: 'DPN Risk', href: '/director-penalty-notice/' },
+                  { label: 'Reduce Debt', href: '/reduce-debt/' },
+                  {
+                    label: 'Restructure Business',
+                    href: '/restructure-your-business/',
+                  },
+                  {
+                    label: 'Admin & Liquidation',
+                    href: '/administration-and-liquidation/',
+                  },
+                  {
+                    label: 'Credit Repair & Funding',
+                    href: '/credit-repair-and-funding/',
+                  },
+                ] as { label: string; href: string }[]
+              ).map(({ label, href }) => (
                 <a
-                  key={item}
-                  href={`/${item.toLowerCase().replace(' ', '-')}/`}
+                  key={label}
+                  href={href}
                   style={{
                     display: 'block',
                     color: 'rgba(255,255,255,0.6)',
@@ -236,7 +248,7 @@ export function Footer() {
                     padding: '4px 0',
                   }}
                 >
-                  {item}
+                  {label}
                 </a>
               ))}
             </nav>
@@ -360,6 +372,7 @@ export function Footer() {
 
         {/* Footer bottom */}
         <div
+          className="footer-bottom"
           style={{
             display: 'flex',
             justifyContent: 'space-between',
@@ -427,6 +440,32 @@ export function Footer() {
           Australia-wide.
         </p>
       </div>
+      <style>{`
+        @media (max-width: 767px) {
+          .footer-grid {
+            grid-template-columns: 1fr !important;
+            text-align: center;
+          }
+          .footer-logo-wrap {
+            display: flex;
+            justify-content: center;
+          }
+          .footer-col-brand address,
+          .footer-col-brand > div {
+            justify-content: center;
+          }
+          .footer-bottom {
+            flex-direction: column !important;
+            align-items: center !important;
+            text-align: center;
+          }
+          .footer-bottom > div {
+            flex-direction: column !important;
+            align-items: center !important;
+            gap: 4px !important;
+          }
+        }
+      `}</style>
     </footer>
   )
 }

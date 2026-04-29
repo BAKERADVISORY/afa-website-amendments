@@ -27,7 +27,10 @@ export function HowItWorksSection() {
   ]
 
   return (
-    <section style={{ backgroundColor: '#f8f8ff', padding: '80px 0' }}>
+    <section
+      className="hiw-section"
+      style={{ backgroundColor: '#f8f8ff', padding: '80px 0' }}
+    >
       <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 32px' }}>
         {/* Header */}
         <p
@@ -148,7 +151,10 @@ export function HowItWorksSection() {
             grid-template-columns: repeat(2, 1fr) !important;
           }
         }
-        @media (max-width: 480px) {
+        @media (max-width: 767px) {
+          .hiw-section {
+            padding: 40px 0 !important;
+          }
           .hiw-grid {
             grid-template-columns: 1fr !important;
           }

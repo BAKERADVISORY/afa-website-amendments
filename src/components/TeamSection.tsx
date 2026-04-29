@@ -140,7 +140,7 @@ export function TeamSection() {
             gap: 24,
             justifyContent: 'center',
           }}
-          className="team-grid"
+          className="team-grid mobile-card-center"
         >
           {team.map((member) => (
             <TeamMember key={member.name} {...member} />

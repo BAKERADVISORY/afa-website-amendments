@@ -24,6 +24,7 @@ export function HeroSection() {
 
       {/* Content */}
       <div
+        className="hero-content"
         style={{
           position: 'relative',
           zIndex: 10,
@@ -35,6 +36,7 @@ export function HeroSection() {
         }}
       >
         <h1
+          className="mobile-hero-title"
           style={{
             fontFamily: 'Manrope, sans-serif',
             fontWeight: 700,
@@ -83,6 +85,7 @@ export function HeroSection() {
 
         <a
           href="#contact"
+          className="mobile-full-button"
           style={{
             backgroundColor: '#ffffff',
             color: '#1a1a3e',
@@ -101,6 +104,7 @@ export function HeroSection() {
         </a>
 
         <ul
+          className="hero-benefits"
           style={{
             display: 'flex',
             gap: '32px',
@@ -131,6 +135,21 @@ export function HeroSection() {
           ))}
         </ul>
       </div>
+
+      <style>{`
+        @media (max-width: 767px) {
+          .hero-content {
+            padding-top: 128px !important;
+            padding-left: 24px !important;
+            padding-right: 24px !important;
+            padding-bottom: 88px !important;
+          }
+          .hero-benefits {
+            flex-direction: column !important;
+            gap: 12px !important;
+          }
+        }
+      `}</style>
 
       {/* Wave divider */}
       <div

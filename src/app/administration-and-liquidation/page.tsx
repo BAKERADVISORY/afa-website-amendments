@@ -57,6 +57,7 @@ export default function AdministrationAndLiquidationPage() {
       <main style={{ paddingTop: 80 }}>
         {/* Hero */}
         <section
+          className="svc-hero"
           style={{
             backgroundColor: '#1a1a3e',
             padding: '100px 0 80px',
@@ -92,6 +93,7 @@ export default function AdministrationAndLiquidationPage() {
           >
             <SectionLabel text="Administration & Liquidation Advisory" light />
             <h1
+              className="mobile-hero-title"
               style={{
                 fontSize: 52,
                 fontWeight: 700,
@@ -126,6 +128,7 @@ export default function AdministrationAndLiquidationPage() {
             </p>
             <a
               href="/#contact"
+              className="mobile-full-button"
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -573,9 +576,8 @@ export default function AdministrationAndLiquidationPage() {
 
       <style>{`
         @media (max-width: 767px) {
-          .aal-two-col {
-            grid-template-columns: 1fr !important;
-          }
+          .svc-hero { padding: 40px 0 !important; }
+          .aal-two-col { grid-template-columns: 1fr !important; }
         }
       `}</style>
     </>

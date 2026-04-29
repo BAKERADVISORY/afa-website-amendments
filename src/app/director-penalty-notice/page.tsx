@@ -87,6 +87,7 @@ export default function DirectorPenaltyNoticePage() {
       <main style={{ paddingTop: 80 }}>
         {/* 1. Hero */}
         <section
+          className="svc-hero"
           style={{
             backgroundColor: '#1a1a3e',
             padding: '100px 0 80px',
@@ -122,6 +123,7 @@ export default function DirectorPenaltyNoticePage() {
           >
             <SectionLabel text="Director Penalty Notice" />
             <h1
+              className="mobile-hero-title"
               style={{
                 fontSize: 52,
                 fontWeight: 700,
@@ -156,6 +158,7 @@ export default function DirectorPenaltyNoticePage() {
             </p>
             <a
               href="/#contact"
+              className="mobile-full-button"
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -906,12 +909,9 @@ export default function DirectorPenaltyNoticePage() {
 
       <style>{`
         @media (max-width: 767px) {
-          .dpn-two-col {
-            grid-template-columns: 1fr !important;
-          }
-          .dpn-three-col {
-            grid-template-columns: 1fr !important;
-          }
+          .svc-hero { padding: 40px 0 !important; }
+          .dpn-two-col { grid-template-columns: 1fr !important; }
+          .dpn-three-col { grid-template-columns: 1fr !important; }
         }
       `}</style>
     </>

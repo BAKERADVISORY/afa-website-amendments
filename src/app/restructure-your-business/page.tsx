@@ -56,6 +56,7 @@ export default function RestructureYourBusinessPage() {
       <main style={{ paddingTop: 80 }}>
         {/* Hero */}
         <section
+          className="svc-hero"
           style={{
             backgroundColor: '#1a1a3e',
             padding: '100px 0 80px',
@@ -91,6 +92,7 @@ export default function RestructureYourBusinessPage() {
           >
             <SectionLabel text="Business Restructure Advisory" light />
             <h1
+              className="mobile-hero-title"
               style={{
                 fontSize: 52,
                 fontWeight: 700,
@@ -126,6 +128,7 @@ export default function RestructureYourBusinessPage() {
             </p>
             <a
               href="/#contact"
+              className="mobile-full-button"
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -560,9 +563,8 @@ export default function RestructureYourBusinessPage() {
 
       <style>{`
         @media (max-width: 767px) {
-          .ryb-two-col {
-            grid-template-columns: 1fr !important;
-          }
+          .svc-hero { padding: 40px 0 !important; }
+          .ryb-two-col { grid-template-columns: 1fr !important; }
         }
       `}</style>
     </>

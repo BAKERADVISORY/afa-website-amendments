@@ -50,6 +50,7 @@ export default function CreditRepairAndFundingPage() {
       <main style={{ paddingTop: 80 }}>
         {/* Hero */}
         <section
+          className="svc-hero"
           style={{
             backgroundColor: '#1a1a3e',
             padding: '100px 0 80px',
@@ -85,6 +86,7 @@ export default function CreditRepairAndFundingPage() {
           >
             <SectionLabel text="Credit Repair & Funding" light />
             <h1
+              className="mobile-hero-title"
               style={{
                 fontSize: 52,
                 fontWeight: 700,
@@ -120,6 +122,7 @@ export default function CreditRepairAndFundingPage() {
             </p>
             <a
               href="/#contact"
+              className="mobile-full-button"
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -493,9 +496,8 @@ export default function CreditRepairAndFundingPage() {
 
       <style>{`
         @media (max-width: 767px) {
-          .crf-two-col {
-            grid-template-columns: 1fr !important;
-          }
+          .svc-hero { padding: 40px 0 !important; }
+          .crf-two-col { grid-template-columns: 1fr !important; }
         }
       `}</style>
     </>

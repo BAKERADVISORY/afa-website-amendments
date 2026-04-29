@@ -68,14 +68,22 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
+    box-sizing: border-box;
   }
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-sans);
     color: #444444;
+    overflow-x: hidden;
   }
   html {
     scroll-behavior: smooth;
+  }
+  img,
+  svg,
+  video,
+  canvas {
+    max-width: 100%;
   }
   h1,
   h2,
@@ -107,4 +115,61 @@
 /* AFA gold gradient */
 .afa-gold-gradient {
   background: linear-gradient(135deg, #c9a84c, #b8963e);
+}
+
+/* Mobile utility classes */
+.mobile-section {
+}
+.mobile-hero-section {
+}
+.mobile-hero-title {
+}
+.mobile-stack-grid {
+}
+.mobile-two-col {
+}
+.mobile-three-col {
+}
+.mobile-four-col {
+}
+.mobile-form-row {
+}
+.mobile-content-grid {
+}
+.mobile-full-button {
+}
+.mobile-center-text {
+}
+.mobile-card-center {
+}
+.mobile-gap-tight {
+}
+
+@media (max-width: 767px) {
+  .mobile-section {
+    padding: 40px 0;
+  }
+  .mobile-hero-title {
+    font-size: 36px !important;
+  }
+  .mobile-stack-grid,
+  .mobile-two-col,
+  .mobile-three-col,
+  .mobile-four-col,
+  .mobile-form-row,
+  .mobile-content-grid {
+    grid-template-columns: 1fr !important;
+    flex-direction: column !important;
+  }
+  .mobile-full-button {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+  .mobile-center-text {
+    text-align: center !important;
+  }
+  .mobile-card-center {
+    align-items: center !important;
+  }
 }

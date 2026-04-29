@@ -1,7 +1,18 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { ChevronRight, Menu, X } from 'lucide-react'
+
+const mobileMenuLinks = [
+  { text: 'DPN Risk', href: '/director-penalty-notice' },
+  { text: 'Reduce Debt', href: '/reduce-debt' },
+  { text: 'Restructure Your Business', href: '/restructure-your-business' },
+  {
+    text: 'Administration & Liquidation',
+    href: '/administration-and-liquidation',
+  },
+  { text: 'Credit Repair & Funding', href: '/credit-repair-and-funding' },
+]
 
 const serviceLinks = [
   { text: 'Reduce Debt', href: '/reduce-debt/' },
@@ -18,7 +29,7 @@ function AfaLogo() {
     <svg
       viewBox="0 0 400 120"
       xmlns="http://www.w3.org/2000/svg"
-      width="560"
+      className="afa-nav-logo"
       style={{ maxHeight: '100px', width: 'auto', display: 'block' }}
     >
       <rect x="0" y="0" width="400" height="120" fill="#1a1a3e" />
@@ -57,82 +68,72 @@ function AfaLogo() {
 export function NavBar() {
   const [mobileOpen, setMobileOpen] = useState(false)
 
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? 'hidden' : ''
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [mobileOpen])
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) setMobileOpen(false)
+    }
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
   return (
-    <header
-      style={{
-        position: 'sticky',
-        top: 0,
-        left: 0,
-        right: 0,
-        zIndex: 50,
-        backgroundColor: '#1a1a3e',
-        height: '120px',
-        overflow: 'hidden',
-        display: 'flex',
-        alignItems: 'center',
-      }}
-    >
-      <div
+    <>
+      <header
         style={{
-          maxWidth: '1400px',
-          margin: '0 auto',
-          width: '100%',
+          position: 'sticky',
+          top: 0,
+          left: 0,
+          right: 0,
+          zIndex: 50,
+          backgroundColor: '#1a1a3e',
+          height: '120px',
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'space-between',
-          paddingLeft: '32px',
-          paddingRight: '32px',
         }}
       >
-        {/* Logo */}
-        <a
-          href="/"
-          aria-label="Australian Financial Advisory"
-          style={{ display: 'flex', alignItems: 'center', flexShrink: 0 }}
+        <div
+          style={{
+            maxWidth: '1400px',
+            margin: '0 auto',
+            width: '100%',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            paddingLeft: '32px',
+            paddingRight: '32px',
+          }}
         >
-          <AfaLogo />
-        </a>
-
-        {/* Desktop nav */}
-        <nav
-          className="hidden md:flex"
-          style={{ alignItems: 'center', gap: '4px' }}
-        >
-          {/* DPN Risk — first position */}
+          {/* Logo */}
           <a
-            href="/director-penalty-notice"
-            style={{
-              color: 'rgba(255,255,255,0.7)',
-              fontSize: '15px',
-              fontWeight: 700,
-              padding: '13px 8px',
-              textDecoration: 'none',
-              whiteSpace: 'nowrap',
-              transition: 'color 0.15s ease',
-            }}
-            onMouseEnter={(e) => {
-              ;(e.currentTarget as HTMLAnchorElement).style.color = '#ffffff'
-            }}
-            onMouseLeave={(e) => {
-              ;(e.currentTarget as HTMLAnchorElement).style.color =
-                'rgba(255,255,255,0.7)'
-            }}
+            href="/"
+            aria-label="Australian Financial Advisory"
+            style={{ display: 'flex', alignItems: 'center', flexShrink: 0 }}
           >
-            DPN Risk
+            <AfaLogo />
           </a>
 
-          {serviceLinks.map((link) => (
+          {/* Desktop nav */}
+          <nav
+            className="hidden md:flex"
+            style={{ alignItems: 'center', gap: '4px' }}
+          >
             <a
-              key={link.href}
-              href={link.href}
+              href="/director-penalty-notice"
               style={{
                 color: 'rgba(255,255,255,0.7)',
                 fontSize: '15px',
                 fontWeight: 700,
                 padding: '13px 8px',
                 textDecoration: 'none',
-                transition: 'color 0.15s ease',
                 whiteSpace: 'nowrap',
+                transition: 'color 0.15s ease',
               }}
               onMouseEnter={(e) => {
                 ;(e.currentTarget as HTMLAnchorElement).style.color = '#ffffff'
@@ -142,65 +143,106 @@ export function NavBar() {
                   'rgba(255,255,255,0.7)'
               }}
             >
-              {link.text}
+              DPN Risk
             </a>
-          ))}
-        </nav>
 
-        {/* Get Started button — desktop only */}
-        <a
-          href="#contact"
-          className="hidden md:inline-flex"
-          style={{
-            backgroundColor: '#9b8ec4',
-            color: '#1a1a3e',
-            borderRadius: '50px',
-            padding: '12px 20px',
-            fontSize: '15px',
-            fontWeight: 700,
-            alignItems: 'center',
-            gap: '8px',
-            textDecoration: 'none',
-            transition: 'background-color 0.15s ease',
-            whiteSpace: 'nowrap',
-            flexShrink: 0,
-          }}
-          onMouseEnter={(e) => {
-            ;(e.currentTarget as HTMLAnchorElement).style.backgroundColor =
-              '#8a7db4'
-          }}
-          onMouseLeave={(e) => {
-            ;(e.currentTarget as HTMLAnchorElement).style.backgroundColor =
-              '#9b8ec4'
-          }}
-        >
-          Get Started
-          <ChevronRight size={16} />
-        </a>
+            {serviceLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                style={{
+                  color: 'rgba(255,255,255,0.7)',
+                  fontSize: '15px',
+                  fontWeight: 700,
+                  padding: '13px 8px',
+                  textDecoration: 'none',
+                  transition: 'color 0.15s ease',
+                  whiteSpace: 'nowrap',
+                }}
+                onMouseEnter={(e) => {
+                  ;(e.currentTarget as HTMLAnchorElement).style.color =
+                    '#ffffff'
+                }}
+                onMouseLeave={(e) => {
+                  ;(e.currentTarget as HTMLAnchorElement).style.color =
+                    'rgba(255,255,255,0.7)'
+                }}
+              >
+                {link.text}
+              </a>
+            ))}
+          </nav>
 
-        {/* Hamburger — mobile only */}
-        <button
+          {/* Get Started button — desktop only */}
+          <a
+            href="#contact"
+            className="hidden md:inline-flex"
+            style={{
+              backgroundColor: '#9b8ec4',
+              color: '#1a1a3e',
+              borderRadius: '50px',
+              padding: '12px 20px',
+              fontSize: '15px',
+              fontWeight: 700,
+              alignItems: 'center',
+              gap: '8px',
+              textDecoration: 'none',
+              transition: 'background-color 0.15s ease',
+              whiteSpace: 'nowrap',
+              flexShrink: 0,
+            }}
+            onMouseEnter={(e) => {
+              ;(e.currentTarget as HTMLAnchorElement).style.backgroundColor =
+                '#8a7db4'
+            }}
+            onMouseLeave={(e) => {
+              ;(e.currentTarget as HTMLAnchorElement).style.backgroundColor =
+                '#9b8ec4'
+            }}
+          >
+            Get Started
+            <ChevronRight size={16} />
+          </a>
+
+          {/* Hamburger — mobile only */}
+          <button
+            className="md:hidden"
+            onClick={() => setMobileOpen((prev) => !prev)}
+            aria-label="Toggle menu"
+            style={{
+              background: 'none',
+              border: 'none',
+              color: '#FFFFFF',
+              cursor: 'pointer',
+              padding: '8px',
+            }}
+          >
+            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+      </header>
+
+      {/* Dark overlay — behind mobile menu */}
+      {mobileOpen && (
+        <div
           className="md:hidden"
-          onClick={() => setMobileOpen((prev) => !prev)}
-          aria-label="Toggle menu"
+          onClick={() => setMobileOpen(false)}
           style={{
-            background: 'none',
-            border: 'none',
-            color: '#FFFFFF',
-            cursor: 'pointer',
-            padding: '8px',
+            position: 'fixed',
+            inset: 0,
+            top: '120px',
+            backgroundColor: 'rgba(0,0,0,0.5)',
+            zIndex: 48,
           }}
-        >
-          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-      </div>
+        />
+      )}
 
-      {/* Mobile nav drawer */}
+      {/* Mobile nav dropdown — fixed below header */}
       {mobileOpen && (
         <div
           className="md:hidden"
           style={{
-            position: 'absolute',
+            position: 'fixed',
             top: '120px',
             left: 0,
             right: 0,
@@ -209,23 +251,10 @@ export function NavBar() {
             display: 'flex',
             flexDirection: 'column',
             padding: '8px 0',
+            zIndex: 49,
           }}
         >
-          {/* DPN Risk mobile — first position */}
-          <a
-            href="/director-penalty-notice"
-            onClick={() => setMobileOpen(false)}
-            style={{
-              color: 'rgba(255,255,255,0.7)',
-              fontSize: '16px',
-              fontWeight: 700,
-              padding: '12px 32px',
-              textDecoration: 'none',
-            }}
-          >
-            DPN Risk
-          </a>
-          {serviceLinks.map((link) => (
+          {mobileMenuLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
@@ -260,6 +289,12 @@ export function NavBar() {
           </a>
         </div>
       )}
-    </header>
+
+      <style>{`
+        @media (max-width: 767px) {
+          .afa-nav-logo { max-width: 180px !important; }
+        }
+      `}</style>
+    </>
   )
 }
