@@ -39,9 +39,21 @@ export function CTABanner() {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setSubmitted(true)
+    const response = await fetch('https://formspree.io/f/mrejjazr', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: JSON.stringify(form),
+    })
+    if (response.ok) {
+      setSubmitted(true)
+    } else {
+      alert('There was an error submitting the form. Please try again.')
+    }
   }
 
   return (
