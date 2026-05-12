@@ -10,7 +10,7 @@ function AfaLogo() {
     >
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@800;400&display=swap');
-        .lm { font-family: Barlow, Arial, sans-serif; font-weight: 800; font-size: 72px; fill: #ffffff; stroke: #ffffff; stroke-width: 4px; paint-order: stroke fill; letter-spacing: 2px; }
+        .lm { font-family: Barlow, Arial, sans-serif; font-weight: 700; font-size: 72px; fill: #ffffff; letter-spacing: 2px; }
         .ls { font-family: Barlow, Arial, sans-serif; font-weight: 500; font-size: 11.5px; fill: #ffffff; letter-spacing: 4.5px; }
       `}</style>
       <text x="210" y="72" textAnchor="middle" className="lm">
