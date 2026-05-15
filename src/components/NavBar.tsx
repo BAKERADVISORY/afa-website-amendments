@@ -28,13 +28,13 @@ function AfaLogo() {
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img
-      src="/afa-logo-transparent.png"
+      src="/afa-logo-nav.png"
       alt="Australian Financial Advisory"
       className="afa-nav-logo-img"
       style={{
-        width: 'clamp(420px, 30vw, 560px)',
+        width: 'clamp(360px, 28vw, 520px)',
         height: 'auto',
-        maxHeight: '80px',
+        maxHeight: '76px',
         display: 'block',
         objectFit: 'contain',
         background: 'transparent',
@@ -110,7 +110,7 @@ export function NavBar() {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'flex-end',
-            paddingLeft: 'clamp(440px, calc(30vw + 20px), 580px)',
+            paddingLeft: 'clamp(380px, calc(28vw + 20px), 540px)',
             paddingRight: '32px',
           }}
         >
@@ -291,9 +291,9 @@ export function NavBar() {
           .afa-header { height: 70px !important; }
           .afa-nav-inner { padding-left: 0 !important; }
           .afa-nav-logo-img {
-            width: min(72vw, 300px) !important;
+            width: min(70vw, 280px) !important;
             height: auto !important;
-            max-height: 52px !important;
+            max-height: 48px !important;
             object-fit: contain !important;
           }
           .afa-mobile-overlay { top: 70px !important; }
