@@ -32,13 +32,16 @@ function AfaLogo() {
       alt="Australian Financial Advisory"
       className="afa-nav-logo-img"
       style={{
-        height: '140px',
+        height: '56px',
+        maxHeight: '56px',
         width: 'auto',
         display: 'block',
         objectFit: 'contain',
         background: 'transparent',
         border: 'none',
         outline: 'none',
+        margin: 0,
+        padding: 0,
       }}
     />
   )
@@ -72,7 +75,8 @@ export function NavBar() {
           right: 0,
           zIndex: 50,
           backgroundColor: '#1a1a3e',
-          height: '120px',
+          height: '80px',
+          overflow: 'hidden',
           display: 'flex',
           alignItems: 'center',
         }}
@@ -93,7 +97,13 @@ export function NavBar() {
           <a
             href="/"
             aria-label="Australian Financial Advisory"
-            style={{ display: 'flex', alignItems: 'center', flexShrink: 0 }}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              flexShrink: 0,
+              padding: 0,
+              margin: 0,
+            }}
           >
             <AfaLogo />
           </a>
@@ -209,7 +219,7 @@ export function NavBar() {
           style={{
             position: 'fixed',
             inset: 0,
-            top: '120px',
+            top: '80px',
             backgroundColor: 'rgba(0,0,0,0.5)',
             zIndex: 48,
           }}
@@ -222,7 +232,7 @@ export function NavBar() {
           className="md:hidden"
           style={{
             position: 'fixed',
-            top: '120px',
+            top: '80px',
             left: 0,
             right: 0,
             backgroundColor: '#1a1a3e',
@@ -271,7 +281,7 @@ export function NavBar() {
 
       <style>{`
         @media (max-width: 767px) {
-          .afa-nav-logo-img { height: 88px !important; }
+          .afa-nav-logo-img { height: 40px !important; max-height: 40px !important; }
         }
       `}</style>
     </>
