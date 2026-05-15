@@ -32,8 +32,8 @@ function AfaLogo() {
       alt="Australian Financial Advisory"
       className="afa-nav-logo-img"
       style={{
-        height: '208px',
-        maxHeight: '208px',
+        height: '100px',
+        maxHeight: '100px',
         width: 'auto',
         display: 'block',
         objectFit: 'contain',
@@ -68,6 +68,7 @@ export function NavBar() {
   return (
     <>
       <header
+        className="afa-header"
         style={{
           position: 'sticky',
           top: 0,
@@ -75,44 +76,44 @@ export function NavBar() {
           right: 0,
           zIndex: 50,
           backgroundColor: '#1a1a3e',
-          height: '180px',
-          overflow: 'hidden',
-          display: 'flex',
-          alignItems: 'center',
+          height: '120px',
+          width: '100%',
         }}
       >
-        <div
+        {/* Logo — absolutely positioned at far left of header */}
+        <a
+          href="/"
+          aria-label="Australian Financial Advisory"
           style={{
-            maxWidth: '1400px',
-            margin: '0 auto',
-            width: '100%',
+            position: 'absolute',
+            left: 0,
+            top: '50%',
+            transform: 'translateY(-50%)',
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'space-between',
-            paddingLeft: '32px',
+            background: 'transparent',
+            boxShadow: 'none',
+            border: 'none',
+            padding: 0,
+            margin: 0,
+            zIndex: 1,
+          }}
+        >
+          <AfaLogo />
+        </a>
+
+        {/* Nav + actions — right side, padded left to clear logo */}
+        <div
+          className="afa-nav-inner"
+          style={{
+            height: '100%',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'flex-end',
+            paddingLeft: '440px',
             paddingRight: '32px',
           }}
         >
-          {/* Logo */}
-          <a
-            href="/"
-            aria-label="Australian Financial Advisory"
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              flexShrink: 0,
-              padding: 0,
-              margin: 0,
-              marginLeft: 0,
-              marginRight: 'auto',
-              background: 'transparent',
-              boxShadow: 'none',
-              border: 'none',
-            }}
-          >
-            <AfaLogo />
-          </a>
-
           {/* Desktop nav */}
           <nav
             className="hidden md:flex"
@@ -184,6 +185,7 @@ export function NavBar() {
               transition: 'background-color 0.15s ease',
               whiteSpace: 'nowrap',
               flexShrink: 0,
+              marginLeft: '16px',
             }}
             onMouseEnter={(e) => {
               ;(e.currentTarget as HTMLAnchorElement).style.backgroundColor =
@@ -219,12 +221,12 @@ export function NavBar() {
       {/* Dark overlay — behind mobile menu */}
       {mobileOpen && (
         <div
-          className="md:hidden"
+          className="afa-mobile-overlay md:hidden"
           onClick={() => setMobileOpen(false)}
           style={{
             position: 'fixed',
             inset: 0,
-            top: '180px',
+            top: '120px',
             backgroundColor: 'rgba(0,0,0,0.5)',
             zIndex: 48,
           }}
@@ -234,10 +236,10 @@ export function NavBar() {
       {/* Mobile nav dropdown — fixed below header */}
       {mobileOpen && (
         <div
-          className="md:hidden"
+          className="afa-mobile-dropdown md:hidden"
           style={{
             position: 'fixed',
-            top: '180px',
+            top: '120px',
             left: 0,
             right: 0,
             backgroundColor: '#1a1a3e',
@@ -286,7 +288,16 @@ export function NavBar() {
 
       <style>{`
         @media (max-width: 767px) {
-          .afa-nav-logo-img { height: 152px !important; }
+          .afa-header { height: 70px !important; }
+          .afa-nav-inner { padding-left: 0 !important; }
+          .afa-nav-logo-img {
+            height: 44px !important;
+            max-height: 44px !important;
+            max-width: calc(100vw - 96px) !important;
+            width: auto !important;
+          }
+          .afa-mobile-overlay { top: 70px !important; }
+          .afa-mobile-dropdown { top: 70px !important; }
         }
       `}</style>
     </>
