@@ -26,25 +26,16 @@ const serviceLinks = [
 
 function AfaLogo() {
   return (
-    <svg
-      width="320"
-      viewBox="0 0 420 100"
-      xmlns="http://www.w3.org/2000/svg"
-      className="afa-nav-logo"
-      style={{ display: 'block' }}
-    >
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@800;400&display=swap');
-        .lm { font-family: Barlow, Arial, sans-serif; font-weight: 700; font-size: 72px; fill: #ffffff; letter-spacing: 2px; }
-        .ls { font-family: Barlow, Arial, sans-serif; font-weight: 500; font-size: 11.5px; fill: #ffffff; letter-spacing: 4.5px; }
-      `}</style>
-      <text x="210" y="72" textAnchor="middle" className="lm">
-        AFA
-      </text>
-      <text x="210" y="90" textAnchor="middle" className="ls">
-        AUSTRALIAN FINANCIAL ADVISORY
-      </text>
-    </svg>
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src="/afa-logo-new.png"
+      alt="Australian Financial Advisory"
+      style={{
+        height: '52px',
+        width: 'auto',
+        display: 'block',
+      }}
+    />
   )
 }
 
@@ -272,12 +263,6 @@ export function NavBar() {
           </a>
         </div>
       )}
-
-      <style>{`
-        @media (max-width: 767px) {
-          .afa-nav-logo { max-width: 180px !important; }
-        }
-      `}</style>
     </>
   )
 }
