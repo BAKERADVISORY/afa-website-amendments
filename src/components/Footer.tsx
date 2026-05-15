@@ -4,16 +4,16 @@ function AfaLogo() {
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img
-      src="/afa-logo-new.png"
+      src="/afa-logo-transparent.png"
       alt="Australian Financial Advisory"
       style={{
-        height: '80px',
+        height: '52px',
         width: 'auto',
         display: 'block',
         objectFit: 'contain',
         background: 'transparent',
         border: 'none',
-        outline: 'none',
+        boxShadow: 'none',
       }}
     />
   )
