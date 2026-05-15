@@ -7,9 +7,13 @@ function AfaLogo() {
       src="/afa-logo-new.png"
       alt="Australian Financial Advisory"
       style={{
-        height: '60px',
+        height: '80px',
         width: 'auto',
         display: 'block',
+        objectFit: 'contain',
+        background: 'transparent',
+        border: 'none',
+        outline: 'none',
       }}
     />
   )
