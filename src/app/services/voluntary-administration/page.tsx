@@ -144,7 +144,7 @@ export default function VoluntaryAdministrationPage() {
               while being protected from creditor actions.
             </p>
             <a
-              href="/contact/"
+              href="/#contact"
               style={{
                 backgroundColor: '#333333',
                 color: '#FFFFFF',
@@ -713,7 +713,7 @@ export default function VoluntaryAdministrationPage() {
               the process.
             </p>
             <a
-              href="/contact/"
+              href="/#contact"
               style={{
                 backgroundColor: '#333333',
                 color: '#FFFFFF',

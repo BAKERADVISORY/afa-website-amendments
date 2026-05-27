@@ -136,7 +136,7 @@ export default function SmallBusinessRestructurePage() {
               help viable businesses recover while maintaining control.
             </p>
             <a
-              href="/contact/"
+              href="/#contact"
               style={{
                 backgroundColor: '#333333',
                 color: '#FFFFFF',
@@ -253,7 +253,7 @@ export default function SmallBusinessRestructurePage() {
                   ))}
                 </div>
                 <a
-                  href="/contact/"
+                  href="/#contact"
                   style={{
                     color: '#333333',
                     fontSize: 16,

@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { ChevronRight, Menu, X } from 'lucide-react'
 
 const mobileMenuLinks = [
+  { text: 'Home', href: '/' },
   { text: 'DPN Risk', href: '/director-penalty-notice' },
   { text: 'Reduce Debt', href: '/reduce-debt' },
   { text: 'Restructure Your Business', href: '/restructure-your-business' },
@@ -120,6 +121,28 @@ export function NavBar() {
             style={{ alignItems: 'center', gap: '4px' }}
           >
             <a
+              href="/"
+              style={{
+                color: 'rgba(255,255,255,0.7)',
+                fontSize: '15px',
+                fontWeight: 700,
+                padding: '13px 8px',
+                textDecoration: 'none',
+                whiteSpace: 'nowrap',
+                transition: 'color 0.15s ease',
+              }}
+              onMouseEnter={(e) => {
+                ;(e.currentTarget as HTMLAnchorElement).style.color = '#ffffff'
+              }}
+              onMouseLeave={(e) => {
+                ;(e.currentTarget as HTMLAnchorElement).style.color =
+                  'rgba(255,255,255,0.7)'
+              }}
+            >
+              Home
+            </a>
+
+            <a
               href="/director-penalty-notice"
               style={{
                 color: 'rgba(255,255,255,0.7)',
@@ -170,7 +193,7 @@ export function NavBar() {
 
           {/* Get Started button — desktop only */}
           <a
-            href="#contact"
+            href="/#contact"
             className="hidden md:inline-flex"
             style={{
               backgroundColor: '#9b8ec4',
@@ -267,7 +290,7 @@ export function NavBar() {
             </a>
           ))}
           <a
-            href="#contact"
+            href="/#contact"
             onClick={() => setMobileOpen(false)}
             style={{
               backgroundColor: '#9b8ec4',

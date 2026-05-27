@@ -145,7 +145,7 @@ export default function CreditorsVoluntaryLiquidationPage() {
               affairs and distribute assets fairly to creditors.
             </p>
             <a
-              href="/contact/"
+              href="/#contact"
               style={{
                 backgroundColor: '#333333',
                 color: '#FFFFFF',
@@ -443,7 +443,7 @@ export default function CreditorsVoluntaryLiquidationPage() {
                   from ongoing liability.
                 </p>
                 <a
-                  href="/contact/"
+                  href="/#contact"
                   style={{
                     backgroundColor: '#333333',
                     color: '#FFFFFF',
@@ -545,7 +545,7 @@ export default function CreditorsVoluntaryLiquidationPage() {
                 Act.
               </p>
               <a
-                href="/contact/"
+                href="/#contact"
                 style={{
                   backgroundColor: '#333333',
                   color: '#FFFFFF',

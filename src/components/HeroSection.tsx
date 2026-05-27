@@ -84,7 +84,7 @@ export function HeroSection() {
         </p>
 
         <a
-          href="#contact"
+          href="/#contact"
           className="mobile-full-button"
           style={{
             backgroundColor: '#ffffff',

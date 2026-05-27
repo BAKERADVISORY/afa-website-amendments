@@ -108,7 +108,7 @@ export default function AboutPage() {
               proven results.
             </p>
             <a
-              href="#contact"
+              href="/#contact"
               style={{
                 backgroundColor: '#333333',
                 color: '#FFFFFF',

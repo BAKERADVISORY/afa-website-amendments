@@ -177,7 +177,7 @@ export function FAQSection() {
             advice for your specific circumstances — no obligation.
           </p>
           <a
-            href="#contact"
+            href="/#contact"
             style={{
               backgroundColor: '#ffffff',
               color: '#1a1a3e',

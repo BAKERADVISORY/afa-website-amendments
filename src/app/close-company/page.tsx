@@ -163,7 +163,7 @@ export default function CloseCompanyPage() {
               to protect you from future liabilities.
             </p>
             <a
-              href="/contact/"
+              href="/#contact"
               style={{
                 backgroundColor: '#333333',
                 color: '#FFFFFF',
@@ -345,7 +345,7 @@ export default function CloseCompanyPage() {
                   ))}
                 </ul>
                 <a
-                  href="/contact/"
+                  href="/#contact"
                   style={{
                     backgroundColor: '#333333',
                     color: '#FFFFFF',
@@ -425,7 +425,7 @@ export default function CloseCompanyPage() {
                 it deserves.
               </p>
               <a
-                href="/contact/"
+                href="/#contact"
                 style={{
                   backgroundColor: '#333333',
                   color: '#FFFFFF',

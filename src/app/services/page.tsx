@@ -81,7 +81,7 @@ export default function ServicesPage() {
               future.
             </p>
             <a
-              href="#contact"
+              href="/#contact"
               style={{
                 backgroundColor: '#333333',
                 color: '#FFFFFF',
@@ -215,7 +215,7 @@ export default function ServicesPage() {
               goals.
             </p>
             <a
-              href="#contact"
+              href="/#contact"
               style={{
                 backgroundColor: '#333333',
                 color: '#FFFFFF',

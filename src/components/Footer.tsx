@@ -19,39 +19,6 @@ function AfaLogo() {
   )
 }
 
-const labelStyle: React.CSSProperties = {
-  display: 'block',
-  fontSize: 13,
-  color: 'rgba(255,255,255,0.7)',
-  marginBottom: 4,
-}
-
-const inputStyle: React.CSSProperties = {
-  width: '100%',
-  backgroundColor: 'rgba(255,255,255,0.05)',
-  border: '1px solid rgba(255,255,255,0.15)',
-  borderRadius: 6,
-  padding: '10px 12px',
-  color: '#FFFFFF',
-  fontSize: 14,
-  boxSizing: 'border-box',
-}
-
-interface FormFieldProps {
-  label: string
-  type: string
-  required?: boolean
-}
-
-function FormField({ label, type, required }: FormFieldProps) {
-  return (
-    <div>
-      <label style={labelStyle}>{label}</label>
-      <input type={type} required={required} style={inputStyle} />
-    </div>
-  )
-}
-
 export function Footer() {
   return (
     <footer
@@ -63,7 +30,7 @@ export function Footer() {
           className="footer-grid"
           style={{
             display: 'grid',
-            gridTemplateColumns: '1.5fr 1fr 1fr 1.8fr',
+            gridTemplateColumns: '1.5fr 1fr 1fr',
             gap: 48,
             paddingBottom: 48,
             borderBottom: '1px solid rgba(255,255,255,0.1)',
@@ -276,75 +243,6 @@ export function Footer() {
                 </a>
               ))}
             </nav>
-          </div>
-
-          {/* Col 4: Contact form */}
-          <div>
-            <h4
-              style={{
-                fontSize: 16,
-                fontWeight: 700,
-                color: '#ffffff',
-                marginBottom: 16,
-              }}
-            >
-              Get in touch
-            </h4>
-            <form>
-              <div
-                style={{
-                  display: 'grid',
-                  gridTemplateColumns: '1fr 1fr',
-                  gap: 12,
-                  marginBottom: 12,
-                }}
-              >
-                <FormField label="Full Name" type="text" required />
-                <FormField label="Email" type="email" required />
-              </div>
-              <div
-                style={{
-                  display: 'grid',
-                  gridTemplateColumns: '1fr 1fr',
-                  gap: 12,
-                  marginBottom: 12,
-                }}
-              >
-                <FormField label="Phone Number" type="tel" required />
-                <FormField label="Company Name" type="text" required />
-              </div>
-              <div style={{ marginBottom: 12 }}>
-                <label style={labelStyle}>Service Needed</label>
-                <select style={inputStyle}>
-                  <option>Reduce Debt</option>
-                  <option>Close Company</option>
-                  <option>Other</option>
-                </select>
-              </div>
-              <div style={{ marginBottom: 16 }}>
-                <label style={labelStyle}>Message</label>
-                <textarea
-                  style={{ ...inputStyle, height: 80, resize: 'vertical' }}
-                />
-              </div>
-              <button
-                type="submit"
-                style={{
-                  width: '100%',
-                  backgroundColor: '#ffffff',
-                  color: '#1a1a3e',
-                  border: 'none',
-                  borderRadius: 6,
-                  padding: '14px',
-                  fontSize: 14,
-                  fontWeight: 700,
-                  letterSpacing: 1,
-                  cursor: 'pointer',
-                }}
-              >
-                SUBMIT
-              </button>
-            </form>
           </div>
         </div>
 

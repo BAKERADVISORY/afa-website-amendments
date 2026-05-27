@@ -131,7 +131,7 @@ export function DPNSection() {
             Learn More About DPNs →
           </a>
           <a
-            href="#contact"
+            href="/#contact"
             style={{
               backgroundColor: 'transparent',
               color: '#FFFFFF',

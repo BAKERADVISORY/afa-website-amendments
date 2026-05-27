@@ -7,6 +7,7 @@ import { WhyChooseSection } from '@/components/WhyChooseSection'
 import { HowItWorksSection } from '@/components/HowItWorksSection'
 import { TeamSection } from '@/components/TeamSection'
 import { FAQSection } from '@/components/FAQSection'
+import { CTABanner } from '@/components/CTABanner'
 import { PartnerLogos } from '@/components/PartnerLogos'
 import { Footer } from '@/components/Footer'
 
@@ -40,6 +41,7 @@ export default function Home() {
         <TeamSection />
         {/* <TestimonialsSection /> */}
         <FAQSection />
+        <CTABanner />
         <PartnerLogos />
       </main>
       <Footer />
