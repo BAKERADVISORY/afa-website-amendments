@@ -16,7 +16,6 @@ export const metadata: Metadata = {
     url: 'https://www.ausfinancialadvisory.com.au/close-company/',
   },
 }
-import { CTABanner } from '@/components/CTABanner'
 import { Footer } from '@/components/Footer'
 import {
   Scale,
@@ -443,8 +442,6 @@ export default function CloseCompanyPage() {
             </div>
           </div>
         </section>
-
-        <CTABanner />
       </main>
       <Footer />
     </>

@@ -15,7 +15,6 @@ export const metadata: Metadata = {
     url: 'https://www.ausfinancialadvisory.com.au/services/',
   },
 }
-import { CTABanner } from '@/components/CTABanner'
 import { Footer } from '@/components/Footer'
 import { ArrowRight } from 'lucide-react'
 
@@ -296,8 +295,6 @@ export default function ServicesPage() {
             </div>
           </div>
         </section>
-
-        <CTABanner />
       </main>
       <Footer />
     </>

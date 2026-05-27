@@ -22,7 +22,6 @@ export const metadata: Metadata = {
     url: 'https://www.ausfinancialadvisory.com.au/services/small-business-restructure/',
   },
 }
-import { CTABanner } from '@/components/CTABanner'
 import { Footer } from '@/components/Footer'
 import { CheckCircle, Clock, Calendar } from 'lucide-react'
 
@@ -614,8 +613,6 @@ export default function SmallBusinessRestructurePage() {
             </div>
           </div>
         </section>
-
-        <CTABanner />
       </main>
       <Footer />
     </>

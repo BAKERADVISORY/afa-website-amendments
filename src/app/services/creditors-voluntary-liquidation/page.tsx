@@ -25,7 +25,6 @@ export const metadata: Metadata = {
     url: 'https://www.ausfinancialadvisory.com.au/services/creditors-voluntary-liquidation/',
   },
 }
-import { CTABanner } from '@/components/CTABanner'
 import { Footer } from '@/components/Footer'
 import {
   AlertCircle,
@@ -623,8 +622,6 @@ export default function CreditorsVoluntaryLiquidationPage() {
             </div>
           </div>
         </section>
-
-        <CTABanner />
       </main>
       <Footer />
     </>
