@@ -175,6 +175,20 @@ export default function RootLayout({
     <html lang="en-AU" className={`${manrope.variable} h-full antialiased`}>
       <head>
         <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-B226QNH900"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-B226QNH900');
+`,
+          }}
+        />
+        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
