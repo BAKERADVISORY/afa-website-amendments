@@ -340,9 +340,6 @@ export function CTABanner() {
                   <option value="Administration & Liquidation">
                     Administration &amp; Liquidation
                   </option>
-                  <option value="Credit Repair & Funding">
-                    Credit Repair &amp; Funding
-                  </option>
                   <option value="Director Penalty Notice">
                     Director Penalty Notice
                   </option>

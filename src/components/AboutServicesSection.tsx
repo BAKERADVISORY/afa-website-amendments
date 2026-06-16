@@ -1,10 +1,4 @@
-import {
-  BadgeDollarSign,
-  Building2,
-  Shield,
-  CreditCard,
-  ChevronRight,
-} from 'lucide-react'
+import { BadgeDollarSign, Building2, Shield, ChevronRight } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 
 interface ServiceCardProps {
@@ -144,19 +138,6 @@ const cards: (ServiceCardProps & { id?: string })[] = [
       'Managed company wind-down',
     ],
     href: '/administration-and-liquidation/',
-  },
-  {
-    id: 'credit-repair',
-    icon: CreditCard,
-    title: 'Credit Repair & Funding',
-    description:
-      'Facing credit issues or funding challenges? We help you understand your options and connect you with the right specialists.',
-    features: [
-      'Understanding your credit position',
-      'Connecting with licensed specialists',
-      'Business and personal credit guidance',
-    ],
-    href: '/credit-repair-and-funding/',
   },
 ]
 

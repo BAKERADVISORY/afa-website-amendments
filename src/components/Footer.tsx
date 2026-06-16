@@ -176,10 +176,6 @@ export function Footer() {
                     label: 'Admin & Liquidation',
                     href: '/administration-and-liquidation/',
                   },
-                  {
-                    label: 'Credit Repair & Funding',
-                    href: '/credit-repair-and-funding/',
-                  },
                 ] as { label: string; href: string }[]
               ).map(({ label, href }) => (
                 <a

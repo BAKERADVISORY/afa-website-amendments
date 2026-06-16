@@ -12,7 +12,6 @@ const mobileMenuLinks = [
     text: 'Administration & Liquidation',
     href: '/administration-and-liquidation',
   },
-  { text: 'Credit Repair & Funding', href: '/credit-repair-and-funding' },
 ]
 
 const serviceLinks = [
@@ -22,7 +21,6 @@ const serviceLinks = [
     text: 'Administration & Liquidation',
     href: '/administration-and-liquidation/',
   },
-  { text: 'Credit Repair & Funding', href: '/credit-repair-and-funding/' },
 ]
 
 function AfaLogo() {
