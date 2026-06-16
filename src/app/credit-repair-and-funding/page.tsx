@@ -1,13 +1,13 @@
 import type { Metadata } from 'next'
 import { NavBar } from '@/components/NavBar'
 import { Footer } from '@/components/Footer'
-import { ChevronRight, Users, Search } from 'lucide-react'
+import { ChevronRight, Users, Search, CreditCard } from 'lucide-react'
 
 export const metadata: Metadata = {
   title:
     'Credit Repair & Business Funding Solutions | Gold Coast & Brisbane | Australian Financial Advisory',
   description:
-    'Understanding your credit and funding options starts with general information. Australian Financial Advisory provides general guidance only. Credit repair and specialist services must be arranged through appropriately licensed providers.',
+    'Facing credit challenges or funding difficulties? Australian Financial Advisory provides general guidance and helps connect you with the right specialists. Gold Coast, Brisbane and Australia-wide.',
   alternates: {
     canonical:
       'https://www.ausfinancialadvisory.com.au/credit-repair-and-funding/',
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title:
       'Credit Repair & Business Funding Solutions | Gold Coast & Brisbane | Australian Financial Advisory',
     description:
-      'Understanding your credit and funding options starts with general information. Australian Financial Advisory provides general guidance only. Credit repair and specialist services must be arranged through appropriately licensed providers.',
+      'Facing credit challenges or funding difficulties? Australian Financial Advisory provides general guidance and helps connect you with the right specialists. Gold Coast, Brisbane and Australia-wide.',
     url: 'https://www.ausfinancialadvisory.com.au/credit-repair-and-funding/',
   },
 }
@@ -116,9 +116,8 @@ export default function CreditRepairAndFundingPage() {
               }}
             >
               Whether it&apos;s your business or your personal credit — there
-              are options. We provide general information to help you understand
-              what those options may look like, and point you toward
-              appropriately licensed specialists who can assist.
+              are options. We help you understand your situation and point you
+              toward the right specialists who can assist.
             </p>
             <a
               href="/#contact"
@@ -156,7 +155,7 @@ export default function CreditRepairAndFundingPage() {
                   marginBottom: 16,
                 }}
               >
-                General Information About Credit and Funding Options
+                How We Can Help With Credit and Funding Challenges
               </h2>
               <p
                 style={{
@@ -166,12 +165,12 @@ export default function CreditRepairAndFundingPage() {
                   margin: 0,
                 }}
               >
-                Before pursuing credit repair or funding, it helps to understand
-                what the general options are and what licensed specialists can
-                do. We provide general information only. We do not review credit
-                files, assess disputes, or issue reports. If you need specialist
-                assistance, we can point you toward appropriately licensed
-                providers.
+                Credit issues and funding challenges can have a serious impact
+                on your business and personal financial position. We help you
+                understand what options may be available and connect you with
+                the right people. Australian Financial Advisory provides general
+                information and guidance only — specialist credit and funding
+                services are provided by appropriately licensed providers.
               </p>
             </div>
 
@@ -187,13 +186,18 @@ export default function CreditRepairAndFundingPage() {
               {[
                 {
                   icon: Search,
-                  heading: 'Understanding Your Options',
-                  body: 'We can provide general information about what credit repair and funding pathways typically look like, and help you understand what questions to ask a licensed specialist.',
+                  heading: 'Understanding Your Credit Position',
+                  body: 'We help you understand what credit and funding challenges typically look like and what options may be available to you — so you can make informed decisions about next steps.',
                 },
                 {
                   icon: Users,
-                  heading: 'Finding the Right Specialist',
-                  body: 'Credit repair and debt negotiation must be performed by appropriately licensed providers. We can assist you in identifying the right type of specialist for your situation.',
+                  heading: 'Connecting You With Specialists',
+                  body: 'Credit repair, debt negotiation, and funding solutions must be arranged through appropriately licensed providers. We can help identify the right type of specialist for your situation.',
+                },
+                {
+                  icon: CreditCard,
+                  heading: 'Business and Personal Credit',
+                  body: 'Credit issues can affect both your business and personal financial position. We provide general guidance across both areas and help you understand what licensed specialists can do.',
                 },
               ].map(({ icon: Icon, heading, body }) => (
                 <div
@@ -262,9 +266,8 @@ export default function CreditRepairAndFundingPage() {
                   style={{ display: 'flex', flexDirection: 'column', gap: 12 }}
                 >
                   {[
-                    'Defaults, court judgments, and negative credit listings can affect your ability to access finance for your business and personally.',
-                    'Credit repair services — including disputing listings and negotiating with lenders — must be performed by providers holding an appropriate Australian Credit Licence. Australian Financial Advisory does not hold a credit licence and does not perform credit repair services.',
-                    'If you believe you have grounds to dispute a listing or need assistance with your credit file, you should seek advice from an appropriately licensed credit repair provider or a financial counsellor. Financial counselling services are available free of charge through the National Debt Helpline at ndh.org.au.',
+                    'Defaults, court judgments, and negative credit listings can prevent you from accessing finance for your business and personally. In some cases these listings can be disputed where the information is inaccurate, incomplete, or incorrectly listed.',
+                    'Credit repair services must be performed by providers holding an appropriate Australian Credit Licence. Australian Financial Advisory does not hold a credit licence and does not perform credit repair services directly. We can provide general information and help you understand your options.',
                   ].map((msg) => (
                     <div
                       key={msg}
@@ -326,9 +329,8 @@ export default function CreditRepairAndFundingPage() {
                   style={{ display: 'flex', flexDirection: 'column', gap: 12 }}
                 >
                   {[
-                    'If your credit position is affecting your ability to access finance, there may be specialist lenders and brokers who work with borrowers in complex financial situations.',
-                    'Australian Financial Advisory does not provide credit, arrange loans, or act as a credit broker. Any funding solutions would need to be arranged through an appropriately licensed broker or lender.',
-                    'If you would like general information about what options may exist for your situation, contact us and we can provide general guidance only.',
+                    'If your credit position is affecting your ability to access finance, there may still be options available through specialist lenders and brokers who work with borrowers in complex financial situations.',
+                    'Australian Financial Advisory does not provide credit or act as a credit broker. We can provide general guidance on what funding options may exist and help connect you with appropriately licensed brokers or lenders.',
                   ].map((msg) => (
                     <div
                       key={msg}

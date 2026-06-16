@@ -150,11 +150,11 @@ const cards: (ServiceCardProps & { id?: string })[] = [
     icon: CreditCard,
     title: 'Credit Repair & Funding',
     description:
-      'If credit issues or funding challenges are affecting your business or personal position, we can provide general information and help you understand your options.',
+      'Facing credit issues or funding challenges? We help you understand your options and connect you with the right specialists.',
     features: [
-      'General information on credit options',
-      'Understanding what licensed specialists do',
-      'Guidance on finding the right provider',
+      'Understanding your credit position',
+      'Connecting with licensed specialists',
+      'Business and personal credit guidance',
     ],
     href: '/credit-repair-and-funding/',
   },
