@@ -95,7 +95,7 @@ export function DiscoveryCallForm() {
               margin: '0 0 4px',
             }}
           >
-            Book a Discovery Call
+            Book a Free Discovery Call
           </h3>
           <p
             style={{
@@ -112,7 +112,10 @@ export function DiscoveryCallForm() {
           {/* Name */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
             <label htmlFor="name" style={labelStyle}>
-              Your Name
+              Your Name{' '}
+              <span style={{ fontWeight: 400, fontSize: 11, color: '#999999' }}>
+                (required)
+              </span>
             </label>
             <input
               id="name"
@@ -129,7 +132,10 @@ export function DiscoveryCallForm() {
           {/* Phone */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
             <label htmlFor="phone" style={labelStyle}>
-              Phone Number
+              Phone Number{' '}
+              <span style={{ fontWeight: 400, fontSize: 11, color: '#999999' }}>
+                (required)
+              </span>
             </label>
             <input
               id="phone"
@@ -165,7 +171,10 @@ export function DiscoveryCallForm() {
           {/* Email */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
             <label htmlFor="email" style={labelStyle}>
-              Email Address
+              Email Address{' '}
+              <span style={{ fontWeight: 400, fontSize: 11, color: '#999999' }}>
+                (required)
+              </span>
             </label>
             <input
               id="email"
@@ -182,7 +191,10 @@ export function DiscoveryCallForm() {
           {/* Service dropdown */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
             <label htmlFor="service" style={labelStyle}>
-              Main Service Needed
+              Main Service Needed{' '}
+              <span style={{ fontWeight: 400, fontSize: 11, color: '#999999' }}>
+                (required)
+              </span>
             </label>
             <select
               id="service"
