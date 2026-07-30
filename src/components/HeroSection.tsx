@@ -1,4 +1,5 @@
 import { ShieldCheck, Eye, Users } from 'lucide-react'
+import { DiscoveryCallForm } from './CTABanner'
 
 export function HeroSection() {
   return (
@@ -22,127 +23,143 @@ export function HeroSection() {
         }}
       />
 
-      {/* Content */}
+      {/* Content — two columns: copy left, form card right */}
       <div
         className="hero-content"
         style={{
           position: 'relative',
           zIndex: 10,
-          paddingTop: '160px',
+          paddingTop: '184px',
           paddingLeft: '80px',
           paddingRight: '80px',
           paddingBottom: '120px',
-          maxWidth: '820px',
+          maxWidth: '1280px',
+          margin: '0 auto',
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr',
+          gap: '88px',
+          alignItems: 'start',
         }}
       >
-        <h1
-          className="mobile-hero-title"
-          style={{
-            fontFamily: 'Manrope, sans-serif',
-            fontWeight: 700,
-            fontSize: '56px',
-            lineHeight: 1.12,
-            color: '#FFFFFF',
-            margin: 0,
-          }}
+        {/* LEFT: copy */}
+        <div
+          className="hero-copy"
+          style={{ maxWidth: '620px', paddingRight: '24px' }}
         >
-          Early Action,{' '}
-          <span style={{ color: '#ffffff', opacity: 0.85 }}>
-            Better Outcomes.
-          </span>
-        </h1>
+          <h1
+            className="mobile-hero-title"
+            style={{
+              fontFamily: 'Manrope, sans-serif',
+              fontWeight: 700,
+              fontSize: '56px',
+              lineHeight: 1.12,
+              color: '#FFFFFF',
+              margin: 0,
+            }}
+          >
+            Early Action,{' '}
+            <span style={{ color: '#ffffff', opacity: 0.85 }}>
+              Better Outcomes.
+            </span>
+          </h1>
 
-        <p
-          style={{
-            fontSize: '20px',
-            color: 'rgba(255,255,255,0.9)',
-            lineHeight: 1.55,
-            maxWidth: '660px',
-            marginTop: '24px',
-            marginBottom: 0,
-            fontWeight: 500,
-          }}
-        >
-          Protect your business and personal assets from ATO debt, cash flow
-          crisis, and financial distress before it&apos;s too late. Serving
-          business owners across Gold Coast, Brisbane, and Australia-wide.
-        </p>
+          <p
+            style={{
+              fontSize: '22px',
+              fontWeight: 600,
+              color: '#ffffff',
+              lineHeight: 1.4,
+              marginTop: '20px',
+              marginBottom: '20px',
+            }}
+          >
+            Every day you wait, your options narrow — book a free, confidential
+            discovery call today. Fill in the form to get started.
+          </p>
 
-        <p
-          style={{
-            fontSize: '16px',
-            color: 'rgba(255,255,255,0.65)',
-            lineHeight: 1.65,
-            maxWidth: '620px',
-            marginTop: '16px',
-            marginBottom: 0,
-          }}
-        >
-          We work for you — the business owner — not the creditors. We explore
-          every alternative before formal insolvency to protect your company
-          record and your personal assets across Queensland and Australia-wide.
-        </p>
+          <p
+            style={{
+              fontSize: '20px',
+              color: 'rgba(255,255,255,0.9)',
+              lineHeight: 1.55,
+              maxWidth: '660px',
+              marginTop: 0,
+              marginBottom: 0,
+              fontWeight: 500,
+            }}
+          >
+            Protect your business and personal assets from ATO debt, cash flow
+            crisis, and financial distress before it&apos;s too late. Serving
+            business owners across Gold Coast, Brisbane, and Australia-wide.
+          </p>
 
-        <a
-          href="/#contact"
-          className="mobile-full-button"
-          style={{
-            backgroundColor: '#ffffff',
-            color: '#1a1a3e',
-            borderRadius: '50px',
-            padding: '16px 32px',
-            fontSize: '16px',
-            fontWeight: 700,
-            display: 'inline-block',
-            marginTop: '36px',
-            textDecoration: 'none',
-            letterSpacing: '0.01em',
-          }}
-        >
-          Schedule Your Discovery Call — Let&apos;s figure out how we can help
-          you.
-        </a>
+          <p
+            style={{
+              fontSize: '16px',
+              color: 'rgba(255,255,255,0.65)',
+              lineHeight: 1.65,
+              maxWidth: '620px',
+              marginTop: '24px',
+              marginBottom: 0,
+            }}
+          >
+            We work for you — the business owner — not the creditors. We explore
+            every alternative before formal insolvency to protect your company
+            record and your personal assets across Queensland and
+            Australia-wide.
+          </p>
 
-        <ul
-          className="hero-benefits"
-          style={{
-            display: 'flex',
-            gap: '32px',
-            listStyle: 'none',
-            padding: 0,
-            margin: '28px 0 0 0',
-            flexWrap: 'wrap',
-          }}
-        >
-          {[
-            { icon: ShieldCheck, label: 'Trusted Australia wide' },
-            { icon: Eye, label: 'Confidential & Private' },
-            { icon: Users, label: 'Experienced advisers' },
-          ].map(({ icon: Icon, label }) => (
-            <li
-              key={label}
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '8px',
-                color: 'rgba(255,255,255,0.8)',
-                fontSize: '14px',
-              }}
-            >
-              <Icon size={16} color="#cccccc" />
-              {label}
-            </li>
-          ))}
-        </ul>
+          <ul
+            className="hero-benefits"
+            style={{
+              display: 'flex',
+              gap: '32px',
+              listStyle: 'none',
+              padding: 0,
+              margin: '40px 0 0 0',
+              flexWrap: 'wrap',
+            }}
+          >
+            {[
+              { icon: ShieldCheck, label: 'Trusted Australia wide' },
+              { icon: Eye, label: 'Confidential & Private' },
+              { icon: Users, label: 'Experienced advisers' },
+            ].map(({ icon: Icon, label }) => (
+              <li
+                key={label}
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  color: 'rgba(255,255,255,0.8)',
+                  fontSize: '14px',
+                }}
+              >
+                <Icon size={16} color="#cccccc" />
+                {label}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* RIGHT: discovery call form card */}
+        <div className="hero-form">
+          <DiscoveryCallForm />
+        </div>
       </div>
 
       <style>{`
         @media (max-width: 767px) {
           .hero-content {
+            grid-template-columns: 1fr !important;
+            gap: 32px !important;
             padding-top: 128px !important;
             padding-left: 24px !important;
             padding-right: 24px !important;
             padding-bottom: 88px !important;
+          }
+          .hero-copy {
+            padding-right: 0 !important;
           }
           .hero-benefits {
             flex-direction: column !important;
