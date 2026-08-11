@@ -66,6 +66,39 @@ export function NavBar() {
 
   return (
     <>
+      {/* Slim contact bar — shown only below 1100px, i.e. exactly where the
+          in-header phone element is hidden. Sticky, so it stays pinned above
+          the header instead of scrolling away. */}
+      <a
+        href="tel:+61721133069"
+        className="afa-contact-bar"
+        style={{
+          position: 'sticky',
+          top: 0,
+          left: 0,
+          right: 0,
+          zIndex: 51,
+          height: '40px',
+          width: '100%',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: '8px',
+          backgroundColor: '#12122e',
+          borderBottom: '1px solid rgba(255,255,255,0.1)',
+          fontSize: '13px',
+          fontWeight: 700,
+          lineHeight: 1,
+          textDecoration: 'none',
+          whiteSpace: 'nowrap',
+        }}
+      >
+        <Phone size={14} color="#9b8ec4" />
+        <span style={{ color: 'rgba(255,255,255,0.65)' }}>
+          Contact us directly
+        </span>
+        <span style={{ color: '#ffffff' }}>(07) 2113 3069</span>
+      </a>
+
       <header
         className="afa-header"
         style={{
@@ -392,6 +425,17 @@ export function NavBar() {
           .afa-nav-phone { display: flex; }
         }
         .afa-nav-phone:hover .afa-nav-phone-number { color: #ffffff; }
+
+        /* Contact bar is the inverse of the in-header phone: exactly one shows. */
+        .afa-contact-bar { display: flex; }
+        @media (min-width: 1100px) {
+          .afa-contact-bar { display: none; }
+        }
+        /* While the bar is visible the sticky header pins below it, not at 0. */
+        @media (max-width: 1099px) {
+          .afa-header { top: 40px !important; }
+        }
+
         @media (max-width: 767px) {
           .afa-header { height: 70px !important; }
           .afa-nav-inner { padding-left: 0 !important; }
@@ -401,8 +445,9 @@ export function NavBar() {
             max-height: 48px !important;
             object-fit: contain !important;
           }
-          .afa-mobile-overlay { top: 70px !important; }
-          .afa-mobile-dropdown { top: 70px !important; }
+          /* 40px contact bar + 70px header */
+          .afa-mobile-overlay { top: 110px !important; }
+          .afa-mobile-dropdown { top: 110px !important; }
         }
       `}</style>
     </>

@@ -7,8 +7,7 @@ export const metadata: Metadata = {
   description:
     'Privacy Policy for Australian Financial Advisory Proprietary Limited (ABN 73 680 451 129).',
   alternates: {
-    canonical:
-      'https://www.australianfinancialadvisory.com.au/privacy-policy/',
+    canonical: 'https://www.australianfinancialadvisory.com.au/privacy-policy/',
   },
 }
 
