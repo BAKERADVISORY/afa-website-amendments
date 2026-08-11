@@ -44,8 +44,10 @@
 ```
 User-agent: *
 Allow: /
-Sitemap: https://www.australianfinancialadvisory.com.au/sitemap.xml
+Sitemap: https://www.ausfinancialadvisory.com.au/sitemap.xml
 ```
+
+NOTE 2026-08-11: the domain defect quoted above was corrected in commit ec86120. The quote is preserved as found.
 
 #### 4. No sitemap.xml
 
