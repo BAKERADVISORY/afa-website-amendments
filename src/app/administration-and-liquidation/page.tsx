@@ -17,14 +17,14 @@ export const metadata: Metadata = {
     'If liquidation is inevitable, choosing your own liquidator is one of the most important decisions you can make. We help directors understand their options before someone else takes control. Gold Coast and Australia-wide.',
   alternates: {
     canonical:
-      'https://www.ausfinancialadvisory.com.au/administration-and-liquidation/',
+      'https://www.australianfinancialadvisory.com.au/administration-and-liquidation/',
   },
   openGraph: {
     title:
       'Voluntary Administration & Liquidation Advice | Gold Coast & Brisbane | Australian Financial Advisory',
     description:
       'If liquidation is inevitable, choosing your own liquidator is one of the most important decisions you can make. We help directors understand their options before someone else takes control. Gold Coast and Australia-wide.',
-    url: 'https://www.ausfinancialadvisory.com.au/administration-and-liquidation/',
+    url: 'https://www.australianfinancialadvisory.com.au/administration-and-liquidation/',
   },
 }
 

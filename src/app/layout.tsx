@@ -9,7 +9,7 @@ const manrope = Manrope({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.ausfinancialadvisory.com.au'),
+  metadataBase: new URL('https://www.australianfinancialadvisory.com.au'),
   title: {
     default:
       'Australian Financial Advisory | Pre-Insolvency & Business Restructuring Gold Coast',
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_AU',
-    url: 'https://www.ausfinancialadvisory.com.au',
+    url: 'https://www.australianfinancialadvisory.com.au',
     siteName: 'Australian Financial Advisory',
     title:
       'Australian Financial Advisory | Pre-Insolvency & Business Restructuring Gold Coast',
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     images: ['/images/business-meeting.webp'],
   },
   alternates: {
-    canonical: 'https://www.ausfinancialadvisory.com.au',
+    canonical: 'https://www.australianfinancialadvisory.com.au',
   },
 }
 
@@ -78,16 +78,16 @@ const jsonLd = {
   '@graph': [
     {
       '@type': ['FinancialService', 'LocalBusiness'],
-      '@id': 'https://www.ausfinancialadvisory.com.au/#organization',
+      '@id': 'https://www.australianfinancialadvisory.com.au/#organization',
       name: 'Australian Financial Advisory',
       alternateName: 'AFA',
-      url: 'https://www.ausfinancialadvisory.com.au',
+      url: 'https://www.australianfinancialadvisory.com.au',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://www.ausfinancialadvisory.com.au/images/logo-light.svg',
+        url: 'https://www.australianfinancialadvisory.com.au/images/logo-light.svg',
       },
       image:
-        'https://www.ausfinancialadvisory.com.au/images/business-meeting.webp',
+        'https://www.australianfinancialadvisory.com.au/images/business-meeting.webp',
       description:
         'Australian Financial Advisory is a specialist pre-insolvency and corporate restructuring firm serving company directors across Gold Coast, Queensland and Australia. We provide expert voluntary administration, small business restructuring, creditors voluntary liquidation, and debt negotiation services.',
       telephone: '1300052321',
@@ -156,11 +156,11 @@ const jsonLd = {
     },
     {
       '@type': 'WebSite',
-      '@id': 'https://www.ausfinancialadvisory.com.au/#website',
-      url: 'https://www.ausfinancialadvisory.com.au',
+      '@id': 'https://www.australianfinancialadvisory.com.au/#website',
+      url: 'https://www.australianfinancialadvisory.com.au',
       name: 'Australian Financial Advisory',
       publisher: {
-        '@id': 'https://www.ausfinancialadvisory.com.au/#organization',
+        '@id': 'https://www.australianfinancialadvisory.com.au/#organization',
       },
     },
   ],

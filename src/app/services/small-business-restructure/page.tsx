@@ -13,13 +13,13 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical:
-      'https://www.ausfinancialadvisory.com.au/services/small-business-restructure/',
+      'https://www.australianfinancialadvisory.com.au/services/small-business-restructure/',
   },
   openGraph: {
     title: 'Small Business Restructuring Gold Coast QLD | SBR Practitioners',
     description:
       'Restructure debts under $1M while keeping control of your business. Expert SBR practitioners in Gold Coast QLD.',
-    url: 'https://www.ausfinancialadvisory.com.au/services/small-business-restructure/',
+    url: 'https://www.australianfinancialadvisory.com.au/services/small-business-restructure/',
   },
 }
 import { Footer } from '@/components/Footer'
@@ -62,7 +62,7 @@ const jsonLd = {
   provider: {
     '@type': 'FinancialService',
     name: 'Australian Financial Advisory',
-    url: 'https://www.ausfinancialadvisory.com.au',
+    url: 'https://www.australianfinancialadvisory.com.au',
     telephone: '1300052321',
     address: {
       '@type': 'PostalAddress',
@@ -73,7 +73,7 @@ const jsonLd = {
     },
   },
   areaServed: { '@type': 'Country', name: 'Australia' },
-  url: 'https://www.ausfinancialadvisory.com.au/services/small-business-restructure/',
+  url: 'https://www.australianfinancialadvisory.com.au/services/small-business-restructure/',
 }
 
 export default function SmallBusinessRestructurePage() {

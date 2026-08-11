@@ -15,14 +15,14 @@ export const metadata: Metadata = {
   description:
     'Struggling with ATO debt or creditor pressure? We review your full financial position and connect you with specialists who negotiate payment plans, debt reduction, and consolidation. Gold Coast, Brisbane and Australia-wide.',
   alternates: {
-    canonical: 'https://www.ausfinancialadvisory.com.au/reduce-debt/',
+    canonical: 'https://www.australianfinancialadvisory.com.au/reduce-debt/',
   },
   openGraph: {
     title:
       'ATO Debt Negotiation & Reduction | Gold Coast & Brisbane | Australian Financial Advisory',
     description:
       'Struggling with ATO debt or creditor pressure? We review your full financial position and connect you with specialists who negotiate payment plans, debt reduction, and consolidation. Gold Coast, Brisbane and Australia-wide.',
-    url: 'https://www.ausfinancialadvisory.com.au/reduce-debt/',
+    url: 'https://www.australianfinancialadvisory.com.au/reduce-debt/',
   },
 }
 

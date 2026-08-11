@@ -16,14 +16,14 @@ export const metadata: Metadata = {
     'The Small Business Restructuring process allows eligible directors to restructure debts while remaining in control. We assess your options and connect you with the right specialist. Gold Coast, Brisbane and Australia-wide.',
   alternates: {
     canonical:
-      'https://www.ausfinancialadvisory.com.au/restructure-your-business/',
+      'https://www.australianfinancialadvisory.com.au/restructure-your-business/',
   },
   openGraph: {
     title:
       'Business Restructuring | Small Business Restructure | Gold Coast & Brisbane | Australian Financial Advisory',
     description:
       'The Small Business Restructuring process allows eligible directors to restructure debts while remaining in control. We assess your options and connect you with the right specialist. Gold Coast, Brisbane and Australia-wide.',
-    url: 'https://www.ausfinancialadvisory.com.au/restructure-your-business/',
+    url: 'https://www.australianfinancialadvisory.com.au/restructure-your-business/',
   },
 }
 

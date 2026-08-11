@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   description:
     'Australian Financial Advisory is a specialist pre-insolvency firm with 15+ years experience helping 500+ company directors across Gold Coast and Australia navigate voluntary administration, restructuring and creditors voluntary liquidation.',
   alternates: {
-    canonical: 'https://www.ausfinancialadvisory.com.au/about/',
+    canonical: 'https://www.australianfinancialadvisory.com.au/about/',
   },
   openGraph: {
     title: 'About Us | Pre-Insolvency Advisers Gold Coast QLD',
     description:
       'Specialist pre-insolvency firm with 15+ years experience helping company directors across Gold Coast and Australia.',
-    url: 'https://www.ausfinancialadvisory.com.au/about/',
+    url: 'https://www.australianfinancialadvisory.com.au/about/',
   },
 }
 import { Footer } from '@/components/Footer'

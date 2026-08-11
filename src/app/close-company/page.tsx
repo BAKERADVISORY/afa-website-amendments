@@ -6,14 +6,14 @@ export const metadata: Metadata = {
   description:
     'Close your company correctly and protect yourself from personal liability. Australian Financial Advisory provides professional company closure services for directors across Gold Coast QLD and Australia. Creditors voluntary liquidation, deregistration, asset realisation.',
   alternates: {
-    canonical: 'https://www.ausfinancialadvisory.com.au/close-company/',
+    canonical: 'https://www.australianfinancialadvisory.com.au/close-company/',
   },
   openGraph: {
     title:
       'Close a Company with Debt | Professional Company Closure Gold Coast',
     description:
       'Professional company closure services protecting directors from personal liability. Serving Gold Coast QLD and Australia-wide.',
-    url: 'https://www.ausfinancialadvisory.com.au/close-company/',
+    url: 'https://www.australianfinancialadvisory.com.au/close-company/',
   },
 }
 import { Footer } from '@/components/Footer'

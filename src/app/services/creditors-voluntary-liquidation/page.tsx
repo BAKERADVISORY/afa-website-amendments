@@ -15,14 +15,14 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical:
-      'https://www.ausfinancialadvisory.com.au/services/creditors-voluntary-liquidation/',
+      'https://www.australianfinancialadvisory.com.au/services/creditors-voluntary-liquidation/',
   },
   openGraph: {
     title:
       'Creditors Voluntary Liquidation Australia | CVL Practitioners Gold Coast',
     description:
       'Wind up your insolvent company properly and protect yourself from personal liability. Expert CVL practitioners in Gold Coast QLD.',
-    url: 'https://www.ausfinancialadvisory.com.au/services/creditors-voluntary-liquidation/',
+    url: 'https://www.australianfinancialadvisory.com.au/services/creditors-voluntary-liquidation/',
   },
 }
 import { Footer } from '@/components/Footer'
@@ -71,7 +71,7 @@ const jsonLd = {
   provider: {
     '@type': 'FinancialService',
     name: 'Australian Financial Advisory',
-    url: 'https://www.ausfinancialadvisory.com.au',
+    url: 'https://www.australianfinancialadvisory.com.au',
     telephone: '1300052321',
     address: {
       '@type': 'PostalAddress',
@@ -82,7 +82,7 @@ const jsonLd = {
     },
   },
   areaServed: { '@type': 'Country', name: 'Australia' },
-  url: 'https://www.ausfinancialadvisory.com.au/services/creditors-voluntary-liquidation/',
+  url: 'https://www.australianfinancialadvisory.com.au/services/creditors-voluntary-liquidation/',
 }
 
 export default function CreditorsVoluntaryLiquidationPage() {

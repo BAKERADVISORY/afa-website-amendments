@@ -16,14 +16,14 @@ export const metadata: Metadata = {
   description:
     'Facing ATO debt, cash flow problems, or a Director Penalty Notice? Australian Financial Advisory helps business owners across Gold Coast, Brisbane and Australia protect personal assets and explore every option before formal insolvency. Early action means more options.',
   alternates: {
-    canonical: 'https://www.ausfinancialadvisory.com.au/',
+    canonical: 'https://www.australianfinancialadvisory.com.au/',
   },
   openGraph: {
     title:
       'Pre-Insolvency Advisory | ATO Debt & Director Penalty Notice Help | Gold Coast & Brisbane',
     description:
       'Facing ATO debt, cash flow problems, or a Director Penalty Notice? Australian Financial Advisory helps business owners across Gold Coast, Brisbane and Australia protect personal assets and explore every option before formal insolvency. Early action means more options.',
-    url: 'https://www.ausfinancialadvisory.com.au/',
+    url: 'https://www.australianfinancialadvisory.com.au/',
   },
 }
 

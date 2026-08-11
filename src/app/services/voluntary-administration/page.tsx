@@ -14,13 +14,13 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical:
-      'https://www.ausfinancialadvisory.com.au/services/voluntary-administration/',
+      'https://www.australianfinancialadvisory.com.au/services/voluntary-administration/',
   },
   openGraph: {
     title: 'Voluntary Administration Queensland | VA Practitioners Gold Coast',
     description:
       'Protect your company from creditors while exploring all recovery options. Expert voluntary administration practitioners in Gold Coast QLD.',
-    url: 'https://www.ausfinancialadvisory.com.au/services/voluntary-administration/',
+    url: 'https://www.australianfinancialadvisory.com.au/services/voluntary-administration/',
   },
 }
 import { Footer } from '@/components/Footer'
@@ -70,7 +70,7 @@ const jsonLd = {
   provider: {
     '@type': 'FinancialService',
     name: 'Australian Financial Advisory',
-    url: 'https://www.ausfinancialadvisory.com.au',
+    url: 'https://www.australianfinancialadvisory.com.au',
     telephone: '1300052321',
     address: {
       '@type': 'PostalAddress',
@@ -81,7 +81,7 @@ const jsonLd = {
     },
   },
   areaServed: { '@type': 'Country', name: 'Australia' },
-  url: 'https://www.ausfinancialadvisory.com.au/services/voluntary-administration/',
+  url: 'https://www.australianfinancialadvisory.com.au/services/voluntary-administration/',
 }
 
 export default function VoluntaryAdministrationPage() {

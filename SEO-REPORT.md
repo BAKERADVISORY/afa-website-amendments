@@ -44,7 +44,7 @@
 ```
 User-agent: *
 Allow: /
-Sitemap: https://www.ausfinancialadvisory.com.au/sitemap.xml
+Sitemap: https://www.australianfinancialadvisory.com.au/sitemap.xml
 ```
 
 #### 4. No sitemap.xml

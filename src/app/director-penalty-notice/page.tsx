@@ -10,14 +10,14 @@ export const metadata: Metadata = {
     'The ATO issued over 84,000 Director Penalty Notices in FY2025 covering $5.5 billion in company tax debts. If you have received a DPN or are at risk, act immediately. We help directors across Gold Coast, Brisbane and Australia understand their options.',
   alternates: {
     canonical:
-      'https://www.ausfinancialadvisory.com.au/director-penalty-notice/',
+      'https://www.australianfinancialadvisory.com.au/director-penalty-notice/',
   },
   openGraph: {
     title:
       'Director Penalty Notice Help | ATO DPN Advice | Gold Coast & Brisbane | Australian Financial Advisory',
     description:
       'The ATO issued over 84,000 Director Penalty Notices in FY2025 covering $5.5 billion in company tax debts. If you have received a DPN or are at risk, act immediately. We help directors across Gold Coast, Brisbane and Australia understand their options.',
-    url: 'https://www.ausfinancialadvisory.com.au/director-penalty-notice/',
+    url: 'https://www.australianfinancialadvisory.com.au/director-penalty-notice/',
   },
 }
 

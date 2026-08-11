@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next'
 
 export const dynamic = 'force-static'
 
-const BASE_URL = 'https://www.ausfinancialadvisory.com.au'
+const BASE_URL = 'https://www.australianfinancialadvisory.com.au'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
