@@ -4,7 +4,7 @@ import { NavBar } from '@/components/NavBar'
 export const metadata: Metadata = {
   title: 'Small Business Restructuring Gold Coast QLD | SBR Practitioners',
   description:
-    'Small Business Restructuring (SBR) lets viable businesses restructure debts under $1 million while directors remain in control. Expert SBR practitioners serving Gold Coast QLD 4216 and Australia. Eligibility check - free consultation.',
+    'Small Business Restructuring lets viable businesses restructure debts under $1 million while directors stay in control. Advisory and referral.',
   keywords: [
     'small business restructuring Gold Coast',
     'SBR practitioners Queensland',
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Small Business Restructuring Gold Coast QLD | SBR Practitioners',
     description:
-      'Restructure debts under $1M while keeping control of your business. Expert SBR practitioners in Gold Coast QLD.',
+      'Small Business Restructuring lets viable businesses restructure debts under $1 million while directors stay in control. Advisory and referral.',
     url: 'https://www.australianfinancialadvisory.com.au/services/small-business-restructure/',
   },
 }

@@ -11,19 +11,18 @@ import {
 } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title:
-    'Voluntary Administration & Liquidation Advice | Gold Coast & Brisbane | Australian Financial Advisory',
+  title: 'Voluntary Administration & Liquidation',
   description:
-    'If liquidation is inevitable, choosing your own liquidator is one of the most important decisions you can make. We help directors understand their options before someone else takes control. Gold Coast and Australia-wide.',
+    'If liquidation is likely, choosing your own liquidator matters. We help directors understand options before someone else takes control.',
   alternates: {
     canonical:
       'https://www.australianfinancialadvisory.com.au/administration-and-liquidation/',
   },
   openGraph: {
     title:
-      'Voluntary Administration & Liquidation Advice | Gold Coast & Brisbane | Australian Financial Advisory',
+      'Voluntary Administration & Liquidation | Australian Financial Advisory',
     description:
-      'If liquidation is inevitable, choosing your own liquidator is one of the most important decisions you can make. We help directors understand their options before someone else takes control. Gold Coast and Australia-wide.',
+      'If liquidation is likely, choosing your own liquidator matters. We help directors understand options before someone else takes control.',
     url: 'https://www.australianfinancialadvisory.com.au/administration-and-liquidation/',
   },
 }

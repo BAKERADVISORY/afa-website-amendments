@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title:
     'Creditors Voluntary Liquidation Australia | CVL Practitioners Gold Coast',
   description:
-    'Creditors Voluntary Liquidation (CVL) winds up an insolvent company in an orderly way, protecting directors from ongoing liability. Expert CVL practitioners serving Gold Coast QLD, Brisbane and Australia. Free director consultation.',
+    'Creditors Voluntary Liquidation winds up an insolvent company in an orderly way. Advisory and referral for directors, Gold Coast and Australia.',
   keywords: [
     'creditors voluntary liquidation Australia',
     'CVL practitioners Gold Coast',
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     title:
       'Creditors Voluntary Liquidation Australia | CVL Practitioners Gold Coast',
     description:
-      'Wind up your insolvent company properly and protect yourself from personal liability. Expert CVL practitioners in Gold Coast QLD.',
+      'Creditors Voluntary Liquidation winds up an insolvent company in an orderly way. Advisory and referral for directors, Gold Coast and Australia.',
     url: 'https://www.australianfinancialadvisory.com.au/services/creditors-voluntary-liquidation/',
   },
 }

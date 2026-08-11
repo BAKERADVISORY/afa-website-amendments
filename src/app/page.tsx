@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title:
     'Pre-Insolvency Advisory | ATO Debt & Director Penalty Notice Help | Gold Coast & Brisbane',
   description:
-    'Facing ATO debt, cash flow problems, or a Director Penalty Notice? Australian Financial Advisory helps business owners across Gold Coast, Brisbane and Australia protect personal assets and explore every option before formal insolvency. Early action means more options.',
+    'Facing ATO debt or a Director Penalty Notice? Advisory and referral for directors across Gold Coast, Brisbane and Australia. Call (07) 2113 3069.',
   alternates: {
     canonical: 'https://www.australianfinancialadvisory.com.au/',
   },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title:
       'Pre-Insolvency Advisory | ATO Debt & Director Penalty Notice Help | Gold Coast & Brisbane',
     description:
-      'Facing ATO debt, cash flow problems, or a Director Penalty Notice? Australian Financial Advisory helps business owners across Gold Coast, Brisbane and Australia protect personal assets and explore every option before formal insolvency. Early action means more options.',
+      'Facing ATO debt or a Director Penalty Notice? Advisory and referral for directors across Gold Coast, Brisbane and Australia. Call (07) 2113 3069.',
     url: 'https://www.australianfinancialadvisory.com.au/',
   },
 }

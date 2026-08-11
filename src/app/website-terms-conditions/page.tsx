@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   title: 'Terms and Conditions',
   description:
     'Website Terms and Conditions for Australian Financial Advisory Proprietary Limited (ABN 73 680 451 129).',
+  alternates: {
+    canonical:
+      'https://www.australianfinancialadvisory.com.au/website-terms-conditions/',
+  },
 }
 
 export default function TermsConditionsPage() {

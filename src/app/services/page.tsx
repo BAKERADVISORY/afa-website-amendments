@@ -4,14 +4,14 @@ import { NavBar } from '@/components/NavBar'
 export const metadata: Metadata = {
   title: 'Business Restructuring & Insolvency Services | Gold Coast QLD',
   description:
-    'Expert insolvency and restructuring services for company directors: voluntary administration, small business restructuring (SBR) and creditors voluntary liquidation (CVL). Serving Gold Coast, Brisbane and Australia. Free confidential consultation.',
+    'Advisory and referral for voluntary administration, small business restructuring and creditors voluntary liquidation. Gold Coast and Australia.',
   alternates: {
     canonical: 'https://www.australianfinancialadvisory.com.au/services/',
   },
   openGraph: {
     title: 'Business Restructuring & Insolvency Services | Gold Coast QLD',
     description:
-      'Voluntary administration, small business restructuring and creditors voluntary liquidation for company directors across Gold Coast and Australia.',
+      'Advisory and referral for voluntary administration, small business restructuring and creditors voluntary liquidation. Gold Coast and Australia.',
     url: 'https://www.australianfinancialadvisory.com.au/services/',
   },
 }

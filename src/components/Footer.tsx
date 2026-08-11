@@ -166,6 +166,8 @@ export function Footer() {
               {(
                 [
                   { label: 'Home', href: '/' },
+                  { label: 'About', href: '/about/' },
+                  { label: 'Services', href: '/services/' },
                   { label: 'DPN Risk', href: '/director-penalty-notice/' },
                   { label: 'Reduce Debt', href: '/reduce-debt/' },
                   {

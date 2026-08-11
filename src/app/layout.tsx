@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     template: '%s | Australian Financial Advisory',
   },
   description:
-    'Pre-insolvency advice for company directors in Gold Coast QLD. Expert voluntary administration, small business restructuring & creditors voluntary liquidation. Free confidential consultation. Call (07) 2113 3069.',
+    'Pre-insolvency advisory for company directors across Gold Coast and Australia. Assessment and referral. Call (07) 2113 3069.',
   keywords: [
     'solvency advice company directors Australia',
     'voluntary administration Queensland',
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     title:
       'Australian Financial Advisory | Pre-Insolvency & Business Restructuring Gold Coast',
     description:
-      'Pre-insolvency advice for company directors in Gold Coast QLD. Expert voluntary administration, small business restructuring & creditors voluntary liquidation.',
+      'Pre-insolvency advisory for company directors across Gold Coast and Australia. Assessment and referral.',
     images: [
       {
         url: '/images/business-meeting.webp',
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     title:
       'Australian Financial Advisory | Pre-Insolvency & Business Restructuring Gold Coast',
     description:
-      'Pre-insolvency advice for company directors in Gold Coast QLD. Expert voluntary administration, small business restructuring & creditors voluntary liquidation.',
+      'Pre-insolvency advisory for company directors across Gold Coast and Australia. Assessment and referral.',
     images: ['/images/business-meeting.webp'],
   },
   alternates: {
@@ -95,8 +95,8 @@ const jsonLd = {
       address: [
         {
           '@type': 'PostalAddress',
-          streetAddress: 'Level 1, Broadbeach',
-          addressLocality: 'Gold Coast',
+          streetAddress: '215 Brisbane Road',
+          addressLocality: 'Biggera Waters',
           addressRegion: 'QLD',
           postalCode: '4216',
           addressCountry: 'AU',

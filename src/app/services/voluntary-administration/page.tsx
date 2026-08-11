@@ -4,7 +4,7 @@ import { NavBar } from '@/components/NavBar'
 export const metadata: Metadata = {
   title: 'Voluntary Administration Queensland | VA Practitioners Gold Coast',
   description:
-    'Voluntary Administration gives financially distressed companies 25 business days to assess all options with creditor protection. Expert VA practitioners in Gold Coast QLD and Queensland. Free confidential assessment for company directors.',
+    'Voluntary Administration gives distressed companies time to assess options under creditor protection. Advisory and referral for directors.',
   keywords: [
     'voluntary administration Queensland',
     'voluntary administration Gold Coast',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Voluntary Administration Queensland | VA Practitioners Gold Coast',
     description:
-      'Protect your company from creditors while exploring all recovery options. Expert voluntary administration practitioners in Gold Coast QLD.',
+      'Voluntary Administration gives distressed companies time to assess options under creditor protection. Advisory and referral for directors.',
     url: 'https://www.australianfinancialadvisory.com.au/services/voluntary-administration/',
   },
 }

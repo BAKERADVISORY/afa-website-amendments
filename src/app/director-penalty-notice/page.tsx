@@ -4,19 +4,17 @@ import { Footer } from '@/components/Footer'
 import { ChevronRight } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title:
-    'Director Penalty Notice Help | ATO DPN Advice | Gold Coast & Brisbane | Australian Financial Advisory',
+  title: 'Director Penalty Notice Help',
   description:
-    'The ATO issued over 84,000 Director Penalty Notices in FY2025 covering $5.5 billion in company tax debts. If you have received a DPN or are at risk, act immediately. We help directors across Gold Coast, Brisbane and Australia understand their options.',
+    'Received an ATO Director Penalty Notice or at risk of one? We help directors understand their options and act before the deadline.',
   alternates: {
     canonical:
       'https://www.australianfinancialadvisory.com.au/director-penalty-notice/',
   },
   openGraph: {
-    title:
-      'Director Penalty Notice Help | ATO DPN Advice | Gold Coast & Brisbane | Australian Financial Advisory',
+    title: 'Director Penalty Notice Help | Australian Financial Advisory',
     description:
-      'The ATO issued over 84,000 Director Penalty Notices in FY2025 covering $5.5 billion in company tax debts. If you have received a DPN or are at risk, act immediately. We help directors across Gold Coast, Brisbane and Australia understand their options.',
+      'Received an ATO Director Penalty Notice or at risk of one? We help directors understand their options and act before the deadline.',
     url: 'https://www.australianfinancialadvisory.com.au/director-penalty-notice/',
   },
 }

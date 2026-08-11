@@ -10,19 +10,17 @@ import {
 } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title:
-    'Business Restructuring | Small Business Restructure | Gold Coast & Brisbane | Australian Financial Advisory',
+  title: 'Business Restructuring',
   description:
-    'The Small Business Restructuring process allows eligible directors to restructure debts while remaining in control. We assess your options and connect you with the right specialist. Gold Coast, Brisbane and Australia-wide.',
+    'Small Business Restructuring lets eligible directors restructure debts while staying in control. We assess options and refer specialists.',
   alternates: {
     canonical:
       'https://www.australianfinancialadvisory.com.au/restructure-your-business/',
   },
   openGraph: {
-    title:
-      'Business Restructuring | Small Business Restructure | Gold Coast & Brisbane | Australian Financial Advisory',
+    title: 'Business Restructuring | Australian Financial Advisory',
     description:
-      'The Small Business Restructuring process allows eligible directors to restructure debts while remaining in control. We assess your options and connect you with the right specialist. Gold Coast, Brisbane and Australia-wide.',
+      'Small Business Restructuring lets eligible directors restructure debts while staying in control. We assess options and refer specialists.',
     url: 'https://www.australianfinancialadvisory.com.au/restructure-your-business/',
   },
 }
