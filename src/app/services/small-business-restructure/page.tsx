@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { NavBar } from '@/components/NavBar'
 
 export const metadata: Metadata = {
-  title: 'Small Business Restructuring Gold Coast QLD | SBR Practitioners',
+  title: 'Small Business Restructuring Advice Gold Coast',
   description:
     'Small Business Restructuring lets viable businesses restructure debts under $1 million while directors stay in control. Advisory and referral.',
   keywords: [
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
       'https://www.australianfinancialadvisory.com.au/services/small-business-restructure/',
   },
   openGraph: {
-    title: 'Small Business Restructuring Gold Coast QLD | SBR Practitioners',
+    title: 'Small Business Restructuring Advice Gold Coast',
     description:
       'Small Business Restructuring lets viable businesses restructure debts under $1 million while directors stay in control. Advisory and referral.',
     url: 'https://www.australianfinancialadvisory.com.au/services/small-business-restructure/',

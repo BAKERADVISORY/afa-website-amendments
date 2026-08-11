@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { NavBar } from '@/components/NavBar'
 
 export const metadata: Metadata = {
-  title: 'Voluntary Administration Queensland | VA Practitioners Gold Coast',
+  title: 'Voluntary Administration Advice Gold Coast',
   description:
     'Voluntary Administration gives distressed companies time to assess options under creditor protection. Advisory and referral for directors.',
   keywords: [
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
       'https://www.australianfinancialadvisory.com.au/services/voluntary-administration/',
   },
   openGraph: {
-    title: 'Voluntary Administration Queensland | VA Practitioners Gold Coast',
+    title: 'Voluntary Administration Advice Gold Coast',
     description:
       'Voluntary Administration gives distressed companies time to assess options under creditor protection. Advisory and referral for directors.',
     url: 'https://www.australianfinancialadvisory.com.au/services/voluntary-administration/',

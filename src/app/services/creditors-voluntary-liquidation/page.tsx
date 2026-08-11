@@ -2,8 +2,7 @@ import type { Metadata } from 'next'
 import { NavBar } from '@/components/NavBar'
 
 export const metadata: Metadata = {
-  title:
-    'Creditors Voluntary Liquidation Australia | CVL Practitioners Gold Coast',
+  title: 'Creditors Voluntary Liquidation Advice Australia',
   description:
     'Creditors Voluntary Liquidation winds up an insolvent company in an orderly way. Advisory and referral for directors, Gold Coast and Australia.',
   keywords: [
@@ -18,8 +17,7 @@ export const metadata: Metadata = {
       'https://www.australianfinancialadvisory.com.au/services/creditors-voluntary-liquidation/',
   },
   openGraph: {
-    title:
-      'Creditors Voluntary Liquidation Australia | CVL Practitioners Gold Coast',
+    title: 'Creditors Voluntary Liquidation Advice Australia',
     description:
       'Creditors Voluntary Liquidation winds up an insolvent company in an orderly way. Advisory and referral for directors, Gold Coast and Australia.',
     url: 'https://www.australianfinancialadvisory.com.au/services/creditors-voluntary-liquidation/',
