@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     template: '%s | Australian Financial Advisory',
   },
   description:
-    'Pre-insolvency advice for company directors in Gold Coast QLD. Expert voluntary administration, small business restructuring & creditors voluntary liquidation. Free confidential consultation. Call 1300 052 321.',
+    'Pre-insolvency advice for company directors in Gold Coast QLD. Expert voluntary administration, small business restructuring & creditors voluntary liquidation. Free confidential consultation. Call (07) 2113 3069.',
   keywords: [
     'solvency advice company directors Australia',
     'voluntary administration Queensland',
@@ -90,7 +90,7 @@ const jsonLd = {
         'https://www.australianfinancialadvisory.com.au/images/business-meeting.webp',
       description:
         'Australian Financial Advisory is a specialist pre-insolvency and corporate restructuring firm serving company directors across Gold Coast, Queensland and Australia. We provide expert voluntary administration, small business restructuring, creditors voluntary liquidation, and debt negotiation services.',
-      telephone: '1300052321',
+      telephone: '+61 7 2113 3069',
       email: 'info@australianfinancialadvisory.com.au',
       address: [
         {

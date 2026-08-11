@@ -63,7 +63,7 @@ const jsonLd = {
     '@type': 'FinancialService',
     name: 'Australian Financial Advisory',
     url: 'https://www.australianfinancialadvisory.com.au',
-    telephone: '1300052321',
+    telephone: '+61 7 2113 3069',
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Gold Coast',

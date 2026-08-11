@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { ChevronRight, Menu, X } from 'lucide-react'
+import { ChevronRight, Menu, Phone, X } from 'lucide-react'
 
 const mobileMenuLinks = [
   { text: 'Home', href: '/' },
@@ -189,6 +189,45 @@ export function NavBar() {
             ))}
           </nav>
 
+          {/* Direct phone contact — desktop only, secondary to Get Started */}
+          <a
+            href="tel:+61721133069"
+            className="afa-nav-phone hidden md:flex"
+            style={{
+              flexDirection: 'column',
+              alignItems: 'flex-end',
+              justifyContent: 'center',
+              lineHeight: 1.25,
+              textDecoration: 'none',
+              whiteSpace: 'nowrap',
+              flexShrink: 0,
+              marginLeft: '20px',
+            }}
+          >
+            <span
+              className="afa-nav-phone-label"
+              style={{
+                color: 'rgba(255,255,255,0.55)',
+                fontSize: '11px',
+                fontWeight: 700,
+                letterSpacing: '0.3px',
+              }}
+            >
+              Contact us directly
+            </span>
+            <span
+              className="afa-nav-phone-number"
+              style={{
+                color: 'rgba(255,255,255,0.7)',
+                fontSize: '15px',
+                fontWeight: 700,
+                transition: 'color 0.15s ease',
+              }}
+            >
+              (07) 2113 3069
+            </span>
+          </a>
+
           {/* Get Started button — desktop only */}
           <a
             href="/#contact"
@@ -287,6 +326,45 @@ export function NavBar() {
               {link.text}
             </a>
           ))}
+          {/* Tap to call — mobile menu */}
+          <a
+            href="tel:+61721133069"
+            onClick={() => setMobileOpen(false)}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '10px',
+              color: 'rgba(255,255,255,0.7)',
+              fontSize: '16px',
+              fontWeight: 700,
+              padding: '12px 32px',
+              textDecoration: 'none',
+              borderTop: '1px solid rgba(255,255,255,0.1)',
+              marginTop: '4px',
+            }}
+          >
+            <Phone size={18} />
+            <span
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                lineHeight: 1.25,
+              }}
+            >
+              <span
+                style={{
+                  color: 'rgba(255,255,255,0.55)',
+                  fontSize: '11px',
+                  fontWeight: 700,
+                  letterSpacing: '0.3px',
+                }}
+              >
+                Contact us directly
+              </span>
+              (07) 2113 3069
+            </span>
+          </a>
+
           <a
             href="/#contact"
             onClick={() => setMobileOpen(false)}
@@ -308,6 +386,7 @@ export function NavBar() {
       )}
 
       <style>{`
+        .afa-nav-phone:hover .afa-nav-phone-number { color: #ffffff; }
         @media (max-width: 767px) {
           .afa-header { height: 70px !important; }
           .afa-nav-inner { padding-left: 0 !important; }
