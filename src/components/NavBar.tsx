@@ -192,7 +192,7 @@ export function NavBar() {
           {/* Direct phone contact — desktop only, secondary to Get Started */}
           <a
             href="tel:+61721133069"
-            className="afa-nav-phone hidden md:flex"
+            className="afa-nav-phone"
             style={{
               flexDirection: 'column',
               alignItems: 'flex-end',
@@ -386,6 +386,11 @@ export function NavBar() {
       )}
 
       <style>{`
+        /* Hidden by default; shown only where the header has room for it */
+        .afa-nav-phone { display: none; }
+        @media (min-width: 1100px) {
+          .afa-nav-phone { display: flex; }
+        }
         .afa-nav-phone:hover .afa-nav-phone-number { color: #ffffff; }
         @media (max-width: 767px) {
           .afa-header { height: 70px !important; }
