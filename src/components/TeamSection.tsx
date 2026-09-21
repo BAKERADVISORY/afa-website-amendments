@@ -84,7 +84,7 @@ const team: TeamMemberProps[] = [
     photo: '/JMOY.jpg',
     alt: 'Jonathan Moy',
     name: 'Jonathan Moy',
-    role: 'Advisor and Negotiations',
+    role: 'Advisory and Negotiations',
     description: '',
   },
 ]

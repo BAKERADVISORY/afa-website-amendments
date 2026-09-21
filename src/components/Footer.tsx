@@ -259,7 +259,7 @@ export function Footer() {
         >
           <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
             <span>© 2026 Australian Financial Advisory Pty Ltd</span>
-            <span>ACN 688 456 788</span>
+            <span>ACN 680 451 129</span>
             <span>ABN 73 680 451 129</span>
             <a href="/privacy-policy/" style={{ color: 'inherit' }}>
               Privacy Policy
