@@ -179,6 +179,22 @@ export function HeroSection() {
       </div>
 
       <style>{`
+        /* Tablet: two columns are too narrow for the heading and the form, so stack them. */
+        @media (min-width: 768px) and (max-width: 1099px) {
+          .hero-content {
+            grid-template-columns: 1fr !important;
+            gap: 48px !important;
+            padding-top: 120px !important;
+            padding-left: 48px !important;
+            padding-right: 48px !important;
+          }
+          .hero-copy {
+            padding-right: 0 !important;
+          }
+          .hero-form {
+            max-width: 620px;
+          }
+        }
         @media (max-width: 767px) {
           .hero-content {
             grid-template-columns: 1fr !important;

@@ -128,11 +128,18 @@ textarea:focus-visible {
   left: 16px;
 }
 
-/* Anchor targets sit below the sticky header */
+/* Anchor targets sit below the sticky header (plus the contact bar below 1440px) */
 #contact,
 #main,
 [id^='section-'] {
-  scroll-margin-top: 140px;
+  scroll-margin-top: 176px;
+}
+@media (min-width: 1440px) {
+  #contact,
+  #main,
+  [id^='section-'] {
+    scroll-margin-top: 136px;
+  }
 }
 
 /* Link and button states mirrored on hover and keyboard focus */

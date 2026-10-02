@@ -52,7 +52,7 @@ export function NavBar() {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 768) setMobileOpen(false)
+      if (window.innerWidth >= 1280) setMobileOpen(false)
     }
     window.addEventListener('resize', handleResize)
     return () => window.removeEventListener('resize', handleResize)
@@ -69,7 +69,9 @@ export function NavBar() {
 
   return (
     <>
-      {/* Slim contact bar, shown only below 1100px where the in-header phone is hidden.
+      {/* Header breakpoints: full nav from 1280px (xl), menu button below that.
+          The in-header phone needs extra room, so it shows from 1440px; below that
+          this slim contact bar carries the number instead.
           Wrapped in a labelled aside so its content sits inside a landmark. */}
       <aside
         className="afa-contact-bar"
@@ -156,7 +158,7 @@ export function NavBar() {
         >
           <nav
             aria-label="Primary"
-            className="hidden md:flex"
+            className="hidden xl:flex"
             style={{ alignItems: 'center', gap: '2px' }}
           >
             {navLinks.map((link) => (
@@ -213,7 +215,7 @@ export function NavBar() {
 
           <a
             href="/contact"
-            className="hidden md:inline-flex afa-button-accent"
+            className="hidden xl:inline-flex afa-button-accent"
             style={{
               backgroundColor: '#9b8ec4',
               color: '#1a1a3e',
@@ -236,7 +238,7 @@ export function NavBar() {
 
           <button
             type="button"
-            className="md:hidden"
+            className="xl:hidden"
             onClick={() => setMobileOpen((prev) => !prev)}
             aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={mobileOpen}
@@ -262,13 +264,13 @@ export function NavBar() {
 
       {mobileOpen && (
         <div
-          className="afa-mobile-overlay md:hidden"
+          className="afa-mobile-overlay xl:hidden"
           onClick={() => setMobileOpen(false)}
           aria-hidden="true"
           style={{
             position: 'fixed',
             inset: 0,
-            top: '120px',
+            top: '160px',
             backgroundColor: 'rgba(0,0,0,0.5)',
             zIndex: 48,
           }}
@@ -278,11 +280,11 @@ export function NavBar() {
       <nav
         id="mobile-menu"
         aria-label="Mobile"
-        className="afa-mobile-dropdown md:hidden"
+        className="afa-mobile-dropdown xl:hidden"
         hidden={!mobileOpen}
         style={{
           position: 'fixed',
-          top: '120px',
+          top: '160px',
           left: 0,
           right: 0,
           backgroundColor: '#1a1a3e',
@@ -368,14 +370,14 @@ export function NavBar() {
 
       <style>{`
         .afa-nav-phone { display: none; }
-        @media (min-width: 1100px) {
+        @media (min-width: 1440px) {
           .afa-nav-phone { display: flex; }
         }
-        .afa-contact-bar { display: flex; }
-        @media (min-width: 1100px) {
+        .afa-contact-bar { display: block; }
+        @media (min-width: 1440px) {
           .afa-contact-bar { display: none; }
         }
-        @media (max-width: 1099px) {
+        @media (max-width: 1439px) {
           .afa-header { top: 40px !important; }
         }
         @media (max-width: 767px) {
