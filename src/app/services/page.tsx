@@ -1,382 +1,239 @@
 import type { Metadata } from 'next'
+import {
+  AlertTriangle,
+  BadgeDollarSign,
+  Building2,
+  Shield,
+  DoorClosed,
+  ChevronRight,
+  Layers,
+  Users,
+  Scale,
+} from 'lucide-react'
+import type { LucideIcon } from 'lucide-react'
 import { NavBar } from '@/components/NavBar'
+import { Footer } from '@/components/Footer'
+import { PageHero } from '@/components/PageHero'
+import { ContentSection, bodyText } from '@/components/ContentSection'
+import { PageDisclaimer } from '@/components/PageDisclaimer'
+import { ConsultationCTA } from '@/components/ConsultationCTA'
+import { JsonLd } from '@/components/JsonLd'
+import { absUrl, webPageSchema } from '@/lib/site'
+
+const PATH = '/services'
+const title = 'Your Options Explained'
+const description =
+  'Plain-language explanations of Director Penalty Notices, ATO debt options, Small Business Restructuring, voluntary administration and liquidation, and how Australian Financial Advisory assesses and refers.'
 
 export const metadata: Metadata = {
-  title: 'Business Restructuring & Insolvency Services | Gold Coast QLD',
-  description:
-    'Advisory and referral for voluntary administration, small business restructuring and creditors voluntary liquidation. Gold Coast and Australia.',
-  alternates: {
-    canonical: 'https://www.australianfinancialadvisory.com.au/services/',
-  },
-  openGraph: {
-    title: 'Business Restructuring & Insolvency Services | Gold Coast QLD',
-    description:
-      'Advisory and referral for voluntary administration, small business restructuring and creditors voluntary liquidation. Gold Coast and Australia.',
-    url: 'https://www.australianfinancialadvisory.com.au/services/',
-  },
+  title,
+  description,
+  alternates: { canonical: absUrl(PATH) },
+  openGraph: { title: `${title} | AFA`, description, url: absUrl(PATH) },
 }
-import { Footer } from '@/components/Footer'
-import { ArrowRight } from 'lucide-react'
+
+interface Card {
+  icon: LucideIcon
+  title: string
+  description: string
+  href: string
+}
+
+const optionsPages: Card[] = [
+  {
+    icon: AlertTriangle,
+    title: 'Director Penalty Notice',
+    description:
+      'What a DPN is, the 21-day window, lockdown versus non-lockdown notices, and the options still open.',
+    href: '/director-penalty-notice',
+  },
+  {
+    icon: BadgeDollarSign,
+    title: 'ATO debt options',
+    description:
+      'Understanding an ATO debt position and the options that may be available, including payment arrangements through a registered tax agent.',
+    href: '/reduce-debt',
+  },
+  {
+    icon: Building2,
+    title: 'Restructure your business',
+    description:
+      'Whether Small Business Restructuring, voluntary administration or an informal arrangement may suit your company.',
+    href: '/restructure-your-business',
+  },
+  {
+    icon: Shield,
+    title: 'Administration and liquidation options',
+    description:
+      'What each formal process means for a director before committing to a path.',
+    href: '/administration-and-liquidation',
+  },
+  {
+    icon: DoorClosed,
+    title: 'Close or wind up a company',
+    description:
+      'Solvent and insolvent closure paths, director duties, and where to start.',
+    href: '/close-company',
+  },
+]
+
+const explainers: Card[] = [
+  {
+    icon: Layers,
+    title: 'Small Business Restructuring explained',
+    description:
+      'A formal process that lets an eligible small company put a plan to creditors while the directors stay in control. Run by a registered restructuring practitioner.',
+    href: '/services/small-business-restructure',
+  },
+  {
+    icon: Users,
+    title: 'Voluntary administration explained',
+    description:
+      'An independent administrator takes control to assess the company’s position and options, with most creditor action paused.',
+    href: '/services/voluntary-administration',
+  },
+  {
+    icon: Scale,
+    title: 'Creditors voluntary liquidation explained',
+    description:
+      'An orderly wind-up of an insolvent company by a registered liquidator, who realises assets and distributes available funds to creditors.',
+    href: '/services/creditors-voluntary-liquidation',
+  },
+]
+
+function CardGrid({ cards }: { cards: Card[] }) {
+  return (
+    <ul
+      style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(3, 1fr)',
+        gap: 24,
+        listStyle: 'none',
+        padding: 0,
+        margin: 0,
+      }}
+      className="options-grid"
+    >
+      {cards.map(({ icon: Icon, title: cardTitle, description: cardDesc, href }) => (
+        <li
+          key={href}
+          style={{
+            backgroundColor: '#ffffff',
+            borderRadius: 12,
+            padding: 28,
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 12,
+            borderTop: '3px solid #9b8ec4',
+          }}
+        >
+          <Icon size={32} color="#6E3E8F" aria-hidden="true" />
+          <h3
+            style={{
+              color: '#1a1a3e',
+              fontSize: 19,
+              fontWeight: 700,
+              lineHeight: 1.25,
+              margin: 0,
+            }}
+          >
+            {cardTitle}
+          </h3>
+          <p style={{ color: '#444444', fontSize: 15, lineHeight: 1.65, margin: 0 }}>
+            {cardDesc}
+          </p>
+          <a
+            href={href}
+            className="afa-crumb-link"
+            style={{
+              color: '#6E3E8F',
+              fontSize: 15,
+              fontWeight: 700,
+              textDecoration: 'none',
+              marginTop: 'auto',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: 4,
+            }}
+          >
+            Read more
+            <ChevronRight size={16} aria-hidden="true" />
+          </a>
+        </li>
+      ))}
+    </ul>
+  )
+}
 
 export default function ServicesPage() {
   return (
     <>
+      <JsonLd
+        data={webPageSchema({
+          path: PATH,
+          name: title,
+          description,
+          about: 'Pre-insolvency options for Australian company directors',
+        })}
+      />
       <NavBar />
-      <main>
-        {/* Hero Section */}
-        <section
-          style={{
-            backgroundColor: '#1a1a3e',
-            paddingTop: 160,
-            paddingBottom: 80,
-            paddingLeft: 80,
-            paddingRight: 80,
-            position: 'relative',
-            overflow: 'hidden',
-          }}
+      <main id="main">
+        <PageHero
+          eyebrow="Your options"
+          title="Your options explained"
+          intro="Plain-language explanations of the formal processes directors ask about, and the pages that set out your options. Australian Financial Advisory assesses and refers. Licensed practitioners carry out formal work."
+          breadcrumbs={[{ name: 'Home', href: '/' }, { name: 'Your options explained' }]}
+          wave
+        />
+
+        <ContentSection
+          id="section-options-pages"
+          label="Where to start"
+          heading="Options by situation"
+          tone="panel"
+          maxWidth={1200}
         >
+          <p style={{ ...bodyText, maxWidth: 760, marginBottom: 36 }}>
+            Start with the page that matches your situation. Each one explains
+            what is happening, what options may exist, and what we can and
+            cannot do.
+          </p>
+          <CardGrid cards={optionsPages} />
+        </ContentSection>
+
+        <ContentSection
+          id="section-explainers"
+          label="Formal processes"
+          heading="Formal processes explained"
+          maxWidth={1200}
+        >
+          <p style={{ ...bodyText, maxWidth: 760, marginBottom: 36 }}>
+            These explainers describe the formal processes available under
+            Australian law. They are general information. Each process is
+            carried out by a registered practitioner, never by Australian
+            Financial Advisory.
+          </p>
           <div
             style={{
-              maxWidth: 1400,
-              margin: '0 auto',
-              position: 'relative',
-              zIndex: 1,
+              backgroundColor: '#f8f8ff',
+              borderRadius: 12,
+              padding: 24,
             }}
           >
-            <p
-              style={{
-                color: '#ffffff',
-                fontSize: 12,
-                fontWeight: 700,
-                letterSpacing: 3,
-                textTransform: 'uppercase',
-                marginBottom: 16,
-              }}
-            >
-              Our Services
-            </p>
-            <h1
-              style={{
-                color: '#FFFFFF',
-                fontSize: 52,
-                fontWeight: 700,
-                marginBottom: 24,
-                lineHeight: 1.15,
-                maxWidth: 700,
-              }}
-            >
-              Specialised Financial Advisory Services
-            </h1>
-            <p
-              style={{
-                color: 'rgba(255,255,255,0.70)',
-                fontSize: 18,
-                lineHeight: 1.6,
-                maxWidth: 580,
-                marginBottom: 36,
-              }}
-            >
-              We provide specialised services to help businesses navigate
-              financial challenges and make informed decisions about their
-              future.
-            </p>
-            <a
-              href="/#contact"
-              style={{
-                backgroundColor: '#333333',
-                color: '#FFFFFF',
-                borderRadius: 50,
-                padding: '14px 28px',
-                fontSize: 16,
-                fontWeight: 700,
-                textDecoration: 'none',
-                display: 'inline-block',
-              }}
-            >
-              Schedule Consultation &rarr;
-            </a>
+            <CardGrid cards={explainers} />
           </div>
-          {/* Wave divider */}
-          <div
-            style={{
-              position: 'absolute',
-              bottom: -1,
-              left: '-35%',
-              width: '171%',
-              height: 100,
-              overflow: 'visible',
-            }}
-          >
-            <svg
-              viewBox="0 0 1440 100"
-              preserveAspectRatio="none"
-              style={{ width: '100%', height: '100%' }}
-            >
-              <path
-                d="M0,50 C360,100 1080,0 1440,50 L1440,100 L0,100 Z"
-                fill="#ffffff"
-              />
-            </svg>
-          </div>
-        </section>
+        </ContentSection>
 
-        {/* Services Cards Section */}
-        <section style={{ backgroundColor: '#FFFFFF', padding: '80px 0' }}>
-          <div style={{ maxWidth: 1400, margin: '0 auto', padding: '0 32px' }}>
-            <p
-              style={{
-                textAlign: 'center',
-                color: '#666666',
-                fontSize: 17,
-                marginBottom: 48,
-              }}
-            >
-              Tailored solutions for every stage of your business journey
-            </p>
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: '1fr 1fr 1fr',
-                gap: 28,
-              }}
-            >
-              {/* Card 1: SBR */}
-              <ServiceCard
-                title="Small Business Restructure (SBR)"
-                description="A formal restructuring process designed to help viable small businesses restructure their debts and continue trading."
-                bullets={[
-                  'Debt restructuring',
-                  'Creditor protection',
-                  'Business continuity',
-                  'Professional guidance',
-                ]}
-                href="/services/small-business-restructure/"
-              />
-
-              {/* Card 2: VA */}
-              <ServiceCard
-                title="Voluntary Administration (VA)"
-                description="A process where an independent administrator takes control to assess the company's financial position and explore options."
-                bullets={[
-                  'Independent assessment',
-                  'Creditor meetings',
-                  'Business evaluation',
-                  'Restructuring options',
-                ]}
-                href="/services/voluntary-administration/"
-              />
-
-              {/* Card 3: CVL */}
-              <ServiceCard
-                title="Creditors Voluntary Liquidation (CVL)"
-                description="A formal process to wind up a company's affairs when it can no longer meet its financial obligations."
-                bullets={[
-                  'Asset liquidation',
-                  'Creditor payments',
-                  'Legal compliance',
-                  'Director protection',
-                ]}
-                href="/services/creditors-voluntary-liquidation/"
-              />
-            </div>
-          </div>
-        </section>
-
-        {/* Ready to Transform Section */}
-        <section
-          style={{
-            backgroundColor: '#1a1a3e',
-            padding: '80px 0',
-            textAlign: 'center',
-          }}
-        >
-          <div style={{ maxWidth: 800, margin: '0 auto', padding: '0 32px' }}>
-            <h2
-              style={{
-                color: '#FFFFFF',
-                fontSize: 42,
-                fontWeight: 700,
-                marginBottom: 20,
-                lineHeight: 1.2,
-              }}
-            >
-              Ready to Transform Your Business?
-            </h2>
-            <p
-              style={{
-                color: 'rgba(255,255,255,0.70)',
-                fontSize: 17,
-                lineHeight: 1.6,
-                marginBottom: 36,
-              }}
-            >
-              Every business challenge is an opportunity for growth. Let our
-              expert team help you navigate complex decisions and achieve your
-              goals.
-            </p>
-            <a
-              href="/#contact"
-              style={{
-                backgroundColor: '#333333',
-                color: '#FFFFFF',
-                borderRadius: 50,
-                padding: '14px 28px',
-                fontSize: 16,
-                fontWeight: 700,
-                textDecoration: 'none',
-                display: 'inline-block',
-              }}
-            >
-              Get Free Consultation &rarr;
-            </a>
-          </div>
-        </section>
-
-        {/* Industries Section */}
-        <section style={{ backgroundColor: '#FFFFFF', padding: '80px 0' }}>
-          <div style={{ maxWidth: 1400, margin: '0 auto', padding: '0 32px' }}>
-            <h2
-              style={{
-                color: '#1a1a3e',
-                fontSize: 38,
-                fontWeight: 700,
-                textAlign: 'center',
-                marginBottom: 16,
-              }}
-            >
-              Industries We Serve
-            </h2>
-            <p
-              style={{
-                color: '#666666',
-                fontSize: 17,
-                textAlign: 'center',
-                marginBottom: 48,
-                maxWidth: 640,
-                marginLeft: 'auto',
-                marginRight: 'auto',
-              }}
-            >
-              Our expertise spans across multiple industries, providing
-              specialised knowledge for your sector&apos;s unique challenges.
-            </p>
-            <div
-              style={{
-                display: 'flex',
-                flexWrap: 'wrap',
-                gap: 12,
-                justifyContent: 'center',
-              }}
-            >
-              {[
-                'Construction',
-                'Hospitality & Tourism',
-                'Professional Services',
-                'Labour Hire',
-                'Technology & Software',
-                'Retail & E-commerce',
-                'Manufacturing',
-                'Transportation & Logistics',
-              ].map((industry) => (
-                <span
-                  key={industry}
-                  style={{
-                    backgroundColor: '#f8f8ff',
-                    color: '#1a1a3e',
-                    borderRadius: 50,
-                    padding: '12px 24px',
-                    fontSize: 15,
-                    fontWeight: 600,
-                  }}
-                >
-                  {industry}
-                </span>
-              ))}
-            </div>
-          </div>
-        </section>
+        <PageDisclaimer />
+        <ConsultationCTA />
       </main>
       <Footer />
+
+      <style>{`
+        @media (max-width: 900px) {
+          .options-grid { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
     </>
-  )
-}
-
-interface ServiceCardProps {
-  title: string
-  description: string
-  bullets: string[]
-  href: string
-}
-
-function ServiceCard({ title, description, bullets, href }: ServiceCardProps) {
-  return (
-    <div
-      style={{
-        backgroundColor: '#f8f8ff',
-        borderRadius: 12,
-        padding: 32,
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 16,
-      }}
-    >
-      {/* Icon placeholder */}
-      <div
-        style={{
-          width: 40,
-          height: 40,
-          backgroundColor: '#333333',
-          borderRadius: 8,
-        }}
-      />
-      <h3
-        style={{
-          color: '#1a1a3e',
-          fontSize: 20,
-          fontWeight: 700,
-          lineHeight: 1.25,
-        }}
-      >
-        {title}
-      </h3>
-      <p style={{ color: '#555555', fontSize: 15, lineHeight: 1.65 }}>
-        {description}
-      </p>
-      <ul
-        style={{
-          listStyle: 'none',
-          padding: 0,
-          margin: 0,
-          display: 'flex',
-          flexDirection: 'column',
-          gap: 8,
-        }}
-      >
-        {bullets.map((bullet) => (
-          <li
-            key={bullet}
-            style={{ display: 'flex', alignItems: 'center', gap: 10 }}
-          >
-            <ArrowRight size={16} color="#333333" style={{ flexShrink: 0 }} />
-            <span style={{ color: '#555555', fontSize: 14 }}>{bullet}</span>
-          </li>
-        ))}
-      </ul>
-      <a
-        href={href}
-        style={{
-          color: '#333333',
-          fontSize: 15,
-          fontWeight: 700,
-          textDecoration: 'none',
-          marginTop: 4,
-          display: 'inline-flex',
-          alignItems: 'center',
-          gap: 4,
-        }}
-      >
-        Learn More &rarr;
-      </a>
-    </div>
   )
 }

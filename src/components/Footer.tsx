@@ -1,4 +1,11 @@
-import { Mail, MapPin } from 'lucide-react'
+import { Mail, MapPin, Phone } from 'lucide-react'
+import {
+  ADDRESS_LINE,
+  EMAIL,
+  PHONE_DISPLAY,
+  PHONE_TEL,
+  SERVICE_AREA_LINE,
+} from '@/lib/site'
 
 function AfaLogo() {
   return (
@@ -6,6 +13,9 @@ function AfaLogo() {
     <img
       src="/afa-logo-transparent.png"
       alt="Australian Financial Advisory"
+      width={770}
+      height={240}
+      loading="lazy"
       style={{
         height: '240px',
         width: 'auto',
@@ -19,13 +29,62 @@ function AfaLogo() {
   )
 }
 
+const headingStyle: React.CSSProperties = {
+  fontSize: 16,
+  fontWeight: 700,
+  color: '#ffffff',
+  marginBottom: 16,
+}
+
+const linkStyle: React.CSSProperties = {
+  display: 'block',
+  fontSize: 14,
+  padding: '5px 0',
+}
+
+// Legal links meet the 24px target minimum; the mobile rule below lifts them to 44px.
+const legalLinkStyle: React.CSSProperties = {
+  display: 'inline-flex',
+  alignItems: 'center',
+  minHeight: 24,
+}
+
+const menuLinks = [
+  { label: 'Home', href: '/' },
+  { label: 'About', href: '/about' },
+  { label: 'Contact', href: '/contact' },
+  { label: 'Your options explained', href: '/services' },
+  { label: 'Director Penalty Notice', href: '/director-penalty-notice' },
+  { label: 'ATO debt options', href: '/reduce-debt' },
+  { label: 'Restructure your business', href: '/restructure-your-business' },
+  {
+    label: 'Administration and liquidation',
+    href: '/administration-and-liquidation',
+  },
+  { label: 'Close or wind up a company', href: '/close-company' },
+]
+
+const explainerLinks = [
+  {
+    label: 'Small Business Restructuring explained',
+    href: '/services/small-business-restructure',
+  },
+  {
+    label: 'Voluntary administration explained',
+    href: '/services/voluntary-administration',
+  },
+  {
+    label: 'Creditors voluntary liquidation explained',
+    href: '/services/creditors-voluntary-liquidation',
+  },
+]
+
 export function Footer() {
   return (
     <footer
       style={{ backgroundColor: '#1a1a3e', paddingTop: 64, paddingBottom: 32 }}
     >
       <div style={{ maxWidth: 1400, margin: '0 auto', padding: '0 32px' }}>
-        {/* Top grid: 4 columns */}
         <div
           className="footer-grid"
           style={{
@@ -37,159 +96,61 @@ export function Footer() {
             marginBottom: 24,
           }}
         >
-          {/* Col 1: Brand */}
           <div className="footer-col-brand">
             <div className="footer-logo-wrap" style={{ marginBottom: 16 }}>
               <AfaLogo />
             </div>
-            {/* Email */}
-            <div
+            <h2 style={headingStyle}>Contact</h2>
+            <address
               style={{
+                fontStyle: 'normal',
                 display: 'flex',
-                alignItems: 'center',
+                flexDirection: 'column',
                 gap: 10,
-                color: 'rgba(255,255,255,0.8)',
+                color: '#DEDCEC',
                 fontSize: 14,
-                marginBottom: 24,
               }}
             >
-              <Mail size={16} color="#cccccc" />
-              <a
-                href="mailto:info@australianfinancialadvisory.com.au"
-                style={{ color: 'inherit', textDecoration: 'none' }}
+              <span
+                style={{ display: 'flex', alignItems: 'center', gap: 10 }}
               >
-                info@australianfinancialadvisory.com.au
-              </a>
-            </div>
-            {/* Gold Coast */}
-            <h4
-              style={{
-                fontSize: 15,
-                fontWeight: 700,
-                color: '#ffffff',
-                marginBottom: 6,
-              }}
-            >
-              Gold Coast
-            </h4>
-            <div
-              style={{
-                display: 'flex',
-                gap: 8,
-                color: 'rgba(255,255,255,0.7)',
-                fontSize: 14,
-                marginBottom: 16,
-              }}
-            >
-              <MapPin
-                size={16}
-                color="#cccccc"
-                style={{ marginTop: 2, flexShrink: 0 }}
-              />
-              <address style={{ fontStyle: 'normal' }}>
-                215 Brisbane Road, Biggera Waters, Queensland 4216
-              </address>
-            </div>
-            {/* Brisbane */}
-            <h4
-              style={{
-                fontSize: 15,
-                fontWeight: 700,
-                color: '#ffffff',
-                marginBottom: 6,
-              }}
-            >
-              Brisbane
-            </h4>
-            <div
-              style={{
-                display: 'flex',
-                gap: 8,
-                color: 'rgba(255,255,255,0.7)',
-                fontSize: 14,
-                marginBottom: 16,
-              }}
-            >
-              <MapPin
-                size={16}
-                color="#cccccc"
-                style={{ marginTop: 2, flexShrink: 0 }}
-              />
-              <address style={{ fontStyle: 'normal' }}>
-                Brisbane, Queensland 4000
-              </address>
-            </div>
-            {/* Sydney */}
-            <h4
-              style={{
-                fontSize: 15,
-                fontWeight: 700,
-                color: '#ffffff',
-                marginBottom: 6,
-              }}
-            >
-              Sydney
-            </h4>
-            <div
-              style={{
-                display: 'flex',
-                gap: 8,
-                color: 'rgba(255,255,255,0.7)',
-                fontSize: 14,
-                marginBottom: 20,
-              }}
-            >
-              <MapPin
-                size={16}
-                color="#cccccc"
-                style={{ marginTop: 2, flexShrink: 0 }}
-              />
-              <address style={{ fontStyle: 'normal' }}>
-                Sydney, New South Wales 2000
-              </address>
-            </div>
+                <Phone size={16} color="#9b8ec4" aria-hidden="true" />
+                <a href={`tel:${PHONE_TEL}`} className="afa-footer-link">
+                  {PHONE_DISPLAY}
+                </a>
+              </span>
+              <span
+                style={{ display: 'flex', alignItems: 'center', gap: 10 }}
+              >
+                <Mail size={16} color="#9b8ec4" aria-hidden="true" />
+                <a href={`mailto:${EMAIL}`} className="afa-footer-link">
+                  {EMAIL}
+                </a>
+              </span>
+              <span style={{ display: 'flex', gap: 10 }}>
+                <MapPin
+                  size={16}
+                  color="#9b8ec4"
+                  aria-hidden="true"
+                  style={{ marginTop: 2, flexShrink: 0 }}
+                />
+                <span>{ADDRESS_LINE}</span>
+              </span>
+            </address>
+            <p style={{ color: '#DEDCEC', fontSize: 14, marginTop: 16 }}>
+              {SERVICE_AREA_LINE}
+            </p>
           </div>
 
-          {/* Col 2: Menu */}
           <div>
-            <h4
-              style={{
-                fontSize: 16,
-                fontWeight: 700,
-                color: '#ffffff',
-                marginBottom: 16,
-              }}
-            >
-              Menu
-            </h4>
-            <nav>
-              {(
-                [
-                  { label: 'Home', href: '/' },
-                  { label: 'About', href: '/about/' },
-                  { label: 'Services', href: '/services/' },
-                  { label: 'DPN Risk', href: '/director-penalty-notice/' },
-                  { label: 'Reduce Debt', href: '/reduce-debt/' },
-                  {
-                    label: 'Restructure Business',
-                    href: '/restructure-your-business/',
-                  },
-                  {
-                    label: 'Admin & Liquidation',
-                    href: '/administration-and-liquidation/',
-                  },
-                ] as { label: string; href: string }[]
-              ).map(({ label, href }) => (
+            <h2 style={headingStyle}>Menu</h2>
+            <nav aria-label="Footer menu">
+              {menuLinks.map(({ label, href }) => (
                 <a
-                  key={label}
+                  key={href}
                   href={href}
-                  style={{
-                    display: 'block',
-                    color: 'rgba(255,255,255,0.6)',
-                    fontSize: 14,
-                    textDecoration: 'none',
-                    padding: '4px 0',
-                  }}
+                  className="afa-footer-link"
+                  style={linkStyle}
                 >
                   {label}
                 </a>
@@ -197,45 +158,15 @@ export function Footer() {
             </nav>
           </div>
 
-          {/* Col 3: Services */}
           <div>
-            <h4
-              style={{
-                fontSize: 16,
-                fontWeight: 700,
-                color: '#ffffff',
-                marginBottom: 16,
-              }}
-            >
-              Services
-            </h4>
-            <nav>
-              {(
-                [
-                  [
-                    'Voluntary Administration',
-                    '/services/voluntary-administration/',
-                  ],
-                  [
-                    'Creditors Voluntary Liquidation',
-                    '/services/creditors-voluntary-liquidation/',
-                  ],
-                  [
-                    'Small Business Restructure',
-                    '/services/small-business-restructure/',
-                  ],
-                ] as [string, string][]
-              ).map(([label, href]) => (
+            <h2 style={headingStyle}>Options explained</h2>
+            <nav aria-label="Footer explainers">
+              {explainerLinks.map(({ label, href }) => (
                 <a
-                  key={label}
+                  key={href}
                   href={href}
-                  style={{
-                    display: 'block',
-                    color: 'rgba(255,255,255,0.6)',
-                    fontSize: 14,
-                    textDecoration: 'none',
-                    padding: '4px 0',
-                  }}
+                  className="afa-footer-link"
+                  style={linkStyle}
                 >
                   {label}
                 </a>
@@ -244,7 +175,6 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Footer bottom */}
         <div
           className="footer-bottom"
           style={{
@@ -252,7 +182,7 @@ export function Footer() {
             justifyContent: 'space-between',
             alignItems: 'center',
             fontSize: 13,
-            color: 'rgba(255,255,255,0.4)',
+            color: '#DEDCEC',
             flexWrap: 'wrap',
             gap: 8,
           }}
@@ -261,18 +191,24 @@ export function Footer() {
             <span>© 2026 Australian Financial Advisory Pty Ltd</span>
             <span>ACN 680 451 129</span>
             <span>ABN 73 680 451 129</span>
-            <a href="/privacy-policy/" style={{ color: 'inherit' }}>
+            <a
+              href="/privacy-policy"
+              className="afa-footer-link afa-footer-legal-link"
+              style={legalLinkStyle}
+            >
               Privacy Policy
             </a>
-            <a href="/website-terms-conditions/" style={{ color: 'inherit' }}>
+            <a
+              href="/website-terms-conditions"
+              className="afa-footer-link afa-footer-legal-link"
+              style={legalLinkStyle}
+            >
               Terms &amp; Conditions
             </a>
           </div>
-          <span>Website by Theme Press</span>
         </div>
       </div>
 
-      {/* Disclaimer */}
       <div
         style={{
           borderTop: '1px solid rgba(255,255,255,0.08)',
@@ -284,7 +220,7 @@ export function Footer() {
             maxWidth: 1400,
             margin: '0 auto',
             fontSize: 12,
-            color: '#888888',
+            color: '#C9C7DA',
             lineHeight: 1.7,
             textAlign: 'center',
           }}
@@ -305,13 +241,12 @@ export function Footer() {
             maxWidth: 1400,
             margin: '8px auto 0',
             fontSize: 12,
-            color: '#666666',
+            color: '#C9C7DA',
             lineHeight: 1.5,
             textAlign: 'center',
           }}
         >
-          Serving clients across Gold Coast, Brisbane, Sydney, Melbourne, and
-          Australia-wide.
+          Serving clients across {SERVICE_AREA_LINE}
         </p>
       </div>
       <style>{`
@@ -324,8 +259,7 @@ export function Footer() {
             display: flex;
             justify-content: center;
           }
-          .footer-col-brand address,
-          .footer-col-brand > div {
+          .footer-col-brand address > span {
             justify-content: center;
           }
           .footer-bottom {
@@ -337,6 +271,9 @@ export function Footer() {
             flex-direction: column !important;
             align-items: center !important;
             gap: 4px !important;
+          }
+          .afa-footer-legal-link {
+            min-height: 44px !important;
           }
         }
       `}</style>

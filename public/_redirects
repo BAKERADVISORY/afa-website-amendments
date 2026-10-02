@@ -1,0 +1,7 @@
+# Cloudflare Pages redirects. Only routes confirmed to have existed on this
+# site and now removed: /credit-repair-and-funding (removed 2026-08-11) and
+# the placeholder /blog route (created 2026-04-11, no longer built).
+/credit-repair-and-funding/*  /  301
+/credit-repair-and-funding    /  301
+/blog/*  /services  301
+/blog    /services  301

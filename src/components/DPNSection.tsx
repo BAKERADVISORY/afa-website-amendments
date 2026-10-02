@@ -3,6 +3,7 @@ import { AlertTriangle } from 'lucide-react'
 export function DPNSection() {
   return (
     <section
+      aria-labelledby="dpn-heading"
       style={{
         backgroundColor: '#1a1a3e',
         padding: '80px 0',
@@ -10,8 +11,8 @@ export function DPNSection() {
         overflow: 'hidden',
       }}
     >
-      {/* Background watermark */}
       <div
+        aria-hidden="true"
         style={{
           position: 'absolute',
           fontSize: 200,
@@ -40,6 +41,7 @@ export function DPNSection() {
         }}
       >
         <div
+          aria-hidden="true"
           style={{
             display: 'inline-flex',
             alignItems: 'center',
@@ -55,6 +57,7 @@ export function DPNSection() {
         </div>
 
         <h2
+          id="dpn-heading"
           style={{
             fontSize: 40,
             fontWeight: 700,
@@ -63,48 +66,38 @@ export function DPNSection() {
             lineHeight: 1.2,
           }}
         >
-          Are You at Risk of a{' '}
-          <span
-            style={{
-              color: '#ffffff',
-              textDecoration: 'underline',
-              textUnderlineOffset: '4px',
-              textDecorationColor: 'rgba(255,255,255,0.4)',
-            }}
-          >
-            Director Penalty Notice?
-          </span>
+          Worried about a Director Penalty Notice?
         </h2>
 
         <p
           style={{
             fontSize: 18,
-            color: 'rgba(255,255,255,0.82)',
+            color: '#DEDCEC',
             lineHeight: 1.7,
             maxWidth: 680,
             margin: '0 auto 16px',
           }}
         >
-          The ATO is issuing Director Penalty Notices aggressively — even for
-          debts in the tens of thousands. A DPN puts your personal assets at
-          risk.{' '}
+          A Director Penalty Notice is a notice the ATO can issue that makes a
+          company director personally liable for certain unpaid company tax
+          debts.{' '}
           <strong style={{ color: '#ffffff' }}>
-            Early action is the only protection.
+            Getting advice early matters.
           </strong>
         </p>
 
         <p
           style={{
             fontSize: 15,
-            color: 'rgba(255,255,255,0.55)',
+            color: '#DEDCEC',
             lineHeight: 1.65,
             maxWidth: 600,
             margin: '0 auto 36px',
           }}
         >
-          Once a DPN is issued, the protection of the corporate structure is
-          removed. You become personally liable for unpaid PAYG withholding and
-          superannuation. Don&apos;t wait for the letter — act now.
+          We help directors understand what a notice means, what options may
+          still be open, and which licensed specialist to involve. Any next
+          step is your decision.
         </p>
 
         <div
@@ -117,6 +110,7 @@ export function DPNSection() {
         >
           <a
             href="/director-penalty-notice"
+            className="afa-button-light"
             style={{
               backgroundColor: '#ffffff',
               color: '#1a1a3e',
@@ -128,10 +122,10 @@ export function DPNSection() {
               display: 'inline-block',
             }}
           >
-            Learn More About DPNs →
+            Learn more about DPNs
           </a>
           <a
-            href="/#contact"
+            href="#contact"
             style={{
               backgroundColor: 'transparent',
               color: '#FFFFFF',
@@ -141,10 +135,10 @@ export function DPNSection() {
               fontWeight: 700,
               textDecoration: 'none',
               display: 'inline-block',
-              border: '1px solid rgba(255,255,255,0.35)',
+              border: '1px solid rgba(255,255,255,0.5)',
             }}
           >
-            Schedule a Discovery Call
+            Book a free initial consultation
           </a>
         </div>
       </div>

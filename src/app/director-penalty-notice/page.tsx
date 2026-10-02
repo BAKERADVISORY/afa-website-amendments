@@ -1,907 +1,501 @@
 import type { Metadata } from 'next'
+import { ChevronRight } from 'lucide-react'
 import { NavBar } from '@/components/NavBar'
 import { Footer } from '@/components/Footer'
-import { ChevronRight } from 'lucide-react'
+import { PageHero } from '@/components/PageHero'
+import {
+  ContentSection,
+  bodyText,
+  bodyTextLight,
+  calloutBox,
+  cardBody,
+  cardStyle,
+  cardTitle,
+} from '@/components/ContentSection'
+import { CanCannot } from '@/components/CanCannot'
+import { FaqList } from '@/components/FaqList'
+import { RelatedLinks } from '@/components/RelatedLinks'
+import { PageDisclaimer } from '@/components/PageDisclaimer'
+import { ConsultationCTA } from '@/components/ConsultationCTA'
+import { JsonLd } from '@/components/JsonLd'
+import { absUrl, serviceSchema, type FaqItem } from '@/lib/site'
+
+const PATH = '/director-penalty-notice'
+const title = 'Director Penalty Notice (DPN) Help and Options'
+const description =
+  'What a Director Penalty Notice is, the 21-day window, lockdown versus non-lockdown notices, and the options still open to directors. Assessment and referral. Free initial consultation.'
 
 export const metadata: Metadata = {
-  title: 'Director Penalty Notice Help',
-  description:
-    'Received an ATO Director Penalty Notice or at risk of one? We help directors understand their options and act before the deadline.',
-  alternates: {
-    canonical:
-      'https://www.australianfinancialadvisory.com.au/director-penalty-notice/',
-  },
-  openGraph: {
-    title: 'Director Penalty Notice Help | Australian Financial Advisory',
-    description:
-      'Received an ATO Director Penalty Notice or at risk of one? We help directors understand their options and act before the deadline.',
-    url: 'https://www.australianfinancialadvisory.com.au/director-penalty-notice/',
-  },
+  title,
+  description,
+  alternates: { canonical: absUrl(PATH) },
+  openGraph: { title: `${title} | AFA`, description, url: absUrl(PATH) },
 }
 
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'What is a Director Penalty Notice?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'A Director Penalty Notice (DPN) is a formal notice issued by the ATO that makes a company director personally liable for unpaid PAYG withholding, GST, and superannuation guarantee charge debts.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Can I resign as director to avoid a DPN?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'No. Resigning as a director does not discharge liability for non-compliance that occurred during your tenure.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'What happens if I do nothing after receiving a DPN?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'If you take no action on a Non-Lockdown DPN within 21 days, your personal liability becomes permanent and the ATO can pursue your personal assets including your home at any time in the future.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Can the ATO take my house?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Yes. Once a DPN is locked down the ATO can issue garnishee notices, offset tax refunds, commence legal proceedings, and ultimately pursue personal assets including your home.',
-      },
-    },
-  ],
-}
+const faqItems: FaqItem[] = [
+  {
+    question: 'Can I resign as director to avoid a DPN?',
+    answer:
+      'No. Resigning as a director does not discharge liability for non-compliance that occurred during your tenure as director.',
+  },
+  {
+    question: 'Does a payment plan remove a DPN?',
+    answer:
+      'A payment plan alone does not remove personal liability under a DPN. For a non-lockdown DPN, the debt must be paid in full or the company must enter administration, restructuring, or liquidation within the 21-day window.',
+  },
+  {
+    question: 'What happens if I do nothing?',
+    answer:
+      'If no action is taken on a non-lockdown DPN within 21 days, the personal liability becomes permanent. The ATO can then pursue personal assets. A DPN does not expire.',
+  },
+  {
+    question: 'Can Australian Financial Advisory negotiate with the ATO for me?',
+    answer:
+      "We're not a registered tax agent, so we don't provide tax agent services like direct ATO negotiation ourselves. Where that's relevant, we can point you toward appropriately licensed help.",
+  },
+  {
+    question: 'How much does it cost to get advice?',
+    answer:
+      'The initial consultation is free. We work on fixed fees agreed upfront, so you know the cost before anything starts.',
+  },
+]
 
-function SectionLabel({ text }: { text: string }) {
-  return (
-    <p
-      style={{
-        fontSize: 12,
-        letterSpacing: 3,
-        textTransform: 'uppercase',
-        color: '#999999',
-        marginBottom: 12,
-      }}
-    >
-      {text}
-    </p>
-  )
-}
+const triggers = [
+  {
+    title: 'PAYG withholding',
+    body: 'Tax withheld from employee wages that was not remitted to the ATO. Directors can be personally liable regardless of whether they were aware the amounts were not being paid.',
+  },
+  {
+    title: 'GST',
+    body: 'Unpaid GST obligations are captured under the DPN regime. GST collected from customers but not remitted to the ATO can become a personal liability for directors.',
+  },
+  {
+    title: 'Superannuation guarantee charge',
+    body: 'Unpaid superannuation guarantee amounts owed to employees can also give rise to director liability.',
+  },
+  {
+    title: 'Income tax',
+    body: 'Outstanding company income tax obligations can give rise to director liability in certain circumstances.',
+  },
+]
+
+const protection = [
+  {
+    num: '01',
+    heading: 'Lodge on time, every time',
+    body: 'Even if the company cannot pay, lodging BAS, IAS and superannuation statements on time keeps a non-lockdown DPN from becoming a lockdown DPN.',
+  },
+  {
+    num: '02',
+    heading: 'Engage the ATO early',
+    body: 'If the company is struggling with cash flow, approaching the ATO early about a payment arrangement, through a registered tax agent where needed, is better than waiting for a notice.',
+  },
+  {
+    num: '03',
+    heading: 'Keep your ASIC address current',
+    body: 'DPNs are sent to the address registered with ASIC. An outdated address is not a defence for missing the 21-day deadline.',
+  },
+  {
+    num: '04',
+    heading: "Monitor the company's compliance",
+    body: 'As a director you are responsible for knowing whether the company is meeting its tax obligations.',
+  },
+  {
+    num: '05',
+    heading: 'Seek advice early',
+    body: 'The earlier you talk to a pre-insolvency adviser, the more options may still be available.',
+  },
+]
 
 export default function DirectorPenaltyNoticePage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      <JsonLd
+        data={serviceSchema({
+          path: PATH,
+          name: 'Director Penalty Notice options assessment and referral',
+          description:
+            "An assessment of a director's position after receiving, or at risk of receiving, an ATO Director Penalty Notice, with the available options set out in writing and referral to an appropriately licensed tax agent, restructuring practitioner or insolvency practitioner where formal action is needed.",
+        })}
       />
       <NavBar />
-      <main style={{ paddingTop: 80 }}>
-        {/* 1. Hero */}
-        <section
-          className="svc-hero"
-          style={{
-            backgroundColor: '#1a1a3e',
-            padding: '100px 0 80px',
-            position: 'relative',
-            overflow: 'hidden',
-          }}
+      <main id="main">
+        <PageHero
+          eyebrow="Director Penalty Notice"
+          title="Director Penalty Notice: what it means and the options still open"
+          intro="A Director Penalty Notice (DPN) is a notice the ATO can issue that makes a company director personally liable for certain unpaid company tax debts. Getting advice early matters, because the options available can narrow once a notice is issued."
+          breadcrumbs={[
+            { name: 'Home', href: '/' },
+            { name: 'Director Penalty Notice' },
+          ]}
+          watermark="DPN"
+        />
+
+        <ContentSection id="section-in-short" label="In short" heading="The short answer">
+          <ul
+            style={{
+              listStyle: 'none',
+              padding: 0,
+              margin: 0,
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 14,
+            }}
+          >
+            {[
+              'A DPN makes a company director personally liable for certain unpaid company tax debts, such as PAYG withholding, GST and superannuation guarantee charge.',
+              'A non-lockdown DPN gives the director 21 days from the date the notice is posted to act. A lockdown DPN cannot be cancelled.',
+              'Australian Financial Advisory assesses your position, sets out the options in writing, and introduces the right licensed specialist: a registered tax agent for ATO matters, or a restructuring or insolvency practitioner for a formal process.',
+            ].map((line) => (
+              <li
+                key={line}
+                style={{
+                  display: 'flex',
+                  gap: 10,
+                  alignItems: 'flex-start',
+                  fontSize: 16,
+                  color: '#444444',
+                  lineHeight: 1.7,
+                }}
+              >
+                <ChevronRight
+                  size={18}
+                  color="#6E3E8F"
+                  aria-hidden="true"
+                  style={{ flexShrink: 0, marginTop: 4 }}
+                />
+                {line}
+              </li>
+            ))}
+          </ul>
+        </ContentSection>
+
+        <ContentSection
+          id="section-what-is-a-dpn"
+          label="What is a DPN"
+          heading="What is a Director Penalty Notice?"
+          tone="panel"
+        >
+          <p style={bodyText}>
+            A Director Penalty Notice is a formal notice issued by the Australian
+            Taxation Office that makes a company director personally liable for
+            certain unpaid company tax debts. Unlike other company debts, a DPN
+            removes the protection of the company structure for those amounts.
+            The ATO can then pursue the director personally.
+          </p>
+          <div style={{ ...calloutBox, backgroundColor: '#ffffff' }}>
+            <p
+              style={{
+                fontSize: 15,
+                color: '#1a1a3e',
+                lineHeight: 1.7,
+                margin: 0,
+                fontWeight: 600,
+              }}
+            >
+              Once a non-lockdown DPN is issued, the director has 21 days to
+              act. After that window closes, the personal liability is locked
+              in, regardless of what happens to the company.
+            </p>
+          </div>
+        </ContentSection>
+
+        <ContentSection
+          id="section-triggers"
+          label="DPN triggers"
+          heading="What debts can trigger a Director Penalty Notice?"
+        >
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+            {triggers.map((item) => (
+              <div key={item.title} style={{ ...cardStyle, backgroundColor: '#f8f8ff' }}>
+                <h3 style={cardTitle}>{item.title}</h3>
+                <p style={cardBody}>{item.body}</p>
+              </div>
+            ))}
+          </div>
+        </ContentSection>
+
+        <ContentSection
+          id="section-types"
+          label="DPN types"
+          heading="The two types of Director Penalty Notice"
+          tone="panel"
         >
           <div
             style={{
-              position: 'absolute',
-              fontSize: 260,
-              fontWeight: 900,
-              color: 'rgba(255,255,255,0.03)',
-              right: -60,
-              top: '50%',
-              transform: 'translateY(-50%)',
-              userSelect: 'none',
-              lineHeight: 1,
-              pointerEvents: 'none',
-              letterSpacing: -8,
+              display: 'grid',
+              gridTemplateColumns: 'repeat(2, 1fr)',
+              gap: 24,
             }}
+            className="dpn-two-col"
           >
-            DPN
-          </div>
-          <div
-            style={{
-              maxWidth: 900,
-              margin: '0 auto',
-              padding: '0 32px',
-              position: 'relative',
-              zIndex: 1,
-            }}
-          >
-            <SectionLabel text="Director Penalty Notice" />
-            <h1
-              className="mobile-hero-title"
-              style={{
-                fontSize: 52,
-                fontWeight: 700,
-                color: '#ffffff',
-                lineHeight: 1.15,
-                marginBottom: 24,
-              }}
-            >
-              Director Penalty Notice —{' '}
-              <span
+            <div style={{ ...cardStyle }}>
+              <h3 style={{ ...cardTitle, fontSize: 20 }}>Non-lockdown DPN</h3>
+              <p style={{ ...cardBody, marginBottom: 14 }}>
+                Issued when the company has lodged its BAS and superannuation
+                statements on time but has not paid the debt. Directors have 21
+                days from the date the notice is posted, not the date it is
+                received, to take action.
+              </p>
+              <p style={{ ...cardBody, marginBottom: 12 }}>
+                Within those 21 days the director can avoid personal liability
+                by:
+              </p>
+              <ul
                 style={{
-                  textDecoration: 'underline',
-                  textUnderlineOffset: '5px',
-                  textDecorationColor: 'rgba(255,255,255,0.35)',
+                  listStyle: 'none',
+                  padding: 0,
+                  margin: '0 0 16px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: 8,
                 }}
               >
-                Act Now or Risk Everything
-              </span>
-            </h1>
-            <p
-              style={{
-                fontSize: 18,
-                color: 'rgba(255,255,255,0.72)',
-                lineHeight: 1.7,
-                maxWidth: 680,
-                marginBottom: 36,
-              }}
-            >
-              The ATO issued over 84,000 Director Penalty Notices in FY2025
-              alone. Your personal assets — including your family home — are at
-              risk. Every day without action narrows your options.
-            </p>
-            <a
-              href="/#contact"
-              className="mobile-full-button"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: 8,
-                backgroundColor: '#ffffff',
-                color: '#1a1a3e',
-                borderRadius: 50,
-                padding: '14px 28px',
-                fontSize: 15,
-                fontWeight: 700,
-                textDecoration: 'none',
-              }}
-            >
-              Schedule Your Discovery Call
-              <ChevronRight size={16} />
-            </a>
-          </div>
-        </section>
-
-        {/* 2. What Is a Director Penalty Notice */}
-        <section style={{ backgroundColor: '#ffffff', padding: '80px 0' }}>
-          <div style={{ maxWidth: 900, margin: '0 auto', padding: '0 32px' }}>
-            <SectionLabel text="What is a DPN" />
-            <h2
-              style={{
-                fontSize: 38,
-                fontWeight: 700,
-                color: '#1a1a3e',
-                marginBottom: 20,
-                lineHeight: 1.2,
-              }}
-            >
-              What Is a Director Penalty Notice?
-            </h2>
-            <p
-              style={{
-                fontSize: 16,
-                color: '#555555',
-                lineHeight: 1.75,
-                marginBottom: 20,
-              }}
-            >
-              A Director Penalty Notice (DPN) is a formal notice issued by the
-              Australian Taxation Office (ATO) that makes a company director
-              personally liable for certain unpaid company tax debts. Unlike
-              other company debts, a DPN pierces the corporate veil — meaning
-              the protection of your company structure is removed and you become
-              personally responsible for the debt. The ATO can then pursue your
-              personal assets including your home, savings, and investments to
-              recover what is owed.
-            </p>
-            <p
-              style={{
-                fontSize: 16,
-                color: '#555555',
-                lineHeight: 1.75,
-                marginBottom: 20,
-              }}
-            >
-              The ATO issued over 84,000 DPNs in FY2024-25, covering
-              approximately $5.5 billion in company tax liabilities — a dramatic
-              increase from 26,702 notices issued the prior year. This is not a
-              tool reserved for large businesses with significant debts. Every
-              debt is now on the ATO&apos;s radar.
-            </p>
-            <div
-              style={{
-                backgroundColor: '#f8f8ff',
-                borderRadius: 10,
-                padding: '20px 24px',
-                borderLeft: '4px solid #9b8ec4',
-              }}
-            >
-              <p
-                style={{
-                  fontSize: 15,
-                  color: '#333333',
-                  lineHeight: 1.7,
-                  margin: 0,
-                  fontWeight: 600,
-                }}
-              >
-                Once a DPN is issued, you have 21 days to act. After that window
-                closes, your personal liability is locked in — regardless of
-                what happens to the company.
+                {[
+                  'Paying the debt in full',
+                  'Placing the company into voluntary administration',
+                  'Appointing a small business restructuring practitioner',
+                  'Commencing liquidation',
+                ].map((item) => (
+                  <li
+                    key={item}
+                    style={{
+                      display: 'flex',
+                      alignItems: 'flex-start',
+                      gap: 8,
+                      fontSize: 14,
+                      color: '#444444',
+                    }}
+                  >
+                    <ChevronRight
+                      size={14}
+                      color="#6E3E8F"
+                      aria-hidden="true"
+                      style={{ flexShrink: 0, marginTop: 3 }}
+                    />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <p style={cardBody}>
+                If no action is taken within 21 days the penalty locks down and
+                the personal liability becomes permanent.
               </p>
             </div>
-          </div>
-        </section>
 
-        {/* 3. What Debts Trigger a DPN */}
-        <section style={{ backgroundColor: '#f8f8ff', padding: '80px 0' }}>
-          <div style={{ maxWidth: 900, margin: '0 auto', padding: '0 32px' }}>
-            <SectionLabel text="DPN Triggers" />
-            <h2
-              style={{
-                fontSize: 38,
-                fontWeight: 700,
-                color: '#1a1a3e',
-                marginBottom: 20,
-                lineHeight: 1.2,
-              }}
-            >
-              What Debts Can Trigger a Director Penalty Notice?
-            </h2>
             <div
               style={{
-                display: 'flex',
-                flexDirection: 'column',
-                gap: 16,
-                marginBottom: 32,
-              }}
-            >
-              {[
-                {
-                  title: 'PAYG Withholding',
-                  body: 'Tax withheld from employee wages that was never remitted to the ATO. This is the most common DPN trigger. Directors are personally liable regardless of whether they were aware the amounts were not being paid.',
-                },
-                {
-                  title: 'GST (Goods and Services Tax)',
-                  body: 'Unpaid GST obligations are captured under the DPN regime. If your business has been collecting GST from customers but not remitting it to the ATO, directors can be held personally liable for those amounts.',
-                },
-                {
-                  title: 'Superannuation Guarantee Charge',
-                  body: 'Unpaid superannuation contributions owed to employees. Since 2019, the ATO can issue a DPN for SGC shortfalls even if the company has lodged returns on time. There is no safe harbour for superannuation.',
-                },
-                {
-                  title: 'Income Tax',
-                  body: 'Outstanding company income tax obligations can also give rise to director liability in certain circumstances.',
-                },
-              ].map((item) => (
-                <div
-                  key={item.title}
-                  style={{
-                    backgroundColor: '#ffffff',
-                    borderRadius: 10,
-                    padding: '24px 28px',
-                    borderTop: '3px solid #9b8ec4',
-                  }}
-                >
-                  <h3
-                    style={{
-                      fontSize: 17,
-                      fontWeight: 700,
-                      color: '#1a1a3e',
-                      marginBottom: 10,
-                    }}
-                  >
-                    {item.title}
-                  </h3>
-                  <p
-                    style={{
-                      fontSize: 14,
-                      color: '#555555',
-                      lineHeight: 1.65,
-                      margin: 0,
-                    }}
-                  >
-                    {item.body}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* 4. Two Types of DPN */}
-        <section style={{ backgroundColor: '#ffffff', padding: '80px 0' }}>
-          <div style={{ maxWidth: 900, margin: '0 auto', padding: '0 32px' }}>
-            <SectionLabel text="DPN Types" />
-            <h2
-              style={{
-                fontSize: 38,
-                fontWeight: 700,
-                color: '#1a1a3e',
-                marginBottom: 32,
-                lineHeight: 1.2,
-              }}
-            >
-              The Two Types of Director Penalty Notice
-            </h2>
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(2, 1fr)',
-                gap: 24,
-              }}
-              className="dpn-two-col"
-            >
-              {/* Non-Lockdown */}
-              <div
-                style={{
-                  backgroundColor: '#f8f8ff',
-                  borderRadius: 10,
-                  padding: '28px',
-                  borderTop: '3px solid #9b8ec4',
-                }}
-              >
-                <h3
-                  style={{
-                    fontSize: 20,
-                    fontWeight: 700,
-                    color: '#1a1a3e',
-                    marginBottom: 16,
-                  }}
-                >
-                  Non-Lockdown DPN
-                </h3>
-                <p
-                  style={{
-                    fontSize: 14,
-                    color: '#555555',
-                    lineHeight: 1.7,
-                    marginBottom: 14,
-                  }}
-                >
-                  Issued when the company has lodged its BAS and superannuation
-                  statements on time but has not paid the debt. Directors have
-                  21 days from the date the notice is posted — not the date it
-                  is received — to take action.
-                </p>
-                <p
-                  style={{
-                    fontSize: 14,
-                    color: '#555555',
-                    lineHeight: 1.7,
-                    marginBottom: 12,
-                  }}
-                >
-                  Within those 21 days the director can avoid personal liability
-                  by:
-                </p>
-                <ul
-                  style={{
-                    listStyle: 'none',
-                    padding: 0,
-                    margin: '0 0 16px',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: 8,
-                  }}
-                >
-                  {[
-                    'Paying the debt in full',
-                    'Placing the company into voluntary administration',
-                    'Appointing a small business restructuring practitioner',
-                    'Commencing liquidation',
-                  ].map((item) => (
-                    <li
-                      key={item}
-                      style={{
-                        display: 'flex',
-                        alignItems: 'flex-start',
-                        gap: 8,
-                        fontSize: 14,
-                        color: '#444444',
-                      }}
-                    >
-                      <ChevronRight
-                        size={14}
-                        color="#333333"
-                        style={{ flexShrink: 0, marginTop: 2 }}
-                      />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-                <p
-                  style={{
-                    fontSize: 14,
-                    color: '#555555',
-                    lineHeight: 1.7,
-                    margin: 0,
-                  }}
-                >
-                  If no action is taken within 21 days the penalty locks down
-                  and personal liability becomes permanent.
-                </p>
-              </div>
-
-              {/* Lockdown */}
-              <div
-                style={{
-                  backgroundColor: '#1a1a3e',
-                  borderRadius: 10,
-                  padding: '28px',
-                  borderTop: '3px solid rgba(255,255,255,0.3)',
-                }}
-              >
-                <h3
-                  style={{
-                    fontSize: 20,
-                    fontWeight: 700,
-                    color: '#ffffff',
-                    marginBottom: 16,
-                  }}
-                >
-                  Lockdown DPN
-                </h3>
-                <p
-                  style={{
-                    fontSize: 14,
-                    color: 'rgba(255,255,255,0.75)',
-                    lineHeight: 1.7,
-                    marginBottom: 14,
-                  }}
-                >
-                  Issued when the company has not lodged its returns within the
-                  required timeframes — typically within 3 months of the due
-                  date. A Lockdown DPN cannot be cancelled.
-                </p>
-                <p
-                  style={{
-                    fontSize: 14,
-                    color: 'rgba(255,255,255,0.75)',
-                    lineHeight: 1.7,
-                    marginBottom: 12,
-                  }}
-                >
-                  Once issued there are only three ways out:
-                </p>
-                <ul
-                  style={{
-                    listStyle: 'none',
-                    padding: 0,
-                    margin: '0 0 20px',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: 8,
-                  }}
-                >
-                  {[
-                    'Pay the debt in full',
-                    'Place the company into voluntary administration',
-                    'Appoint a small business restructuring practitioner',
-                  ].map((item) => (
-                    <li
-                      key={item}
-                      style={{
-                        display: 'flex',
-                        alignItems: 'flex-start',
-                        gap: 8,
-                        fontSize: 14,
-                        color: 'rgba(255,255,255,0.75)',
-                      }}
-                    >
-                      <ChevronRight
-                        size={14}
-                        color="rgba(255,255,255,0.5)"
-                        style={{ flexShrink: 0, marginTop: 2 }}
-                      />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-                <p
-                  style={{
-                    fontSize: 14,
-                    color: 'rgba(255,255,255,0.9)',
-                    lineHeight: 1.7,
-                    margin: 0,
-                    fontWeight: 600,
-                  }}
-                >
-                  Liquidation does not remove personal liability for a Lockdown
-                  DPN.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* 5. The 21-Day Window */}
-        <section style={{ backgroundColor: '#1a1a3e', padding: '80px 0' }}>
-          <div style={{ maxWidth: 900, margin: '0 auto', padding: '0 32px' }}>
-            <SectionLabel text="Critical Timing" />
-            <h2
-              style={{
-                fontSize: 38,
-                fontWeight: 700,
-                color: '#ffffff',
-                marginBottom: 20,
-                lineHeight: 1.2,
-              }}
-            >
-              The 21-Day Window — What You Must Do
-            </h2>
-            <p
-              style={{
-                fontSize: 16,
-                color: 'rgba(255,255,255,0.75)',
-                lineHeight: 1.75,
-                marginBottom: 28,
-              }}
-            >
-              The 21-day period for a Non-Lockdown DPN begins from the date the
-              ATO posts the notice — not the date you receive it. This means by
-              the time you open the letter, you may already have lost several
-              days.
-            </p>
-            <div
-              style={{
-                backgroundColor: 'rgba(255,255,255,0.08)',
+                backgroundColor: '#1a1a3e',
                 borderRadius: 10,
-                padding: '28px',
-                borderLeft: '4px solid rgba(255,255,255,0.4)',
+                padding: '24px 28px',
+                borderTop: '3px solid rgba(255,255,255,0.3)',
               }}
             >
+              <h3
+                style={{
+                  fontSize: 20,
+                  fontWeight: 700,
+                  color: '#ffffff',
+                  marginBottom: 14,
+                }}
+              >
+                Lockdown DPN
+              </h3>
+              <p style={{ ...bodyTextLight, fontSize: 14, marginBottom: 14 }}>
+                Issued when the company has not lodged its returns within the
+                required timeframes. A lockdown DPN cannot be cancelled.
+              </p>
+              <p style={{ ...bodyTextLight, fontSize: 14, marginBottom: 12 }}>
+                Once issued, the liability is dealt with by:
+              </p>
+              <ul
+                style={{
+                  listStyle: 'none',
+                  padding: 0,
+                  margin: '0 0 16px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: 8,
+                }}
+              >
+                {[
+                  'Paying the debt in full',
+                  'Placing the company into voluntary administration',
+                  'Appointing a small business restructuring practitioner',
+                ].map((item) => (
+                  <li
+                    key={item}
+                    style={{
+                      display: 'flex',
+                      alignItems: 'flex-start',
+                      gap: 8,
+                      fontSize: 14,
+                      color: '#DEDCEC',
+                    }}
+                  >
+                    <ChevronRight
+                      size={14}
+                      color="#DEDCEC"
+                      aria-hidden="true"
+                      style={{ flexShrink: 0, marginTop: 3 }}
+                    />
+                    {item}
+                  </li>
+                ))}
+              </ul>
               <p
                 style={{
-                  fontSize: 17,
+                  fontSize: 14,
                   color: '#ffffff',
                   lineHeight: 1.7,
                   margin: 0,
                   fontWeight: 600,
                 }}
               >
-                Immediate action is critical. Do not wait. Do not assume it will
-                be resolved. Contact a professional the same day you receive the
-                notice. The difference between a successful outcome and
-                permanent personal liability is often measured in days.
+                Liquidation does not remove personal liability for a lockdown
+                DPN.
               </p>
             </div>
           </div>
-        </section>
+        </ContentSection>
 
-        {/* 6. How to Protect Yourself */}
-        <section style={{ backgroundColor: '#ffffff', padding: '80px 0' }}>
-          <div style={{ maxWidth: 900, margin: '0 auto', padding: '0 32px' }}>
-            <SectionLabel text="Protection" />
-            <h2
-              style={{
-                fontSize: 38,
-                fontWeight: 700,
-                color: '#1a1a3e',
-                marginBottom: 32,
-                lineHeight: 1.2,
-              }}
-            >
-              How to Protect Yourself from a Director Penalty Notice
-            </h2>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-              {[
-                {
-                  num: '01',
-                  heading: 'Lodge on time every time',
-                  body: 'Even if you cannot afford to pay, lodging your BAS, IAS, and SGC statements on time prevents a Non-Lockdown DPN from becoming a Lockdown DPN.',
-                },
-                {
-                  num: '02',
-                  heading: 'Engage the ATO early',
-                  body: 'If your company is struggling with cash flow, proactively contacting the ATO to negotiate a payment plan is significantly better than waiting for a DPN.',
-                },
-                {
-                  num: '03',
-                  heading: 'Keep your ASIC address current',
-                  body: 'DPNs are sent to your registered address with ASIC. An outdated address is not a valid defence for missing the 21-day deadline.',
-                },
-                {
-                  num: '04',
-                  heading: "Monitor your company's compliance",
-                  body: 'Ignorance is not a defence. As a director you are responsible for knowing whether your company is meeting its tax obligations.',
-                },
-                {
-                  num: '05',
-                  heading: 'Seek advice early',
-                  body: 'The earlier you engage a pre-insolvency adviser, the more options are available to you.',
-                },
-              ].map(({ num, heading, body }) => (
-                <div
-                  key={num}
-                  style={{
-                    display: 'flex',
-                    gap: 24,
-                    alignItems: 'flex-start',
-                    backgroundColor: '#f8f8ff',
-                    borderRadius: 10,
-                    padding: '24px 28px',
-                  }}
-                >
-                  <span
-                    style={{
-                      fontSize: 28,
-                      fontWeight: 900,
-                      color: '#dddddd',
-                      lineHeight: 1,
-                      flexShrink: 0,
-                      width: 40,
-                    }}
-                  >
-                    {num}
-                  </span>
-                  <div>
-                    <h3
-                      style={{
-                        fontSize: 17,
-                        fontWeight: 700,
-                        color: '#1a1a3e',
-                        marginBottom: 6,
-                      }}
-                    >
-                      {heading}
-                    </h3>
-                    <p
-                      style={{
-                        fontSize: 14,
-                        color: '#555555',
-                        lineHeight: 1.65,
-                        margin: 0,
-                      }}
-                    >
-                      {body}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* 7. How AFA Helps */}
-        <section style={{ backgroundColor: '#f8f8ff', padding: '80px 0' }}>
-          <div style={{ maxWidth: 900, margin: '0 auto', padding: '0 32px' }}>
-            <SectionLabel text="How We Help" />
-            <h2
-              style={{
-                fontSize: 38,
-                fontWeight: 700,
-                color: '#1a1a3e',
-                marginBottom: 20,
-                lineHeight: 1.2,
-              }}
-            >
-              How Australian Financial Advisory Helps Directors Facing a DPN
-            </h2>
-            <p
-              style={{
-                fontSize: 16,
-                color: '#555555',
-                lineHeight: 1.75,
-                marginBottom: 20,
-              }}
-            >
-              We work with directors across Gold Coast, Brisbane, and
-              Australia-wide who are facing Director Penalty Notices or are at
-              risk of receiving one. We review your full financial position,
-              assess your ATO obligations, and provide a written report with
-              clear recommended action steps.
-            </p>
-            <p
-              style={{
-                fontSize: 16,
-                color: '#555555',
-                lineHeight: 1.75,
-                marginBottom: 32,
-              }}
-            >
-              We then connect you with the right licensed specialist in our
-              network — whether that is a tax agent to negotiate with the ATO, a
-              small business restructuring practitioner, or an insolvency
-              specialist. We work for you — the director — not the creditors.
-              Our clients come to us from Gold Coast, Biggera Waters, Brisbane,
-              Queensland, Sydney, New South Wales, and across Australia.
-            </p>
-            <div
-              style={{
-                backgroundColor: '#1a1a3e',
-                borderRadius: 10,
-                padding: '24px 28px',
-              }}
-            >
-              <p
-                style={{
-                  fontSize: 15,
-                  color: 'rgba(255,255,255,0.85)',
-                  lineHeight: 1.7,
-                  margin: 0,
-                }}
-              >
-                We offer a no-obligation discovery call to understand your
-                situation. We provide a written report with our recommended
-                action steps tailored to your specific situation.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* 8. FAQ */}
-        <section style={{ backgroundColor: '#ffffff', padding: '80px 0' }}>
-          <div style={{ maxWidth: 900, margin: '0 auto', padding: '0 32px' }}>
-            <SectionLabel text="Common Questions" />
-            <h2
-              style={{
-                fontSize: 38,
-                fontWeight: 700,
-                color: '#1a1a3e',
-                marginBottom: 32,
-                lineHeight: 1.2,
-              }}
-            >
-              Frequently Asked Questions
-            </h2>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
-              {[
-                {
-                  q: 'Can I resign as director to avoid a DPN?',
-                  a: 'No. Resigning as a director does not discharge liability for non-compliance that occurred during your tenure as director.',
-                },
-                {
-                  q: 'Does a payment plan remove a DPN?',
-                  a: 'A payment plan alone does not remove personal liability under a DPN. The debt must be paid in full or the company must enter administration, restructuring, or liquidation within the 21-day window for a Non-Lockdown DPN.',
-                },
-                {
-                  q: 'What happens if I do nothing?',
-                  a: 'If you take no action on a Non-Lockdown DPN within 21 days, your personal liability becomes permanent. The ATO can then pursue your personal assets including your home, savings, and bank accounts at any time in the future. A DPN does not expire.',
-                },
-                {
-                  q: 'Can the ATO take my house?',
-                  a: 'Yes. Once a DPN is locked down, the debt is treated as a personal debt. The ATO can issue garnishee notices to your bank, offset your personal tax refunds, commence legal proceedings, and ultimately pursue your personal assets including your home.',
-                },
-                {
-                  q: 'How much does it cost to get advice?',
-                  a: 'We offer a no-obligation discovery call to understand your situation. We provide a written report with our recommended action steps tailored to your specific situation.',
-                },
-              ].map(({ q, a }) => (
-                <div
-                  key={q}
-                  style={{
-                    backgroundColor: '#f8f8ff',
-                    borderRadius: 10,
-                    padding: '24px 28px',
-                    borderLeft: '4px solid #9b8ec4',
-                  }}
-                >
-                  <h3
-                    style={{
-                      fontSize: 17,
-                      fontWeight: 700,
-                      color: '#1a1a3e',
-                      marginBottom: 10,
-                    }}
-                  >
-                    {q}
-                  </h3>
-                  <p
-                    style={{
-                      fontSize: 15,
-                      color: '#555555',
-                      lineHeight: 1.7,
-                      margin: 0,
-                    }}
-                  >
-                    {a}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Disclaimer */}
-        <section style={{ backgroundColor: '#ffffff', padding: '24px 0' }}>
-          <p
-            style={{
-              maxWidth: 800,
-              margin: '0 auto',
-              padding: '0 32px',
-              fontSize: 12,
-              color: '#888888',
-              lineHeight: 1.7,
-              textAlign: 'center',
-            }}
-          >
-            The information on this page is general in nature and does not
-            constitute legal, financial, or insolvency advice. Australian
-            Financial Advisory Pty Ltd provides assessment and advisory services
-            only. All specialist services are referred to appropriately licensed
-            partners. You should seek independent professional advice before
-            acting on any information on this page.
+        <ContentSection
+          id="section-21-days"
+          label="Critical timing"
+          heading="The 21-day window"
+          tone="navy"
+        >
+          <p style={bodyTextLight}>
+            The 21-day period for a non-lockdown DPN begins from the date the
+            ATO posts the notice, not the date you receive it. By the time you
+            open the letter, some of those days may already have passed.
           </p>
-        </section>
-
-        {/* 9. CTA */}
-        <section style={{ backgroundColor: '#1a1a3e', padding: '80px 0' }}>
           <div
             style={{
-              maxWidth: 700,
-              margin: '0 auto',
-              padding: '0 32px',
-              textAlign: 'center',
+              backgroundColor: 'rgba(255,255,255,0.08)',
+              borderRadius: 10,
+              padding: '24px 28px',
+              borderLeft: '4px solid #9b8ec4',
             }}
           >
-            <SectionLabel text="Act Now" />
-            <h2
-              style={{
-                fontSize: 42,
-                fontWeight: 700,
-                color: '#ffffff',
-                marginBottom: 16,
-                lineHeight: 1.2,
-              }}
-            >
-              Do Not Wait — Contact Australian Financial Advisory Today
-            </h2>
             <p
               style={{
                 fontSize: 17,
-                color: 'rgba(255,255,255,0.7)',
+                color: '#ffffff',
                 lineHeight: 1.7,
-                marginBottom: 36,
+                margin: 0,
+                fontWeight: 600,
               }}
             >
-              Every day without action narrows your options. We help directors
-              across Gold Coast, Brisbane, and Australia understand their
-              position and take the right steps before it is too late.
-            </p>
-            <a
-              href="/#contact"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: 8,
-                backgroundColor: '#ffffff',
-                color: '#1a1a3e',
-                borderRadius: 50,
-                padding: '16px 36px',
-                fontSize: 16,
-                fontWeight: 700,
-                textDecoration: 'none',
-              }}
-            >
-              Schedule Your Discovery Call
-              <ChevronRight size={16} />
-            </a>
-            <p
-              style={{
-                fontSize: 13,
-                color: 'rgba(255,255,255,0.4)',
-                marginTop: 20,
-              }}
-            >
-              Confidential · No obligation · Fast response
+              Do not assume a notice will resolve itself. Talk to a professional
+              as soon as it arrives. The options available can narrow quickly.
             </p>
           </div>
-        </section>
+        </ContentSection>
+
+        <ContentSection
+          id="section-reduce-risk"
+          label="Reducing the risk"
+          heading="How directors can reduce Director Penalty Notice risk"
+        >
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+            {protection.map(({ num, heading, body }) => (
+              <div
+                key={num}
+                style={{
+                  display: 'flex',
+                  gap: 24,
+                  alignItems: 'flex-start',
+                  backgroundColor: '#f8f8ff',
+                  borderRadius: 10,
+                  padding: '24px 28px',
+                }}
+              >
+                <span
+                  aria-hidden="true"
+                  style={{
+                    fontSize: 28,
+                    fontWeight: 900,
+                    color: '#8A7DBA',
+                    lineHeight: 1,
+                    flexShrink: 0,
+                    width: 40,
+                  }}
+                >
+                  {num}
+                </span>
+                <div>
+                  <h3 style={{ ...cardTitle, marginBottom: 6 }}>{heading}</h3>
+                  <p style={cardBody}>{body}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </ContentSection>
+
+        <ContentSection
+          id="section-how-we-help"
+          label="How we help"
+          heading="How Australian Financial Advisory helps directors facing a DPN"
+          tone="panel"
+        >
+          <p style={bodyText}>
+            We work with directors across Gold Coast, Brisbane, Sydney and
+            Australia-wide who have received a Director Penalty Notice or are
+            worried one may arrive. We review your financial position, assess
+            your ATO obligations, and provide a written report with recommended
+            action steps.
+          </p>
+          <p style={bodyText}>
+            We then connect you with the right licensed specialist in our
+            network: a registered tax agent to deal with the ATO, a small
+            business restructuring practitioner, or an insolvency practitioner.
+            We work for you, the director. Any next step is your decision.
+          </p>
+        </ContentSection>
+
+        <CanCannot
+          can={[
+            'Assess your financial position and your ATO exposure early.',
+            'Explain what a DPN means and set out the options in writing.',
+            'Introduce a registered tax agent, a restructuring practitioner or an insolvency practitioner from our network.',
+            'Communicate with commercial creditors under a signed authority.',
+          ]}
+          cannot={[
+            'Negotiate directly with the ATO on your behalf. That is tax agent work, which we refer to a registered tax agent.',
+            'Act as the restructuring practitioner, administrator or liquidator.',
+            'Give legal advice or promise a particular outcome. Outcomes vary case by case.',
+          ]}
+        />
+
+        <ContentSection
+          id="section-faq"
+          label="Common questions"
+          heading="Director Penalty Notice questions"
+        >
+          <FaqList items={faqItems} alwaysOpen />
+        </ContentSection>
+
+        <RelatedLinks
+          links={[
+            { label: 'ATO debt options', href: '/reduce-debt' },
+            {
+              label: 'Restructure your business',
+              href: '/restructure-your-business',
+            },
+            {
+              label: 'Small Business Restructuring explained',
+              href: '/services/small-business-restructure',
+            },
+            {
+              label: 'Voluntary administration explained',
+              href: '/services/voluntary-administration',
+            },
+          ]}
+        />
+
+        <PageDisclaimer />
+        <ConsultationCTA />
       </main>
       <Footer />
 
@@ -909,7 +503,6 @@ export default function DirectorPenaltyNoticePage() {
         @media (max-width: 767px) {
           .svc-hero { padding: 40px 0 !important; }
           .dpn-two-col { grid-template-columns: 1fr !important; }
-          .dpn-three-col { grid-template-columns: 1fr !important; }
         }
       `}</style>
     </>

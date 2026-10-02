@@ -1,37 +1,6 @@
-# Target Website
+# Target
 
-## URL
-
-https://www.wynnadvisory.com.au/
-
-## Scope
-
-### Pages to Replicate
-
-- [x] Home page
-
-### Fidelity Level
-
-- [x] **Pixel-perfect** — exact match in colors, spacing, typography, animations
-
-### In Scope
-
-- Visual layout and styling
-- Component structure and interactions
-- Responsive design
-- Real content from the target site
-
-### Out of Scope
-
-- Real backend / database
-- Authentication
-- Real-time features
-- SEO optimization
-
-## Why
-
-Clone of wynnadvisory.com.au for portfolio/template purposes.
-
-## Customization Plans
-
-- None — pure emulation
+The template clone phase is complete. This file is retained only because
+`AGENTS.md` historically referenced it. There is no clone target. The site is
+the Australian Financial Advisory marketing website; see `README.md` and
+`AGENTS.md`.

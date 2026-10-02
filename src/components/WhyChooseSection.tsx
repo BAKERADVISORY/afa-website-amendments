@@ -1,5 +1,12 @@
-import { UserCheck, GitBranch, FileX, ShieldAlert, Clock } from 'lucide-react'
+import {
+  UserCheck,
+  GitBranch,
+  Handshake,
+  ShieldAlert,
+  MessageSquare,
+} from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
+import { SectionLabel } from './SectionLabel'
 
 interface FeatureItemProps {
   icon: LucideIcon
@@ -9,8 +16,9 @@ interface FeatureItemProps {
 
 function FeatureItem({ icon: Icon, title, description }: FeatureItemProps) {
   return (
-    <div style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}>
+    <li style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}>
       <div
+        aria-hidden="true"
         style={{
           minWidth: 48,
           height: 48,
@@ -30,7 +38,6 @@ function FeatureItem({ icon: Icon, title, description }: FeatureItemProps) {
             fontSize: 16,
             fontWeight: 700,
             color: '#FFFFFF',
-            marginBottom: 4,
             margin: '0 0 4px',
           }}
         >
@@ -39,7 +46,7 @@ function FeatureItem({ icon: Icon, title, description }: FeatureItemProps) {
         <p
           style={{
             fontSize: 14,
-            color: 'rgba(255,255,255,0.6)',
+            color: '#DEDCEC',
             lineHeight: 1.6,
             margin: 0,
           }}
@@ -47,47 +54,48 @@ function FeatureItem({ icon: Icon, title, description }: FeatureItemProps) {
           {description}
         </p>
       </div>
-    </div>
+    </li>
   )
 }
 
+/** Every line traces to approved-copy.md, the GBP content file, or compliance-layer.md. */
 const features: FeatureItemProps[] = [
   {
     icon: UserCheck,
-    title: 'We Work for You — Not the Creditors',
+    title: 'We work for you, the business owner',
     description:
-      'Unlike insolvency practitioners appointed by creditors, we represent you — the business owner. Your interests come first, every time.',
+      'We are engaged by the director, not appointed by creditors. Our job is to help you understand where you stand and what options exist.',
   },
   {
     icon: GitBranch,
-    title: 'Every Alternative Explored Before Formal Insolvency',
+    title: 'Every alternative set out before formal insolvency',
     description:
-      'Formal insolvency is a last resort. We exhaust every negotiation, restructuring, and advisory pathway before recommending it.',
+      'Formal insolvency is one option among several. We set out the alternatives in writing before any formal step is considered.',
   },
   {
-    icon: FileX,
-    title:
-      'Formal Insolvency Appears on Company Records — We Help You Avoid That',
+    icon: Handshake,
+    title: 'Assessment first. The right specialist, second.',
     description:
-      'A formal insolvency appointment stays on the record permanently. Our pre-insolvency approach protects your company history and future reputation.',
+      "We don't try to be everything. Formal restructuring and liquidation go to people licensed to do that work.",
   },
   {
     icon: ShieldAlert,
-    title: 'Personal Assets Are at Risk from DPNs — We Act Fast',
+    title: 'Director Penalty Notice risk explained early',
     description:
-      'Director Penalty Notices remove the corporate veil. Once issued, you are personally liable. We move quickly to protect what you have built.',
+      'A DPN can make a director personally liable for certain unpaid company tax debts. Getting advice early matters.',
   },
   {
-    icon: Clock,
-    title: 'Professional, Urgent, and Reassuring',
+    icon: MessageSquare,
+    title: 'Straight answers, not a sales pitch',
     description:
-      'We understand that financial distress is stressful. Our approach is fast, confidential, and designed to give you clarity and a clear path forward.',
+      "No pressure, no sales pitch. If we're not the right fit, we'll say so on the first call.",
   },
 ]
 
 export function WhyChooseSection() {
   return (
     <section
+      aria-labelledby="why-heading"
       style={{
         backgroundColor: '#1a1a3e',
         padding: '80px 0',
@@ -95,8 +103,8 @@ export function WhyChooseSection() {
         overflow: 'hidden',
       }}
     >
-      {/* Watermark text background */}
       <div
+        aria-hidden="true"
         style={{
           position: 'absolute',
           fontSize: 300,
@@ -123,20 +131,9 @@ export function WhyChooseSection() {
           zIndex: 1,
         }}
       >
-        {/* Header */}
-        <p
-          style={{
-            textAlign: 'center',
-            fontSize: 12,
-            letterSpacing: 3,
-            textTransform: 'uppercase',
-            color: '#cccccc',
-            marginBottom: 12,
-          }}
-        >
-          australian financial advisory
-        </p>
+        <SectionLabel text="Australian Financial Advisory" light align="center" />
         <h2
+          id="why-heading"
           style={{
             textAlign: 'center',
             fontSize: 40,
@@ -145,25 +142,21 @@ export function WhyChooseSection() {
             marginBottom: 16,
           }}
         >
-          Why Choose{' '}
-          <span style={{ color: '#ffffff', opacity: 0.75 }}>
-            Australian Financial Advisory?
-          </span>
+          Why talk to Australian Financial Advisory?
         </h2>
         <p
           style={{
             textAlign: 'center',
             fontSize: 16,
-            color: 'rgba(255,255,255,0.6)',
+            color: '#DEDCEC',
             maxWidth: 700,
             margin: '0 auto 48px',
           }}
         >
-          We support business owners at the earliest stage of financial
-          difficulty — when the most options are still available to you.
+          A second set of eyes for directors under pressure, at the stage when
+          the most options are still available.
         </p>
 
-        {/* 2-column: images | features */}
         <div
           style={{
             display: 'grid',
@@ -173,11 +166,15 @@ export function WhyChooseSection() {
           }}
           className="why-choose-grid"
         >
-          {/* Images column */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/images/business-meeting.webp"
-              alt="Business meeting"
+              alt=""
+              width={600}
+              height={260}
+              loading="lazy"
+              decoding="async"
               style={{
                 width: '100%',
                 borderRadius: 12,
@@ -186,9 +183,14 @@ export function WhyChooseSection() {
                 filter: 'grayscale(30%)',
               }}
             />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/images/garnishee-order.webp"
-              alt="Advisory team"
+              alt=""
+              width={600}
+              height={260}
+              loading="lazy"
+              decoding="async"
               style={{
                 width: '100%',
                 borderRadius: 12,
@@ -199,12 +201,20 @@ export function WhyChooseSection() {
             />
           </div>
 
-          {/* Features column */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 28 }}>
+          <ul
+            style={{
+              listStyle: 'none',
+              padding: 0,
+              margin: 0,
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 28,
+            }}
+          >
             {features.map((feature) => (
               <FeatureItem key={feature.title} {...feature} />
             ))}
-          </div>
+          </ul>
         </div>
       </div>
 

@@ -1,620 +1,395 @@
 import type { Metadata } from 'next'
+import { CheckCircle, ChevronRight } from 'lucide-react'
 import { NavBar } from '@/components/NavBar'
+import { Footer } from '@/components/Footer'
+import { PageHero } from '@/components/PageHero'
+import {
+  ContentSection,
+  bodyText,
+  bodyTextLight,
+  cardBody,
+  cardTitle,
+} from '@/components/ContentSection'
+import { CanCannot } from '@/components/CanCannot'
+import { FaqList } from '@/components/FaqList'
+import { RelatedLinks } from '@/components/RelatedLinks'
+import { PageDisclaimer } from '@/components/PageDisclaimer'
+import { ConsultationCTA } from '@/components/ConsultationCTA'
+import { JsonLd } from '@/components/JsonLd'
+import { absUrl, webPageSchema, type FaqItem } from '@/lib/site'
+
+const PATH = '/services/small-business-restructure'
+const title = 'Small Business Restructuring (SBR) Explained'
+const description =
+  'How Small Business Restructuring works in Australia: eligibility criteria, what the process is designed to do, and the registered practitioner’s role. General information from an assessment-and-referral advisory.'
 
 export const metadata: Metadata = {
-  title: 'Small Business Restructuring Advice Gold Coast',
-  description:
-    'Small Business Restructuring lets viable businesses restructure debts under $1 million while directors stay in control. Advisory and referral.',
-  keywords: [
-    'small business restructuring Gold Coast',
-    'SBR practitioners Queensland',
-    'small business restructuring plan Australia',
-    'business debt restructuring QLD',
-  ],
-  alternates: {
-    canonical:
-      'https://www.australianfinancialadvisory.com.au/services/small-business-restructure/',
-  },
-  openGraph: {
-    title: 'Small Business Restructuring Advice Gold Coast',
-    description:
-      'Small Business Restructuring lets viable businesses restructure debts under $1 million while directors stay in control. Advisory and referral.',
-    url: 'https://www.australianfinancialadvisory.com.au/services/small-business-restructure/',
-  },
-}
-import { Footer } from '@/components/Footer'
-import { CheckCircle, Clock, Calendar } from 'lucide-react'
-
-function PlaceholderImage({
-  height = 400,
-  label = 'Image',
-}: {
-  height?: number
-  label?: string
-}) {
-  return (
-    <div
-      style={{
-        width: '100%',
-        height,
-        backgroundColor: '#D1D5DB',
-        borderRadius: 12,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        color: '#9CA3AF',
-        fontSize: 14,
-        fontWeight: 500,
-      }}
-    >
-      {label}
-    </div>
-  )
+  title,
+  description,
+  alternates: { canonical: absUrl(PATH) },
+  openGraph: { title: `${title} | AFA`, description, url: absUrl(PATH) },
 }
 
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Service',
-  name: 'Small Business Restructuring',
-  serviceType: 'Small Business Restructuring',
-  description:
-    'A formal insolvency process that helps viable small businesses restructure debts under $1 million while directors remain in control of the business.',
-  provider: {
-    '@type': 'FinancialService',
-    name: 'Australian Financial Advisory',
-    url: 'https://www.australianfinancialadvisory.com.au',
-    telephone: '+61 7 2113 3069',
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: 'Gold Coast',
-      addressRegion: 'QLD',
-      postalCode: '4216',
-      addressCountry: 'AU',
-    },
+const faqItems: FaqItem[] = [
+  {
+    question: 'Is Australian Financial Advisory a restructuring practitioner?',
+    answer:
+      'No. Only a registered small business restructuring practitioner can be appointed. We assess whether the process may suit your company and introduce a registered practitioner from our network.',
   },
-  areaServed: { '@type': 'Country', name: 'Australia' },
-  url: 'https://www.australianfinancialadvisory.com.au/services/small-business-restructure/',
-}
+  {
+    question: 'Does Small Business Restructuring guarantee creditors will accept a plan?',
+    answer:
+      'No. Creditors vote on the proposed plan. Outcomes vary case by case.',
+  },
+  {
+    question: 'Do directors stay in control during the process?',
+    answer:
+      'Yes. That is a defining feature of Small Business Restructuring: the directors remain in control of the business while the registered practitioner runs the process.',
+  },
+]
+
+const eligibility = [
+  'Total liabilities under the statutory threshold',
+  'An incorporated Australian company',
+  'Tax lodgements up to date',
+  'Employee entitlements, including superannuation, paid',
+  'Directors who have not used the process within the restricted period',
+]
+
+const designedTo = [
+  'Keep the directors in control of the business while the process runs',
+  'Allow a restructuring plan to be proposed to creditors, who vote on it',
+  'Provide protection from certain creditor actions while the plan is developed',
+  'Set terms that depend on the plan the creditors accept',
+]
+
+const steps = [
+  {
+    num: 1,
+    title: 'Eligibility assessment',
+    desc: 'The eligibility criteria are checked. Australian Financial Advisory can assess this initially; the registered practitioner confirms it.',
+  },
+  {
+    num: 2,
+    title: 'Practitioner appointed',
+    desc: 'The directors appoint a registered small business restructuring practitioner.',
+  },
+  {
+    num: 3,
+    title: 'Plan developed and proposed',
+    desc: 'With the practitioner, a restructuring plan is prepared and put to creditors.',
+  },
+  {
+    num: 4,
+    title: 'Creditors vote',
+    desc: 'If creditors accept the plan, it is implemented under the practitioner’s oversight. If not, the directors consider the other options.',
+  },
+]
 
 export default function SmallBusinessRestructurePage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      <JsonLd
+        data={webPageSchema({
+          path: PATH,
+          name: title,
+          description,
+          about: 'Small Business Restructuring (Australia)',
+        })}
       />
       <NavBar />
-      <main>
-        {/* Hero Section */}
-        <section
-          style={{
-            backgroundColor: '#1a1a3e',
-            paddingTop: 160,
-            paddingBottom: 80,
-            paddingLeft: 80,
-            paddingRight: 80,
-            position: 'relative',
-            overflow: 'hidden',
-          }}
-        >
-          <div style={{ maxWidth: 1400, margin: '0 auto' }}>
-            <p
-              style={{
-                color: '#333333',
-                textTransform: 'uppercase',
-                fontSize: 12,
-                letterSpacing: 3,
-                fontWeight: 600,
-                marginBottom: 16,
-              }}
-            >
-              DEBT RESTRUCTURING SERVICE
-            </p>
-            <h1
-              style={{
-                color: '#FFFFFF',
-                fontSize: 52,
-                fontWeight: 700,
-                lineHeight: 1.15,
-                marginBottom: 24,
-                maxWidth: 700,
-              }}
-            >
-              Small Business Restructure
-            </h1>
-            <p
-              style={{
-                color: 'rgba(255,255,255,0.7)',
-                fontSize: 18,
-                lineHeight: 1.6,
-                marginBottom: 36,
-                maxWidth: 640,
-              }}
-            >
-              Give your business a fresh start with our Small Business
-              Restructuring Process. A formal insolvency procedure designed to
-              help viable businesses recover while maintaining control.
-            </p>
-            <a
-              href="/#contact"
-              style={{
-                backgroundColor: '#333333',
-                color: '#FFFFFF',
-                borderRadius: 50,
-                padding: '14px 28px',
-                fontSize: 16,
-                fontWeight: 700,
-                textDecoration: 'none',
-                display: 'inline-block',
-              }}
-            >
-              Free Consultation →
-            </a>
-          </div>
-          {/* Wave divider */}
-          <div
+      <main id="main">
+        <PageHero
+          eyebrow="Formal process explained"
+          title="Small Business Restructuring explained"
+          intro="Small Business Restructuring (SBR) is a formal process under Australian law that allows an eligible small company to propose a plan to its creditors while the directors stay in control of the business. A registered small business restructuring practitioner runs the process. Australian Financial Advisory assesses eligibility and refers you to a practitioner."
+          breadcrumbs={[
+            { name: 'Home', href: '/' },
+            { name: 'Your options explained', href: '/services' },
+            { name: 'Small Business Restructuring' },
+          ]}
+          wave
+        />
+
+        <ContentSection id="section-in-short" label="In short" heading="The short answer">
+          <ul
             style={{
-              position: 'absolute',
-              bottom: -1,
-              left: '-35%',
-              width: '171%',
-              height: 100,
+              listStyle: 'none',
+              padding: 0,
+              margin: 0,
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 14,
             }}
           >
-            <svg
-              viewBox="0 0 1440 100"
-              preserveAspectRatio="none"
-              style={{ width: '100%', height: '100%' }}
-            >
-              <path
-                d="M0,50 C360,100 1080,0 1440,50 L1440,100 L0,100 Z"
-                fill="#ffffff"
-              />
-            </svg>
-          </div>
-        </section>
+            {[
+              'SBR lets an eligible small company put a restructuring plan to its creditors while the directors keep running the business.',
+              'It is run by a registered small business restructuring practitioner. Creditors vote on the plan.',
+              'Australian Financial Advisory assesses whether SBR may suit your company, sets out the options in writing, and introduces a registered practitioner. We do not act as the practitioner.',
+            ].map((line) => (
+              <li
+                key={line}
+                style={{
+                  display: 'flex',
+                  gap: 10,
+                  alignItems: 'flex-start',
+                  fontSize: 16,
+                  color: '#444444',
+                  lineHeight: 1.7,
+                }}
+              >
+                <ChevronRight
+                  size={18}
+                  color="#6E3E8F"
+                  aria-hidden="true"
+                  style={{ flexShrink: 0, marginTop: 4 }}
+                />
+                {line}
+              </li>
+            ))}
+          </ul>
+        </ContentSection>
 
-        {/* Quick Assessment Section */}
-        <section style={{ backgroundColor: '#FFFFFF', padding: '80px 0' }}>
-          <div style={{ maxWidth: 1400, margin: '0 auto', padding: '0 32px' }}>
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: '1fr 1fr',
-                gap: 64,
-                alignItems: 'center',
-              }}
-            >
-              {/* Left column */}
-              <div>
-                <p
-                  style={{
-                    color: '#333333',
-                    textTransform: 'uppercase',
-                    fontSize: 12,
-                    letterSpacing: 3,
-                    fontWeight: 600,
-                    marginBottom: 12,
-                  }}
-                >
-                  QUICK ASSESSMENT
-                </p>
-                <h2
-                  style={{
-                    fontSize: 36,
-                    fontWeight: 700,
-                    color: '#383838',
-                    marginBottom: 16,
-                    lineHeight: 1.25,
-                  }}
-                >
-                  Is Your Business Eligible?
-                </h2>
-                <p
-                  style={{
-                    fontSize: 16,
-                    color: '#666666',
-                    lineHeight: 1.6,
-                    marginBottom: 28,
-                  }}
-                >
-                  The SBR process has specific eligibility requirements. Check
-                  if your business qualifies:
-                </p>
+        <ContentSection
+          id="section-eligibility"
+          label="Eligibility"
+          heading="Is a company eligible?"
+          tone="panel"
+        >
+          <p style={bodyText}>
+            The SBR process has specific eligibility requirements set out in the
+            Corporations Act. In general terms, a company needs to meet
+            conditions such as:
+          </p>
+          <ul
+            style={{
+              listStyle: 'none',
+              padding: 0,
+              margin: '0 0 24px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 12,
+            }}
+          >
+            {eligibility.map((item) => (
+              <li
+                key={item}
+                style={{ display: 'flex', alignItems: 'center', gap: 12 }}
+              >
+                <CheckCircle
+                  size={20}
+                  color="#6E3E8F"
+                  aria-hidden="true"
+                  style={{ flexShrink: 0 }}
+                />
+                <span style={{ color: '#383838', fontSize: 16 }}>{item}</span>
+              </li>
+            ))}
+          </ul>
+          <p style={{ ...bodyText, marginBottom: 0 }}>
+            The exact thresholds and conditions are set by legislation and are
+            confirmed by the registered practitioner. We assess the position
+            initially as part of the free initial consultation.
+          </p>
+        </ContentSection>
+
+        <ContentSection
+          id="section-designed-to"
+          label="What it does"
+          heading="What Small Business Restructuring is designed to do"
+        >
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: '1fr 1fr',
+              gap: 20,
+            }}
+            className="sbr-two-col"
+          >
+            {designedTo.map((benefit) => (
+              <div
+                key={benefit}
+                style={{
+                  display: 'flex',
+                  alignItems: 'flex-start',
+                  gap: 12,
+                  backgroundColor: '#f8f8ff',
+                  borderRadius: 8,
+                  padding: '14px 18px',
+                }}
+              >
+                <ChevronRight
+                  size={16}
+                  color="#6E3E8F"
+                  aria-hidden="true"
+                  style={{ flexShrink: 0, marginTop: 4 }}
+                />
+                <span style={{ color: '#383838', fontSize: 15, lineHeight: 1.6 }}>
+                  {benefit}
+                </span>
+              </div>
+            ))}
+          </div>
+        </ContentSection>
+
+        <ContentSection
+          id="section-process"
+          label="The process"
+          heading="How the SBR process runs"
+          tone="navy"
+        >
+          <p style={bodyTextLight}>
+            The registered practitioner runs the process. In outline:
+          </p>
+          <ol
+            style={{
+              listStyle: 'none',
+              padding: 0,
+              margin: 0,
+              maxWidth: 600,
+            }}
+          >
+            {steps.map((step, index, arr) => (
+              <li key={step.num}>
                 <div
                   style={{
                     display: 'flex',
-                    flexDirection: 'column',
-                    gap: 14,
-                    marginBottom: 32,
+                    gap: 20,
+                    alignItems: 'flex-start',
                   }}
-                >
-                  {[
-                    'Debt under $1 million',
-                    'Incorporated Australian company',
-                    'Lodgements up to date',
-                    'Superannuation paid',
-                    'Viable business model',
-                    'No prior SBR in 7 years',
-                  ].map((item) => (
-                    <div
-                      key={item}
-                      style={{ display: 'flex', alignItems: 'center', gap: 12 }}
-                    >
-                      <CheckCircle
-                        size={20}
-                        color="#333333"
-                        style={{ flexShrink: 0 }}
-                      />
-                      <span style={{ color: '#383838', fontSize: 16 }}>
-                        {item}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-                <a
-                  href="/#contact"
-                  style={{
-                    color: '#333333',
-                    fontSize: 16,
-                    fontWeight: 600,
-                    textDecoration: 'none',
-                    borderBottom: '1px solid #333333',
-                    paddingBottom: 2,
-                  }}
-                >
-                  Check Your Eligibility →
-                </a>
-              </div>
-              {/* Right column */}
-              <div>
-                <PlaceholderImage height={420} label="Business Assessment" />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Why Choose SBR Section */}
-        <section style={{ backgroundColor: '#f8f8ff', padding: '80px 0' }}>
-          <div style={{ maxWidth: 1400, margin: '0 auto', padding: '0 32px' }}>
-            <p
-              style={{
-                color: '#333333',
-                textTransform: 'uppercase',
-                fontSize: 12,
-                letterSpacing: 3,
-                fontWeight: 600,
-                textAlign: 'center',
-                marginBottom: 12,
-              }}
-            >
-              WHY CHOOSE SBR
-            </p>
-            <h2
-              style={{
-                fontSize: 36,
-                fontWeight: 700,
-                color: '#383838',
-                textAlign: 'center',
-                marginBottom: 16,
-                lineHeight: 1.25,
-              }}
-            >
-              Why Choose Small Business Restructuring?
-            </h2>
-            <p
-              style={{
-                fontSize: 16,
-                color: '#666666',
-                textAlign: 'center',
-                maxWidth: 800,
-                margin: '0 auto 48px',
-                lineHeight: 1.6,
-              }}
-            >
-              SBR is a formal insolvency process that offers a lifeline for
-              struggling small businesses, providing a structured pathway to
-              recovery while maintaining business control.
-            </p>
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: '1fr 1fr',
-                gap: 20,
-              }}
-            >
-              {[
-                'Structured debt repayment process',
-                'Maintain control of your business',
-                'Protection from creditor actions',
-                'Flexible repayment terms',
-                'Reduced debt obligations',
-                'Preserve business relationships',
-              ].map((benefit) => (
-                <div
-                  key={benefit}
-                  style={{ display: 'flex', alignItems: 'center', gap: 12 }}
                 >
                   <div
+                    aria-hidden="true"
                     style={{
-                      width: 8,
-                      height: 8,
+                      width: 44,
+                      height: 44,
                       borderRadius: '50%',
-                      backgroundColor: '#333333',
+                      backgroundColor: '#9b8ec4',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      color: '#1a1a3e',
+                      fontSize: 18,
+                      fontWeight: 700,
                       flexShrink: 0,
                     }}
-                  />
-                  <span style={{ color: '#383838', fontSize: 16 }}>
-                    {benefit}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Our SBR Process Section */}
-        <section style={{ backgroundColor: '#1a1a3e', padding: '80px 0' }}>
-          <div style={{ maxWidth: 1400, margin: '0 auto', padding: '0 32px' }}>
-            <p
-              style={{
-                color: '#333333',
-                textTransform: 'uppercase',
-                fontSize: 12,
-                letterSpacing: 3,
-                fontWeight: 600,
-                textAlign: 'center',
-                marginBottom: 12,
-              }}
-            >
-              OUR PROCESS
-            </p>
-            <h2
-              style={{
-                fontSize: 38,
-                fontWeight: 700,
-                color: '#FFFFFF',
-                textAlign: 'center',
-                marginBottom: 16,
-                lineHeight: 1.25,
-              }}
-            >
-              Our SBR Process
-            </h2>
-            <p
-              style={{
-                fontSize: 16,
-                color: 'rgba(255,255,255,0.7)',
-                textAlign: 'center',
-                maxWidth: 700,
-                margin: '0 auto 56px',
-                lineHeight: 1.6,
-              }}
-            >
-              We guide you through every step of the Small Business
-              Restructuring process to ensure the best possible outcome for your
-              business.
-            </p>
-            <div style={{ maxWidth: 600, margin: '0 auto' }}>
-              {[
-                {
-                  num: 1,
-                  title: 'Eligibility Assessment',
-                  desc: 'We evaluate if your business meets the SBR criteria including debt thresholds and trading history.',
-                },
-                {
-                  num: 2,
-                  title: 'Plan Development',
-                  desc: 'Create a comprehensive restructuring plan that addresses your specific financial situation.',
-                },
-                {
-                  num: 3,
-                  title: 'Creditor Proposal',
-                  desc: 'Present the plan to creditors and negotiate favourable terms for debt repayment.',
-                },
-                {
-                  num: 4,
-                  title: 'Implementation',
-                  desc: 'Execute the approved plan whilst we monitor progress and ensure compliance.',
-                },
-              ].map((step, index, arr) => (
-                <div key={step.num}>
-                  <div
-                    style={{
-                      display: 'flex',
-                      gap: 20,
-                      alignItems: 'flex-start',
-                    }}
                   >
-                    <div
+                    {step.num}
+                  </div>
+                  <div style={{ paddingTop: 8 }}>
+                    <h3
                       style={{
-                        width: 44,
-                        height: 44,
-                        borderRadius: '50%',
-                        backgroundColor: '#333333',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
                         color: '#FFFFFF',
-                        fontSize: 18,
                         fontWeight: 700,
-                        flexShrink: 0,
+                        fontSize: 18,
+                        marginBottom: 6,
                       }}
                     >
-                      {step.num}
-                    </div>
-                    <div style={{ paddingTop: 8 }}>
-                      <h3
-                        style={{
-                          color: '#FFFFFF',
-                          fontWeight: 700,
-                          fontSize: 18,
-                          marginBottom: 6,
-                        }}
-                      >
-                        {step.title}
-                      </h3>
-                      <p
-                        style={{
-                          color: 'rgba(255,255,255,0.7)',
-                          fontSize: 15,
-                          lineHeight: 1.6,
-                        }}
-                      >
-                        {step.desc}
-                      </p>
-                    </div>
+                      {step.title}
+                    </h3>
+                    <p style={{ ...bodyTextLight, fontSize: 15, marginBottom: 0 }}>
+                      {step.desc}
+                    </p>
                   </div>
-                  {index < arr.length - 1 && (
-                    <div
-                      style={{
-                        width: 2,
-                        height: 40,
-                        backgroundColor: 'rgba(255,255,255,0.2)',
-                        marginLeft: 21,
-                        marginTop: 4,
-                        marginBottom: 4,
-                      }}
-                    />
-                  )}
                 </div>
-              ))}
-            </div>
-          </div>
-        </section>
+                {index < arr.length - 1 && (
+                  <div
+                    aria-hidden="true"
+                    style={{
+                      width: 2,
+                      height: 40,
+                      backgroundColor: 'rgba(255,255,255,0.2)',
+                      marginLeft: 21,
+                      marginTop: 4,
+                      marginBottom: 4,
+                    }}
+                  />
+                )}
+              </li>
+            ))}
+          </ol>
+        </ContentSection>
 
-        {/* Time Statistics Section */}
-        <section style={{ backgroundColor: '#FFFFFF', padding: '60px 0' }}>
-          <div style={{ maxWidth: 1400, margin: '0 auto', padding: '0 32px' }}>
-            <div
-              style={{
-                display: 'flex',
-                justifyContent: 'center',
-                gap: 32,
-                flexWrap: 'wrap',
-              }}
-            >
-              <div
-                style={{
-                  backgroundColor: '#f8f8ff',
-                  borderRadius: 12,
-                  padding: 40,
-                  textAlign: 'center',
-                  maxWidth: 300,
-                  width: '100%',
-                }}
+        <ContentSection
+          id="section-practitioner"
+          label="Who runs it"
+          heading="Who can act as the restructuring practitioner"
+        >
+          <p style={bodyText}>
+            Only a registered small business restructuring practitioner can be
+            appointed. Australian Financial Advisory is not a restructuring
+            practitioner. We assess whether SBR may suit your company and
+            introduce a registered practitioner from our network.
+          </p>
+          <div
+            style={{
+              backgroundColor: '#f8f8ff',
+              borderRadius: 10,
+              padding: '20px 24px',
+              borderLeft: '4px solid #9b8ec4',
+            }}
+          >
+            <h3 style={{ ...cardTitle, marginBottom: 6 }}>Not sure if SBR fits?</h3>
+            <p style={cardBody}>
+              The AFA options page on restructuring sets out SBR alongside the
+              other pathways.{' '}
+              <a
+                href="/restructure-your-business"
+                className="afa-crumb-link"
+                style={{ color: '#6E3E8F', fontWeight: 600 }}
               >
-                <Clock size={36} color="#333333" style={{ marginBottom: 16 }} />
-                <p
-                  style={{
-                    fontSize: 42,
-                    fontWeight: 700,
-                    color: '#1a1a3e',
-                    marginBottom: 8,
-                    lineHeight: 1.1,
-                  }}
-                >
-                  4 - 6 Weeks
-                </p>
-                <p style={{ fontSize: 15, color: '#666666' }}>
-                  Time Under Restructure Proposal
-                </p>
-              </div>
-              <div
-                style={{
-                  backgroundColor: '#f8f8ff',
-                  borderRadius: 12,
-                  padding: 40,
-                  textAlign: 'center',
-                  maxWidth: 300,
-                  width: '100%',
-                }}
-              >
-                <Calendar
-                  size={36}
-                  color="#333333"
-                  style={{ marginBottom: 16 }}
-                />
-                <p
-                  style={{
-                    fontSize: 42,
-                    fontWeight: 700,
-                    color: '#1a1a3e',
-                    marginBottom: 8,
-                    lineHeight: 1.1,
-                  }}
-                >
-                  0 - 36 Months
-                </p>
-                <p style={{ fontSize: 15, color: '#666666' }}>
-                  Time Under Restructure Plan
-                </p>
-              </div>
-            </div>
+                Restructure your business
+              </a>
+            </p>
           </div>
-        </section>
+        </ContentSection>
 
-        {/* Related Services */}
-        <section style={{ backgroundColor: '#FFFFFF', padding: '48px 0' }}>
-          <div style={{ maxWidth: 1400, margin: '0 auto', padding: '0 32px' }}>
-            <h2
-              style={{
-                fontSize: 22,
-                fontWeight: 700,
-                color: '#1a1a3e',
-                marginBottom: 24,
-              }}
-            >
-              Related Services
-            </h2>
-            <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
-              <a
-                href="/services/voluntary-administration/"
-                style={{
-                  backgroundColor: '#f8f8ff',
-                  borderRadius: 8,
-                  padding: '14px 20px',
-                  fontSize: 15,
-                  fontWeight: 600,
-                  color: '#1a1a3e',
-                  textDecoration: 'none',
-                }}
-              >
-                Voluntary Administration &rarr;
-              </a>
-              <a
-                href="/services/creditors-voluntary-liquidation/"
-                style={{
-                  backgroundColor: '#f8f8ff',
-                  borderRadius: 8,
-                  padding: '14px 20px',
-                  fontSize: 15,
-                  fontWeight: 600,
-                  color: '#1a1a3e',
-                  textDecoration: 'none',
-                }}
-              >
-                Creditors Voluntary Liquidation &rarr;
-              </a>
-              <a
-                href="/reduce-debt/"
-                style={{
-                  backgroundColor: '#f8f8ff',
-                  borderRadius: 8,
-                  padding: '14px 20px',
-                  fontSize: 15,
-                  fontWeight: 600,
-                  color: '#1a1a3e',
-                  textDecoration: 'none',
-                }}
-              >
-                Reduce Business Debt &rarr;
-              </a>
-            </div>
-          </div>
-        </section>
+        <CanCannot
+          can={[
+            'Assess initially whether your company may meet the SBR eligibility criteria.',
+            'Set out SBR alongside the other options in writing.',
+            'Introduce a registered small business restructuring practitioner from our network.',
+          ]}
+          cannot={[
+            'Act as the restructuring practitioner or run the process.',
+            'Guarantee that creditors will accept a plan, or promise a particular outcome.',
+            'Give legal or tax advice.',
+          ]}
+        />
+
+        <ContentSection id="section-faq" label="Common questions" heading="Small Business Restructuring questions">
+          <FaqList items={faqItems} alwaysOpen />
+        </ContentSection>
+
+        <RelatedLinks
+          links={[
+            {
+              label: 'Restructure your business',
+              href: '/restructure-your-business',
+            },
+            {
+              label: 'Voluntary administration explained',
+              href: '/services/voluntary-administration',
+            },
+            {
+              label: 'Creditors voluntary liquidation explained',
+              href: '/services/creditors-voluntary-liquidation',
+            },
+            { label: 'ATO debt options', href: '/reduce-debt' },
+          ]}
+        />
+
+        <PageDisclaimer />
+        <ConsultationCTA />
       </main>
       <Footer />
+
+      <style>{`
+        @media (max-width: 767px) {
+          .svc-hero { padding: 40px 0 !important; }
+          .sbr-two-col { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
     </>
   )
 }

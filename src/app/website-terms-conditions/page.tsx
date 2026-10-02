@@ -1,14 +1,15 @@
 import { NavBar } from '@/components/NavBar'
 import { Footer } from '@/components/Footer'
+import { Breadcrumbs } from '@/components/Breadcrumbs'
 import type { Metadata } from 'next'
+import { absUrl } from '@/lib/site'
 
 export const metadata: Metadata = {
   title: 'Terms and Conditions',
   description:
     'Website Terms and Conditions for Australian Financial Advisory Proprietary Limited (ABN 73 680 451 129).',
   alternates: {
-    canonical:
-      'https://www.australianfinancialadvisory.com.au/website-terms-conditions/',
+    canonical: absUrl('/website-terms-conditions'),
   },
 }
 
@@ -16,25 +17,33 @@ export default function TermsConditionsPage() {
   return (
     <>
       <NavBar />
-      <main style={{ paddingTop: 80 }}>
-        {/* Hero */}
+      <main id="main">
         <section
           style={{
             backgroundColor: '#1a1a3e',
-            padding: '60px 32px',
+            padding: '100px 32px 60px',
             textAlign: 'center',
           }}
         >
+          <div style={{ maxWidth: 860, margin: '0 auto', textAlign: 'left' }}>
+            <Breadcrumbs
+              items={[
+                { name: 'Home', href: '/' },
+                { name: 'Terms and Conditions' },
+              ]}
+              tone="dark"
+            />
+          </div>
           <p
             style={{
               fontSize: 12,
               letterSpacing: 3,
               textTransform: 'uppercase',
-              color: '#ffffff',
+              color: '#DEDCEC',
               marginBottom: 12,
             }}
           >
-            legal
+            Legal
           </p>
           <h1
             style={{
@@ -47,24 +56,20 @@ export default function TermsConditionsPage() {
           >
             Terms and Conditions
           </h1>
-          <p
-            style={{ fontSize: 15, color: 'rgba(255,255,255,0.6)', margin: 0 }}
-          >
+          <p style={{ fontSize: 15, color: '#DEDCEC', margin: 0 }}>
             Last updated: April 2026
           </p>
         </section>
 
-        {/* Content */}
         <section style={{ backgroundColor: '#FFFFFF', padding: '80px 32px' }}>
           <div style={{ maxWidth: 860, margin: '0 auto' }}>
-            {/* Intro */}
             <div
               style={{
                 backgroundColor: '#f8f8ff',
                 borderRadius: 12,
                 padding: '28px 32px',
                 marginBottom: 48,
-                borderLeft: '4px solid #333333',
+                borderLeft: '4px solid #9b8ec4',
               }}
             >
               <p
@@ -81,7 +86,6 @@ export default function TermsConditionsPage() {
               </p>
             </div>
 
-            {/* Sections */}
             {[
               {
                 number: '1.',
@@ -124,6 +128,7 @@ export default function TermsConditionsPage() {
                   }}
                 >
                   <span
+                    aria-hidden="true"
                     style={{
                       fontSize: 18,
                       fontWeight: 700,

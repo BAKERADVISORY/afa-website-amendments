@@ -1,74 +1,69 @@
-﻿<!-- BEGIN:nextjs-agent-rules -->
+<!-- BEGIN:nextjs-agent-rules -->
 
 # This is NOT the Next.js you know
 
-This version has breaking changes â€” APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
+This version has breaking changes - APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
 
 <!-- END:nextjs-agent-rules -->
 
-# Website Reverse-Engineer Template
+# Australian Financial Advisory website
 
-## What This Is
+## What this is
 
-A reusable template for reverse-engineering any website and rebuilding it as a faithful clone using Claude Code. The Next.js + shadcn/ui + Tailwind v4 base is pre-scaffolded â€” just fill in TARGET.md and run `/clone-website`.
+The live marketing website for Australian Financial Advisory (AFA), served at
+`https://www.australianfinancialadvisory.com.au/`. Next.js 16 App Router,
+React 19, TypeScript strict, Tailwind CSS v4, static export (`output: 'export'`
+in `next.config.ts`). Hosting is Cloudflare Pages.
 
-## Tech Stack
+## Deployment warning
 
-- **Framework:** Next.js 16 (App Router, React 19, TypeScript strict)
-- **UI:** shadcn/ui (Radix primitives, Tailwind CSS v4, `cn()` utility)
-- **Icons:** Lucide React (default â€” will be replaced/supplemented by extracted SVGs)
-- **Styling:** Tailwind CSS v4 with oklch design tokens
-- **Deployment:** Vercel
+**A push to `main` auto-deploys production.** Never push to `main` without an
+explicit, current instruction from the operator. Work on a branch and open a
+pull request. Do not add server features, API routes, middleware, or runtime
+rewrites: they do not work in a static export.
+
+## Compliance rules for any copy change
+
+AFA is an assessment-and-referral advisory. It is not a registered insolvency
+practitioner, credit licensee, tax agent, registered liquidator, AFSL holder,
+or law firm. Copy must never imply AFA performs licensed work. Approved
+wording sources (outside this repo):
+
+- `afa-project\09_MARKETING_AND_SOCIAL\google-business-profile-content-v1.0.2.md`
+- `social-media-kit\05_BUSINESS_PROFILES\afa\approved-copy.md`
+- `social-media-kit\05_BUSINESS_PROFILES\afa\compliance-layer.md`
+- `afa-project\02_COMPLIANCE_AND_RISK\licensing-boundaries-v1.0.6.md`
+- `afa-project\09_MARKETING_AND_SOCIAL\citation-targets-v1.0.2.md` (canonical NAP)
+
+No pricing, no outcome claims, no statistics without a cited source, no
+testimonials or case studies, no "we negotiate with the ATO", "we protect",
+"we clear", "we handle every aspect". Use "free initial consultation". Facts not
+in an approved source are UNKNOWN and are omitted. Australian English, no em
+dashes.
+
+## Where things live
+
+- `src/lib/site.ts`: every site-wide fact and the structured-data builders.
+  Change NAP, service area, entity wording and schema here, nowhere else.
+- `src/components/`: shared blocks. `ConsultationCTA` is the single contact
+  target (`id="contact"`) on every inner page; `HeroSection` carries it on the
+  home page.
+- `src/app/`: one folder per route. Canonical URLs have no trailing slash,
+  matching what the host serves.
+- `public/robots.txt`, `public/llms.txt`, `public/_redirects`,
+  `src/app/sitemap.ts`: crawl and discovery surfaces.
+- `scripts/optimise-hero.mjs`: regenerates the responsive hero images with
+  the sharp build that ships with Next.js.
+
+## Known blocker, do not touch
+
+`src/app/layout.tsx` loads GTM and GA4 without a consent mechanism. Recorded as
+a compliance hard stop in `afa-project` and awaiting an operator decision on a
+consent-management platform. Do not change the tracking block.
 
 ## Commands
 
-- `npm run dev` â€” Start dev server
-- `npm run build` â€” Production build
-- `npm run lint` â€” ESLint check
-
-## Code Style
-
-- TypeScript strict mode, no `any`
-- Named exports, PascalCase components, camelCase utils
-- Tailwind utility classes, no inline styles
-- 2-space indentation
-- Responsive: mobile-first
-
-## Design Principles
-
-- **Pixel-perfect emulation** â€” match the target's spacing, colors, typography exactly
-- **No personal aesthetic changes during emulation phase** â€” match 1:1 first, customize later
-- **Real content** â€” use actual text and assets from the target site, not placeholders
-- **Beauty-first** â€” every pixel matters
-
-## Project Structure
-
-```
-src/
-  app/              # Next.js routes
-  components/       # React components
-    ui/             # shadcn/ui primitives
-    icons.tsx       # Extracted SVG icons as React components
-  lib/
-    utils.ts        # cn() utility (shadcn)
-  types/            # TypeScript interfaces
-  hooks/            # Custom React hooks
-public/
-  images/           # Downloaded images from target site
-  videos/           # Downloaded videos from target site
-  seo/              # Favicons, OG images, webmanifest
-docs/
-  research/         # Inspection output (design tokens, components, layout)
-  design-references/ # Screenshots and visual references
-scripts/            # Asset download scripts
-```
-
-## MOST IMPORTANT NOTES
-
-- When launching Claude Code agent teams, ALWAYS have each teammate work in their own worktree branch and merge everyone's work at the end, resolving any merge conflicts smartly since you are basically serving the orchestrator role and have full context to our goals, work given, work achieved, and desired outcomes.
-
-@docs/research/INSPECTION_GUIDE.md
-@TARGET.md
+- `npm run dev`, `npm run build`, `npm run lint`
 
 ## Truth Mode Deployment Gate (Cloudflare)
 

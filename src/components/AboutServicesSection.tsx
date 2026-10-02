@@ -1,5 +1,13 @@
-import { BadgeDollarSign, Building2, Shield, ChevronRight } from 'lucide-react'
+import {
+  BadgeDollarSign,
+  Building2,
+  Shield,
+  ChevronRight,
+  Check,
+  X,
+} from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
+import { ENTITY_DISCLAIMER } from '@/lib/site'
 
 interface ServiceCardProps {
   icon: LucideIcon
@@ -7,6 +15,7 @@ interface ServiceCardProps {
   description: string
   features: string[]
   href: string
+  linkText: string
 }
 
 function ServiceCard({
@@ -15,9 +24,10 @@ function ServiceCard({
   description,
   features,
   href,
+  linkText,
 }: ServiceCardProps) {
   return (
-    <div
+    <li
       style={{
         backgroundColor: '#f8f8ff',
         borderRadius: 12,
@@ -30,7 +40,7 @@ function ServiceCard({
         borderTop: '3px solid #9b8ec4',
       }}
     >
-      <Icon color="#9b8ec4" size={40} />
+      <Icon color="#6E3E8F" size={40} aria-hidden="true" />
 
       <h3
         style={{
@@ -43,7 +53,7 @@ function ServiceCard({
         {title}
       </h3>
 
-      <p style={{ fontSize: 15, color: '#555555', lineHeight: 1.6, margin: 0 }}>
+      <p style={{ fontSize: 15, color: '#444444', lineHeight: 1.6, margin: 0 }}>
         {description}
       </p>
 
@@ -69,8 +79,9 @@ function ServiceCard({
             }}
           >
             <ChevronRight
-              color="#9b8ec4"
+              color="#6E3E8F"
               size={16}
+              aria-hidden="true"
               style={{ flexShrink: 0, marginTop: 1 }}
             />
             {feature}
@@ -94,60 +105,79 @@ function ServiceCard({
           alignSelf: 'flex-start',
         }}
       >
-        Learn More
+        {linkText}
       </a>
-    </div>
+    </li>
   )
 }
 
-const cards: (ServiceCardProps & { id?: string })[] = [
+/** Card copy is assessment, written options and referral only. */
+const cards: ServiceCardProps[] = [
   {
-    id: 'reduce-debt',
     icon: BadgeDollarSign,
-    title: 'Reduce Debt',
+    title: 'ATO debt and creditor pressure',
     description:
-      'Negotiate and consolidate ATO debt and creditor obligations before they spiral out of control.',
+      'Understand your ATO debt position and the options that may be available, before pressure escalates.',
     features: [
-      'ATO payment plan negotiation',
-      'Creditor debt consolidation',
-      'Interest reduction strategies',
+      'Written review of your position',
+      'Options set out in plain language',
+      'Referral to a registered tax agent for ATO matters where needed',
     ],
-    href: '/reduce-debt/',
+    href: '/reduce-debt',
+    linkText: 'Learn about ATO debt options',
   },
   {
-    id: 'restructure',
     icon: Building2,
-    title: 'Restructure Your Business',
+    title: 'Restructure your business',
     description:
-      'Explore every option before formal insolvency. We protect your company record and your future.',
+      'Explore every option before formal insolvency, with the alternatives set out in writing.',
     features: [
-      'Small business restructuring',
-      'Director liability assessment',
-      'Pre-insolvency planning',
+      'Small Business Restructuring eligibility assessment',
+      'Director obligations explained',
+      'Referral to a licensed practitioner where a formal process is chosen',
     ],
-    href: '/restructure-your-business/',
+    href: '/restructure-your-business',
+    linkText: 'Learn about restructuring options',
   },
   {
     icon: Shield,
-    title: 'Wind Down Safely',
+    title: 'Administration and liquidation options',
     description:
-      'When closure is the right decision, we make sure your personal assets and company record are protected.',
+      'When closure may be the right decision, understand what each process means for you as a director before committing.',
     features: [
-      'Asset and liability review',
-      'Personal asset protection',
-      'Managed company wind-down',
+      'Options review before any formal step',
+      'Director duties explained',
+      'Referral to a registered insolvency practitioner',
     ],
-    href: '/administration-and-liquidation/',
+    href: '/administration-and-liquidation',
+    linkText: 'Learn about administration and liquidation',
   },
+]
+
+const weDo = [
+  'Assess your financial position early, particularly where ATO debt or Director Penalty Notice risk is building.',
+  'Set out the options available to you in writing.',
+  'Communicate with your company’s commercial creditors under a signed authority.',
+  'Bring in a licensed specialist when the situation calls for one.',
+]
+
+const weDoNot = [
+  'Act as a registered insolvency practitioner or liquidator.',
+  'Provide tax agent services such as negotiating directly with the ATO. We refer that work to a registered tax agent.',
+  'Provide credit assistance or arrange finance. Where finance may be relevant, we can pass on a licensed broker’s details.',
+  'Give legal advice.',
 ]
 
 export function AboutServicesSection() {
   return (
-    <section style={{ backgroundColor: '#FFFFFF', padding: '80px 0' }}>
+    <section
+      aria-labelledby="what-we-do-heading"
+      style={{ backgroundColor: '#FFFFFF', padding: '80px 0' }}
+    >
       <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 32px' }}>
-        {/* About header */}
         <div style={{ textAlign: 'center', marginBottom: 48 }}>
           <h2
+            id="what-we-do-heading"
             style={{
               fontFamily: 'Manrope, sans-serif',
               fontSize: 40,
@@ -156,37 +186,32 @@ export function AboutServicesSection() {
               marginBottom: 16,
             }}
           >
-            Early advice is the{' '}
-            <span
-              style={{ color: '#9b8ec4', borderBottom: '2px solid #9b8ec4' }}
-            >
-              most powerful tool
-            </span>{' '}
-            you have.
+            What Australian Financial Advisory does
           </h2>
           <p
             style={{
               fontSize: 16,
               color: '#444444',
               lineHeight: 1.75,
-              maxWidth: 740,
+              maxWidth: 760,
               margin: '0 auto 20px',
               textAlign: 'center',
             }}
           >
-            Australian Financial Advisory is a pre-insolvency advisory firm
-            helping business owners and individuals across Gold Coast, Brisbane,
-            Queensland, and Australia-wide who are facing ATO debt, cash flow
-            challenges, and financial distress. Early action protects your
-            personal assets and keeps your business future open.
+            Australian Financial Advisory helps company directors get ahead of
+            financial pressure, particularly ATO debt and Director Penalty
+            Notice risk, before it becomes a crisis. We assess your financial
+            position, set out the options in writing, and refer specialist
+            execution work to appropriately licensed practitioners in our
+            network.
           </p>
           <p
             style={{
               fontSize: 15,
               color: '#1a1a3e',
               lineHeight: 1.7,
-              maxWidth: 680,
-              margin: '0 auto 64px',
+              maxWidth: 760,
+              margin: '0 auto 56px',
               textAlign: 'center',
               fontWeight: 600,
               backgroundColor: '#f8f8ff',
@@ -195,35 +220,147 @@ export function AboutServicesSection() {
               borderLeft: '4px solid #9b8ec4',
             }}
           >
-            Warning: The ATO is escalating Director Penalty Notice (DPN)
-            issuance aggressively — even for debts in the tens of thousands. A
-            DPN makes you personally liable. The earlier you act, the more
-            options you have.
+            {ENTITY_DISCLAIMER}
           </p>
         </div>
 
-        {/* 4 service cards — 2x2 grid */}
-        <div
+        <ul
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(2, 1fr)',
+            gridTemplateColumns: 'repeat(3, 1fr)',
             gap: 24,
+            listStyle: 'none',
+            padding: 0,
+            margin: '0 0 56px',
           }}
           className="services-grid mobile-stack-grid"
         >
           {cards.map((card) => (
-            <div key={card.href} id={card.id}>
-              <ServiceCard {...card} />
-            </div>
+            <ServiceCard key={card.href} {...card} />
           ))}
+        </ul>
+
+        <div
+          className="do-dont-grid"
+          style={{
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr',
+            gap: 24,
+          }}
+        >
+          <div
+            style={{
+              backgroundColor: '#f8f8ff',
+              borderRadius: 12,
+              padding: '28px 32px',
+            }}
+          >
+            <h3
+              style={{
+                fontSize: 19,
+                fontWeight: 700,
+                color: '#1a1a3e',
+                marginBottom: 14,
+              }}
+            >
+              What we can do
+            </h3>
+            <ul
+              style={{
+                listStyle: 'none',
+                padding: 0,
+                margin: 0,
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 10,
+              }}
+            >
+              {weDo.map((line) => (
+                <li
+                  key={line}
+                  style={{
+                    display: 'flex',
+                    gap: 10,
+                    alignItems: 'flex-start',
+                    fontSize: 15,
+                    color: '#444444',
+                    lineHeight: 1.6,
+                  }}
+                >
+                  <Check
+                    size={18}
+                    color="#6E3E8F"
+                    aria-hidden="true"
+                    style={{ flexShrink: 0, marginTop: 3 }}
+                  />
+                  {line}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div
+            style={{
+              backgroundColor: '#f8f8ff',
+              borderRadius: 12,
+              padding: '28px 32px',
+            }}
+          >
+            <h3
+              style={{
+                fontSize: 19,
+                fontWeight: 700,
+                color: '#1a1a3e',
+                marginBottom: 14,
+              }}
+            >
+              What we do not do
+            </h3>
+            <ul
+              style={{
+                listStyle: 'none',
+                padding: 0,
+                margin: 0,
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 10,
+              }}
+            >
+              {weDoNot.map((line) => (
+                <li
+                  key={line}
+                  style={{
+                    display: 'flex',
+                    gap: 10,
+                    alignItems: 'flex-start',
+                    fontSize: 15,
+                    color: '#444444',
+                    lineHeight: 1.6,
+                  }}
+                >
+                  <X
+                    size={18}
+                    color="#8a1c1c"
+                    aria-hidden="true"
+                    style={{ flexShrink: 0, marginTop: 3 }}
+                  />
+                  {line}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
 
       <style>{`
-        @media (max-width: 767px) {
+        @media (max-width: 900px) {
           .services-grid {
             grid-template-columns: 1fr !important;
           }
+          .do-dont-grid {
+            grid-template-columns: 1fr !important;
+          }
+        }
+        @media (max-width: 767px) {
           .service-learn-more {
             width: 100% !important;
             display: block !important;

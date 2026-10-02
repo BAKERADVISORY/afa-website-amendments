@@ -1,13 +1,15 @@
 import { NavBar } from '@/components/NavBar'
 import { Footer } from '@/components/Footer'
+import { Breadcrumbs } from '@/components/Breadcrumbs'
 import type { Metadata } from 'next'
+import { absUrl } from '@/lib/site'
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
   description:
     'Privacy Policy for Australian Financial Advisory Proprietary Limited (ABN 73 680 451 129).',
   alternates: {
-    canonical: 'https://www.australianfinancialadvisory.com.au/privacy-policy/',
+    canonical: absUrl('/privacy-policy'),
   },
 }
 
@@ -15,25 +17,30 @@ export default function PrivacyPolicyPage() {
   return (
     <>
       <NavBar />
-      <main style={{ paddingTop: 80 }}>
-        {/* Hero */}
+      <main id="main">
         <section
           style={{
             backgroundColor: '#1a1a3e',
-            padding: '60px 32px',
+            padding: '100px 32px 60px',
             textAlign: 'center',
           }}
         >
+          <div style={{ maxWidth: 860, margin: '0 auto', textAlign: 'left' }}>
+            <Breadcrumbs
+              items={[{ name: 'Home', href: '/' }, { name: 'Privacy Policy' }]}
+              tone="dark"
+            />
+          </div>
           <p
             style={{
               fontSize: 12,
               letterSpacing: 3,
               textTransform: 'uppercase',
-              color: '#ffffff',
+              color: '#DEDCEC',
               marginBottom: 12,
             }}
           >
-            legal
+            Legal
           </p>
           <h1
             style={{
@@ -46,17 +53,13 @@ export default function PrivacyPolicyPage() {
           >
             Privacy Policy
           </h1>
-          <p
-            style={{ fontSize: 15, color: 'rgba(255,255,255,0.6)', margin: 0 }}
-          >
+          <p style={{ fontSize: 15, color: '#DEDCEC', margin: 0 }}>
             Last updated: April 2026
           </p>
         </section>
 
-        {/* Content */}
         <section style={{ backgroundColor: '#FFFFFF', padding: '80px 32px' }}>
           <div style={{ maxWidth: 860, margin: '0 auto' }}>
-            {/* Intro */}
             <div
               style={{
                 backgroundColor: '#f8f8ff',
@@ -81,7 +84,6 @@ export default function PrivacyPolicyPage() {
               </p>
             </div>
 
-            {/* Sections */}
             {[
               {
                 number: '1.',
@@ -120,6 +122,7 @@ export default function PrivacyPolicyPage() {
                     information held by us. To make a request contact us at{' '}
                     <a
                       href="mailto:info@australianfinancialadvisory.com.au"
+                      className="afa-crumb-link"
                       style={{
                         color: '#333333',
                         textDecoration: 'none',
@@ -152,6 +155,7 @@ export default function PrivacyPolicyPage() {
                       href="https://www.oaic.gov.au"
                       target="_blank"
                       rel="noopener noreferrer"
+                      className="afa-crumb-link"
                       style={{
                         color: '#333333',
                         textDecoration: 'none',
@@ -174,6 +178,7 @@ export default function PrivacyPolicyPage() {
                   }}
                 >
                   <span
+                    aria-hidden="true"
                     style={{
                       fontSize: 18,
                       fontWeight: 700,

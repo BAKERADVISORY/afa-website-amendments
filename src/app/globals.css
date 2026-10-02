@@ -11,11 +11,11 @@
   --font-mono: ui-monospace, monospace;
 
   /* AFA brand colors */
-  --color-afa-navy: #0d1b2a;
-  --color-afa-gold: #c9a84c;
-  --color-afa-gold-dark: #b8963e;
-  --color-afa-card-bg: #f5f0e6;
-  --color-afa-faq-bg: #fdf5e4;
+  --color-afa-navy: #1a1a3e;
+  --color-afa-purple: #9b8ec4;
+  --color-afa-purple-deep: #6e3e8f;
+  --color-afa-lavender: #dedcec;
+  --color-afa-panel: #f8f8ff;
 
   /* shadcn tokens mapped to AFA palette */
   --color-background: var(--background);
@@ -50,24 +50,24 @@
   --card-foreground: #383838;
   --popover: #ffffff;
   --popover-foreground: #383838;
-  --primary: #c9a84c;
+  --primary: #1a1a3e;
   --primary-foreground: #ffffff;
-  --secondary: #f5f0e6;
+  --secondary: #f8f8ff;
   --secondary-foreground: #383838;
   --muted: #f5f7fa;
   --muted-foreground: #666666;
-  --accent: #c9a84c;
-  --accent-foreground: #0d1b2a;
+  --accent: #9b8ec4;
+  --accent-foreground: #1a1a3e;
   --destructive: #ef4444;
   --border: #e5e7eb;
   --input: #e5e7eb;
-  --ring: #c9a84c;
+  --ring: #9b8ec4;
   --radius: 0.625rem;
 }
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border;
     box-sizing: border-box;
   }
   body {
@@ -98,23 +98,124 @@
   }
 }
 
-/* Marquee animation for partner logos */
-@keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
+/* Keyboard focus: always visible, on every interactive element */
+:focus-visible {
+  outline: 3px solid #9b8ec4;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #6e3e8f;
+  outline-offset: 2px;
+}
+
+/* Skip link: first focusable element on every page */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 8px;
+  z-index: 1000;
+  background: #ffffff;
+  color: #1a1a3e;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.skip-link:focus {
+  left: 16px;
+}
+
+/* Anchor targets sit below the sticky header (plus the contact bar below 1440px) */
+#contact,
+#main,
+[id^='section-'] {
+  scroll-margin-top: 176px;
+}
+@media (min-width: 1440px) {
+  #contact,
+  #main,
+  [id^='section-'] {
+    scroll-margin-top: 136px;
   }
 }
 
-.animate-marquee {
-  animation: marquee 35s linear infinite;
+/* Link and button states mirrored on hover and keyboard focus */
+.afa-nav-link {
+  color: rgba(255, 255, 255, 0.78);
+  transition: color 0.15s ease;
+}
+.afa-nav-link:hover,
+.afa-nav-link:focus-visible {
+  color: #ffffff;
+}
+.afa-button-light:hover,
+.afa-button-light:focus-visible {
+  background-color: #dedcec !important;
+}
+.afa-button-accent:hover,
+.afa-button-accent:focus-visible {
+  background-color: #8a7db4 !important;
+}
+.afa-chip-link:hover,
+.afa-chip-link:focus-visible,
+.afa-crumb-link:hover,
+.afa-crumb-link:focus-visible,
+.afa-inline-link-light:hover,
+.afa-inline-link-light:focus-visible {
+  text-decoration: underline;
+}
+.afa-footer-link {
+  color: #dedcec;
+  text-decoration: none;
+}
+.afa-footer-link:hover,
+.afa-footer-link:focus-visible {
+  color: #ffffff;
+  text-decoration: underline;
 }
 
-/* AFA gold gradient */
-.afa-gold-gradient {
-  background: linear-gradient(135deg, #c9a84c, #b8963e);
+/* FAQ: answers are always in the HTML; details/summary needs no JavaScript */
+.afa-faq-item {
+  background-color: #f8f8ff;
+  border-radius: 10px;
+  border-left: 4px solid transparent;
+  transition: border-color 0.2s ease;
+}
+.afa-faq-item[open] {
+  border-left-color: #1a1a3e;
+}
+.afa-faq-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 20px;
+  cursor: pointer;
+  list-style: none;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a1a3e;
+}
+.afa-faq-summary::-webkit-details-marker {
+  display: none;
+}
+.afa-faq-marker::before {
+  content: '+';
+  font-size: 20px;
+  color: #333333;
+}
+.afa-faq-item[open] .afa-faq-marker::before {
+  content: '\2212';
+}
+.afa-faq-answer {
+  padding: 0 20px 18px;
+  margin: 0;
+  font-size: 14px;
+  color: #444444;
+  line-height: 1.75;
 }
 
 /* Mobile utility classes */
@@ -171,5 +272,23 @@
   }
   .mobile-card-center {
     align-items: center !important;
+  }
+  #contact,
+  #main {
+    scroll-margin-top: 120px;
+  }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
