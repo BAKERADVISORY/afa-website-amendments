@@ -119,10 +119,13 @@ export default function PrivacyPolicyPage() {
                 custom: (
                   <>
                     <p style={policyText}>
-                      Our website uses Google Tag Manager and Google Analytics.
-                      With your permission, these Google tools may set cookies
-                      that help us understand how the website is used and
-                      measure how our advertising performs.
+                      Our website uses Google Analytics to understand how the
+                      website is used. With your permission, it also uses Google
+                      Tag Manager to load advertising measurement tags from
+                      Google Ads and Meta. These tools may set cookies that help
+                      us understand how the website is used and measure how our
+                      advertising performs, including when an enquiry form is
+                      submitted.
                     </p>
                     <p style={policyText}>
                       Analytics and advertising cookies are optional. When you
@@ -133,9 +136,10 @@ export default function PrivacyPolicyPage() {
                       not limit your access to any part of the website.
                     </p>
                     <p style={policyText}>
-                      While cookies are off, Google&rsquo;s tags may still
-                      receive limited information that does not rely on
-                      cookies, such as the fact that a page was viewed.
+                      While cookies are off, Google Analytics may still receive
+                      limited information that does not rely on cookies, such as
+                      the fact that a page was viewed. The Google Ads and Meta
+                      tags are not loaded until you accept.
                     </p>
                     <p style={{ ...policyText, marginBottom: 0 }}>
                       You can change your choice at any time using the Privacy

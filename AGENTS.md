@@ -62,9 +62,16 @@ denied) as the first script in `<head>`, before GTM and gtag load. The visitor's
 choice comes from `src/components/ConsentBanner.tsx` and is stored in
 localStorage under `afa-consent-v1` (logic in `src/lib/consent.ts`); the footer
 "Privacy choices" button reopens the banner. Do not change the GTM or GA4 IDs,
-and do not load any tag ahead of the consent-default script. Non-Google tags
-inside the GTM container are not covered by Consent Mode and need consent
-checks configured in GTM itself.
+and do not load any tag ahead of the consent-default script.
+
+GTM is consent-gated: `window.afaLoadGtm` (in `layout.tsx`) runs the standard
+GTM snippet only for a stored "granted" choice or when the visitor accepts.
+Reason: the published container (checked 2 October 2026, version 5) runs a
+Meta Pixel template set to grant its own consent, which Consent Mode cannot
+hold back, alongside Google Ads tags. GA4 is loaded directly (not in GTM) and
+runs under Consent Mode from page start. If the Meta tags are later given a
+consent check inside GTM, GTM could load at page start again; keep the Privacy
+Policy section 5 in step with whatever the site actually does.
 
 ## Commands
 

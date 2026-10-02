@@ -6,6 +6,8 @@ export const dynamic = 'force-static'
 // URLs use the form the host serves (no trailing slash). Dates are real
 // content dates, not build timestamps.
 const LEGAL_UPDATED_ISO = '2026-04-11'
+// Cookies, analytics and advertising section added with the consent banner.
+const PRIVACY_UPDATED_ISO = '2026-10-02'
 
 const pages: { path: string; updated: string }[] = [
   { path: '/', updated: CONTENT_UPDATED_ISO },
@@ -23,7 +25,7 @@ const pages: { path: string; updated: string }[] = [
     path: '/services/creditors-voluntary-liquidation',
     updated: CONTENT_UPDATED_ISO,
   },
-  { path: '/privacy-policy', updated: LEGAL_UPDATED_ISO },
+  { path: '/privacy-policy', updated: PRIVACY_UPDATED_ISO },
   { path: '/website-terms-conditions', updated: LEGAL_UPDATED_ISO },
 ]
 

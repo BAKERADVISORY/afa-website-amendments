@@ -1,5 +1,6 @@
 // Google Consent Mode v2 helpers. Analytics and advertising storage stay denied
-// until the visitor accepts in the consent banner.
+// until the visitor accepts in the consent banner, and GTM (which carries the
+// Google Ads and Meta tags) is not loaded until then.
 
 export const CONSENT_STORAGE_KEY = 'afa-consent-v1'
 export const CONSENT_OPEN_EVENT = 'afa:open-consent'
@@ -46,12 +47,12 @@ export function subscribeConsent(onChange: () => void) {
   }
 }
 
-/** Analytics and advertising cookies set by Google tags on this site. */
-function clearGoogleCookies() {
+/** First-party analytics and advertising cookies set by Google and Meta tags on this site. */
+function clearTrackingCookies() {
   const names = document.cookie
     .split(';')
     .map((c) => c.split('=')[0].trim())
-    .filter((n) => /^(_ga|_gid|_gat|_gcl)/.test(n))
+    .filter((n) => /^(_ga|_gid|_gat|_gcl|_fbp|_fbc)/.test(n))
   const host = window.location.hostname
   const domains = ['', host, `.${host.replace(/^www\./, '')}`]
   for (const name of names) {
@@ -68,7 +69,12 @@ export function saveConsent(choice: ConsentChoice) {
   } catch {
     // Storage blocked: the choice still applies for this page view.
   }
-  const w = window as unknown as { dataLayer?: unknown[]; gtag?: Gtag }
+  const w = window as unknown as {
+    dataLayer?: unknown[]
+    gtag?: Gtag
+    fbq?: Gtag
+    afaLoadGtm?: () => void
+  }
   w.dataLayer = w.dataLayer || []
   const gtag: Gtag =
     w.gtag ||
@@ -82,6 +88,13 @@ export function saveConsent(choice: ConsentChoice) {
     Object.fromEntries(SIGNALS.map((s) => [s, choice])),
   )
   w.dataLayer.push({ event: 'afa_consent_update', afa_consent: choice })
-  if (choice === 'denied') clearGoogleCookies()
+  if (choice === 'granted') {
+    // GTM (Google Ads and Meta tags) only loads once consent is given.
+    w.afaLoadGtm?.()
+  } else {
+    // GTM may already be running on this page if the visitor accepted earlier.
+    w.fbq?.('consent', 'revoke')
+    clearTrackingCookies()
+  }
   window.dispatchEvent(new Event(CONSENT_CHANGE_EVENT))
 }
