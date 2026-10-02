@@ -81,10 +81,10 @@ export function ConsentBanner() {
                 Your privacy choices
               </h2>
               <p id={bodyId} className="afa-consent-body">
-                We would like to use cookies to measure how this site is used
-                and how our advertising performs. They stay off unless you
-                accept. You can change your choice at any time from Privacy
-                choices in the footer. See our{' '}
+                We use cookies to understand how this website is used and to
+                measure advertising performance. Analytics and advertising
+                cookies stay off unless you accept. You can change your choice
+                at any time from Privacy choices in the footer. See our{' '}
                 <a href="/privacy-policy" className="afa-inline-link-light">
                   Privacy Policy
                 </a>
