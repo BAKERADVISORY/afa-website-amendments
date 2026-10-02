@@ -1,47 +1,61 @@
-'use client'
+import { FaqList } from './FaqList'
+import type { FaqItem } from '@/lib/site'
 
-import { useState } from 'react'
-
-interface FAQItem {
-  question: string
-  answer: string
-}
-
-const faqItems: FAQItem[] = [
+/** Home page FAQ. Every answer is approved GBP Q&A wording. Rendered statically; schema generated from this same array. */
+const faqItems: FaqItem[] = [
+  {
+    question: 'What does Australian Financial Advisory do?',
+    answer:
+      "We assess a director's financial position early, particularly where ATO debt or Director Penalty Notice risk is building, and set out the options available in writing. Specialist execution work is referred to appropriately licensed practitioners.",
+  },
+  {
+    question: 'Is Australian Financial Advisory a registered insolvency practitioner?',
+    answer:
+      "No. We're an assessment-and-referral service. Where formal insolvency work is needed, we refer to appropriately licensed practitioners.",
+  },
+  {
+    question: 'Do you charge for the first conversation?',
+    answer: 'No, the initial consultation is free.',
+  },
   {
     question: 'What is a Director Penalty Notice?',
     answer:
-      'The ATO can make directors personally liable for unpaid PAYG withholding and superannuation through a Director Penalty Notice (DPN). A DPN removes the protection of the corporate structure — meaning your personal assets (home, savings, investments) are at risk. Once issued, your options narrow significantly. Early advice is critical.',
+      'A notice the ATO can issue that makes a company director personally liable for certain unpaid company tax debts. Getting advice early matters.',
   },
   {
-    question: 'How much does it cost to get started?',
+    question: 'Can you negotiate with the ATO on my behalf?',
     answer:
-      'We offer a no-obligation discovery call to understand your situation. We provide a written report with our recommended action steps tailored to your specific situation.',
+      "We're not a registered tax agent, so we don't provide tax agent services like direct ATO negotiation ourselves. Where that's relevant, we can point you toward appropriately licensed help.",
   },
   {
-    question: 'What happens after the review?',
+    question: 'What happens after the Initial Advisory Report?',
     answer:
-      'We provide a written report with recommended action steps tailored to your situation. If formal insolvency is required, we refer you to our external insolvency practitioner partner. In most cases, we find alternatives — negotiation, restructuring, or a managed wind-down — that avoid a formal appointment.',
+      "You get a written report setting out your position and options. Any next step is your decision, we don't push a particular outcome.",
   },
   {
-    question: 'Do I have to go into liquidation?',
+    question: 'How do your fees work?',
     answer:
-      'No. Liquidation is a last resort, and we make that clear from the outset. We explore every alternative first — ATO payment plans, creditor negotiations, small business restructuring, and more. Formal insolvency appointments appear permanently on company records. We help you avoid that wherever possible.',
+      "We work on fixed fees agreed upfront, so you know the cost before anything starts. The initial consultation is free and we'll give you exact figures on that first call.",
+  },
+  {
+    question: 'Which areas do you service?',
+    answer: 'Gold Coast, Brisbane, Sydney, and Australia-wide.',
+  },
+  {
+    question: 'Is what I tell you confidential?',
+    answer: 'Yes, standard professional confidentiality applies.',
   },
 ]
 
 export function FAQSection() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null)
-
-  const toggle = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index)
-  }
-
   return (
-    <section style={{ backgroundColor: '#FFFFFF', padding: '80px 0' }}>
-      {/* Header */}
+    <section
+      aria-labelledby="faq-heading"
+      style={{ backgroundColor: '#FFFFFF', padding: '80px 0' }}
+    >
       <div style={{ textAlign: 'center', marginBottom: 48, padding: '0 32px' }}>
         <h2
+          id="faq-heading"
           style={{
             fontSize: 38,
             fontWeight: 700,
@@ -49,12 +63,12 @@ export function FAQSection() {
             margin: '0 0 16px 0',
           }}
         >
-          Frequently <span style={{ color: '#9b8ec4' }}>Asked Questions</span>
+          Frequently <span style={{ color: '#6E3E8F' }}>asked questions</span>
         </h2>
         <p
           style={{
             fontSize: 16,
-            color: '#666',
+            color: '#444444',
             textAlign: 'center',
             margin: 0,
           }}
@@ -63,7 +77,6 @@ export function FAQSection() {
         </p>
       </div>
 
-      {/* Two-column layout */}
       <div
         style={{
           display: 'grid',
@@ -76,73 +89,8 @@ export function FAQSection() {
         }}
         className="faq-grid"
       >
-        {/* Accordion */}
-        <div>
-          {faqItems.map((item, index) => {
-            const isOpen = openIndex === index
-            return (
-              <div
-                key={index}
-                style={{
-                  backgroundColor: '#f8f8ff',
-                  borderRadius: 10,
-                  marginBottom: 12,
-                  overflow: 'hidden',
-                  borderLeft: isOpen
-                    ? '4px solid #1a1a3e'
-                    : '4px solid transparent',
-                  transition: 'border-color 0.2s ease',
-                }}
-              >
-                <button
-                  onClick={() => toggle(index)}
-                  style={{
-                    width: '100%',
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'center',
-                    padding: '18px 20px',
-                    background: 'none',
-                    border: 'none',
-                    cursor: 'pointer',
-                    textAlign: 'left',
-                  }}
-                >
-                  <span
-                    style={{ fontSize: 15, fontWeight: 600, color: '#1a1a3e' }}
-                  >
-                    {item.question}
-                  </span>
-                  <span
-                    style={{
-                      fontSize: 20,
-                      color: '#333333',
-                      fontWeight: 400,
-                      flexShrink: 0,
-                      marginLeft: 12,
-                    }}
-                  >
-                    {isOpen ? '−' : '+'}
-                  </span>
-                </button>
-                {isOpen && (
-                  <div
-                    style={{
-                      padding: '0 20px 18px',
-                      fontSize: 14,
-                      color: '#555',
-                      lineHeight: 1.75,
-                    }}
-                  >
-                    {item.answer}
-                  </div>
-                )}
-              </div>
-            )
-          })}
-        </div>
+        <FaqList items={faqItems} />
 
-        {/* Still Have Questions card */}
         <div
           style={{
             backgroundColor: '#1a1a3e',
@@ -163,21 +111,22 @@ export function FAQSection() {
               margin: 0,
             }}
           >
-            Still Have Questions?
+            Still have questions?
           </h3>
           <p
             style={{
               fontSize: 15,
-              color: 'rgba(255,255,255,0.7)',
+              color: '#DEDCEC',
               lineHeight: 1.6,
               margin: 0,
             }}
           >
-            Every situation is different. Talk to our team and get personalised
-            advice for your specific circumstances — no obligation.
+            Every situation is different. Talk to our team in a free,
+            confidential initial consultation. No obligation.
           </p>
           <a
-            href="/#contact"
+            href="#contact"
+            className="afa-button-light"
             style={{
               backgroundColor: '#ffffff',
               color: '#1a1a3e',
@@ -189,7 +138,7 @@ export function FAQSection() {
               display: 'inline-block',
             }}
           >
-            Schedule a Discovery Call
+            Book a free initial consultation
           </a>
         </div>
       </div>

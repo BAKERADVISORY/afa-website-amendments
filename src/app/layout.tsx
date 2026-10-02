@@ -1,6 +1,13 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Manrope } from 'next/font/google'
 import './globals.css'
+import { JsonLd } from '@/components/JsonLd'
+import {
+  OG_IMAGE_PATH,
+  SITE_NAME,
+  SITE_URL,
+  organizationGraph,
+} from '@/lib/site'
 
 const manrope = Manrope({
   variable: '--font-manrope',
@@ -8,29 +15,21 @@ const manrope = Manrope({
   weight: ['400', '500', '600', '700', '800'],
 })
 
+export const viewport: Viewport = {
+  themeColor: '#1a1a3e',
+}
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.australianfinancialadvisory.com.au'),
+  metadataBase: new URL(SITE_URL),
   title: {
-    default:
-      'Australian Financial Advisory | Pre-Insolvency & Business Restructuring Gold Coast',
-    template: '%s | Australian Financial Advisory',
+    default: 'Australian Financial Advisory | Pre-Insolvency Advisory',
+    template: '%s | AFA',
   },
   description:
-    'Pre-insolvency advisory for company directors across Gold Coast and Australia. Assessment and referral. Call (07) 2113 3069.',
-  keywords: [
-    'solvency advice company directors Australia',
-    'voluntary administration Queensland',
-    'small business restructuring Gold Coast',
-    'creditors voluntary liquidation Australia',
-    'debt negotiation company directors',
-    'pre-insolvency advice Gold Coast',
-    'business restructuring Gold Coast QLD',
-    'insolvency practitioners Queensland',
-    'company director debt advice Australia',
-  ],
-  authors: [{ name: 'Australian Financial Advisory' }],
-  creator: 'Australian Financial Advisory',
-  publisher: 'Australian Financial Advisory',
+    'Assessment and referral for company directors facing ATO debt, Director Penalty Notice risk or cash-flow pressure. Gold Coast, Brisbane, Sydney, Australia-wide. Free initial consultation.',
+  authors: [{ name: SITE_NAME }],
+  creator: SITE_NAME,
+  publisher: SITE_NAME,
   robots: {
     index: true,
     follow: true,
@@ -45,125 +44,30 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_AU',
-    url: 'https://www.australianfinancialadvisory.com.au',
-    siteName: 'Australian Financial Advisory',
-    title:
-      'Australian Financial Advisory | Pre-Insolvency & Business Restructuring Gold Coast',
+    url: `${SITE_URL}/`,
+    siteName: SITE_NAME,
+    title: 'Australian Financial Advisory | Pre-Insolvency Advisory',
     description:
-      'Pre-insolvency advisory for company directors across Gold Coast and Australia. Assessment and referral.',
+      'Assessment and referral for company directors facing ATO debt, Director Penalty Notice risk or cash-flow pressure. Free initial consultation.',
     images: [
       {
-        url: '/images/business-meeting.webp',
+        url: OG_IMAGE_PATH,
         width: 1200,
         height: 630,
-        alt: 'Australian Financial Advisory - Business Restructuring Experts Gold Coast QLD',
+        alt: 'Australian Financial Advisory. Pre-insolvency advisory for company directors.',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title:
-      'Australian Financial Advisory | Pre-Insolvency & Business Restructuring Gold Coast',
+    title: 'Australian Financial Advisory | Pre-Insolvency Advisory',
     description:
-      'Pre-insolvency advisory for company directors across Gold Coast and Australia. Assessment and referral.',
-    images: ['/images/business-meeting.webp'],
+      'Assessment and referral for company directors facing ATO debt, Director Penalty Notice risk or cash-flow pressure. Free initial consultation.',
+    images: [OG_IMAGE_PATH],
   },
   alternates: {
-    canonical: 'https://www.australianfinancialadvisory.com.au',
+    canonical: `${SITE_URL}/`,
   },
-}
-
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@graph': [
-    {
-      '@type': ['FinancialService', 'LocalBusiness'],
-      '@id': 'https://www.australianfinancialadvisory.com.au/#organization',
-      name: 'Australian Financial Advisory',
-      alternateName: 'AFA',
-      url: 'https://www.australianfinancialadvisory.com.au',
-      logo: {
-        '@type': 'ImageObject',
-        url: 'https://www.australianfinancialadvisory.com.au/images/logo-light.svg',
-      },
-      image:
-        'https://www.australianfinancialadvisory.com.au/images/business-meeting.webp',
-      description:
-        'Australian Financial Advisory is a specialist pre-insolvency and corporate restructuring firm serving company directors across Gold Coast, Queensland and Australia. We provide expert voluntary administration, small business restructuring, creditors voluntary liquidation, and debt negotiation services.',
-      telephone: '+61 7 2113 3069',
-      email: 'info@australianfinancialadvisory.com.au',
-      address: [
-        {
-          '@type': 'PostalAddress',
-          streetAddress: '215 Brisbane Road',
-          addressLocality: 'Biggera Waters',
-          addressRegion: 'QLD',
-          postalCode: '4216',
-          addressCountry: 'AU',
-        },
-        {
-          '@type': 'PostalAddress',
-          streetAddress: '310 Edward St',
-          addressLocality: 'Brisbane',
-          addressRegion: 'QLD',
-          postalCode: '4000',
-          addressCountry: 'AU',
-        },
-        {
-          '@type': 'PostalAddress',
-          streetAddress: '75 Pitt St',
-          addressLocality: 'Sydney',
-          addressRegion: 'NSW',
-          postalCode: '2000',
-          addressCountry: 'AU',
-        },
-      ],
-      areaServed: [
-        {
-          '@type': 'State',
-          name: 'Queensland',
-        },
-        {
-          '@type': 'State',
-          name: 'New South Wales',
-        },
-        {
-          '@type': 'Country',
-          name: 'Australia',
-        },
-      ],
-      serviceType: [
-        'Pre-Insolvency Advice',
-        'Voluntary Administration',
-        'Small Business Restructuring',
-        'Creditors Voluntary Liquidation',
-        'Debt Negotiation',
-        'Solvency Advice',
-        'Business Restructuring',
-      ],
-      openingHoursSpecification: [
-        {
-          '@type': 'OpeningHoursSpecification',
-          dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-          opens: '08:30',
-          closes: '17:30',
-        },
-      ],
-      priceRange: '$$',
-      sameAs: [
-        'https://www.linkedin.com/company/australian-financial-advisory',
-      ],
-    },
-    {
-      '@type': 'WebSite',
-      '@id': 'https://www.australianfinancialadvisory.com.au/#website',
-      url: 'https://www.australianfinancialadvisory.com.au',
-      name: 'Australian Financial Advisory',
-      publisher: {
-        '@id': 'https://www.australianfinancialadvisory.com.au/#organization',
-      },
-    },
-  ],
 }
 
 export default function RootLayout({
@@ -174,6 +78,12 @@ export default function RootLayout({
   return (
     <html lang="en-AU" className={`${manrope.variable} h-full antialiased`}>
       <head>
+        {/*
+          Tracking block (GTM-M672BXC4, G-B226QNH900) left exactly as deployed.
+          Known consent blocker: these tags fire without a consent mechanism.
+          Recorded as HARD STOP 3 in afa-project compliance-register. Any change
+          here needs a consent-management decision from the operator first.
+        */}
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-M672BXC4');`,
@@ -193,10 +103,7 @@ export default function RootLayout({
 `,
           }}
         />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        <JsonLd data={organizationGraph()} />
       </head>
       <body className="flex min-h-full flex-col font-sans">
         <noscript
@@ -204,6 +111,9 @@ export default function RootLayout({
             __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M672BXC4" height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
           }}
         />
+        <a href="#main" className="skip-link">
+          Skip to main content
+        </a>
         {children}
       </body>
     </html>

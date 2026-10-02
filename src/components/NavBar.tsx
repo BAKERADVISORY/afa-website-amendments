@@ -1,26 +1,18 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Link from 'next/link'
 import { ChevronRight, Menu, Phone, X } from 'lucide-react'
+import { PHONE_DISPLAY, PHONE_TEL } from '@/lib/site'
 
-const mobileMenuLinks = [
+const navLinks = [
   { text: 'Home', href: '/' },
   { text: 'DPN Risk', href: '/director-penalty-notice' },
-  { text: 'Reduce Debt', href: '/reduce-debt' },
-  { text: 'Restructure Your Business', href: '/restructure-your-business' },
-  {
-    text: 'Administration & Liquidation',
-    href: '/administration-and-liquidation',
-  },
-]
-
-const serviceLinks = [
-  { text: 'Reduce Debt', href: '/reduce-debt/' },
-  { text: 'Restructure Your Business', href: '/restructure-your-business/' },
-  {
-    text: 'Administration & Liquidation',
-    href: '/administration-and-liquidation/',
-  },
+  { text: 'ATO Debt', href: '/reduce-debt' },
+  { text: 'Restructure', href: '/restructure-your-business' },
+  { text: 'Admin & Liquidation', href: '/administration-and-liquidation' },
+  { text: 'About', href: '/about' },
+  { text: 'Contact', href: '/contact' },
 ]
 
 function AfaLogo() {
@@ -30,6 +22,8 @@ function AfaLogo() {
       src="/afa-logo-nav.png"
       alt="Australian Financial Advisory"
       className="afa-nav-logo-img"
+      width={520}
+      height={162}
       style={{
         width: 'clamp(360px, 28vw, 520px)',
         height: 'auto',
@@ -64,14 +58,22 @@ export function NavBar() {
     return () => window.removeEventListener('resize', handleResize)
   }, [])
 
+  useEffect(() => {
+    if (!mobileOpen) return
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setMobileOpen(false)
+    }
+    window.addEventListener('keydown', handleKey)
+    return () => window.removeEventListener('keydown', handleKey)
+  }, [mobileOpen])
+
   return (
     <>
-      {/* Slim contact bar — shown only below 1100px, i.e. exactly where the
-          in-header phone element is hidden. Sticky, so it stays pinned above
-          the header instead of scrolling away. */}
+      {/* Slim contact bar, shown only below 1100px where the in-header phone is hidden */}
       <a
-        href="tel:+61721133069"
+        href={`tel:${PHONE_TEL}`}
         className="afa-contact-bar"
+        aria-label={`Call us on ${PHONE_DISPLAY}`}
         style={{
           position: 'sticky',
           top: 0,
@@ -92,11 +94,9 @@ export function NavBar() {
           whiteSpace: 'nowrap',
         }}
       >
-        <Phone size={14} color="#9b8ec4" />
-        <span style={{ color: 'rgba(255,255,255,0.65)' }}>
-          Contact us directly
-        </span>
-        <span style={{ color: '#ffffff' }}>(07) 2113 3069</span>
+        <Phone size={14} color="#9b8ec4" aria-hidden="true" />
+        <span style={{ color: '#DEDCEC' }}>Contact us directly</span>
+        <span style={{ color: '#ffffff' }}>{PHONE_DISPLAY}</span>
       </a>
 
       <header
@@ -112,10 +112,9 @@ export function NavBar() {
           width: '100%',
         }}
       >
-        {/* Logo — absolutely positioned at far left of header */}
-        <a
+        <Link
           href="/"
-          aria-label="Australian Financial Advisory"
+          aria-label="Australian Financial Advisory home"
           style={{
             position: 'absolute',
             left: 0,
@@ -132,9 +131,8 @@ export function NavBar() {
           }}
         >
           <AfaLogo />
-        </a>
+        </Link>
 
-        {/* Nav + actions — right side, padded left to clear logo */}
         <div
           className="afa-nav-inner"
           style={{
@@ -146,75 +144,22 @@ export function NavBar() {
             paddingRight: '32px',
           }}
         >
-          {/* Desktop nav */}
           <nav
+            aria-label="Primary"
             className="hidden md:flex"
-            style={{ alignItems: 'center', gap: '4px' }}
+            style={{ alignItems: 'center', gap: '2px' }}
           >
-            <a
-              href="/"
-              style={{
-                color: 'rgba(255,255,255,0.7)',
-                fontSize: '15px',
-                fontWeight: 700,
-                padding: '13px 8px',
-                textDecoration: 'none',
-                whiteSpace: 'nowrap',
-                transition: 'color 0.15s ease',
-              }}
-              onMouseEnter={(e) => {
-                ;(e.currentTarget as HTMLAnchorElement).style.color = '#ffffff'
-              }}
-              onMouseLeave={(e) => {
-                ;(e.currentTarget as HTMLAnchorElement).style.color =
-                  'rgba(255,255,255,0.7)'
-              }}
-            >
-              Home
-            </a>
-
-            <a
-              href="/director-penalty-notice"
-              style={{
-                color: 'rgba(255,255,255,0.7)',
-                fontSize: '15px',
-                fontWeight: 700,
-                padding: '13px 8px',
-                textDecoration: 'none',
-                whiteSpace: 'nowrap',
-                transition: 'color 0.15s ease',
-              }}
-              onMouseEnter={(e) => {
-                ;(e.currentTarget as HTMLAnchorElement).style.color = '#ffffff'
-              }}
-              onMouseLeave={(e) => {
-                ;(e.currentTarget as HTMLAnchorElement).style.color =
-                  'rgba(255,255,255,0.7)'
-              }}
-            >
-              DPN Risk
-            </a>
-
-            {serviceLinks.map((link) => (
+            {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
+                className="afa-nav-link"
                 style={{
-                  color: 'rgba(255,255,255,0.7)',
                   fontSize: '15px',
                   fontWeight: 700,
                   padding: '13px 8px',
                   textDecoration: 'none',
-                  transition: 'color 0.15s ease',
                   whiteSpace: 'nowrap',
-                }}
-                onMouseEnter={(e) => {
-                  ;(e.currentTarget as HTMLAnchorElement).style.color =
-                    '#ffffff'
-                }}
-                onMouseLeave={(e) => {
-                  ;(e.currentTarget as HTMLAnchorElement).style.color =
-                    'rgba(255,255,255,0.7)'
                 }}
               >
                 {link.text}
@@ -222,10 +167,10 @@ export function NavBar() {
             ))}
           </nav>
 
-          {/* Direct phone contact — desktop only, secondary to Get Started */}
           <a
-            href="tel:+61721133069"
-            className="afa-nav-phone"
+            href={`tel:${PHONE_TEL}`}
+            className="afa-nav-phone afa-nav-link"
+            aria-label={`Call us on ${PHONE_DISPLAY}`}
             style={{
               flexDirection: 'column',
               alignItems: 'flex-end',
@@ -234,13 +179,13 @@ export function NavBar() {
               textDecoration: 'none',
               whiteSpace: 'nowrap',
               flexShrink: 0,
-              marginLeft: '20px',
+              marginLeft: '16px',
             }}
           >
             <span
               className="afa-nav-phone-label"
               style={{
-                color: 'rgba(255,255,255,0.55)',
+                color: '#DEDCEC',
                 fontSize: '11px',
                 fontWeight: 700,
                 letterSpacing: '0.3px',
@@ -250,21 +195,15 @@ export function NavBar() {
             </span>
             <span
               className="afa-nav-phone-number"
-              style={{
-                color: 'rgba(255,255,255,0.7)',
-                fontSize: '15px',
-                fontWeight: 700,
-                transition: 'color 0.15s ease',
-              }}
+              style={{ fontSize: '15px', fontWeight: 700 }}
             >
-              (07) 2113 3069
+              {PHONE_DISPLAY}
             </span>
           </a>
 
-          {/* Get Started button — desktop only */}
           <a
-            href="/#contact"
-            className="hidden md:inline-flex"
+            href="/contact"
+            className="hidden md:inline-flex afa-button-accent"
             style={{
               backgroundColor: '#9b8ec4',
               color: '#1a1a3e',
@@ -278,44 +217,44 @@ export function NavBar() {
               transition: 'background-color 0.15s ease',
               whiteSpace: 'nowrap',
               flexShrink: 0,
-              marginLeft: '16px',
-            }}
-            onMouseEnter={(e) => {
-              ;(e.currentTarget as HTMLAnchorElement).style.backgroundColor =
-                '#8a7db4'
-            }}
-            onMouseLeave={(e) => {
-              ;(e.currentTarget as HTMLAnchorElement).style.backgroundColor =
-                '#9b8ec4'
+              marginLeft: '12px',
             }}
           >
-            Get Started
-            <ChevronRight size={16} />
+            Free consultation
+            <ChevronRight size={16} aria-hidden="true" />
           </a>
 
-          {/* Hamburger — mobile only */}
           <button
+            type="button"
             className="md:hidden"
             onClick={() => setMobileOpen((prev) => !prev)}
-            aria-label="Toggle menu"
+            aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-menu"
             style={{
               background: 'none',
               border: 'none',
               color: '#FFFFFF',
               cursor: 'pointer',
-              padding: '8px',
+              padding: '10px',
+              minWidth: 44,
+              minHeight: 44,
             }}
           >
-            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+            {mobileOpen ? (
+              <X size={24} aria-hidden="true" />
+            ) : (
+              <Menu size={24} aria-hidden="true" />
+            )}
           </button>
         </div>
       </header>
 
-      {/* Dark overlay — behind mobile menu */}
       {mobileOpen && (
         <div
           className="afa-mobile-overlay md:hidden"
           onClick={() => setMobileOpen(false)}
+          aria-hidden="true"
           style={{
             position: 'fixed',
             inset: 0,
@@ -326,116 +265,109 @@ export function NavBar() {
         />
       )}
 
-      {/* Mobile nav dropdown — fixed below header */}
-      {mobileOpen && (
-        <div
-          className="afa-mobile-dropdown md:hidden"
+      <nav
+        id="mobile-menu"
+        aria-label="Mobile"
+        className="afa-mobile-dropdown md:hidden"
+        hidden={!mobileOpen}
+        style={{
+          position: 'fixed',
+          top: '120px',
+          left: 0,
+          right: 0,
+          backgroundColor: '#1a1a3e',
+          borderTop: '1px solid rgba(255,255,255,0.1)',
+          display: mobileOpen ? 'flex' : 'none',
+          flexDirection: 'column',
+          padding: '8px 0',
+          zIndex: 49,
+        }}
+      >
+        {navLinks.map((link) => (
+          <a
+            key={link.href}
+            href={link.href}
+            onClick={() => setMobileOpen(false)}
+            className="afa-nav-link"
+            style={{
+              fontSize: '16px',
+              fontWeight: 700,
+              padding: '14px 32px',
+              textDecoration: 'none',
+            }}
+          >
+            {link.text}
+          </a>
+        ))}
+        <a
+          href={`tel:${PHONE_TEL}`}
+          onClick={() => setMobileOpen(false)}
+          className="afa-nav-link"
           style={{
-            position: 'fixed',
-            top: '120px',
-            left: 0,
-            right: 0,
-            backgroundColor: '#1a1a3e',
-            borderTop: '1px solid rgba(255,255,255,0.1)',
             display: 'flex',
-            flexDirection: 'column',
-            padding: '8px 0',
-            zIndex: 49,
+            alignItems: 'center',
+            gap: '10px',
+            fontSize: '16px',
+            fontWeight: 700,
+            padding: '14px 32px',
+            textDecoration: 'none',
+            borderTop: '1px solid rgba(255,255,255,0.1)',
+            marginTop: '4px',
           }}
         >
-          {mobileMenuLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={() => setMobileOpen(false)}
-              style={{
-                color: 'rgba(255,255,255,0.7)',
-                fontSize: '16px',
-                fontWeight: 700,
-                padding: '12px 32px',
-                textDecoration: 'none',
-              }}
-            >
-              {link.text}
-            </a>
-          ))}
-          {/* Tap to call — mobile menu */}
-          <a
-            href="tel:+61721133069"
-            onClick={() => setMobileOpen(false)}
+          <Phone size={18} aria-hidden="true" />
+          <span
             style={{
               display: 'flex',
-              alignItems: 'center',
-              gap: '10px',
-              color: 'rgba(255,255,255,0.7)',
-              fontSize: '16px',
-              fontWeight: 700,
-              padding: '12px 32px',
-              textDecoration: 'none',
-              borderTop: '1px solid rgba(255,255,255,0.1)',
-              marginTop: '4px',
+              flexDirection: 'column',
+              lineHeight: 1.25,
             }}
           >
-            <Phone size={18} />
             <span
               style={{
-                display: 'flex',
-                flexDirection: 'column',
-                lineHeight: 1.25,
+                color: '#DEDCEC',
+                fontSize: '11px',
+                fontWeight: 700,
+                letterSpacing: '0.3px',
               }}
             >
-              <span
-                style={{
-                  color: 'rgba(255,255,255,0.55)',
-                  fontSize: '11px',
-                  fontWeight: 700,
-                  letterSpacing: '0.3px',
-                }}
-              >
-                Contact us directly
-              </span>
-              (07) 2113 3069
+              Contact us directly
             </span>
-          </a>
-
-          <a
-            href="/#contact"
-            onClick={() => setMobileOpen(false)}
-            style={{
-              backgroundColor: '#9b8ec4',
-              color: '#1a1a3e',
-              borderRadius: '50px',
-              padding: '12px 20px',
-              fontSize: '16px',
-              fontWeight: 700,
-              textDecoration: 'none',
-              margin: '8px 32px',
-              textAlign: 'center',
-            }}
-          >
-            Get Started
-          </a>
-        </div>
-      )}
+            {PHONE_DISPLAY}
+          </span>
+        </a>
+        <a
+          href="/contact"
+          onClick={() => setMobileOpen(false)}
+          className="afa-button-accent"
+          style={{
+            backgroundColor: '#9b8ec4',
+            color: '#1a1a3e',
+            borderRadius: '50px',
+            padding: '12px 20px',
+            fontSize: '16px',
+            fontWeight: 700,
+            textDecoration: 'none',
+            margin: '8px 32px',
+            textAlign: 'center',
+          }}
+        >
+          Free initial consultation
+        </a>
+      </nav>
 
       <style>{`
-        /* Hidden by default; shown only where the header has room for it */
         .afa-nav-phone { display: none; }
         @media (min-width: 1100px) {
           .afa-nav-phone { display: flex; }
         }
-        .afa-nav-phone:hover .afa-nav-phone-number { color: #ffffff; }
-
-        /* Contact bar is the inverse of the in-header phone: exactly one shows. */
         .afa-contact-bar { display: flex; }
         @media (min-width: 1100px) {
           .afa-contact-bar { display: none; }
         }
-        /* While the bar is visible the sticky header pins below it, not at 0. */
         @media (max-width: 1099px) {
           .afa-header { top: 40px !important; }
         }
-
         @media (max-width: 767px) {
           .afa-header { height: 70px !important; }
           .afa-nav-inner { padding-left: 0 !important; }
@@ -445,7 +377,6 @@ export function NavBar() {
             max-height: 48px !important;
             object-fit: contain !important;
           }
-          /* 40px contact bar + 70px header */
           .afa-mobile-overlay { top: 110px !important; }
           .afa-mobile-dropdown { top: 110px !important; }
         }

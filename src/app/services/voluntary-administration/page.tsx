@@ -1,796 +1,468 @@
 import type { Metadata } from 'next'
-import { NavBar } from '@/components/NavBar'
-
-export const metadata: Metadata = {
-  title: 'Voluntary Administration Advice Gold Coast',
-  description:
-    'Voluntary Administration gives distressed companies time to assess options under creditor protection. Advisory and referral for directors.',
-  keywords: [
-    'voluntary administration Queensland',
-    'voluntary administration Gold Coast',
-    'VA practitioners QLD',
-    'company voluntary administration Australia',
-    'deed of company arrangement Queensland',
-  ],
-  alternates: {
-    canonical:
-      'https://www.australianfinancialadvisory.com.au/services/voluntary-administration/',
-  },
-  openGraph: {
-    title: 'Voluntary Administration Advice Gold Coast',
-    description:
-      'Voluntary Administration gives distressed companies time to assess options under creditor protection. Advisory and referral for directors.',
-    url: 'https://www.australianfinancialadvisory.com.au/services/voluntary-administration/',
-  },
-}
-import { Footer } from '@/components/Footer'
 import {
   ShieldCheck,
   Clock,
   Users,
   Scale,
   CheckCircle,
+  ChevronRight,
   ArrowRight,
 } from 'lucide-react'
+import { NavBar } from '@/components/NavBar'
+import { Footer } from '@/components/Footer'
+import { PageHero } from '@/components/PageHero'
+import {
+  ContentSection,
+  bodyText,
+  bodyTextLight,
+  cardBody,
+  cardTitle,
+} from '@/components/ContentSection'
+import { CanCannot } from '@/components/CanCannot'
+import { FaqList } from '@/components/FaqList'
+import { RelatedLinks } from '@/components/RelatedLinks'
+import { PageDisclaimer } from '@/components/PageDisclaimer'
+import { ConsultationCTA } from '@/components/ConsultationCTA'
+import { JsonLd } from '@/components/JsonLd'
+import { absUrl, webPageSchema, type FaqItem } from '@/lib/site'
 
-function PlaceholderImage({
-  height = 400,
-  label = 'Image',
-}: {
-  height?: number
-  label?: string
-}) {
-  return (
-    <div
-      style={{
-        width: '100%',
-        height,
-        backgroundColor: '#D1D5DB',
-        borderRadius: 12,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        color: '#9CA3AF',
-        fontSize: 14,
-        fontWeight: 500,
-      }}
-    >
-      {label}
-    </div>
-  )
+const PATH = '/services/voluntary-administration'
+const title = 'Voluntary Administration Explained'
+const description =
+  'How voluntary administration works in Australia: the administrator’s role, creditor meetings, and possible outcomes including a Deed of Company Arrangement. General information from an assessment-and-referral advisory.'
+
+export const metadata: Metadata = {
+  title,
+  description,
+  alternates: { canonical: absUrl(PATH) },
+  openGraph: { title: `${title} | AFA`, description, url: absUrl(PATH) },
 }
 
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Service',
-  name: 'Voluntary Administration',
-  serviceType: 'Voluntary Administration',
-  description:
-    'A formal insolvency process where an independent administrator takes control to assess company options and protect from creditor actions over 25 business days.',
-  provider: {
-    '@type': 'FinancialService',
-    name: 'Australian Financial Advisory',
-    url: 'https://www.australianfinancialadvisory.com.au',
-    telephone: '+61 7 2113 3069',
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: 'Gold Coast',
-      addressRegion: 'QLD',
-      postalCode: '4216',
-      addressCountry: 'AU',
-    },
+const faqItems: FaqItem[] = [
+  {
+    question: 'Who can act as a voluntary administrator?',
+    answer:
+      'A registered liquidator. Australian Financial Advisory is not a registered liquidator and does not accept appointments. We explain the process and introduce a registered practitioner from our network.',
   },
-  areaServed: { '@type': 'Country', name: 'Australia' },
-  url: 'https://www.australianfinancialadvisory.com.au/services/voluntary-administration/',
-}
+  {
+    question: 'Does voluntary administration stop all creditor action?',
+    answer:
+      'It pauses most creditor action while the administration runs, but there are exceptions set out in the Corporations Act. The administrator explains what applies to the company.',
+  },
+  {
+    question: 'What are the possible outcomes?',
+    answer:
+      'At the second creditors’ meeting, creditors vote on whether the company enters a Deed of Company Arrangement, is returned to its directors, or is wound up.',
+  },
+]
+
+const designedTo = [
+  {
+    Icon: ShieldCheck,
+    title: 'Creditor protection',
+    desc: 'Protection from most creditor actions and legal proceedings while the administration runs.',
+  },
+  {
+    Icon: Clock,
+    title: 'Time to assess',
+    desc: 'Breathing space to properly evaluate the company’s options.',
+  },
+  {
+    Icon: Users,
+    title: 'Independent administrator',
+    desc: 'A registered liquidator takes control to investigate the company’s affairs and report to creditors.',
+  },
+  {
+    Icon: Scale,
+    title: 'Creditor decision',
+    desc: 'Creditors decide the outcome by vote at the second meeting.',
+  },
+]
+
+const steps = [
+  {
+    num: 1,
+    title: 'Appointment',
+    desc: 'An administrator is appointed by the directors, a liquidator or a secured creditor.',
+  },
+  {
+    num: 2,
+    title: 'Investigation',
+    desc: 'The administrator reviews the business, its affairs and the options.',
+  },
+  {
+    num: 3,
+    title: 'First creditors’ meeting',
+    desc: 'Held within the statutory period after appointment.',
+  },
+  {
+    num: 4,
+    title: 'Second creditors’ meeting and decision',
+    desc: 'Creditors vote on the company’s future at the second meeting, held within the statutory convening period.',
+  },
+]
 
 export default function VoluntaryAdministrationPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      <JsonLd
+        data={webPageSchema({
+          path: PATH,
+          name: title,
+          description,
+          about: 'Voluntary administration (Australia)',
+        })}
       />
       <NavBar />
-      <main>
-        {/* Hero Section */}
-        <section
-          style={{
-            backgroundColor: '#1a1a3e',
-            paddingTop: 160,
-            paddingBottom: 80,
-            paddingLeft: 80,
-            paddingRight: 80,
-            position: 'relative',
-            overflow: 'hidden',
-          }}
-        >
-          <div style={{ maxWidth: 1400, margin: '0 auto' }}>
-            <p
-              style={{
-                color: '#333333',
-                textTransform: 'uppercase',
-                fontSize: 12,
-                letterSpacing: 3,
-                fontWeight: 600,
-                marginBottom: 16,
-              }}
-            >
-              INSOLVENCY SERVICES
-            </p>
-            <h1
-              style={{
-                color: '#FFFFFF',
-                fontSize: 52,
-                fontWeight: 700,
-                lineHeight: 1.15,
-                marginBottom: 24,
-                maxWidth: 700,
-              }}
-            >
-              Voluntary Administration
-            </h1>
-            <p
-              style={{
-                color: 'rgba(255,255,255,0.7)',
-                fontSize: 18,
-                lineHeight: 1.6,
-                marginBottom: 36,
-                maxWidth: 640,
-              }}
-            >
-              Voluntary Administration provides a structured process for
-              financially distressed companies to explore options for recovery
-              while being protected from creditor actions.
-            </p>
-            <a
-              href="/#contact"
-              style={{
-                backgroundColor: '#333333',
-                color: '#FFFFFF',
-                borderRadius: 50,
-                padding: '14px 28px',
-                fontSize: 16,
-                fontWeight: 700,
-                textDecoration: 'none',
-                display: 'inline-block',
-              }}
-            >
-              Free Consultation →
-            </a>
-          </div>
-          {/* Wave divider */}
-          <div
+      <main id="main">
+        <PageHero
+          eyebrow="Formal process explained"
+          title="Voluntary administration explained"
+          intro="Voluntary administration is a formal insolvency process in which an independent administrator, a registered liquidator, takes control of a company to assess its position and the options for its future. It is a step the directors can choose to take. Australian Financial Advisory explains the process and refers you to a practitioner."
+          breadcrumbs={[
+            { name: 'Home', href: '/' },
+            { name: 'Your options explained', href: '/services' },
+            { name: 'Voluntary administration' },
+          ]}
+          wave
+        />
+
+        <ContentSection id="section-in-short" label="In short" heading="The short answer">
+          <ul
             style={{
-              position: 'absolute',
-              bottom: -1,
-              left: '-35%',
-              width: '171%',
-              height: 100,
+              listStyle: 'none',
+              padding: 0,
+              margin: 0,
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 14,
             }}
           >
-            <svg
-              viewBox="0 0 1440 100"
-              preserveAspectRatio="none"
-              style={{ width: '100%', height: '100%' }}
-            >
-              <path
-                d="M0,50 C360,100 1080,0 1440,50 L1440,100 L0,100 Z"
-                fill="#ffffff"
-              />
-            </svg>
-          </div>
-        </section>
-
-        {/* What is VA Section */}
-        <section style={{ backgroundColor: '#FFFFFF', padding: '80px 0' }}>
-          <div style={{ maxWidth: 1400, margin: '0 auto', padding: '0 32px' }}>
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: '1fr 1fr',
-                gap: 64,
-                alignItems: 'center',
-              }}
-            >
-              {/* Left column */}
-              <div>
-                <p
-                  style={{
-                    color: '#333333',
-                    textTransform: 'uppercase',
-                    fontSize: 12,
-                    letterSpacing: 3,
-                    fontWeight: 600,
-                    marginBottom: 12,
-                  }}
-                >
-                  WHAT IS VA
-                </p>
-                <h2
-                  style={{
-                    fontSize: 36,
-                    fontWeight: 700,
-                    color: '#383838',
-                    marginBottom: 20,
-                    lineHeight: 1.25,
-                  }}
-                >
-                  What is Voluntary Administration?
-                </h2>
-                <p
-                  style={{
-                    fontSize: 16,
-                    color: '#444444',
-                    lineHeight: 1.7,
-                    marginBottom: 16,
-                  }}
-                >
-                  Voluntary Administration is a formal insolvency process
-                  designed to provide companies with breathing space to explore
-                  their options. It&apos;s often the first step when a company
-                  faces financial difficulties but may still be viable.
-                </p>
-                <p
-                  style={{
-                    fontSize: 16,
-                    color: '#444444',
-                    lineHeight: 1.7,
-                    marginBottom: 28,
-                  }}
-                >
-                  During this process, an independent administrator takes
-                  control of the company to investigate its affairs, assess its
-                  prospects, and determine the best course of action for
-                  creditors and the company.
-                </p>
-                <div
-                  style={{ display: 'flex', flexDirection: 'column', gap: 14 }}
-                >
-                  {[
-                    'Maximum 25 business days for resolution',
-                    'Protection from creditor legal action',
-                    'Independent professional oversight',
-                  ].map((item) => (
-                    <div
-                      key={item}
-                      style={{ display: 'flex', alignItems: 'center', gap: 12 }}
-                    >
-                      <CheckCircle
-                        size={20}
-                        color="#333333"
-                        style={{ flexShrink: 0 }}
-                      />
-                      <span style={{ color: '#383838', fontSize: 16 }}>
-                        {item}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              {/* Right column */}
-              <div>
-                <PlaceholderImage
-                  height={420}
-                  label="Voluntary Administration"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Key Objective Box Section */}
-        <section style={{ backgroundColor: '#1a1a3e', padding: '80px 0' }}>
-          <div style={{ maxWidth: 1400, margin: '0 auto', padding: '0 32px' }}>
-            <div
-              style={{
-                backgroundColor: '#FFFFFF',
-                borderRadius: 16,
-                padding: 48,
-                maxWidth: 900,
-                margin: '0 auto',
-              }}
-            >
-              <p
-                style={{
-                  color: '#333333',
-                  textTransform: 'uppercase',
-                  fontSize: 12,
-                  letterSpacing: 3,
-                  fontWeight: 600,
-                  marginBottom: 12,
-                }}
-              >
-                Key Objective
-              </p>
-              <h3
-                style={{
-                  fontSize: 28,
-                  fontWeight: 700,
-                  color: '#383838',
-                  marginBottom: 20,
-                  lineHeight: 1.3,
-                }}
-              >
-                Breathing Space to Assess Your Future
-              </h3>
-              <p style={{ fontSize: 16, color: '#444444', lineHeight: 1.7 }}>
-                The primary objective of a Voluntary Administration is to give a
-                financially distressed company breathing room to assess its
-                future and decide on the best path forward. By appointing an
-                independent administrator, the company gains immediate
-                protection from creditor action while a fair proposal is
-                prepared for creditors. The aim is to maximise the chances of
-                the company&apos;s survival or, if that&apos;s not viable, to
-                achieve a better outcome for creditors than an immediate
-                liquidation.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Benefits Section */}
-        <section style={{ backgroundColor: '#f8f8ff', padding: '80px 0' }}>
-          <div style={{ maxWidth: 1400, margin: '0 auto', padding: '0 32px' }}>
-            <h2
-              style={{
-                fontSize: 36,
-                fontWeight: 700,
-                color: '#383838',
-                textAlign: 'center',
-                marginBottom: 16,
-                lineHeight: 1.25,
-              }}
-            >
-              Benefits of Voluntary Administration
-            </h2>
-            <p
-              style={{
-                fontSize: 16,
-                color: '#666666',
-                textAlign: 'center',
-                maxWidth: 700,
-                margin: '0 auto 48px',
-                lineHeight: 1.6,
-              }}
-            >
-              Voluntary Administration provides immediate relief and structured
-              pathways to explore the best options for your business and
-              creditors.
-            </p>
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: '1fr 1fr',
-                gap: 24,
-                maxWidth: 900,
-                margin: '0 auto',
-              }}
-            >
-              {[
-                {
-                  Icon: ShieldCheck,
-                  title: 'Creditor Protection',
-                  desc: 'Immediate protection from creditor actions and legal proceedings',
-                },
-                {
-                  Icon: Clock,
-                  title: 'Time to Assess',
-                  desc: 'Breathing space to properly evaluate your business options',
-                },
-                {
-                  Icon: Users,
-                  title: 'Expert Management',
-                  desc: 'Independent administrator takes control to maximise outcomes',
-                },
-                {
-                  Icon: Scale,
-                  title: 'Fair Process',
-                  desc: 'Equitable treatment of all stakeholders and creditors',
-                },
-              ].map(({ Icon, title, desc }) => (
-                <div
-                  key={title}
-                  style={{
-                    backgroundColor: '#FFFFFF',
-                    borderRadius: 12,
-                    padding: 28,
-                  }}
-                >
-                  <Icon
-                    size={28}
-                    color="#333333"
-                    style={{ marginBottom: 14 }}
-                  />
-                  <h3
-                    style={{
-                      fontSize: 18,
-                      fontWeight: 700,
-                      color: '#383838',
-                      marginBottom: 8,
-                    }}
-                  >
-                    {title}
-                  </h3>
-                  <p
-                    style={{ fontSize: 15, color: '#666666', lineHeight: 1.6 }}
-                  >
-                    {desc}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* The Administration Process Section */}
-        <section style={{ backgroundColor: '#1a1a3e', padding: '80px 0' }}>
-          <div style={{ maxWidth: 1400, margin: '0 auto', padding: '0 32px' }}>
-            <h2
-              style={{
-                fontSize: 38,
-                fontWeight: 700,
-                color: '#FFFFFF',
-                textAlign: 'center',
-                marginBottom: 16,
-                lineHeight: 1.25,
-              }}
-            >
-              The Administration Process
-            </h2>
-            <p
-              style={{
-                fontSize: 16,
-                color: 'rgba(255,255,255,0.7)',
-                textAlign: 'center',
-                maxWidth: 700,
-                margin: '0 auto 56px',
-                lineHeight: 1.6,
-              }}
-            >
-              A structured 25-day process designed to assess all options and
-              determine the best outcome for the company and its creditors.
-            </p>
-            <div style={{ maxWidth: 600, margin: '0 auto' }}>
-              {[
-                {
-                  num: 1,
-                  title: 'Appointment',
-                  desc: 'Administrator appointed by directors or creditors',
-                },
-                {
-                  num: 2,
-                  title: 'Investigation',
-                  desc: 'Comprehensive review of business affairs and options',
-                },
-                {
-                  num: 3,
-                  title: 'Creditor Meeting',
-                  desc: 'First meeting within 8 business days of appointment',
-                },
-                {
-                  num: 4,
-                  title: 'Decision',
-                  desc: "Second meeting to decide the company's future within 25 business days",
-                },
-              ].map((step, index, arr) => (
-                <div key={step.num}>
-                  <div
-                    style={{
-                      display: 'flex',
-                      gap: 20,
-                      alignItems: 'flex-start',
-                    }}
-                  >
-                    <div
-                      style={{
-                        width: 44,
-                        height: 44,
-                        borderRadius: '50%',
-                        backgroundColor: '#333333',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        color: '#FFFFFF',
-                        fontSize: 18,
-                        fontWeight: 700,
-                        flexShrink: 0,
-                      }}
-                    >
-                      {step.num}
-                    </div>
-                    <div style={{ paddingTop: 8 }}>
-                      <h3
-                        style={{
-                          color: '#FFFFFF',
-                          fontWeight: 700,
-                          fontSize: 18,
-                          marginBottom: 6,
-                        }}
-                      >
-                        {step.title}
-                      </h3>
-                      <p
-                        style={{
-                          color: 'rgba(255,255,255,0.7)',
-                          fontSize: 15,
-                          lineHeight: 1.6,
-                        }}
-                      >
-                        {step.desc}
-                      </p>
-                    </div>
-                  </div>
-                  {index < arr.length - 1 && (
-                    <div
-                      style={{
-                        width: 2,
-                        height: 40,
-                        backgroundColor: 'rgba(255,255,255,0.2)',
-                        marginLeft: 21,
-                        marginTop: 4,
-                        marginBottom: 4,
-                      }}
-                    />
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Possible Outcomes Section */}
-        <section style={{ backgroundColor: '#FFFFFF', padding: '80px 0' }}>
-          <div style={{ maxWidth: 1400, margin: '0 auto', padding: '0 32px' }}>
-            <h2
-              style={{
-                fontSize: 36,
-                fontWeight: 700,
-                color: '#383838',
-                textAlign: 'center',
-                marginBottom: 16,
-                lineHeight: 1.25,
-              }}
-            >
-              Possible Outcomes
-            </h2>
-            <p
-              style={{
-                fontSize: 16,
-                color: '#666666',
-                textAlign: 'center',
-                maxWidth: 700,
-                margin: '0 auto 36px',
-                lineHeight: 1.6,
-              }}
-            >
-              At the second creditors&apos; meeting, creditors will vote on one
-              of several options for the company&apos;s future. Each outcome is
-              designed to maximise value for stakeholders.
-            </p>
-            <div style={{ maxWidth: 800, margin: '0 auto' }}>
-              <div
+            {[
+              'Voluntary administration gives a financially distressed company breathing space while an independent administrator assesses its options.',
+              'Most creditor action is paused during the administration. Creditors then vote on the outcome: a Deed of Company Arrangement, a return to the directors, or liquidation.',
+              'Australian Financial Advisory explains what the process means for you and introduces a registered liquidator. We do not act as the administrator.',
+            ].map((line) => (
+              <li
+                key={line}
                 style={{
                   display: 'flex',
-                  flexDirection: 'column',
-                  gap: 16,
-                  marginBottom: 32,
+                  gap: 10,
+                  alignItems: 'flex-start',
+                  fontSize: 16,
+                  color: '#444444',
+                  lineHeight: 1.7,
                 }}
               >
-                {[
-                  'Return to creditors (Deed of Company Arrangement)',
-                  'Proceed to liquidation',
-                ].map((outcome) => (
-                  <div
-                    key={outcome}
-                    style={{ display: 'flex', alignItems: 'center', gap: 12 }}
-                  >
-                    <ArrowRight
-                      size={20}
-                      color="#333333"
-                      style={{ flexShrink: 0 }}
-                    />
-                    <span style={{ color: '#383838', fontSize: 16 }}>
-                      {outcome}
-                    </span>
-                  </div>
-                ))}
-              </div>
-              {/* DOCA highlighted box */}
+                <ChevronRight
+                  size={18}
+                  color="#6E3E8F"
+                  aria-hidden="true"
+                  style={{ flexShrink: 0, marginTop: 4 }}
+                />
+                {line}
+              </li>
+            ))}
+          </ul>
+        </ContentSection>
+
+        <ContentSection
+          id="section-what-is-va"
+          label="What is VA"
+          heading="What is voluntary administration?"
+          tone="panel"
+        >
+          <p style={bodyText}>
+            Voluntary administration is a formal insolvency process designed to
+            give a company breathing space to explore its options. It is often
+            the first formal step when a company faces financial difficulty but
+            may still be viable.
+          </p>
+          <p style={bodyText}>
+            During the process, an independent administrator takes control of
+            the company to investigate its affairs, assess its prospects, and
+            report to creditors on the options.
+          </p>
+          <ul
+            style={{
+              listStyle: 'none',
+              padding: 0,
+              margin: 0,
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 12,
+            }}
+          >
+            {[
+              'A defined statutory timeframe for the process',
+              'Protection from most creditor legal action',
+              'Independent professional oversight',
+            ].map((item) => (
+              <li
+                key={item}
+                style={{ display: 'flex', alignItems: 'center', gap: 12 }}
+              >
+                <CheckCircle
+                  size={20}
+                  color="#6E3E8F"
+                  aria-hidden="true"
+                  style={{ flexShrink: 0 }}
+                />
+                <span style={{ color: '#383838', fontSize: 16 }}>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </ContentSection>
+
+        <ContentSection
+          id="section-objective"
+          label="Key objective"
+          heading="Breathing space to assess the company’s future"
+          tone="navy"
+        >
+          <p style={{ ...bodyTextLight, marginBottom: 0 }}>
+            The primary objective of a voluntary administration is to give a
+            financially distressed company breathing room to assess its future
+            and decide on the best path forward. By appointing an independent
+            administrator, the company gains protection from most creditor
+            action while a proposal is prepared for creditors. The aim is to
+            maximise the chances of the company&apos;s survival or, if that is
+            not viable, to achieve a better outcome for creditors than an
+            immediate liquidation.
+          </p>
+        </ContentSection>
+
+        <ContentSection
+          id="section-designed-to"
+          label="What it provides"
+          heading="What the process is designed to provide"
+          maxWidth={1100}
+        >
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: '1fr 1fr',
+              gap: 24,
+              maxWidth: 900,
+            }}
+            className="va-two-col"
+          >
+            {designedTo.map(({ Icon, title: cardHeading, desc }) => (
               <div
+                key={cardHeading}
                 style={{
                   backgroundColor: '#f8f8ff',
                   borderRadius: 12,
-                  padding: 32,
+                  padding: 28,
                 }}
               >
+                <Icon
+                  size={28}
+                  color="#6E3E8F"
+                  aria-hidden="true"
+                  style={{ marginBottom: 14 }}
+                />
+                <h3 style={cardTitle}>{cardHeading}</h3>
+                <p style={cardBody}>{desc}</p>
+              </div>
+            ))}
+          </div>
+        </ContentSection>
+
+        <ContentSection
+          id="section-process"
+          label="The process"
+          heading="The administration process"
+          tone="panel"
+        >
+          <ol
+            style={{
+              listStyle: 'none',
+              padding: 0,
+              margin: 0,
+              maxWidth: 600,
+            }}
+          >
+            {steps.map((step, index, arr) => (
+              <li key={step.num}>
                 <div
                   style={{
                     display: 'flex',
-                    alignItems: 'center',
-                    gap: 16,
-                    marginBottom: 16,
-                    flexWrap: 'wrap',
+                    gap: 20,
+                    alignItems: 'flex-start',
                   }}
                 >
-                  <h3
+                  <div
+                    aria-hidden="true"
                     style={{
-                      fontSize: 22,
-                      fontWeight: 700,
-                      color: '#1a1a3e',
-                      margin: 0,
-                    }}
-                  >
-                    Deed of Company Arrangement
-                  </h3>
-                  <span
-                    style={{
-                      backgroundColor: '#333333',
+                      width: 44,
+                      height: 44,
+                      borderRadius: '50%',
+                      backgroundColor: '#1a1a3e',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
                       color: '#FFFFFF',
-                      borderRadius: 50,
-                      padding: '4px 14px',
-                      fontSize: 13,
-                      fontWeight: 600,
-                      whiteSpace: 'nowrap',
+                      fontSize: 18,
+                      fontWeight: 700,
+                      flexShrink: 0,
                     }}
                   >
-                    The most common successful outcome
-                  </span>
+                    {step.num}
+                  </div>
+                  <div style={{ paddingTop: 8 }}>
+                    <h3 style={{ ...cardTitle, fontSize: 18, marginBottom: 6 }}>
+                      {step.title}
+                    </h3>
+                    <p style={{ ...cardBody, fontSize: 15 }}>{step.desc}</p>
+                  </div>
                 </div>
-                <p
-                  style={{
-                    fontSize: 15,
-                    color: '#444444',
-                    lineHeight: 1.7,
-                    marginBottom: 20,
-                  }}
-                >
-                  A DOCA is a binding agreement between the company and its
-                  creditors that allows the company to continue operating while
-                  paying creditors according to agreed terms.
-                </p>
-                <div
-                  style={{ display: 'flex', flexDirection: 'column', gap: 12 }}
-                >
-                  {[
-                    'Company continues trading',
-                    'Jobs are preserved',
-                    'Better returns for creditors',
-                  ].map((item) => (
-                    <div
-                      key={item}
-                      style={{ display: 'flex', alignItems: 'center', gap: 12 }}
-                    >
-                      <CheckCircle
-                        size={18}
-                        color="#333333"
-                        style={{ flexShrink: 0 }}
-                      />
-                      <span style={{ color: '#383838', fontSize: 15 }}>
-                        {item}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+                {index < arr.length - 1 && (
+                  <div
+                    aria-hidden="true"
+                    style={{
+                      width: 2,
+                      height: 40,
+                      backgroundColor: 'rgba(26,26,62,0.2)',
+                      marginLeft: 21,
+                      marginTop: 4,
+                      marginBottom: 4,
+                    }}
+                  />
+                )}
+              </li>
+            ))}
+          </ol>
+        </ContentSection>
 
-        {/* Custom CTA Section */}
-        <section
-          style={{
-            backgroundColor: '#1a1a3e',
-            padding: '64px 0',
-            textAlign: 'center',
-          }}
+        <ContentSection
+          id="section-outcomes"
+          label="Outcomes"
+          heading="Possible outcomes"
         >
-          <div style={{ maxWidth: 900, margin: '0 auto', padding: '0 32px' }}>
-            <h2
-              style={{
-                fontSize: 38,
-                fontWeight: 700,
-                color: '#FFFFFF',
-                marginBottom: 16,
-                lineHeight: 1.25,
-              }}
-            >
-              Have Questions About Voluntary Administration?
-            </h2>
-            <p
-              style={{
-                fontSize: 16,
-                color: 'rgba(255,255,255,0.7)',
-                lineHeight: 1.6,
-                marginBottom: 32,
-                maxWidth: 640,
-                marginLeft: 'auto',
-                marginRight: 'auto',
-              }}
-            >
-              Time is critical in financial distress situations. Our experienced
-              team can help you understand your options and guide you through
-              the process.
+          <p style={bodyText}>
+            At the second creditors&apos; meeting, creditors vote on one of the
+            following options for the company&apos;s future.
+          </p>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 14,
+              marginBottom: 28,
+            }}
+          >
+            {[
+              'A Deed of Company Arrangement (DOCA)',
+              'The company is returned to the control of its directors',
+              'The company proceeds to liquidation',
+            ].map((outcome) => (
+              <div
+                key={outcome}
+                style={{ display: 'flex', alignItems: 'center', gap: 12 }}
+              >
+                <ArrowRight
+                  size={20}
+                  color="#6E3E8F"
+                  aria-hidden="true"
+                  style={{ flexShrink: 0 }}
+                />
+                <span style={{ color: '#383838', fontSize: 16 }}>{outcome}</span>
+              </div>
+            ))}
+          </div>
+          <div
+            style={{
+              backgroundColor: '#f8f8ff',
+              borderRadius: 12,
+              padding: 32,
+            }}
+          >
+            <h3 style={{ ...cardTitle, fontSize: 22, marginBottom: 12 }}>
+              Deed of Company Arrangement
+            </h3>
+            <p style={{ ...bodyText, fontSize: 15 }}>
+              A DOCA is a binding agreement between the company and its
+              creditors that allows the company to continue operating while
+              paying creditors according to the terms agreed in the deed.
             </p>
-            <a
-              href="/#contact"
+            <ul
               style={{
-                backgroundColor: '#333333',
-                color: '#FFFFFF',
-                borderRadius: 50,
-                padding: '14px 28px',
-                fontSize: 16,
-                fontWeight: 700,
-                textDecoration: 'none',
-                display: 'inline-block',
+                listStyle: 'none',
+                padding: 0,
+                margin: 0,
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 10,
               }}
             >
-              Get Free Assessment →
-            </a>
+              {[
+                'The company may continue trading',
+                'Creditors receive what the deed provides',
+                'The terms are those creditors voted to accept',
+              ].map((item) => (
+                <li
+                  key={item}
+                  style={{ display: 'flex', alignItems: 'center', gap: 12 }}
+                >
+                  <CheckCircle
+                    size={18}
+                    color="#6E3E8F"
+                    aria-hidden="true"
+                    style={{ flexShrink: 0 }}
+                  />
+                  <span style={{ color: '#383838', fontSize: 15 }}>{item}</span>
+                </li>
+              ))}
+            </ul>
           </div>
-        </section>
+        </ContentSection>
 
-        {/* Related Services */}
-        <section style={{ backgroundColor: '#FFFFFF', padding: '48px 0' }}>
-          <div style={{ maxWidth: 1400, margin: '0 auto', padding: '0 32px' }}>
-            <h2
-              style={{
-                fontSize: 22,
-                fontWeight: 700,
-                color: '#1a1a3e',
-                marginBottom: 24,
-              }}
-            >
-              Related Services
-            </h2>
-            <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
-              <a
-                href="/services/small-business-restructure/"
-                style={{
-                  backgroundColor: '#f8f8ff',
-                  borderRadius: 8,
-                  padding: '14px 20px',
-                  fontSize: 15,
-                  fontWeight: 600,
-                  color: '#1a1a3e',
-                  textDecoration: 'none',
-                }}
-              >
-                Small Business Restructure &rarr;
-              </a>
-              <a
-                href="/services/creditors-voluntary-liquidation/"
-                style={{
-                  backgroundColor: '#f8f8ff',
-                  borderRadius: 8,
-                  padding: '14px 20px',
-                  fontSize: 15,
-                  fontWeight: 600,
-                  color: '#1a1a3e',
-                  textDecoration: 'none',
-                }}
-              >
-                Creditors Voluntary Liquidation &rarr;
-              </a>
-              <a
-                href="/reduce-debt/"
-                style={{
-                  backgroundColor: '#f8f8ff',
-                  borderRadius: 8,
-                  padding: '14px 20px',
-                  fontSize: 15,
-                  fontWeight: 600,
-                  color: '#1a1a3e',
-                  textDecoration: 'none',
-                }}
-              >
-                Reduce Business Debt &rarr;
-              </a>
-            </div>
-          </div>
-        </section>
+        <CanCannot
+          can={[
+            'Explain what voluntary administration would mean for you and your company.',
+            'Set out administration alongside the other options in writing.',
+            'Introduce a registered liquidator from our network who can act as administrator.',
+          ]}
+          cannot={[
+            'Act as the administrator or accept any appointment.',
+            'Promise that creditors will accept a deed, or any particular outcome.',
+            'Give legal advice.',
+          ]}
+        />
+
+        <ContentSection id="section-faq" label="Common questions" heading="Voluntary administration questions">
+          <FaqList items={faqItems} alwaysOpen />
+        </ContentSection>
+
+        <RelatedLinks
+          links={[
+            {
+              label: 'Administration and liquidation options',
+              href: '/administration-and-liquidation',
+            },
+            {
+              label: 'Small Business Restructuring explained',
+              href: '/services/small-business-restructure',
+            },
+            {
+              label: 'Creditors voluntary liquidation explained',
+              href: '/services/creditors-voluntary-liquidation',
+            },
+          ]}
+        />
+
+        <PageDisclaimer />
+        <ConsultationCTA />
       </main>
       <Footer />
+
+      <style>{`
+        @media (max-width: 767px) {
+          .svc-hero { padding: 40px 0 !important; }
+          .va-two-col { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
     </>
   )
 }

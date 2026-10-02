@@ -1,4 +1,31 @@
 User-agent: *
 Allow: /
 
+# AI search and assistant crawlers are permitted. Change Allow to Disallow
+# for any agent the operator decides to exclude. Agent names should be
+# re-checked against each vendor's current documentation.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
 Sitemap: https://www.australianfinancialadvisory.com.au/sitemap.xml

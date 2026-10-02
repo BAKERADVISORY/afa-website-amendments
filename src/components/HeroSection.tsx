@@ -1,29 +1,64 @@
-import { ShieldCheck, Eye, Users } from 'lucide-react'
+import { preload } from 'react-dom'
+import { ShieldCheck, Eye, Phone } from 'lucide-react'
 import { DiscoveryCallForm } from './CTABanner'
+import { SERVICE_AREA_LINE } from '@/lib/site'
+
+const AVIF_SET =
+  '/images/hero-city-960.avif 960w, /images/hero-city-1440.avif 1440w, /images/hero-city-1920.avif 1920w'
+const WEBP_SET =
+  '/images/hero-city-960.webp 960w, /images/hero-city-1440.webp 1440w, /images/hero-city-1920.webp 1920w'
 
 export function HeroSection() {
+  // Resource hint so the LCP image is discovered from the HTML head, not after CSS.
+  preload('/images/hero-city-1440.avif', {
+    as: 'image',
+    fetchPriority: 'high',
+    imageSrcSet: AVIF_SET,
+    imageSizes: '100vw',
+  })
+
   return (
     <section
+      aria-labelledby="hero-heading"
       style={{
         minHeight: '95vh',
         position: 'relative',
         overflow: 'hidden',
-        backgroundImage: 'url(/CITY.jpg)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
+        backgroundColor: '#1a1a3e',
       }}
     >
+      {/* Decorative background photo, responsive and prioritised as the LCP element */}
+      <picture>
+        <source type="image/avif" srcSet={AVIF_SET} sizes="100vw" />
+        <source type="image/webp" srcSet={WEBP_SET} sizes="100vw" />
+        <img
+          src="/images/hero-city-1440.webp"
+          alt=""
+          width={1440}
+          height={960}
+          fetchPriority="high"
+          decoding="async"
+          style={{
+            position: 'absolute',
+            inset: 0,
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            objectPosition: 'center',
+          }}
+        />
+      </picture>
+
       {/* Dark overlay */}
       <div
+        aria-hidden="true"
         style={{
           position: 'absolute',
           inset: 0,
-          backgroundColor: 'rgba(10, 10, 50, 0.45)',
+          backgroundColor: 'rgba(10, 10, 50, 0.5)',
         }}
       />
 
-      {/* Content — two columns: copy left, form card right */}
       <div
         className="hero-content"
         style={{
@@ -41,26 +76,23 @@ export function HeroSection() {
           alignItems: 'start',
         }}
       >
-        {/* LEFT: copy */}
         <div
           className="hero-copy"
           style={{ maxWidth: '620px', paddingRight: '24px' }}
         >
           <h1
+            id="hero-heading"
             className="mobile-hero-title"
             style={{
               fontFamily: 'Manrope, sans-serif',
               fontWeight: 700,
-              fontSize: '56px',
+              fontSize: '52px',
               lineHeight: 1.12,
               color: '#FFFFFF',
               margin: 0,
             }}
           >
-            Early Action,{' '}
-            <span style={{ color: '#ffffff', opacity: 0.85 }}>
-              Better Outcomes.
-            </span>
+            Pre-insolvency advisory for company directors.
           </h1>
 
           <p
@@ -73,14 +105,15 @@ export function HeroSection() {
               marginBottom: '20px',
             }}
           >
-            Every day you wait, your options narrow — book a free, confidential
-            discovery call today. Fill in the form to get started.
+            If your company is facing ATO debt, cash-flow pressure or a
+            Director Penalty Notice, the earlier you act, the more options may
+            still be open.
           </p>
 
           <p
             style={{
-              fontSize: '20px',
-              color: 'rgba(255,255,255,0.9)',
+              fontSize: '19px',
+              color: 'rgba(255,255,255,0.92)',
               lineHeight: 1.55,
               maxWidth: '660px',
               marginTop: 0,
@@ -88,29 +121,27 @@ export function HeroSection() {
               fontWeight: 500,
             }}
           >
-            Protect your business and personal assets from ATO debt, cash flow
-            crisis, and financial distress before it&apos;s too late. Serving
-            business owners across Gold Coast, Brisbane, and Australia-wide.
+            We assess where you stand, put the options in writing, and bring in
+            a licensed specialist when the situation calls for one.
           </p>
 
           <p
             style={{
               fontSize: '16px',
-              color: 'rgba(255,255,255,0.65)',
+              color: 'rgba(255,255,255,0.8)',
               lineHeight: 1.65,
               maxWidth: '620px',
               marginTop: '24px',
               marginBottom: 0,
             }}
           >
-            We work for you — the business owner — not the creditors. We explore
-            every alternative before formal insolvency to protect your company
-            record and your personal assets across Queensland and
-            Australia-wide.
+            Serving business owners across {SERVICE_AREA_LINE} No pressure, no
+            sales pitch.
           </p>
 
           <ul
             className="hero-benefits"
+            aria-label="Key points"
             style={{
               display: 'flex',
               gap: '32px',
@@ -121,9 +152,9 @@ export function HeroSection() {
             }}
           >
             {[
-              { icon: ShieldCheck, label: 'Trusted Australia wide' },
-              { icon: Eye, label: 'Confidential & Private' },
-              { icon: Users, label: 'Experienced advisers' },
+              { icon: Phone, label: 'Free initial consultation' },
+              { icon: Eye, label: 'Confidential' },
+              { icon: ShieldCheck, label: 'Australia-wide' },
             ].map(({ icon: Icon, label }) => (
               <li
                 key={label}
@@ -131,20 +162,19 @@ export function HeroSection() {
                   display: 'flex',
                   alignItems: 'center',
                   gap: '8px',
-                  color: 'rgba(255,255,255,0.8)',
+                  color: 'rgba(255,255,255,0.9)',
                   fontSize: '14px',
                 }}
               >
-                <Icon size={16} color="#cccccc" />
+                <Icon size={16} color="#DEDCEC" aria-hidden="true" />
                 {label}
               </li>
             ))}
           </ul>
         </div>
 
-        {/* RIGHT: discovery call form card */}
-        <div className="hero-form">
-          <DiscoveryCallForm />
+        <div id="contact" className="hero-form">
+          <DiscoveryCallForm headingLevel="h2" />
         </div>
       </div>
 
@@ -170,6 +200,7 @@ export function HeroSection() {
 
       {/* Wave divider */}
       <div
+        aria-hidden="true"
         style={{
           position: 'absolute',
           bottom: '-1px',
@@ -183,6 +214,7 @@ export function HeroSection() {
           viewBox="0 0 1440 140"
           preserveAspectRatio="none"
           style={{ width: '100%', height: '100%' }}
+          focusable="false"
         >
           <path
             d="M0,70 C360,140 1080,0 1440,70 L1440,140 L0,140 Z"

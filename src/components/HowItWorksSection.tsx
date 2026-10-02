@@ -1,51 +1,40 @@
-export function HowItWorksSection() {
-  const steps = [
-    {
-      step: '01',
-      heading: 'Discovery Call',
-      body: 'Tell us your situation — ATO debt, creditor pressure, cash flow position. No obligation. We listen and give you an honest first read on your options.',
-      note: null,
-    },
-    {
-      step: '02',
-      heading: 'Financial Review',
-      body: 'We assess your full financial position — ATO exposure, creditor obligations, and every available pathway. You get a complete picture of where you stand.',
-      note: null,
-    },
-    {
-      step: '03',
-      heading: 'Written Report',
-      body: 'We deliver a clear written report with recommended action steps tailored to your situation. No jargon — a straight-forward plan of what to do next.',
-      note: null,
-    },
-    {
-      step: '04',
-      heading: 'Implement & Support',
-      body: 'We implement the recommendations in the report, working directly with the director every step of the way.',
-      note: null,
-    },
-  ]
+import { SectionLabel } from './SectionLabel'
 
+/** Steps mirror the approved GBP service list and Q&A. No pricing, no outcomes. */
+const steps = [
+  {
+    step: '01',
+    heading: 'Free initial consultation',
+    body: 'A confidential first conversation to understand your situation and confirm whether we can help. No pressure, no sales pitch.',
+  },
+  {
+    step: '02',
+    heading: 'Options Assessment',
+    body: 'A structured review of your financial position and the options available to you.',
+  },
+  {
+    step: '03',
+    heading: 'Initial Advisory Report',
+    body: 'A written report setting out your position, your options, and recommended next steps in plain language.',
+  },
+  {
+    step: '04',
+    heading: 'Referral and next steps',
+    body: 'Where a licensed specialist is needed, we introduce the right one from our network. Any next step is your decision.',
+  },
+]
+
+export function HowItWorksSection() {
   return (
     <section
       className="hiw-section"
+      aria-labelledby="hiw-heading"
       style={{ backgroundColor: '#f8f8ff', padding: '80px 0' }}
     >
       <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 32px' }}>
-        {/* Header */}
-        <p
-          style={{
-            textAlign: 'center',
-            fontSize: 12,
-            letterSpacing: 3,
-            textTransform: 'uppercase',
-            color: '#999999',
-            marginBottom: 12,
-          }}
-        >
-          how it works
-        </p>
+        <SectionLabel text="How it works" align="center" />
         <h2
+          id="hiw-heading"
           style={{
             textAlign: 'center',
             fontSize: 38,
@@ -54,33 +43,35 @@ export function HowItWorksSection() {
             marginBottom: 16,
           }}
         >
-          Four Steps to a Clear Path Forward
+          Four steps to a clear picture
         </h2>
         <p
           style={{
             textAlign: 'center',
             fontSize: 16,
-            color: '#666666',
+            color: '#444444',
             maxWidth: 580,
             margin: '0 auto 56px',
             lineHeight: 1.65,
           }}
         >
-          We review your situation, assess every available option, and work
-          directly with you to implement the right path forward.
+          We review your situation, set out every available option in writing,
+          and bring in a licensed specialist when the situation calls for one.
         </p>
 
-        {/* Steps grid */}
-        <div
+        <ol
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(4, 1fr)',
             gap: 20,
+            listStyle: 'none',
+            padding: 0,
+            margin: 0,
           }}
           className="hiw-grid"
         >
-          {steps.map(({ step, heading, body, note }) => (
-            <div
+          {steps.map(({ step, heading, body }) => (
+            <li
               key={step}
               style={{
                 backgroundColor: '#ffffff',
@@ -93,56 +84,39 @@ export function HowItWorksSection() {
               }}
             >
               <span
+                aria-hidden="true"
                 style={{
                   fontSize: 36,
                   fontWeight: 900,
-                  color: '#dddddd',
+                  color: '#C9C7DA',
                   lineHeight: 1,
                 }}
               >
                 {step}
               </span>
-              <div>
-                <h3
-                  style={{
-                    fontSize: 17,
-                    fontWeight: 700,
-                    color: '#1a1a3e',
-                    margin: '0 0 4px',
-                  }}
-                >
-                  {heading}
-                </h3>
-                {note && (
-                  <span
-                    style={{
-                      fontSize: 12,
-                      fontWeight: 600,
-                      color: '#333333',
-                      backgroundColor: 'rgba(0,0,0,0.07)',
-                      padding: '2px 8px',
-                      borderRadius: 50,
-                      display: 'inline-block',
-                      marginTop: 4,
-                    }}
-                  >
-                    {note}
-                  </span>
-                )}
-              </div>
+              <h3
+                style={{
+                  fontSize: 17,
+                  fontWeight: 700,
+                  color: '#1a1a3e',
+                  margin: '0 0 4px',
+                }}
+              >
+                {heading}
+              </h3>
               <p
                 style={{
                   fontSize: 14,
-                  color: '#555555',
+                  color: '#444444',
                   lineHeight: 1.65,
                   margin: 0,
                 }}
               >
                 {body}
               </p>
-            </div>
+            </li>
           ))}
-        </div>
+        </ol>
       </div>
 
       <style>{`
