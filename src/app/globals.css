@@ -280,6 +280,111 @@ textarea:focus-visible {
 }
 
 /* Respect reduced-motion preferences */
+/* Consent banner (src/components/ConsentBanner.tsx) */
+.afa-consent {
+  position: fixed;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  z-index: 60;
+  max-width: 1100px;
+  margin: 0 auto;
+  background-color: #1a1a3e;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-top: 3px solid #9b8ec4;
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+}
+.afa-consent-inner {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 20px 24px;
+}
+.afa-consent-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 6px;
+  color: #ffffff;
+}
+.afa-consent-body {
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+  color: #dedcec;
+}
+.afa-consent-body a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+.afa-consent-actions {
+  display: flex;
+  gap: 12px;
+  flex-shrink: 0;
+}
+.afa-consent-btn {
+  min-height: 44px;
+  padding: 10px 22px;
+  border-radius: 50px;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.afa-consent-btn:focus-visible {
+  outline-offset: 3px;
+}
+.afa-consent-accept {
+  background-color: #9b8ec4;
+  color: #1a1a3e;
+  border: 2px solid #9b8ec4;
+}
+.afa-consent-accept:hover,
+.afa-consent-accept:focus-visible {
+  background-color: #8a7db4;
+  border-color: #8a7db4;
+}
+.afa-consent-decline {
+  background-color: transparent;
+  color: #ffffff;
+  border: 2px solid #dedcec;
+}
+.afa-consent-decline:hover,
+.afa-consent-decline:focus-visible {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.afa-consent-reopen {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+}
+@media (max-width: 767px) {
+  .afa-consent {
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+  }
+  .afa-consent-inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    padding: 16px;
+  }
+  .afa-consent-actions {
+    flex-direction: column;
+  }
+  .afa-consent-btn {
+    width: 100%;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

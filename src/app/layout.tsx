@@ -1,7 +1,9 @@
 import type { Metadata, Viewport } from 'next'
 import { Manrope } from 'next/font/google'
 import './globals.css'
+import { ConsentBanner } from '@/components/ConsentBanner'
 import { JsonLd } from '@/components/JsonLd'
+import { CONSENT_DEFAULT_SCRIPT, CONSENT_STORAGE_KEY } from '@/lib/consent'
 import {
   OG_IMAGE_PATH,
   SITE_NAME,
@@ -79,18 +81,23 @@ export default function RootLayout({
     <html lang="en-AU" className={`${manrope.variable} h-full antialiased`}>
       <head>
         {/*
-          Tracking block (GTM-M672BXC4, G-B226QNH900) left exactly as deployed.
-          Known consent blocker: these tags fire without a consent mechanism.
-          Recorded as HARD STOP 3 in afa-project compliance-register. Any change
-          here needs a consent-management decision from the operator first.
+          Consent Mode defaults must be the first script: every storage signal is
+          denied until the visitor accepts in ConsentBanner. IDs GTM-M672BXC4 and
+          G-B226QNH900 are unchanged.
+          GTM itself loads only after consent (stored or just given): the
+          container runs a Meta Pixel template that grants its own consent, which
+          Consent Mode cannot hold back. The standard GTM snippet is wrapped, not
+          altered; window.afaLoadGtm runs it once.
         */}
+        <script dangerouslySetInnerHTML={{ __html: CONSENT_DEFAULT_SCRIPT }} />
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-M672BXC4');`,
+            __html: `window.afaLoadGtm=function(){if(window.afaGtmLoaded)return;window.afaGtmLoaded=true;(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-M672BXC4');};try{if(localStorage.getItem('${CONSENT_STORAGE_KEY}')==='granted')window.afaLoadGtm();}catch(e){}`,
           }}
         />
+        {/* defer, not async: React hoists async src scripts above the consent defaults. */}
         <script
-          async
+          defer
           src="https://www.googletagmanager.com/gtag/js?id=G-B226QNH900"
         ></script>
         <script
@@ -106,14 +113,11 @@ export default function RootLayout({
         <JsonLd data={organizationGraph()} />
       </head>
       <body className="flex min-h-full flex-col font-sans">
-        <noscript
-          dangerouslySetInnerHTML={{
-            __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M672BXC4" height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
-          }}
-        />
+        {/* No GTM noscript iframe: without JavaScript no consent can be given. */}
         <a href="#main" className="skip-link">
           Skip to main content
         </a>
+        <ConsentBanner />
         {children}
       </body>
     </html>

@@ -13,6 +13,13 @@ export const metadata: Metadata = {
   },
 }
 
+const policyText: React.CSSProperties = {
+  fontSize: 15,
+  color: '#555',
+  lineHeight: 1.8,
+  margin: '0 0 16px',
+}
+
 export default function PrivacyPolicyPage() {
   return (
     <>
@@ -54,7 +61,7 @@ export default function PrivacyPolicyPage() {
             Privacy Policy
           </h1>
           <p style={{ fontSize: 15, color: '#DEDCEC', margin: 0 }}>
-            Last updated: April 2026
+            Last updated: October 2026
           </p>
         </section>
 
@@ -107,6 +114,44 @@ export default function PrivacyPolicyPage() {
               },
               {
                 number: '5.',
+                title: 'Cookies, Analytics and Advertising',
+                body: null,
+                custom: (
+                  <>
+                    <p style={policyText}>
+                      Our website uses Google Analytics to understand how the
+                      website is used. With your permission, it also uses Google
+                      Tag Manager to load advertising measurement tags from
+                      Google Ads and Meta. These tools may set cookies that help
+                      us understand how the website is used and measure how our
+                      advertising performs, including when an enquiry form is
+                      submitted.
+                    </p>
+                    <p style={policyText}>
+                      Analytics and advertising cookies are optional. When you
+                      first visit, a banner asks you to choose Accept analytics
+                      or Decline. Until you accept, these cookies stay off. If
+                      you decline, they stay off and any of these cookies
+                      already set by our website are removed. Declining does
+                      not limit your access to any part of the website.
+                    </p>
+                    <p style={policyText}>
+                      While cookies are off, Google Analytics may still receive
+                      limited information that does not rely on cookies, such as
+                      the fact that a page was viewed. The Google Ads and Meta
+                      tags are not loaded until you accept.
+                    </p>
+                    <p style={{ ...policyText, marginBottom: 0 }}>
+                      You can change your choice at any time using the Privacy
+                      choices link in the footer of every page. Your choice is
+                      stored in your browser, so clearing your browser data
+                      will also reset it and the banner will appear again.
+                    </p>
+                  </>
+                ),
+              },
+              {
+                number: '6.',
                 title: 'Access and Correction',
                 body: null,
                 custom: (
@@ -135,7 +180,7 @@ export default function PrivacyPolicyPage() {
                 ),
               },
               {
-                number: '6.',
+                number: '7.',
                 title: 'Complaints',
                 body: null,
                 custom: (

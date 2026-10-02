@@ -1,4 +1,5 @@
 import { Mail, MapPin, Phone } from 'lucide-react'
+import { ConsentSettingsButton } from './ConsentBanner'
 import {
   ADDRESS_LINE,
   EMAIL,
@@ -205,6 +206,7 @@ export function Footer() {
             >
               Terms &amp; Conditions
             </a>
+            <ConsentSettingsButton />
           </div>
         </div>
       </div>
