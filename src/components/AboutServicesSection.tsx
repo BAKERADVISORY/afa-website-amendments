@@ -15,6 +15,7 @@ interface ServiceCardProps {
   description: string
   features: string[]
   href: string
+  linkText: string
 }
 
 function ServiceCard({
@@ -23,6 +24,7 @@ function ServiceCard({
   description,
   features,
   href,
+  linkText,
 }: ServiceCardProps) {
   return (
     <li
@@ -103,7 +105,7 @@ function ServiceCard({
           alignSelf: 'flex-start',
         }}
       >
-        Learn more
+        {linkText}
       </a>
     </li>
   )
@@ -122,6 +124,7 @@ const cards: ServiceCardProps[] = [
       'Referral to a registered tax agent for ATO matters where needed',
     ],
     href: '/reduce-debt',
+    linkText: 'Learn about ATO debt options',
   },
   {
     icon: Building2,
@@ -134,6 +137,7 @@ const cards: ServiceCardProps[] = [
       'Referral to a licensed practitioner where a formal process is chosen',
     ],
     href: '/restructure-your-business',
+    linkText: 'Learn about restructuring options',
   },
   {
     icon: Shield,
@@ -146,6 +150,7 @@ const cards: ServiceCardProps[] = [
       'Referral to a registered insolvency practitioner',
     ],
     href: '/administration-and-liquidation',
+    linkText: 'Learn about administration and liquidation',
   },
 ]
 

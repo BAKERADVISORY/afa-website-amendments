@@ -42,6 +42,13 @@ const linkStyle: React.CSSProperties = {
   padding: '5px 0',
 }
 
+// Legal links meet the 24px target minimum; the mobile rule below lifts them to 44px.
+const legalLinkStyle: React.CSSProperties = {
+  display: 'inline-flex',
+  alignItems: 'center',
+  minHeight: 24,
+}
+
 const menuLinks = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about' },
@@ -184,10 +191,18 @@ export function Footer() {
             <span>© 2026 Australian Financial Advisory Pty Ltd</span>
             <span>ACN 680 451 129</span>
             <span>ABN 73 680 451 129</span>
-            <a href="/privacy-policy" className="afa-footer-link">
+            <a
+              href="/privacy-policy"
+              className="afa-footer-link afa-footer-legal-link"
+              style={legalLinkStyle}
+            >
               Privacy Policy
             </a>
-            <a href="/website-terms-conditions" className="afa-footer-link">
+            <a
+              href="/website-terms-conditions"
+              className="afa-footer-link afa-footer-legal-link"
+              style={legalLinkStyle}
+            >
               Terms &amp; Conditions
             </a>
           </div>
@@ -256,6 +271,9 @@ export function Footer() {
             flex-direction: column !important;
             align-items: center !important;
             gap: 4px !important;
+          }
+          .afa-footer-legal-link {
+            min-height: 44px !important;
           }
         }
       `}</style>

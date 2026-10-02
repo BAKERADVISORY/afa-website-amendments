@@ -88,7 +88,7 @@ export function HowItWorksSection() {
                 style={{
                   fontSize: 36,
                   fontWeight: 900,
-                  color: '#C9C7DA',
+                  color: '#8A7DBA',
                   lineHeight: 1,
                 }}
               >

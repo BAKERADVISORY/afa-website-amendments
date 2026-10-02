@@ -69,11 +69,11 @@ export function NavBar() {
 
   return (
     <>
-      {/* Slim contact bar, shown only below 1100px where the in-header phone is hidden */}
-      <a
-        href={`tel:${PHONE_TEL}`}
+      {/* Slim contact bar, shown only below 1100px where the in-header phone is hidden.
+          Wrapped in a labelled aside so its content sits inside a landmark. */}
+      <aside
         className="afa-contact-bar"
-        aria-label={`Call us on ${PHONE_DISPLAY}`}
+        aria-label="Phone contact"
         style={{
           position: 'sticky',
           top: 0,
@@ -82,22 +82,32 @@ export function NavBar() {
           zIndex: 51,
           height: '40px',
           width: '100%',
-          alignItems: 'center',
-          justifyContent: 'center',
-          gap: '8px',
           backgroundColor: '#12122e',
           borderBottom: '1px solid rgba(255,255,255,0.1)',
-          fontSize: '13px',
-          fontWeight: 700,
-          lineHeight: 1,
-          textDecoration: 'none',
-          whiteSpace: 'nowrap',
         }}
       >
-        <Phone size={14} color="#9b8ec4" aria-hidden="true" />
-        <span style={{ color: '#DEDCEC' }}>Contact us directly</span>
-        <span style={{ color: '#ffffff' }}>{PHONE_DISPLAY}</span>
-      </a>
+        <a
+          href={`tel:${PHONE_TEL}`}
+          aria-label={`Call us on ${PHONE_DISPLAY}`}
+          style={{
+            display: 'flex',
+            width: '100%',
+            height: '100%',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '8px',
+            fontSize: '13px',
+            fontWeight: 700,
+            lineHeight: 1,
+            textDecoration: 'none',
+            whiteSpace: 'nowrap',
+          }}
+        >
+          <Phone size={14} color="#9b8ec4" aria-hidden="true" />
+          <span style={{ color: '#DEDCEC' }}>Contact us directly</span>
+          <span style={{ color: '#ffffff' }}>{PHONE_DISPLAY}</span>
+        </a>
+      </aside>
 
       <header
         className="afa-header"

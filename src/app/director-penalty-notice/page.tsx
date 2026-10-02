@@ -416,7 +416,7 @@ export default function DirectorPenaltyNoticePage() {
                   style={{
                     fontSize: 28,
                     fontWeight: 900,
-                    color: '#C9C7DA',
+                    color: '#8A7DBA',
                     lineHeight: 1,
                     flexShrink: 0,
                     width: 40,
