@@ -55,11 +55,16 @@ dashes.
 - `scripts/optimise-hero.mjs`: regenerates the responsive hero images with
   the sharp build that ships with Next.js.
 
-## Known blocker, do not touch
+## Tracking and consent
 
-`src/app/layout.tsx` loads GTM and GA4 without a consent mechanism. Recorded as
-a compliance hard stop in `afa-project` and awaiting an operator decision on a
-consent-management platform. Do not change the tracking block.
+`src/app/layout.tsx` sets Google Consent Mode v2 defaults (all four signals
+denied) as the first script in `<head>`, before GTM and gtag load. The visitor's
+choice comes from `src/components/ConsentBanner.tsx` and is stored in
+localStorage under `afa-consent-v1` (logic in `src/lib/consent.ts`); the footer
+"Privacy choices" button reopens the banner. Do not change the GTM or GA4 IDs,
+and do not load any tag ahead of the consent-default script. Non-Google tags
+inside the GTM container are not covered by Consent Mode and need consent
+checks configured in GTM itself.
 
 ## Commands
 
