@@ -148,7 +148,9 @@ export function organizationGraph() {
           ],
         },
         sameAs: [
-          'https://www.linkedin.com/company/australian-financial-advisory',
+          'https://www.facebook.com/AustralianFinancialAdvisory/',
+          'https://www.instagram.com/australianfinancialadvisory/',
+          'https://www.linkedin.com/company/australian-financial-advisory/',
           'https://abr.business.gov.au/ABN/View?abn=73680451129',
         ],
       },
