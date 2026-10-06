@@ -80,6 +80,50 @@ const explainerLinks = [
   },
 ]
 
+const socialLinks = [
+  {
+    name: 'Facebook',
+    href: 'https://www.facebook.com/AustralianFinancialAdvisory/',
+    icon: (
+      <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z" />
+    ),
+  },
+  {
+    name: 'Instagram',
+    href: 'https://www.instagram.com/australianfinancialadvisory/',
+    icon: (
+      <>
+        <rect
+          x="3"
+          y="3"
+          width="18"
+          height="18"
+          rx="5"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+        />
+        <circle
+          cx="12"
+          cy="12"
+          r="4"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+        />
+        <circle cx="17.5" cy="6.5" r="1.3" />
+      </>
+    ),
+  },
+  {
+    name: 'LinkedIn',
+    href: 'https://www.linkedin.com/company/australian-financial-advisory/',
+    icon: (
+      <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S.02 4.88.02 3.5 1.13 1 2.5 1s2.48 1.12 2.48 2.5zM.2 8h4.6v15H.2V8zm7.5 0h4.4v2.05h.06C12.77 8.9 14.27 7.8 16.5 7.8c4.7 0 5.5 3.1 5.5 7.1V23h-4.6v-7.3c0-1.75-.03-4-2.4-4-2.4 0-2.77 1.9-2.77 3.9V23H7.7V8z" />
+    ),
+  },
+]
+
 export function Footer() {
   return (
     <footer
@@ -141,6 +185,42 @@ export function Footer() {
             <p style={{ color: '#DEDCEC', fontSize: 14, marginTop: 16 }}>
               {SERVICE_AREA_LINE}
             </p>
+            <h2 style={{ ...headingStyle, marginTop: 24 }}>Socials</h2>
+            <nav aria-label="Footer socials">
+              <ul
+                className="footer-socials"
+                style={{
+                  display: 'flex',
+                  gap: 8,
+                  listStyle: 'none',
+                  margin: 0,
+                  padding: 0,
+                }}
+              >
+                {socialLinks.map(({ name, href, icon }) => (
+                  <li key={name}>
+                    <a
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Australian Financial Advisory on ${name}`}
+                      className="afa-social-link text-white"
+                    >
+                      <svg
+                        viewBox="0 0 24 24"
+                        width={24}
+                        height={24}
+                        fill="currentColor"
+                        aria-hidden="true"
+                        focusable="false"
+                      >
+                        {icon}
+                      </svg>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
           </div>
 
           <div>
@@ -252,7 +332,24 @@ export function Footer() {
         </p>
       </div>
       <style>{`
+        .afa-social-link {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 44px;
+          height: 44px;
+          border-radius: 9999px;
+          background-color: rgba(255, 255, 255, 0.1);
+          transition: background-color 0.2s ease;
+        }
+        .afa-social-link:hover,
+        .afa-social-link:focus-visible {
+          background-color: rgba(255, 255, 255, 0.22);
+        }
         @media (max-width: 767px) {
+          .footer-socials {
+            justify-content: center;
+          }
           .footer-grid {
             grid-template-columns: 1fr !important;
             text-align: center;
