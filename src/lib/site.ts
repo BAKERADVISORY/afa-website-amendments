@@ -82,7 +82,7 @@ export function organizationGraph() {
         url: SITE_URL,
         logo: {
           '@type': 'ImageObject',
-          url: absUrl('/images/logo-light.svg'),
+          url: absUrl('/afa-logo-navy.png'),
         },
         image: absUrl(OG_IMAGE_PATH),
         description: ENTITY_DESCRIPTION,
