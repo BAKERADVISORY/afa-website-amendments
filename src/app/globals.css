@@ -397,3 +397,54 @@ textarea:focus-visible {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* /accountants page grids (src/app/accountants/page.tsx).
+   Each row fills the content width with no orphan card and equal card heights.
+   Phase 2 has five cards, laid out on a six-column grid as three then two. */
+.afa-phase {
+  display: grid;
+  gap: 20px;
+  align-items: stretch;
+}
+.afa-phase--2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+.afa-phase--3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+.afa-phase--5 {
+  grid-template-columns: repeat(6, 1fr);
+}
+.afa-phase--5 > * {
+  grid-column: span 2;
+}
+.afa-phase--5 > *:nth-child(n + 4) {
+  grid-column: span 3;
+}
+.afa-services {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Tablet: the service cards drop to two per row, but the phases keep their
+   shape. Dropping a three-card or five-card phase to two columns puts an
+   orphan card on its own row, which is the thing this layout exists to avoid. */
+@media (max-width: 1023px) {
+  .afa-services {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .afa-phase,
+  .afa-services {
+    grid-template-columns: 1fr;
+  }
+  .afa-phase > *,
+  .afa-phase--5 > *,
+  .afa-phase--5 > *:nth-child(n + 4),
+  .afa-services > * {
+    grid-column: auto;
+  }
+}

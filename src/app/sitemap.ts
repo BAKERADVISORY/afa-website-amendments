@@ -8,6 +8,8 @@ export const dynamic = 'force-static'
 const LEGAL_UPDATED_ISO = '2026-04-11'
 // Cookies, analytics and advertising section added with the consent banner.
 const PRIVACY_UPDATED_ISO = '2026-10-02'
+// Referral information for accountancy firms, published 13 November 2026.
+const ACCOUNTANTS_UPDATED_ISO = '2026-11-13'
 
 const pages: { path: string; updated: string }[] = [
   { path: '/', updated: CONTENT_UPDATED_ISO },
@@ -19,6 +21,7 @@ const pages: { path: string; updated: string }[] = [
   { path: '/restructure-your-business', updated: CONTENT_UPDATED_ISO },
   { path: '/administration-and-liquidation', updated: CONTENT_UPDATED_ISO },
   { path: '/close-company', updated: CONTENT_UPDATED_ISO },
+  { path: '/accountants', updated: ACCOUNTANTS_UPDATED_ISO },
   { path: '/services/small-business-restructure', updated: CONTENT_UPDATED_ISO },
   { path: '/services/voluntary-administration', updated: CONTENT_UPDATED_ISO },
   {

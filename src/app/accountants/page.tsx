@@ -19,23 +19,42 @@ import { absUrl, serviceSchema, PHONE_DISPLAY, PHONE_TEL } from '@/lib/site'
 /**
  * Referral information for accountancy firms.
  *
- * Wording and section order are verbatim from the approved brochure source,
- * afa-documents 01_SOURCE/brochure-accountants-v1.0.0-standalone.html (ACN
- * corrected to 680 451 129 on 13 November 2026, afa-documents commit a7fdaf1).
- * Builder brief: afa-project
- * handovers/prompts/builder-prompt-2026-11-13-accountants-page-v1_0_2.md.
+ * Wording and section order follow the approved brochure source, afa-documents
+ * 01_SOURCE/brochure-accountants-v1.0.1-standalone.html.
+ * Builder briefs: afa-project handovers/prompts/
+ * builder-prompt-2026-11-13-accountants-page-v1_0_2.md, then
+ * builder-prompt-2026-11-13-accountants-page-polish-v1_0_0.md.
  *
  * No form on this page, by Jason's decision: the call to action is tap-to-call
- * and email to Jason. noindex until Jason says otherwise, and the page is
- * deliberately absent from sitemap.ts and the main navigation.
+ * and email to Jason.
+ *
+ * Polished and made public on 13 November 2026: one shared content width so
+ * section headings line up, phase and service grids that fill the row with no
+ * orphan card, a single-column warning-signs list, an "Accountants" nav item,
+ * and the noindex removed.
+ *
+ * Three deliberate differences from the print brochure, approved by Jason on
+ * 13 November 2026: the contact box carries the phone number only (no email
+ * address and no website line, both of which make sense in print but not on
+ * the site itself), and the line under the call-to-action buttons carries the
+ * referral undertaking rather than repeating the contact details already in
+ * the buttons above it.
  */
+
+/**
+ * One content width for every section on this page. Mixing 900 and 1100 left
+ * the headings stepping sideways between sections at desktop widths. Prose
+ * keeps its own narrower measure so the reading line does not get too long.
+ */
+const SECTION_WIDTH = 1100
+const PROSE_WIDTH = 820
 
 const PATH = '/accountants'
 const title = 'Referral Information for Accountancy Firms'
 const description =
   'Early, independent support on your clients and their options while you stay their accountant. Assessment and advisory services for accountancy firms. Gold Coast, Brisbane, Sydney, Australia-wide.'
 
-const PDF_PATH = '/afa-brochure-accountants-v1.0.0.pdf'
+const PDF_PATH = '/afa-brochure-accountants-v1.0.1.pdf'
 const JASON_EMAIL = 'jason@australianfinancialadvisory.com.au'
 
 export const metadata: Metadata = {
@@ -43,12 +62,9 @@ export const metadata: Metadata = {
   description,
   alternates: { canonical: absUrl(PATH) },
   openGraph: { title: `${title} | AFA`, description, url: absUrl(PATH) },
-  // Not for indexing until Jason says otherwise (builder brief v1.0.2, item 4).
-  robots: {
-    index: false,
-    follow: false,
-    googleBot: { index: false, follow: false },
-  },
+  // Public since 13 November 2026 (polish brief v1.0.0, item 5). The page was
+  // noindex while the wording was being settled; it now indexes like the rest
+  // of the site, which inherits index/follow from the root layout.
   // afa-documents CLAUDE.md mobile-first rule. Set per page, so nothing else
   // on the site changes in this build.
   formatDetection: { telephone: false },
@@ -149,9 +165,9 @@ const processGroups: ProcessGroup[] = [
 ]
 
 const firmActions: string[] = [
-  "Keep each director's residential and postal address current with ASIC. That is where a DPN is sent.",
+  "Keep each director's address on the ASIC register current. That is where the ATO generally sends a DPN, and the 21 days start the day it is posted there.",
   "Check the client's address and contact details held by the ATO are up to date.",
-  'Check the ATO portal communication history regularly for a DPN or warning letter.',
+  'Check your firm-wide ATO portal communication history regularly for any DPN or warning letter issued to your clients.',
   'Keep BAS, PAYG withholding and super reporting on time, even when the client cannot pay.',
   'Call us the day a DPN appears, so every option inside the 21 days stays open.',
 ]
@@ -224,7 +240,7 @@ function TalkToUs({ id, closing = false }: { id: string; closing?: boolean }) {
       className="mobile-section"
       style={{ backgroundColor: '#1a1a3e', padding: '80px 0' }}
     >
-      <div style={{ maxWidth: 900, margin: '0 auto', padding: '0 32px' }}>
+      <div style={{ maxWidth: SECTION_WIDTH, margin: '0 auto', padding: '0 32px' }}>
         <SectionLabel text="Get started" light />
         <h2
           id={`${id}-heading`}
@@ -307,10 +323,9 @@ function TalkToUs({ id, closing = false }: { id: string; closing?: boolean }) {
             color: 'rgba(255,255,255,0.78)',
             lineHeight: 1.7,
             marginTop: 18,
-            wordBreak: 'break-word',
           }}
         >
-          {PHONE_DISPLAY} &middot; {JASON_EMAIL}
+          We will never refer your client to another tax agent or accountant.
         </p>
       </div>
     </section>
@@ -354,7 +369,7 @@ export default function AccountantsPage() {
           className="mobile-section"
           style={{ backgroundColor: '#ffffff', padding: '80px 0' }}
         >
-          <div style={{ maxWidth: 900, margin: '0 auto', padding: '0 32px' }}>
+          <div style={{ maxWidth: SECTION_WIDTH, margin: '0 auto', padding: '0 32px' }}>
             <p style={{ ...bodyText, fontSize: 18 }}>
               Australian Financial Advisory gives your clients early,
               independent support on their options, while you stay their
@@ -385,14 +400,6 @@ export default function AccountantsPage() {
                     {PHONE_DISPLAY}
                   </a>
                 </p>
-                <p style={{ ...cardText, wordBreak: 'break-word' }}>
-                  <a
-                    href={`mailto:${JASON_EMAIL}`}
-                    style={{ color: '#6E3E8F' }}
-                  >
-                    {JASON_EMAIL}
-                  </a>
-                </p>
               </div>
               <div>
                 <p style={numeral}>Offices</p>
@@ -413,9 +420,6 @@ export default function AccountantsPage() {
                 </p>
               </div>
             </div>
-            <p style={{ ...cardText, marginTop: 16 }}>
-              www.australianfinancialadvisory.com.au
-            </p>
           </div>
         </section>
 
@@ -424,6 +428,7 @@ export default function AccountantsPage() {
           label="Working with your practice"
           heading="Built for small and busy practices"
           tone="panel"
+          maxWidth={SECTION_WIDTH}
         >
           <p style={bodyText}>
             Many accounting firms have small teams. When a client hits financial
@@ -435,7 +440,8 @@ export default function AccountantsPage() {
             We give you another option. You keep the client, and we add the
             expertise. We work alongside you to assess the position and guide
             the client through a tough period, so they have the best chance of
-            coming back to you as a stronger business.
+            coming back to you as a stronger business. We will not refer your
+            client to another tax agent or accountant.
           </p>
         </ContentSection>
 
@@ -443,6 +449,7 @@ export default function AccountantsPage() {
           id="why-refer-early"
           label="Why refer early"
           heading="Options before liquidation"
+          maxWidth={SECTION_WIDTH}
         >
           <p style={bodyText}>
             By the time most directors reach a liquidator, the choices have
@@ -465,22 +472,14 @@ export default function AccountantsPage() {
           label="Our services"
           heading="What we help with"
           tone="panel"
-          maxWidth={1100}
+          maxWidth={SECTION_WIDTH}
         >
-          <p style={{ ...bodyText, maxWidth: 820 }}>
+          <p style={{ ...bodyText, maxWidth: PROSE_WIDTH }}>
             Every matter starts with an assessment. The director gets a clear,
             written read on where the business stands and what can realistically
             be done.
           </p>
-          <div
-            className="mobile-two-col"
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(2, 1fr)',
-              gap: 20,
-              marginTop: 28,
-            }}
-          >
+          <div className="afa-services" style={{ marginTop: 28 }}>
             {services.map((service, index) => (
               <div key={service} style={cardStyle}>
                 <p style={numeral}>{String(index + 1).padStart(2, '0')}</p>
@@ -496,9 +495,9 @@ export default function AccountantsPage() {
           id="process"
           label="The process"
           heading="From first signs to clear options"
-          maxWidth={1100}
+          maxWidth={SECTION_WIDTH}
         >
-          <p style={{ ...bodyText, maxWidth: 820 }}>
+          <p style={{ ...bodyText, maxWidth: PROSE_WIDTH }}>
             Ten steps, with your firm involved from start to finish.
           </p>
           {processGroups.map((group) => (
@@ -514,14 +513,7 @@ export default function AccountantsPage() {
               >
                 {group.stage}
               </h3>
-              <div
-                className="mobile-stack-grid"
-                style={{
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-                  gap: 20,
-                }}
-              >
+              <div className={`afa-phase afa-phase--${group.steps.length}`}>
                 {group.steps.map((step) => (
                   <div key={step.n} style={cardStyle}>
                     <p style={numeral}>{String(step.n).padStart(2, '0')}</p>
@@ -533,9 +525,10 @@ export default function AccountantsPage() {
             </div>
           ))}
           <p style={{ ...bodyText, marginTop: 32, marginBottom: 0 }}>
-            Either way, we work alongside your firm, and the client stays with
-            your practice for their accounting and tax work. We do not take
-            formal appointments and we do not provide tax agent services.
+            Either way, we work alongside your firm. Your client&apos;s
+            accounting and tax work stays with your practice, and we will not
+            refer your client to another tax agent or accountant. We do not take
+            formal appointments.
           </p>
         </ContentSection>
 
@@ -544,9 +537,9 @@ export default function AccountantsPage() {
           label="Director Penalty Notices"
           heading="When company debt becomes personal"
           tone="navy"
-          maxWidth={1100}
+          maxWidth={SECTION_WIDTH}
         >
-          <p style={{ ...bodyTextLight, maxWidth: 820 }}>
+          <p style={{ ...bodyTextLight, maxWidth: PROSE_WIDTH }}>
             A Director Penalty Notice can make your client personally liable for
             the company&apos;s unpaid PAYG withholding, GST and super guarantee
             charge. The ATO can start recovery 21 days after the notice is
@@ -590,6 +583,7 @@ export default function AccountantsPage() {
           id="what-your-firm-can-do"
           label="Staying on top of it"
           heading="What your firm can do"
+          maxWidth={SECTION_WIDTH}
         >
           <p style={bodyText}>
             The 21 days run from the date the notice is issued, not the date
@@ -612,6 +606,7 @@ export default function AccountantsPage() {
           label="Personal assets at risk"
           heading="Could your client lose their home?"
           tone="panel"
+          maxWidth={SECTION_WIDTH}
         >
           <p style={bodyText}>
             A director penalty is a personal debt. If it is not paid, the ATO
@@ -643,20 +638,17 @@ export default function AccountantsPage() {
           id="indicators"
           label="Key insolvency indicators"
           heading="When to start the conversation"
+          maxWidth={SECTION_WIDTH}
         >
           <p style={bodyText}>
             These are key insolvency indicators. It&apos;s worth considering a
             referral when a client is:
           </p>
           <ul
-            className="mobile-two-col"
             style={{
               listStyle: 'none',
               padding: 0,
               margin: '0 0 20px',
-              display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
-              gap: '0 28px',
             }}
           >
             {indicators.map((item) => (
@@ -686,6 +678,7 @@ export default function AccountantsPage() {
           id="who-you-will-deal-with"
           heading="Who you will deal with"
           tone="panel"
+          maxWidth={SECTION_WIDTH}
         >
           <div style={cardStyle}>
             <p style={cardTitle}>
@@ -702,7 +695,7 @@ export default function AccountantsPage() {
           aria-label="Download the brochure"
           style={{ backgroundColor: '#ffffff', padding: '48px 0' }}
         >
-          <div style={{ maxWidth: 900, margin: '0 auto', padding: '0 32px' }}>
+          <div style={{ maxWidth: SECTION_WIDTH, margin: '0 auto', padding: '0 32px' }}>
             <a
               href={PDF_PATH}
               className="mobile-full-button"
@@ -733,7 +726,7 @@ export default function AccountantsPage() {
           aria-label="Disclaimer"
           style={{ backgroundColor: '#ffffff', padding: '48px 0 64px' }}
         >
-          <div style={{ maxWidth: 900, margin: '0 auto', padding: '0 32px' }}>
+          <div style={{ maxWidth: SECTION_WIDTH, margin: '0 auto', padding: '0 32px' }}>
             <p
               style={{
                 fontSize: 14,
