@@ -11,6 +11,7 @@ const navLinks = [
   { text: 'ATO Debt', href: '/reduce-debt' },
   { text: 'Restructure', href: '/restructure-your-business' },
   { text: 'Admin & Liquidation', href: '/administration-and-liquidation' },
+  { text: 'Accountants', href: '/accountants' },
   { text: 'About', href: '/about' },
   { text: 'Contact', href: '/contact' },
 ]
@@ -167,9 +168,15 @@ export function NavBar() {
                 href={link.href}
                 className="afa-nav-link"
                 style={{
-                  fontSize: '15px',
+                  // 14px with 5px side padding, not 15px/8px: the nav carries
+                  // eight items since "Accountants" was added, and at 1280 to
+                  // 1440 the old sizing overflowed the row leftwards into the
+                  // logo. 6px cleared every width except 1440, where the logo
+                  // is at its widest (28vw) and only 1px was left. Swept every
+                  // width from 1280 to 1920 at this size: all clear.
+                  fontSize: '14px',
                   fontWeight: 700,
-                  padding: '13px 8px',
+                  padding: '13px 5px',
                   textDecoration: 'none',
                   whiteSpace: 'nowrap',
                 }}
